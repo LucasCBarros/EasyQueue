@@ -1,0 +1,24 @@
+disabled_rules:
+  #- vertical_whitespace
+  - trailing_whitespace
+
+
+included: # paths to include during linting. `--path` is ignored if present.
+
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Carthage
+- Pods/Pods
+- Pods
+- GTMSessionFetcher.m
+- Source/ExcludedFolder
+- Source/ExcludedFile.swift
+- FilaFacilUITests
+
+
+line_length: 
+  - 150 # warning
+
+  # Se for supremir uma regra, fazer por comentario na linha exata com justificativa
+
+
