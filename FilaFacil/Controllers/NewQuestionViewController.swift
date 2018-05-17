@@ -22,7 +22,7 @@ class NewQuestionViewController: UIViewController {
     var allUserProfiles: [UserProfile]?
     var usersInLine: [UserProfile]?
     var selectedTeacher = "All"
-    var teacherArray = ["All", "Guga", "Sergio", "Cela", "Fran", "Rosana", "Bia"]
+    var teacherArray = [ "Dev", "Design", "Biz"]
     
     var currentProfile: UserProfile {
         get {

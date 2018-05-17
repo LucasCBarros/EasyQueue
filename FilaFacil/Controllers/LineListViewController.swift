@@ -17,7 +17,7 @@ class LineListViewController: UIViewController {
     
     // MARK: - Properties
     // Array with all registered teachers
-    var teacherArray = ["All", "Guga", "Sergio", "Cela", "Rosana", "Bia"]
+    var teacherArray = [ "Dev", "Design", "Biz"]
     var selectedTab = "All"
     
     let userProfileManager = UserProfileService()
@@ -259,7 +259,8 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 extension LineListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return teacherArray.count
+        return 3
+//        return teacherArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
