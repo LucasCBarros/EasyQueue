@@ -10,12 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var list = [1,2,3,4,5,6,7,8]
-    
     var openedQuestions:[Question] = []
     var questionIDArray: [String] = []
     var topTimer: Timer!
-    
     
     @IBOutlet weak var questionTableView: UITableView!
     
@@ -30,8 +27,8 @@ class ViewController: UIViewController {
         getAllQuestions()
 //        getJsonFromUrl()
         
-                topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(3), target: self,
-                                                selector: #selector(ViewController.getJsonFromUrl),
+         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
+                                                selector: #selector(ViewController.getAllQuestions),
                                                 userInfo: nil, repeats: true)
 
     }
@@ -58,38 +55,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func getJsonFromUrl() {
-
-        
-        for index in 0..<self.questionIDArray.count {
-            
-            let URL: String = "https://filafacildev.firebaseio.com/Questions/\(self.questionIDArray[index]).json"
-            
-            guard let url = NSURL(string: URL) else { return }
-            URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) in
-    
-                guard let data = data else { return }
-    
-                do {
-                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
-    
-                    let question = Question(json: json)
-                    self.openedQuestions.append(question)
-                    print(">>>>>>>>>>", question.username)
-                    
-    
-                } catch let jsonErr {
-                    print("Error serializing json:", jsonErr)
-                }
-            }).resume()
-        }
-        print("---------")
-        if(questionIDArray.count == openedQuestions.count) {
-            self.questionTableView.reloadData()
-            
-        }
-    }
-    
     @objc func getAllQuestions() {
         let URL: String = "https://filafacildev.firebaseio.com/Questions.json"
         
@@ -104,33 +69,29 @@ class ViewController: UIViewController {
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
                 
+//                print("JSON:", json)
+                
                 let jsonString = ("\(json.keys)")
-//                print("JSON:", jsonString)
+//                print("jsonString:", json.keys)
                 
                 let jsonData = jsonString.data(using: .utf8)! // Conversion to UTF-8 cannot fail.
                 
-                if let array = (try? JSONSerialization.jsonObject(with: jsonData, options: [])) as? [String] {
-                    self.questionIDArray.removeAll()
-                    // Let's dump the array for demonstration purposes:
-//                    print("\nArray:")
-                    for (idx, elem) in array.enumerated() {
-//                        print(idx, elem)
-                        self.questionIDArray.append(elem)
-                    }
-//                    print(">>>>>>>>", self.questionIDArray)
-                    
-                    self.getJsonFromUrl()
-                    
-                } else {
-                    print("malformed input")
+                self.openedQuestions.removeAll()
+                
+                for (idx, elem) in json{
+                    print(elem)
+                    var lala = elem as? [String: Any]
+                    self.openedQuestions.append(Question(json: lala!))
                 }
+                
+                
+                self.questionTableView.reloadData()
                 
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
             }
         }).resume()
         
-        questionTableView.reloadData()
     }
 }
 
@@ -152,8 +113,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = "\(indexPath.row+1)"
             cell?.numberLabel.text = self.openedQuestions[indexPath.row].requestedTeacher
-            
-            
         }
         
         return cell!
