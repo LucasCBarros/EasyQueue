@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
+		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
+		DEDF0FC320AE20470064A247 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC220AE20470064A247 /* ViewController.swift */; };
+		DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */; };
+		DEDF0FC920AE20470064A247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDF0FC720AE20470064A247 /* Main.storyboard */; };
+		DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDF0FCA20AE20470064A247 /* Assets.xcassets */; };
+		DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */; };
+		DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE420AE20D00064A247 /* QuestionService.swift */; };
 		E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6022998203FA29E00336FC3 /* AppDelegate.swift */; };
 		E60229A0203FA29E00336FC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E602299F203FA29E00336FC3 /* Assets.xcassets */; };
 		E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229A1203FA29E00336FC3 /* LaunchScreen.storyboard */; };
@@ -55,6 +62,15 @@
 /* Begin PBXFileReference section */
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacilTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEDF0FC020AE20470064A247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DEDF0FC220AE20470064A247 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEDF0FC520AE20470064A247 /* FilaFacilTV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilaFacilTV.xcdatamodel; sourceTree = "<group>"; };
+		DEDF0FC820AE20470064A247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DEDF0FCA20AE20470064A247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEDF0FCC20AE20470064A247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		DEDF0FE420AE20D00064A247 /* QuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		E6022995203FA29E00336FC3 /* FilaFacil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6022998203FA29E00336FC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E602299F203FA29E00336FC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DEDF0FBB20AE20470064A247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6022992203FA29E00336FC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,11 +146,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DEDF0FBF20AE20470064A247 /* FilaFacilTV */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF0FE420AE20D00064A247 /* QuestionService.swift */,
+				DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */,
+				DEDF0FC020AE20470064A247 /* AppDelegate.swift */,
+				DEDF0FC220AE20470064A247 /* ViewController.swift */,
+				DEDF0FC720AE20470064A247 /* Main.storyboard */,
+				DEDF0FCA20AE20470064A247 /* Assets.xcassets */,
+				DEDF0FCC20AE20470064A247 /* Info.plist */,
+				DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */,
+			);
+			path = FilaFacilTV;
+			sourceTree = "<group>";
+		};
 		E602298C203FA29E00336FC3 = {
 			isa = PBXGroup;
 			children = (
 				E6022997203FA29E00336FC3 /* FilaFacil */,
 				E6D7FB1A205314B600EEC89D /* FilaFacilUITests */,
+				DEDF0FBF20AE20470064A247 /* FilaFacilTV */,
 				E6022996203FA29E00336FC3 /* Products */,
 				1ECAEA88155B8A23266FB768 /* Pods */,
 				EEE9480C3407FA46BDEB6102 /* Frameworks */,
@@ -139,6 +178,7 @@
 			children = (
 				E6022995203FA29E00336FC3 /* FilaFacil.app */,
 				E6D7FB19205314B600EEC89D /* FilaFacilUITests.xctest */,
+				DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +299,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DEDF0FBD20AE20470064A247 /* FilaFacilTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */;
+			buildPhases = (
+				DEDF0FBA20AE20470064A247 /* Sources */,
+				DEDF0FBB20AE20470064A247 /* Frameworks */,
+				DEDF0FBC20AE20470064A247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FilaFacilTV;
+			productName = FilaFacilTV;
+			productReference = DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E6022994203FA29E00336FC3 /* FilaFacil */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60229A7203FA29E00336FC3 /* Build configuration list for PBXNativeTarget "FilaFacil" */;
@@ -308,6 +365,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Lucas C Barros";
 				TargetAttributes = {
+					DEDF0FBD20AE20470064A247 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					E6022994203FA29E00336FC3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -342,11 +403,21 @@
 			targets = (
 				E6022994203FA29E00336FC3 /* FilaFacil */,
 				E6D7FB18205314B600EEC89D /* FilaFacilUITests */,
+				DEDF0FBD20AE20470064A247 /* FilaFacilTV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DEDF0FBC20AE20470064A247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */,
+				DEDF0FC920AE20470064A247 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6022993203FA29E00336FC3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,6 +525,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DEDF0FBA20AE20470064A247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDF0FC320AE20470064A247 /* ViewController.swift in Sources */,
+				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
+				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
+				DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */,
+				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E6022991203FA29E00336FC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +583,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DEDF0FC720AE20470064A247 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEDF0FC820AE20470064A247 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		E60229A1203FA29E00336FC3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,6 +602,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DEDF0FCD20AE20470064A247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MWC4D44UN;
+				INFOPLIST_FILE = FilaFacilTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tus.FilaFacilTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		DEDF0FCE20AE20470064A247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8MWC4D44UN;
+				INFOPLIST_FILE = FilaFacilTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tus.FilaFacilTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 		E60229A5203FA29E00336FC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -687,6 +814,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEDF0FCD20AE20470064A247 /* Debug */,
+				DEDF0FCE20AE20470064A247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E6022990203FA29E00336FC3 /* Build configuration list for PBXProject "FilaFacil" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -715,6 +851,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DEDF0FC520AE20470064A247 /* FilaFacilTV.xcdatamodel */,
+			);
+			currentVersion = DEDF0FC520AE20470064A247 /* FilaFacilTV.xcdatamodel */;
+			path = FilaFacilTV.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E602298D203FA29E00336FC3 /* Project object */;
 }
