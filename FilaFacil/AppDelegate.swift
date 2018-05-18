@@ -52,13 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        print("applicationDidBecomeActive \(Messaging.messaging().shouldEstablishDirectChannel)")
-        Messaging.messaging().connect { error in
-            print(error)
-        }
-    }
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         Messaging.messaging().appDidReceiveMessage(userInfo)
     }
@@ -69,10 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Unable to register for remote notifications: \(error.localizedDescription)")
-    }
-    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map({ data -> String in
             return String(format: "%02.2hhx", data)
@@ -80,43 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let token = tokenParts.joined()
         print("Device Token: \(token)")
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
         
-        // Print full message.
-        print(userInfo)
-        
-        // Change this to your preferred presentation option
-        completionHandler([])
+        Messaging.messaging().apnsToken = deviceToken
     }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        
-        print(userInfo)
-        
-        completionHandler()
-    }
-    
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
-        
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-    // [END refresh_token]
-    // [START ios_10_data_message]
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
-    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
-    
+
     @objc func tokenRefreshNotification(notification: NSNotification) {
         if let refreshedToken = InstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
@@ -124,23 +80,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             //            User.getIDTokenForcingRefresh(refreshedToken.)
         }
     }
-    
-    //    func connect() {
-    //        Messaging.messaging().shouldEstablishDirectChannel = true
-    //    }
-    
-    //    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-    //        let newToken = InstanceID.instanceID().token()
-    //        print(newToken)
-    //        connect()
-    //    }
-    
-    //    func applicationDidEnterBackground(_ application: UIApplication) {
-    //        Messaging.messaging().shouldEstablishDirectChannel = false
-    //    }
-    
-    //    func applicationDidBecomeActive(_ application: UIApplication) {
-    //        connect()
-    //    }
     
 }
