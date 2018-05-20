@@ -33,9 +33,11 @@ class ViewController: UIViewController {
     @objc func getAllQuestions(){
         questionService.getAllQuestions(completion: {(questions, error) in
             if error == nil{
-                self.openedQuestions.removeAll()
-                self.openedQuestions = questions
-                self.questionTableView.reloadData()
+                if self.openedQuestions != questions{
+                    self.openedQuestions.removeAll()
+                    self.openedQuestions = questions
+                    self.questionTableView.reloadData()
+                }
             }
         })
     }
