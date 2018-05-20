@@ -14,6 +14,9 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var viewTypeQuestion: UIView!
+    @IBOutlet weak var timeInputQuestion: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

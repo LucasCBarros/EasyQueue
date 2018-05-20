@@ -185,6 +185,9 @@
                         <color key="badgeColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="activityIndicator" destination="QuC-iX-vzC" id="nzq-uJ-WCQ"/>
                         <outlet property="customSegmentControl" destination="u6u-0n-frV" id="hWz-eU-M1g"/>
