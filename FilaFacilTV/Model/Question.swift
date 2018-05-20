@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Question {
+struct Question: Equatable{
+    static func ==(lhs: Question, rhs: Question) -> Bool {
+        return lhs.questionID == rhs.questionID
+    }
+    
     let questionID: String
     let questionTitle: String
     let categoryQuestion: CategoryQuestion!
