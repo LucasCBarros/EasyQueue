@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             if error == nil{
                 if self.openedQuestions != questions {
                     self.openedQuestions.removeAll()
-                    self.openedQuestions = questions
+                    self.openedQuestions = questions.
                     DispatchQueue.main.async {
                         self.questionTableView.reloadData()
                     }
@@ -72,7 +72,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
             
             //TODO: Tirar o timestamp e colocar a data e hora
-            cell?.timeInputQuestion.text = self.openedQuestions[indexPath.row].questionID
+            let timeInterval = Double.init(self.openedQuestions[indexPath.row].questionID)
+            let date = Date(timeIntervalSince1970: timeInterval! / 1000)
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+            dateFormatter.locale = NSLocale.current
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+            let strDate = dateFormatter.string(from: date)
+            cell?.timeInputQuestion.text = strDate
             
         }
         
@@ -81,14 +88,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Delete cell and update student status in Firebase
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = (tableView.cellForRow(at: indexPath) as? QuestionTableViewCell) {
-            cell.questionLabel.textColor = UIColor.black
-            cell.profileName.textColor = UIColor.black
-            cell.timeInputQuestion.textColor = UIColor(red: 59, green: 59, blue: 59, alpha: 1)
-        }
     }
     
 }
