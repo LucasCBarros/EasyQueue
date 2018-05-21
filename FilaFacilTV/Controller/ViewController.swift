@@ -33,10 +33,12 @@ class ViewController: UIViewController {
     @objc func getAllQuestions(){
         questionService.getAllQuestions(completion: {(questions, error) in
             if error == nil{
-                if self.openedQuestions != questions{
+                if self.openedQuestions != questions {
                     self.openedQuestions.removeAll()
                     self.openedQuestions = questions
-                    self.questionTableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.questionTableView.reloadData()
+                    }
                 }
             }
         })
@@ -79,6 +81,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Delete cell and update student status in Firebase
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = (tableView.cellForRow(at: indexPath) as? QuestionTableViewCell) {
+            cell.questionLabel.textColor = UIColor.black
+            cell.profileName.textColor = UIColor.black
+            cell.timeInputQuestion.textColor = UIColor(red: 59, green: 59, blue: 59, alpha: 1)
+        }
     }
     
 }
