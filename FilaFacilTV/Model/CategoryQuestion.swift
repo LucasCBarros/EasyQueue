@@ -35,8 +35,8 @@ class CategoryQuestion {
             title = "Desing"
             color = #colorLiteral(red: 0.9390600324, green: 0.7066840529, blue: 0, alpha: 1)
         case .bisness:
-            title = "Bisness"
-            color = #colorLiteral(red: 1, green: 0.4210417271, blue: 0.5105110407, alpha: 1)
+            title = "Bizness"
+            color = #colorLiteral(red: 0.3411764706, green: 0.6078431373, blue: 0.05098039216, alpha: 1)
         case .other:
             title = "Other"
             color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
