@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XUL-Nr-nxn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XUL-Nr-nxn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="YiC-gr-hBU" kind="relationship" relationship="viewControllers" id="dAB-Ko-1Ag"/>
                         <segue destination="b3Z-vp-h6K" kind="relationship" relationship="viewControllers" id="vE5-Od-FJK"/>
+                        <segue destination="CY3-7W-Bdt" kind="relationship" relationship="viewControllers" id="i5G-RV-Fhz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1C-Jr-Z9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,6 +48,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxx-Ir-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-127" y="-590"/>
+        </scene>
+        <!--CreateNoteView-->
+        <scene sceneID="Xsr-ue-Bvc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateNoteView" id="CY3-7W-Bdt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Dkz-nZ-DwK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-nq-M72" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="-524"/>
         </scene>
     </scenes>
     <resources>

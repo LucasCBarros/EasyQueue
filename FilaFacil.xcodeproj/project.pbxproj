@@ -49,6 +49,9 @@
 		E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		E604FF522052F26300656DED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E604FF512052F26300656DED /* GoogleService-Info.plist */; };
 		E6D7FB1C205314B600EEC89D /* FilaFacilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */; };
+		E6FC384120B3506400D88578 /* CreateNoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC384020B3506400D88578 /* CreateNoteView.storyboard */; };
+		E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384220B3514500D88578 /* CreateNoteViewController.swift */; };
+		E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384420B35DE300D88578 /* NoteCell.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -165,6 +168,9 @@
 		E6D7FB19205314B600EEC89D /* FilaFacilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaFacilUITests.swift; sourceTree = "<group>"; };
 		E6D7FB1D205314B600EEC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6FC384020B3506400D88578 /* CreateNoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNoteView.storyboard; sourceTree = "<group>"; };
+		E6FC384220B3514500D88578 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		E6FC384420B35DE300D88578 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
@@ -385,6 +391,7 @@
 				E60229D3203FD18200336FC3 /* NewQuestionViewController.swift */,
 				E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */,
 				E60229D9203FD20200336FC3 /* LineStatusViewController.swift */,
+				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,6 +409,7 @@
 				E60229C1203FCD1500336FC3 /* NewQuestionView.storyboard */,
 				E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */,
 				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
+				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				E60229B5203FC94000336FC3 /* MainSegmentationCell.swift */,
+				E6FC384420B35DE300D88578 /* NoteCell.swift */,
 				E60229B7203FC98000336FC3 /* MainListCell.swift */,
 			);
 			path = Cells;
@@ -700,6 +709,7 @@
 				FAB3368420B331BB00D6B61F /* SFCompactText-Light.otf in Resources */,
 				FAB3367E20B331BB00D6B61F /* SFCompactDisplay-Medium.otf in Resources */,
 				E60229BE203FCC9E00336FC3 /* ProfileView.storyboard in Resources */,
+				E6FC384120B3506400D88578 /* CreateNoteView.storyboard in Resources */,
 				FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */,
 				FAB3369420B331BB00D6B61F /* SF-Pro-Display-Medium.otf in Resources */,
 				FAB3369020B331BB00D6B61F /* SF-Pro-Display-Light.otf in Resources */,
@@ -830,12 +840,14 @@
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
+				E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */,
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
 				E60229B6203FC94000336FC3 /* MainSegmentationCell.swift in Sources */,
 				E60229DE20408F0D00336FC3 /* DAO.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,
+				E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */,
 				E60229DC203FD5AB00336FC3 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
