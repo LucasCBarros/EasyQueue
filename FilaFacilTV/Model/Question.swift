@@ -25,16 +25,16 @@ struct Question: Equatable{
         questionTitle = json["questionTitle"] as? String ?? "??"
         requestedTeacher = json["requestedTeacher"] as? String ?? "???"
         
-        //TODO: Esse parce está na camada errada?
+        //TODO: Esse parse está na camada errada?
         switch requestedTeacher {
-        case "Dev":
+        case CategoryQuestionType.developer.rawValue:
             categoryQuestion = CategoryQuestion(type: CategoryQuestionType.developer)
-        case "Design":
+        case CategoryQuestionType.design.rawValue:
             categoryQuestion = CategoryQuestion(type: CategoryQuestionType.design)
-        case "Bisness":
+        case CategoryQuestionType.business.rawValue:
             categoryQuestion = CategoryQuestion(type: CategoryQuestionType.business)
         default:
-            categoryQuestion = CategoryQuestion(type: CategoryQuestionType.developer)
+            categoryQuestion = CategoryQuestion(type: CategoryQuestionType.other)
         }
         
         userID = json["userID"] as? String ?? "????"
