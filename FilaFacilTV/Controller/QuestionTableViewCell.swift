@@ -11,8 +11,8 @@ import Foundation
 class QuestionTableViewCell: UITableViewCell {
     
     // Outlets
-    @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var viewTypeQuestion: UIView!
     @IBOutlet weak var timeInputQuestion: UILabel!
@@ -33,13 +33,13 @@ class QuestionTableViewCell: UITableViewCell {
         super.didUpdateFocus(in: context, with: coordinator)
         
         if context.nextFocusedView == self {
-            self.questionLabel.textColor = UIColor.black
             self.profileName.textColor = UIColor.black
+            self.questionLabel.textColor = UIColor.black
             self.timeInputQuestion.textColor = #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1)
         } else {
-            self.questionLabel.textColor = UIColor.white
             self.profileName.textColor = UIColor.white
-            self.timeInputQuestion.textColor = UIColor.white
+            self.questionLabel.textColor = UIColor.white
+            self.timeInputQuestion.textColor = #colorLiteral(red: 0.6235294118, green: 0.6235294118, blue: 0.6235294118, alpha: 1)
         }
     }
     

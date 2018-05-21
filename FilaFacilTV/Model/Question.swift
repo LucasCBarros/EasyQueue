@@ -32,7 +32,7 @@ struct Question: Equatable{
         case "Design":
             categoryQuestion = CategoryQuestion(type: CategoryQuestionType.design)
         case "Bisness":
-            categoryQuestion = CategoryQuestion(type: CategoryQuestionType.bisness)
+            categoryQuestion = CategoryQuestion(type: CategoryQuestionType.business)
         default:
             categoryQuestion = CategoryQuestion(type: CategoryQuestionType.developer)
         }
