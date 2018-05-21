@@ -11,11 +11,11 @@ import UIKit
 
 //TODO: Gostaria que isso fosse um enum e que fosse da camada de model e por isso não importasse UIKit
 
-enum CategoryQuestionType {
-    case developer
-    case design
-    case business
-    case other
+enum CategoryQuestionType: String {
+    case developer = "Dev"
+    case design = "Design"
+    case business = "Biz"
+    case other = ""
 }
 
 class CategoryQuestion {
