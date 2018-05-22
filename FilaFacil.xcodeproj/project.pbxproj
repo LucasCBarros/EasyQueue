@@ -52,6 +52,9 @@
 		E6FC384120B3506400D88578 /* CreateNoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC384020B3506400D88578 /* CreateNoteView.storyboard */; };
 		E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384220B3514500D88578 /* CreateNoteViewController.swift */; };
 		E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384420B35DE300D88578 /* NoteCell.swift */; };
+		E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384620B36CFD00D88578 /* NoteProfile.swift */; };
+		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
+		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -171,6 +174,9 @@
 		E6FC384020B3506400D88578 /* CreateNoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNoteView.storyboard; sourceTree = "<group>"; };
 		E6FC384220B3514500D88578 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		E6FC384420B35DE300D88578 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		E6FC384620B36CFD00D88578 /* NoteProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfile.swift; sourceTree = "<group>"; };
+		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
+		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
@@ -358,6 +364,7 @@
 				E60229DB203FD5AB00336FC3 /* AuthService.swift */,
 				E60229E520409E8400336FC3 /* UserProfileService.swift */,
 				E60229E72040A03C00336FC3 /* QuestionProfileService.swift */,
+				E6FC384A20B36FC600D88578 /* NoteProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 			children = (
 				E60229B1203FC87F00336FC3 /* UserProfile.swift */,
 				E60229B3203FC8B300336FC3 /* QuestionProfile.swift */,
+				E6FC384620B36CFD00D88578 /* NoteProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +437,7 @@
 			children = (
 				E60229E12040938300336FC3 /* UserProfileDAO.swift */,
 				E60229E320409C3E00336FC3 /* QuestionProfileDAO.swift */,
+				E6FC384820B36E0900D88578 /* NoteDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -837,6 +846,7 @@
 				E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */,
 				E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */,
 				E60229E82040A03C00336FC3 /* QuestionProfileService.swift in Sources */,
+				E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
@@ -844,10 +854,12 @@
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
 				E60229B6203FC94000336FC3 /* MainSegmentationCell.swift in Sources */,
 				E60229DE20408F0D00336FC3 /* DAO.swift in Sources */,
+				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,
 				E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */,
+				E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */,
 				E60229DC203FD5AB00336FC3 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -58,12 +58,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FilaFacilTV/Controller/ViewController.swift"
-            timestampString = "548629615.610938"
+            timestampString = "548709491.9929481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Model/NoteProfile.swift"
+            timestampString = "548702131.28935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "NoteProfile"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.getter : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevRep/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  timestampString = "548709404.253846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.setter : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevRep/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  timestampString = "548709404.255767"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Model/NoteProfile.swift"
+            timestampString = "548702131.289687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.__allocating_init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevRep/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  timestampString = "548709404.260715"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevRep/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  timestampString = "548709404.2625591"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Model/NoteProfile.swift"
+            timestampString = "548702131.289929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "init(noteText:noteID:userID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.__allocating_init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevRep/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  timestampString = "548709404.267843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevRep/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  timestampString = "548709404.269725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Model/NoteProfile.swift"
+            timestampString = "548702131.290161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getDictInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Controllers/CreateNoteViewController.swift"
+            timestampString = "548709491.99309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

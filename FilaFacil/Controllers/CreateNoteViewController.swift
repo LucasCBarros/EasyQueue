@@ -11,26 +11,85 @@ import UIKit
 class CreateNoteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var newNoteView: UIView!
-    @IBOutlet weak var noteText: UITextField!
+    @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var createNoteButton: UIButton!
     
-    var notes: [String] = ["Hello", "Lulalala", "Yeah!"]
+    var allNoteProfiles: [NoteProfile]?
+    
+    let noteProfileManager = NoteProfileService()
+    let userProfileManager = UserProfileService()
+    
+    var currentProfile: UserProfile {
+        get {
+            var profile = UserProfile(dictionary: [:])
+
+            if let tabbarcontroller = self.tabBarController,
+                let firstTabController = tabbarcontroller.viewControllers?.first,
+                let lineListController = firstTabController as? LineListViewController {
+                if let currentProfile = lineListController.currentProfile {
+                    profile = currentProfile
+                }
+            }
+            return profile
+        }
+        set(newValue) {
+            (self.tabBarController!.viewControllers![0] as? LineListViewController)?.currentProfile = newValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         newNoteView.frame.size.width = self.view.frame.width
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        retrieveAllNotes()
+        
+        // Update currentUser
+        userProfileManager.retrieveCurrentUserProfile { (userProfile) in
+            self.currentProfile = userProfile!
+        }
+    }
+    
     @IBAction func createNote_Action(_ sender: Any) {
-        notes.append(noteText.text!)
+        self.createNote()
         noteTableView.reloadData()
         animateOut()
     }
     
     @IBAction func newNote_Action(_ sender: Any) {
         animateIn()
+    }
+    
+    func orderListElements() {
+        allNoteProfiles = allNoteProfiles?.sorted { $0.noteID < $1.noteID }
+    }
+
+    func retrieveAllNotes() {
+        noteProfileManager.retrieveAllOpenNotes { (noteProfile) in
+            if let noteProfile = noteProfile {
+                self.allNoteProfiles = noteProfile
+            }
+
+            // Add to main Thread
+            DispatchQueue.main.async {
+                self.orderListElements()
+                self.noteTableView.reloadData()
+            }
+        }
+    }
+    
+    func createNote() {
+        var noteText = " "
+        // Get typed text if not empty
+        if !(noteTextField.text?.isEmpty)! {
+            noteText = noteTextField.text!
+        }
+
+        // Inserts question info in Firebase and updates users status
+        noteProfileManager.createNote(userID: currentProfile.userID, noteText: noteText)
+        self.retrieveAllNotes()
     }
     
     func animateIn() {
@@ -54,21 +113,41 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
             self.newNoteView.removeFromSuperview()
         }
     }
+}
+extension CreateNoteViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes.count
+        if allNoteProfiles == nil {
+            return 3
+        } else {
+            return allNoteProfiles!.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell") as? NoteCell
         
-        cell?.backgroundColor = UIColor.lightGray
-        cell?.noteDate.text = "\(Date())"
-        cell?.noteText.text = notes[indexPath.row]
+        cell?.selectionStyle = .none // Removes selection
+        
+        if allNoteProfiles != nil {
+            let timeInterval = Double(Int((self.allNoteProfiles?[indexPath.row].noteID)!)!)
+            let date = Date(timeIntervalSince1970: timeInterval / 1000)
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+            dateFormatter.locale = NSLocale.current
+            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
+            let strDate = dateFormatter.string(from: date)
+            
+            cell?.noteDate.text = strDate
+            cell?.noteText.text = self.allNoteProfiles?[indexPath.row].noteText
+        } else {
+            cell?.noteText.text = "Hello"
+            cell?.noteDate.text = "\(Date())"
+        }
         
         return cell!
     }
@@ -78,14 +157,20 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         
         // TODO: Verify ID from who created
         if editingStyle == UITableViewCellEditingStyle.delete {
-            notes.remove(at: indexPath.row)
-            noteTableView.reloadData()
+            
+            noteProfileManager.removeNote(noteID: (allNoteProfiles?[indexPath.row].noteID)!)
+//            noteTableView.reloadData()
+            self.viewWillAppear(true)
         }
     }
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if self.allNoteProfiles?[indexPath.row].userID == currentProfile.userID {
+            return true
+        } else {
+            return false
+        }
     }
 
 }
