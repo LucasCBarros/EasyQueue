@@ -16,6 +16,9 @@ class UserProfileDAO: DAO {
     // Create a new user
     func createUserProfile(userID: String, username: String, profileType: String, email: String,
                            questionID: String ) {
+        // Retrieve users DeviceID from defaults
+        let userDeviceID = UserDefaults.standard.string(forKey: "userDeviceID")  ?? ""
+        
         let newUser = UserProfile(dictionary: [
             "userID": userID,
             "username": username,
@@ -23,7 +26,8 @@ class UserProfileDAO: DAO {
             "email": email,
             "questionID": "",
             "userInLine": false,
-            "userLinePosition": 0
+            "userLinePosition": 0,
+            "deviceID": userDeviceID
             ])
         
         let path = "Users"

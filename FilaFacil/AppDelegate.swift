@@ -30,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
+        // Finds and saves users DeviceID
+//        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        let deviceToken = Messaging.messaging().fcmToken
+        UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
+        
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
