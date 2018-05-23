@@ -10,40 +10,74 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var noteCollectionView: UICollectionView!
     var questionService = QuestionService()
     var openedQuestions:[Question] = []
-    var questionIDArray: [String] = []
+    var noteService = NoteService()
+    var openedNotes:[Note] = []
     var topTimer: Timer!
+    var dateFormatter: DateFormatter!
+    
+//    var avisosMocados = [(texto: "Meu primeiro texto. Oié", data: "21 de maio às 18:36"), (texto: "Bola na área para ninguém cabecear.", data: "12 de fevereiro às 18:36"), (texto: "Quem veio de mato vai ter que ir embora. E quem veio a pé também. Quem veio de mato vai ter que ir embora. E quem veio a pé também.", data: "10 de outubro às 18:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00")]
     
     @IBOutlet weak var questionTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
+        if let flowLayout = noteCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
         getAllQuestions()
+        getAllNotes()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
-                                                selector: #selector(ViewController.getAllQuestions),
+                                                selector: #selector(ViewController.getAllInformations),
                                                 userInfo: nil, repeats: true)
-
     }
     
-    @objc func getAllQuestions(){
-        questionService.getAllQuestions(completion: {(questions, error) in
+    func getAllQuestions(){
+        questionService.getAllQuestions(completion: {[weak self] (questions, error) in
             if error == nil{
-                if self.openedQuestions != questions {
-                    self.openedQuestions.removeAll()
-                    self.openedQuestions = questions.sorted(by: { (question1, question2) -> Bool in
+                if self?.openedQuestions != questions {
+                    self?.openedQuestions.removeAll()
+                    self?.openedQuestions = questions.sorted(by: { (question1, question2) -> Bool in
                         return question1.questionID < question2.questionID
                     })
                     DispatchQueue.main.async {
-                        self.questionTableView.reloadData()
+                        self?.questionTableView.reloadData()
                     }
                 }
             }
         })
+    }
+    
+    func getAllNotes() {
+        noteService.getAllQuestions(completion: {[weak self] (notes, error) in
+            if error == nil{
+                if self?.openedNotes != notes {
+                    self?.openedNotes.removeAll()
+                    self?.openedNotes = notes.sorted(by: { (note1, note2) -> Bool in
+                        return note1.noteID < note2.noteID
+                    })
+                    DispatchQueue.main.async {
+                        self?.noteCollectionView.reloadData()
+                    }
+                }
+            }
+        })
+    }
+    
+    
+    @objc func getAllInformations() {
+        getAllNotes()
+        getAllQuestions()
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,13 +107,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.numberLabel.text = "\(indexPath.row+1)"
             cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
             
-            //TODO: Tirar o timestamp e colocar a data e hora
+            //Tirar o timestamp e colocar a data e hora
             let timeInterval = Double.init(self.openedQuestions[indexPath.row].questionID)
             let date = Date(timeIntervalSince1970: timeInterval! / 1000)
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-            dateFormatter.locale = NSLocale.current
-            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
             let strDate = dateFormatter.string(from: date)
             cell?.timeInputQuestion.text = strDate
             
@@ -93,18 +123,29 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+}
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return openedNotes.count
     }
     
-    // Delete cell and update student status in Firebase
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if editingStyle == .delete {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath)
+        
+        if let noteCell = cell as? NoteViewCell {
+            noteCell.noteLabel.text = openedNotes[indexPath.row].noteText
             
+            let strDate = dateFormatter.string(from: openedNotes[indexPath.row].date)
+            
+            noteCell.dateLabel.text = strDate
+            
+//            noteCell.configureWidth(screenWidth)
         }
         
+        return cell
     }
     
 }
-
