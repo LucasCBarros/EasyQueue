@@ -41,6 +41,8 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         newNoteView.frame.size.width = self.view.frame.width
+        noteTableView.estimatedRowHeight = 44.0
+        noteTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {

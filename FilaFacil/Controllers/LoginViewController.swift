@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -22,6 +23,9 @@ class LoginViewController: UIViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
+        
+        //print("TOKEN" + Messaging.messaging().fcmToken! + "END TOKEN")
+        
         emailTxtField.textColor = UIColor.white
         emailTxtField.attributedPlaceholder = NSAttributedString(string: "E-mail",
                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])

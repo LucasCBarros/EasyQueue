@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,21 +31,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-hN-DSY">
-                                                    <rect key="frame" x="15" y="11" width="155" height="53"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-wv-Qfd">
+                                                    <rect key="frame" x="324" y="27" width="36" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-wv-Qfd">
-                                                    <rect key="frame" x="211" y="11" width="149" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-hN-DSY">
+                                                    <rect key="frame" x="23" y="19" width="37" height="37"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qdI-wv-Qfd" firstAttribute="trailing" secondItem="3Cv-zA-y0C" secondAttribute="trailingMargin" id="5Zy-hD-om3"/>
+                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leadingMargin" constant="8" id="FG6-68-P7t"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0Y0-hN-DSY" secondAttribute="bottom" constant="8" id="kyh-d0-oeb"/>
+                                                <constraint firstItem="qdI-wv-Qfd" firstAttribute="centerY" secondItem="3Cv-zA-y0C" secondAttribute="centerY" id="sv7-wa-1PF"/>
+                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="top" secondItem="3Cv-zA-y0C" secondAttribute="topMargin" constant="8" id="tA3-oA-YG2"/>
+                                                <constraint firstItem="qdI-wv-Qfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Y0-hN-DSY" secondAttribute="trailing" constant="24" id="wFk-m0-0a0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.21568627450980393" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
