@@ -22,7 +22,7 @@ class NewQuestionViewController: UIViewController {
     var allUserProfiles: [UserProfile]?
     var usersInLine: [UserProfile]?
     var selectedTeacher = "All"
-    var teacherArray = [ "Dev", "Design", "Biz"]
+    var teacherArray = ["All", "Developer", "Design", "Business"]
     
     var currentProfile: UserProfile {
         get {
@@ -133,9 +133,30 @@ extension NewQuestionViewController: UIPickerViewDataSource, UIPickerViewDelegat
     // Sets text and textColor for Picker
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let titleData = teacherArray[row]
-        let myTitle = NSAttributedString(string: titleData,
+        
+        var myTitle = NSAttributedString(string: titleData,
                                          attributes: [NSAttributedStringKey.font: UIFont(name: "Georgia", size: 15.0)!,
                                                       NSAttributedStringKey.foregroundColor: UIColor.white ])
+        
+        switch teacherArray[row] {
+        case "Developer":
+            myTitle = NSAttributedString(string: titleData,
+                                             attributes: [NSAttributedStringKey.font: UIFont(name: "Georgia", size: 15.0)!,
+                                                          NSAttributedStringKey.foregroundColor: UIColor.cyan ])
+        case "Design":
+            myTitle = NSAttributedString(string: titleData,
+                                             attributes: [NSAttributedStringKey.font: UIFont(name: "Georgia", size: 15.0)!,
+                                                          NSAttributedStringKey.foregroundColor: UIColor.yellow ])
+        case "Business":
+            myTitle = NSAttributedString(string: titleData,
+                                             attributes: [NSAttributedStringKey.font: UIFont(name: "Georgia", size: 15.0)!,
+                                                          NSAttributedStringKey.foregroundColor: UIColor.green ])
+        default:
+            myTitle = NSAttributedString(string: titleData,
+                                             attributes: [NSAttributedStringKey.font: UIFont(name: "Georgia", size: 15.0)!,
+                                                          NSAttributedStringKey.foregroundColor: UIColor.white ])
+        }
+        
         return myTitle
     }
 }

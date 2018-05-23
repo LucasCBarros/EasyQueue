@@ -17,7 +17,7 @@ class LineListViewController: UIViewController {
     
     // MARK: - Properties
     // Array with all registered teachers
-    var teacherArray = [ "Dev", "Design", "Biz"]
+    var teacherArray = ["All", "Developer", "Design", "Business"]
     var selectedTab = "All"
     
     let userProfileManager = UserProfileService()
@@ -259,12 +259,23 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 extension LineListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-//        return teacherArray.count
+//        return 3
+        return teacherArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "segmentCell", for: indexPath) as? MainSegmentationCell
+        
+        switch teacherArray[indexPath.row] {
+        case "Developer":
+            cell?.segmentTitle.textColor = UIColor.cyan
+        case "Design":
+            cell?.segmentTitle.textColor = UIColor.yellow
+        case "Business":
+            cell?.segmentTitle.textColor = UIColor.green
+        default:
+            cell?.segmentTitle.textColor = UIColor.white
+        }
         
         cell?.segmentTitle.text = teacherArray[indexPath.row]
         cell?.segmentSelection.isHidden = true
