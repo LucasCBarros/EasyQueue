@@ -55,9 +55,6 @@
 		E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384620B36CFD00D88578 /* NoteProfile.swift */; };
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
-		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
-		FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
-		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -111,7 +108,6 @@
 		FAB336A920B331BB00D6B61F /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3367420B331B800D6B61F /* SF-Pro-Text-SemiboldItalic.otf */; };
 		FAB336AA20B331BB00D6B61F /* SF Pro Font License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3367520B331B900D6B61F /* SF Pro Font License.rtf */; };
 		FAB336AB20B331BB00D6B61F /* SF Compact Font License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3367620B331BA00D6B61F /* SF Compact Font License.rtf */; };
-		FAB336AF20B374A200D6B61F /* NoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB336AE20B374A200D6B61F /* NoteViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,9 +178,6 @@
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
-		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
-		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
-		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -238,7 +231,6 @@
 		FAB3367420B331B800D6B61F /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		FAB3367520B331B900D6B61F /* SF Pro Font License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "SF Pro Font License.rtf"; sourceTree = "<group>"; };
 		FAB3367620B331BA00D6B61F /* SF Compact Font License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "SF Compact Font License.rtf"; sourceTree = "<group>"; };
-		FAB336AE20B374A200D6B61F /* NoteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +273,6 @@
 			children = (
 				DEBC40BF20B1E81100870D4C /* Question.swift */,
 				DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */,
-				FA834E0A20B5E953002F3E32 /* Note.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,8 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				DEDF0FC720AE20470064A247 /* Main.storyboard */,
-				FAB336AE20B374A200D6B61F /* NoteViewCell.swift */,
-				FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				DEDF0FE420AE20D00064A247 /* QuestionService.swift */,
-				FA834E0820B5E90C002F3E32 /* NoteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -835,16 +823,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDF0FC320AE20470064A247 /* ViewController.swift in Sources */,
-				FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */,
 				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
-				FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */,
 				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
 				DEBC40C020B1E81100870D4C /* Question.swift in Sources */,
 				DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */,
-				FA834E0B20B5E953002F3E32 /* Note.swift in Sources */,
 				DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */,
 				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,
-				FAB336AF20B374A200D6B61F /* NoteViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,7 +1052,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1086,7 +1070,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
