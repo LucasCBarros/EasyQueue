@@ -120,7 +120,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? QuestionTableViewCell
-        cell.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
+        cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
     }
     
 }
