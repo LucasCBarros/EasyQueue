@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
+    
+    func getAllTexts() -> [String]
+    
+}
+
 class NoteCollectionViewLayout: UICollectionViewLayout {
+    
+    open weak var delegate: NoteCollectionViewLayoutDelegate?
     
     // Configurable properties
     var numberOfColumns = 2
@@ -46,13 +54,21 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
         }
         var column = 0
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
-
+        var texts = [String]()
+        if let delegate = self.delegate {
+            texts = delegate.getAllTexts()
+        }
+        
         // 3. Iterates through the list of items in the first section
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
 
             let indexPath = IndexPath(item: item, section: 0)
             
-            let expectedHeight: CGFloat = 300
+            var expectedHeight: CGFloat = 130
+            
+            if texts.count > indexPath.row {
+                expectedHeight += CGFloat(abs(Int32.init(CGFloat(texts[indexPath.row].count) * 30 / columnWidth))) * 10
+            }
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: expectedHeight)

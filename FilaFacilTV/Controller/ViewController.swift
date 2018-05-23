@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         if let flowLayout = noteCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
         }
+        
+        if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
+            layout.delegate = self
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,6 +151,18 @@ extension ViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+}
+
+extension ViewController: NoteCollectionViewLayoutDelegate {
+    
+    func getAllTexts() -> [String] {
+        return self.openedNotes.reduce([], {result, element in
+            var result = result
+            result.append(element.noteText)
+            return result
+        })
     }
     
 }
