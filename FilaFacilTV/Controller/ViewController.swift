@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var noteActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noteCollectionView: UICollectionView!
     @IBOutlet weak var questionActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noQuestions: UILabel!
+    @IBOutlet weak var noNotes: UILabel!
     var questionService = QuestionService()
     var openedQuestions:[Question] = []
     var noteService = NoteService()
@@ -53,6 +55,12 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async {
                         self?.questionTableView.reloadData()
                         self?.questionActivityIndicator.stopAnimating()
+                        if self?.openedQuestions.count == 0 {
+                            self?.noQuestions.isHidden = false
+                        }
+                        else {
+                            self?.noQuestions.isHidden = true
+                        }
                     }
                 }
             }
@@ -65,13 +73,19 @@ class ViewController: UIViewController {
                 let notes = notes.sorted(by: { (note1, note2) -> Bool in
                     return note1.noteID < note2.noteID
                 })
-                if !(self?.openedNotes == notes) {
+                if self?.openedNotes != notes {
                     self?.openedNotes.removeAll()
                     self?.openedNotes = notes
                     DispatchQueue.main.async {
                         self?.noteCollectionView.reloadData()
                         self?.noteCollectionView.collectionViewLayout.invalidateLayout()
                         self?.noteActivityIndicator.stopAnimating()
+                        if self?.openedNotes.count == 0 {
+                            self?.noNotes.isHidden = false
+                        }
+                        else {
+                            self?.noNotes.isHidden = true
+                        }
                     }
                 }
             }

@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-0u-XBU">
-                                <rect key="frame" x="144" y="210" width="1008" height="695"/>
+                                <rect key="frame" x="144" y="223" width="1008" height="682"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="95" shouldIndentWhileEditing="NO" reuseIdentifier="questionCell" rowHeight="90" id="wDh-WK-fjx" customClass="QuestionTableViewCell" customModule="FilaFacilTV" customModuleProvider="target">
@@ -124,14 +124,14 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Developer Academy 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdx-1L-44u">
-                                <rect key="frame" x="144" y="60" width="678" height="58"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <rect key="frame" x="144" y="60" width="724" height="63"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="52"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instituto Eldorado Campinas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-po-kjT">
-                                <rect key="frame" x="144" y="121" width="483" height="46"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <rect key="frame" x="144" y="126" width="529" height="54"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -235,7 +235,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNR-pT-yoA">
-                                <rect key="frame" x="1206" y="210" width="624" height="810"/>
+                                <rect key="frame" x="1206" y="223" width="624" height="797"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Krf-1o-bQP" customClass="NoteCollectionViewLayout" customModule="FilaFacilTV" customModuleProvider="target"/>
                                 <cells>
@@ -295,25 +295,40 @@
                                 </connections>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qkQ-GL-fj6">
-                                <rect key="frame" x="616" y="526" width="64" height="64"/>
+                                <rect key="frame" x="616" y="532" width="64" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VXq-aN-jAw">
-                                <rect key="frame" x="1486" y="526" width="64" height="64"/>
+                                <rect key="frame" x="1486" y="532" width="64" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sem questões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj3-Xs-eiQ">
+                                <rect key="frame" x="553" y="546" width="191" height="37"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sem recados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9V-5V-9bc">
+                                <rect key="frame" x="1431" y="546" width="175" height="37"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qkQ-GL-fj6" firstAttribute="centerX" secondItem="yfQ-0u-XBU" secondAttribute="centerX" id="00f-ci-qJs"/>
                             <constraint firstItem="OGs-4t-lJZ" firstAttribute="trailing" secondItem="nNR-pT-yoA" secondAttribute="trailing" id="0o1-Mv-sEU"/>
                             <constraint firstItem="yfQ-0u-XBU" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" multiplier="21/40" id="1wB-ti-E9W"/>
+                            <constraint firstItem="y9V-5V-9bc" firstAttribute="centerY" secondItem="VXq-aN-jAw" secondAttribute="centerY" id="3bI-NA-LnA"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="width" secondItem="yfQ-0u-XBU" secondAttribute="width" id="7Wa-mS-DnZ"/>
                             <constraint firstItem="qkQ-GL-fj6" firstAttribute="centerY" secondItem="yfQ-0u-XBU" secondAttribute="centerY" id="9RH-C5-N7p"/>
                             <constraint firstItem="VXq-aN-jAw" firstAttribute="centerY" secondItem="qkQ-GL-fj6" secondAttribute="centerY" id="Ae1-qa-AuG"/>
+                            <constraint firstItem="y9V-5V-9bc" firstAttribute="centerX" secondItem="VXq-aN-jAw" secondAttribute="centerX" id="F2u-tR-w5R"/>
                             <constraint firstItem="nNR-pT-yoA" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" multiplier="13/40" id="G4t-BN-PhB"/>
+                            <constraint firstItem="Kj3-Xs-eiQ" firstAttribute="centerX" secondItem="qkQ-GL-fj6" secondAttribute="centerX" id="M9f-Bs-XFu"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="centerX" secondItem="OGs-4t-lJZ" secondAttribute="centerX" id="PCZ-RS-NYP"/>
                             <constraint firstItem="OGs-4t-lJZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cjg-po-kjT" secondAttribute="trailing" id="QmA-Tz-y3n"/>
                             <constraint firstItem="Cjg-po-kjT" firstAttribute="leading" secondItem="wdx-1L-44u" secondAttribute="leading" id="WFF-Sa-yO9"/>
@@ -331,11 +346,14 @@
                             <constraint firstItem="VXq-aN-jAw" firstAttribute="centerX" secondItem="nNR-pT-yoA" secondAttribute="centerX" id="tbY-0J-qrR"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="top" secondItem="yfQ-0u-XBU" secondAttribute="bottom" constant="25" id="wlL-RX-ZbD"/>
                             <constraint firstItem="yfQ-0u-XBU" firstAttribute="top" secondItem="Cjg-po-kjT" secondAttribute="bottom" constant="43" id="x28-pT-h3S"/>
+                            <constraint firstItem="Kj3-Xs-eiQ" firstAttribute="centerY" secondItem="qkQ-GL-fj6" secondAttribute="centerY" id="ydC-Nz-EPR"/>
                             <constraint firstItem="wdx-1L-44u" firstAttribute="top" secondItem="OGs-4t-lJZ" secondAttribute="top" id="ydg-Ms-hPM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OGs-4t-lJZ"/>
                     </view>
                     <connections>
+                        <outlet property="noNotes" destination="y9V-5V-9bc" id="9C9-FM-8fK"/>
+                        <outlet property="noQuestions" destination="Kj3-Xs-eiQ" id="XGn-h3-3t8"/>
                         <outlet property="noteActivityIndicator" destination="VXq-aN-jAw" id="ty2-Ut-AIY"/>
                         <outlet property="noteCollectionView" destination="nNR-pT-yoA" id="iPM-Qk-4Cd"/>
                         <outlet property="questionActivityIndicator" destination="qkQ-GL-fj6" id="MFF-Jl-7OV"/>
