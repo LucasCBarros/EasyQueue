@@ -294,12 +294,25 @@
                                     <outlet property="dataSource" destination="pMK-bG-TX5" id="Oej-l8-vfa"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qkQ-GL-fj6">
+                                <rect key="frame" x="616" y="526" width="64" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VXq-aN-jAw">
+                                <rect key="frame" x="1486" y="526" width="64" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="qkQ-GL-fj6" firstAttribute="centerX" secondItem="yfQ-0u-XBU" secondAttribute="centerX" id="00f-ci-qJs"/>
                             <constraint firstItem="OGs-4t-lJZ" firstAttribute="trailing" secondItem="nNR-pT-yoA" secondAttribute="trailing" id="0o1-Mv-sEU"/>
                             <constraint firstItem="yfQ-0u-XBU" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" multiplier="21/40" id="1wB-ti-E9W"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="width" secondItem="yfQ-0u-XBU" secondAttribute="width" id="7Wa-mS-DnZ"/>
+                            <constraint firstItem="qkQ-GL-fj6" firstAttribute="centerY" secondItem="yfQ-0u-XBU" secondAttribute="centerY" id="9RH-C5-N7p"/>
+                            <constraint firstItem="VXq-aN-jAw" firstAttribute="centerY" secondItem="qkQ-GL-fj6" secondAttribute="centerY" id="Ae1-qa-AuG"/>
                             <constraint firstItem="nNR-pT-yoA" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" multiplier="13/40" id="G4t-BN-PhB"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="centerX" secondItem="OGs-4t-lJZ" secondAttribute="centerX" id="PCZ-RS-NYP"/>
                             <constraint firstItem="Cjg-po-kjT" firstAttribute="leading" secondItem="wdx-1L-44u" secondAttribute="leading" id="WFF-Sa-yO9"/>
@@ -313,6 +326,7 @@
                             <constraint firstItem="wdx-1L-44u" firstAttribute="leading" secondItem="OGs-4t-lJZ" secondAttribute="leading" constant="54" id="qQ8-A5-bmS"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="centerY" secondItem="OGs-4t-lJZ" secondAttribute="centerY" id="sl1-6l-dOO"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" id="t3j-wp-NOa"/>
+                            <constraint firstItem="VXq-aN-jAw" firstAttribute="centerX" secondItem="nNR-pT-yoA" secondAttribute="centerX" id="tbY-0J-qrR"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="top" secondItem="yfQ-0u-XBU" secondAttribute="bottom" constant="25" id="wlL-RX-ZbD"/>
                             <constraint firstItem="yfQ-0u-XBU" firstAttribute="top" secondItem="Cjg-po-kjT" secondAttribute="bottom" constant="43" id="x28-pT-h3S"/>
                             <constraint firstItem="wdx-1L-44u" firstAttribute="top" secondItem="OGs-4t-lJZ" secondAttribute="top" id="ydg-Ms-hPM"/>
@@ -320,8 +334,10 @@
                         <viewLayoutGuide key="safeArea" id="OGs-4t-lJZ"/>
                     </view>
                     <connections>
+                        <outlet property="noteActivityIndicator" destination="VXq-aN-jAw" id="ty2-Ut-AIY"/>
                         <outlet property="noteCollectionView" destination="nNR-pT-yoA" id="iPM-Qk-4Cd"/>
-                        <outlet property="questionTableView" destination="yfQ-0u-XBU" id="h6W-kb-KZZ"/>
+                        <outlet property="questionActivityIndicator" destination="qkQ-GL-fj6" id="MFF-Jl-7OV"/>
+                        <outlet property="questionTableView" destination="yfQ-0u-XBU" id="uj2-br-z2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnL-yb-CFv" sceneMemberID="firstResponder"/>

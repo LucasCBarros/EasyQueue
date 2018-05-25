@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var noteActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noteCollectionView: UICollectionView!
+    @IBOutlet weak var questionActivityIndicator: UIActivityIndicatorView!
     var questionService = QuestionService()
     var openedQuestions:[Question] = []
     var noteService = NoteService()
@@ -22,11 +24,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
             layout.delegate = self
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
-        getAllNotes()
         getAllQuestions()
+        getAllNotes()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
                                                 selector: #selector(ViewController.getAllInformations),
                                                 userInfo: nil, repeats: true)
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
                     self?.openedQuestions = questions
                     DispatchQueue.main.async {
                         self?.questionTableView.reloadData()
+                        self?.questionActivityIndicator.stopAnimating()
                     }
                 }
             }
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async {
                         self?.noteCollectionView.reloadData()
                         self?.noteCollectionView.collectionViewLayout.invalidateLayout()
+                        self?.noteActivityIndicator.stopAnimating()
                     }
                 }
             }
@@ -78,8 +80,8 @@ class ViewController: UIViewController {
     
     
     @objc func getAllInformations() {
-        getAllNotes()
         getAllQuestions()
+        getAllNotes()
     }
     
     override func didReceiveMemoryWarning() {
