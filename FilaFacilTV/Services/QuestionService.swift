@@ -19,31 +19,25 @@ class QuestionService{
         //fetching the data from the url
         URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, response, error) in
             
-            guard let data = data else { return }
+            guard let data = data else {
+                completion([Question](), error)
+                return
+            }
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
                 
-                //TODO: Código inúti?
-                //                print("JSON:", json)
-                
-//                _ = ("\(json.keys)").data(using: .utf8)!
-                //                print("jsonString:", json.keys)
-                
-//                let jsonData = jsonString.data(using: .utf8)! // Conversion to UTF-8 cannot fail.
-                
                 var questions: [Question] = []
                 
-                for (_, elem) in json{
-//                    print(elem)
+                for (_, elem) in json {
                     let jsonQuestion = elem as? [String: Any]
                     questions.append(Question(json: jsonQuestion!))
                 }
                 
                 completion(questions, nil)
                 
-            } catch let jsonErr {
-                print("Error serializing json:", jsonErr)
+            } catch _ {
+                completion([Question](), nil)
             }
         }).resume()
         

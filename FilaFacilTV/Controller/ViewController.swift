@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 let questions = questions.sorted(by: { (question1, question2) -> Bool in
                     return question1.questionID < question2.questionID
                 })
-                if !(self?.openedQuestions == questions) {
+                if questions.count == 0 || self?.openedQuestions != questions {
                     self?.openedQuestions.removeAll()
                     self?.openedQuestions = questions
                     DispatchQueue.main.async {
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
                 let notes = notes.sorted(by: { (note1, note2) -> Bool in
                     return note1.noteID < note2.noteID
                 })
-                if self?.openedNotes != notes {
+                if notes.count == 0 || self?.openedNotes != notes {
                     self?.openedNotes.removeAll()
                     self?.openedNotes = notes
                     DispatchQueue.main.async {

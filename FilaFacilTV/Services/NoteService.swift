@@ -19,19 +19,17 @@ class NoteService {
         //fetching the data from the url
         URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, response, error) in
             
-            guard let data = data else { return }
+            guard let data = data else {
+                completion([Note](), error)
+                return
+            }
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
                 
-                //TODO: Código inútil?
-//                let jsonString = ("\(json.keys)")
-                
-//                let jsonData = jsonString.data(using: .utf8)! // Conversion to UTF-8 cannot fail.
-                
                 var notes: [Note] = []
                 
-                for (_, elem) in json{
+                for (_, elem) in json {
 //                    print(elem)
                     let jsonQuestion = elem as? [String: Any]
                     notes.append(Note(json: jsonQuestion!))
@@ -39,8 +37,8 @@ class NoteService {
                 
                 completion(notes, nil)
                 
-            } catch let jsonErr {
-                print("Error serializing json:", jsonErr)
+            } catch _ {
+                completion([Note](), nil)
             }
         }).resume()
         
