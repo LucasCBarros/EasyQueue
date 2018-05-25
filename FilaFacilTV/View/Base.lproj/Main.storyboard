@@ -315,6 +315,7 @@
                             <constraint firstItem="VXq-aN-jAw" firstAttribute="centerY" secondItem="qkQ-GL-fj6" secondAttribute="centerY" id="Ae1-qa-AuG"/>
                             <constraint firstItem="nNR-pT-yoA" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" multiplier="13/40" id="G4t-BN-PhB"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="centerX" secondItem="OGs-4t-lJZ" secondAttribute="centerX" id="PCZ-RS-NYP"/>
+                            <constraint firstItem="OGs-4t-lJZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cjg-po-kjT" secondAttribute="trailing" id="QmA-Tz-y3n"/>
                             <constraint firstItem="Cjg-po-kjT" firstAttribute="leading" secondItem="wdx-1L-44u" secondAttribute="leading" id="WFF-Sa-yO9"/>
                             <constraint firstItem="nNR-pT-yoA" firstAttribute="top" secondItem="yfQ-0u-XBU" secondAttribute="top" id="XiA-Co-Mgq"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="height" secondItem="WLX-oQ-5Nn" secondAttribute="height" id="a0H-0B-Idx"/>
@@ -323,6 +324,7 @@
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="bottom" secondItem="OGs-4t-lJZ" secondAttribute="bottom" id="cFX-fU-t8f"/>
                             <constraint firstItem="yfQ-0u-XBU" firstAttribute="leading" secondItem="Cjg-po-kjT" secondAttribute="leading" id="eKt-qx-Awd"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="leading" secondItem="yfQ-0u-XBU" secondAttribute="leading" id="iqn-JD-v9a"/>
+                            <constraint firstItem="OGs-4t-lJZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wdx-1L-44u" secondAttribute="trailing" id="oEn-hp-m3k"/>
                             <constraint firstItem="wdx-1L-44u" firstAttribute="leading" secondItem="OGs-4t-lJZ" secondAttribute="leading" constant="54" id="qQ8-A5-bmS"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="centerY" secondItem="OGs-4t-lJZ" secondAttribute="centerY" id="sl1-6l-dOO"/>
                             <constraint firstItem="9Mj-Pn-Ir3" firstAttribute="width" secondItem="WLX-oQ-5Nn" secondAttribute="width" id="t3j-wp-NOa"/>
