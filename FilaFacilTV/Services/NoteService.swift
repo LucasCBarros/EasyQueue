@@ -17,22 +17,23 @@ class NoteService {
         guard let url = NSURL(string: URL) else { return }
         
         //fetching the data from the url
-        URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) in
+        URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, response, error) in
             
             guard let data = data else { return }
             
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
                 
-                let jsonString = ("\(json.keys)")
+                //TODO: Código inútil?
+//                let jsonString = ("\(json.keys)")
                 
-                let jsonData = jsonString.data(using: .utf8)! // Conversion to UTF-8 cannot fail.
+//                let jsonData = jsonString.data(using: .utf8)! // Conversion to UTF-8 cannot fail.
                 
                 var notes: [Note] = []
                 
-                for (idx, elem) in json{
+                for (_, elem) in json{
                     print(elem)
-                    var jsonQuestion = elem as? [String: Any]
+                    let jsonQuestion = elem as? [String: Any]
                     notes.append(Note(json: jsonQuestion!))
                 }
                 
