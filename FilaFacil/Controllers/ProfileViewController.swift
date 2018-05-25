@@ -13,12 +13,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     // MARK: - Outlets
     @IBOutlet weak var photoColorBg: UIImageView!
+    @IBOutlet weak var editPhotoBtn: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var profileTypeLabel: UILabel!
-    @IBOutlet weak var editSaveButton: UIBarButtonItem!
-    @IBOutlet weak var backBtn: UIBarButtonItem!
+    @IBOutlet weak var editCancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveBtn: UIBarButtonItem!
     
     // MARK: - Properties
     let userProfileManager = UserProfileService()
@@ -42,8 +43,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // MARK: - Actions
     @IBAction func click_BackBtn(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
         saveChanges()
+    }
+    
+    @IBAction func editCancel_Action(_ sender: Any) {
+//        if isEditing {
+//            editPhotoBtn.isEnabled = true
+//            editPhotoBtn.isHidden = false
+//            saveBtn.isEnabled = true
+//            saveBtn.tintColor = UIColor().UIGreen()
+//
+//        } else {
+//            editPhotoBtn.isEnabled = false
+//            editPhotoBtn.isHidden = true
+//            saveBtn.isEnabled = false
+//            editPhotoBtn.isHidden = false
+//        }
     }
     
     @IBAction func editPhoto_Action(_ sender: Any) {
@@ -74,9 +89,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func loadUserProfileInfo() {
-        usernameLabel.text = currentProfile.username
-        emailLabel.text = currentProfile.email
-        profileTypeLabel.text = currentProfile.profileType
+        if currentProfile != nil {
+            usernameLabel.text = currentProfile.username
+            emailLabel.text = currentProfile.email
+            profileTypeLabel.text = currentProfile.profileType
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
@@ -119,7 +136,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                         return
                     }
                     if let urlText = url?.absoluteString {
-                        self.databaseRef.child("Users").child(self.currentProfile.userID).updateChildValues(["photo": urlText], withCompletionBlock: { (error, _) in
+                        self.databaseRef.child("Users").child(self.currentProfile.userID)
+                            .updateChildValues(["photo": urlText], withCompletionBlock: { (error, _) in
                             if error != nil {
                                 print(error!)
                                 return
@@ -132,10 +150,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func setupProfile() {
         
+//        let gradient = CAGradientLayer()
+//        gradient.frame = view.bounds
+//        gradient.colors = [UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
+//        self.photoColorBg.layer.insertSublayer(gradient, at: 0)
+        
         profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
         profilePhoto.clipsToBounds = true
-        
-        
         
         if isPhotoEdited {
             databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in

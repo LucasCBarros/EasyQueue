@@ -23,6 +23,7 @@
                         <segue destination="YiC-gr-hBU" kind="relationship" relationship="viewControllers" id="dAB-Ko-1Ag"/>
                         <segue destination="b3Z-vp-h6K" kind="relationship" relationship="viewControllers" id="vE5-Od-FJK"/>
                         <segue destination="CY3-7W-Bdt" kind="relationship" relationship="viewControllers" id="i5G-RV-Fhz"/>
+                        <segue destination="g6i-mf-Pja" kind="relationship" relationship="viewControllers" id="09K-MO-4i8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1C-Jr-Z9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxx-Ir-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="-590"/>
+            <point key="canvasLocation" x="-127" y="-785"/>
         </scene>
         <!--CreateNoteView-->
         <scene sceneID="Xsr-ue-Bvc">
@@ -57,7 +58,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-nq-M72" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="-524"/>
+            <point key="canvasLocation" x="-110" y="-579"/>
+        </scene>
+        <!--ProfileView-->
+        <scene sceneID="N0c-0A-QSW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfileView" id="g6i-mf-Pja" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zgU-e0-Aqh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J10-Cr-qcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-121" y="-455"/>
         </scene>
     </scenes>
     <resources>
