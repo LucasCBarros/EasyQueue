@@ -64,11 +64,11 @@
                                 <rect key="frame" x="112" y="122" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcQ-fE-yik">
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcQ-fE-yik">
                                 <rect key="frame" x="112" y="122" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="######"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="-----------"/>
                                 <connections>
                                     <action selector="editPhoto_Action:" destination="Wck-Ig-pHW" eventType="touchUpInside" id="kTd-MQ-8Fq"/>
                                 </connections>
@@ -105,7 +105,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="save" id="5CK-mO-9Tg">
                             <color key="tintColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="click_BackBtn:" destination="Wck-Ig-pHW" id="JEl-d1-i8R"/>
+                                <action selector="saveBtn_Action:" destination="Wck-Ig-pHW" id="BmA-BE-dMW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="wLQ-Qz-2JQ">

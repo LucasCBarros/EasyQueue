@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     // MARK: - Actions
-    @IBAction func click_BackBtn(_ sender: Any) {
+    @IBAction func saveBtn_Action(_ sender: Any) {
         saveChanges()
     }
     
@@ -150,13 +150,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func setupProfile() {
         
-//        let gradient = CAGradientLayer()
-//        gradient.frame = view.bounds
-//        gradient.colors = [UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
-//        self.photoColorBg.layer.insertSublayer(gradient, at: 0)
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor().UIBlack().cgColor, UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
+        self.photoColorBg.layer.insertSublayer(gradient, at: 0)
         
         profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
         profilePhoto.clipsToBounds = true
+        editPhotoBtn.layer.cornerRadius = editPhotoBtn.frame.width/2
+        editPhotoBtn.clipsToBounds = true
         
         if isPhotoEdited {
             databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in

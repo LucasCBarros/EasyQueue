@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LineListViewController: UIViewController {
 
@@ -19,6 +20,9 @@ class LineListViewController: UIViewController {
     // Array with all registered teachers
     var teacherArray = ["All", "Developer", "Design", "Business"]
     var selectedTab = "All"
+    
+    let storageRef = Storage.storage().reference()
+    let databaseRef = Database.database().reference()
     
     let userProfileManager = UserProfileService()
     let questionProfileManager = QuestionProfileService()
@@ -197,6 +201,25 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as? MainListCell
        
         if usersInLine != nil {
+            // Gets users Profile
+            databaseRef.child("Users").child(usersInLine![indexPath.row].userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dict = snapshot.value as? [String: AnyObject] {
+                    if let profileImageURL = dict["photo"] as? String {
+                        let url = URL(string: profileImageURL)
+                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                            DispatchQueue.main.async {
+                                cell?.profilePhoto?.image = UIImage(data: data!)
+                            }
+                        }).resume()
+                    }
+                }
+            })
+            
+            // Get users questions
             cell?.profileName?.text = usersInLine![indexPath.row].username
             if let inLineQuestions = inLineQuestions {
                 if inLineQuestions.count == (usersInLine?.count)! {
