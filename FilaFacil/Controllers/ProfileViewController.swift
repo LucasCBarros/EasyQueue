@@ -7,21 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
+    @IBOutlet weak var photoColorBg: UIImageView!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var profileTypeLabel: UILabel!
-    @IBOutlet weak var saveBtn: UIButton!
-    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var editSaveButton: UIBarButtonItem!
+    @IBOutlet weak var backBtn: UIBarButtonItem!
     
     // MARK: - Properties
     let userProfileManager = UserProfileService()
     let authManager = AuthDatabaseManager()
     var currentProfile: UserProfile!
+    
+    var isPhotoEdited: Bool = true
+    
+    let storageRef = Storage.storage().reference()
+    let databaseRef = Database.database().reference()
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +43,15 @@ class ProfileViewController: UIViewController {
     // MARK: - Actions
     @IBAction func click_BackBtn(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
+        saveChanges()
+    }
+    
+    @IBAction func editPhoto_Action(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func click_Logout(_ sender: Any) {
@@ -52,6 +68,7 @@ class ProfileViewController: UIViewController {
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             if let userProfile = userProfile {
                 self.currentProfile = userProfile
+                self.setupProfile()
             }
         }
     }
@@ -60,6 +77,86 @@ class ProfileViewController: UIViewController {
         usernameLabel.text = currentProfile.username
         emailLabel.text = currentProfile.email
         profileTypeLabel.text = currentProfile.profileType
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"]
+            as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"]
+            as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            profilePhoto.image = selectedImage
+        }
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func saveChanges() {
+        
+        let imageName = NSUUID().uuidString
+        
+        let storedImage = storageRef.child("profile_images").child(imageName)
+        
+        if let uploadData = UIImagePNGRepresentation(self.profilePhoto.image!) {
+            storedImage.putData(uploadData, metadata: nil, completion: { (_, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                storedImage.downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    if let urlText = url?.absoluteString {
+                        self.databaseRef.child("Users").child(self.currentProfile.userID).updateChildValues(["photo": urlText], withCompletionBlock: { (error, _) in
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                        })                    }
+                })
+            })
+        }
+    }
+    
+    func setupProfile() {
+        
+        profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
+        profilePhoto.clipsToBounds = true
+        
+        
+        
+        if isPhotoEdited {
+            databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dict = snapshot.value as? [String: AnyObject] {
+                    self.usernameLabel.text = dict["username"] as? String
+                    if let profileImageURL = dict["photo"] as? String {
+                        let url = URL(string: profileImageURL)
+                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                            DispatchQueue.main.async {
+                                self.profilePhoto?.image = UIImage(data: data!)
+                            }
+                        }).resume()
+                    }
+                }
+            })
+        }
+        isPhotoEdited = false
     }
     
     // MARK: - Navigation
