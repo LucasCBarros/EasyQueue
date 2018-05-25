@@ -44,11 +44,12 @@ class ViewController: UIViewController {
     func getAllQuestions() {
         questionService.getAllQuestions(completion: {[weak self] (questions, error) in
             if error == nil {
+                let questions = questions.sorted(by: { (question1, question2) -> Bool in
+                    return question1.questionID < question2.questionID
+                })
                 if !(self?.openedQuestions == questions) {
                     self?.openedQuestions.removeAll()
-                    self?.openedQuestions = questions.sorted(by: { (question1, question2) -> Bool in
-                        return question1.questionID < question2.questionID
-                    })
+                    self?.openedQuestions = questions
                     DispatchQueue.main.async {
                         self?.questionTableView.reloadData()
                     }
@@ -60,11 +61,12 @@ class ViewController: UIViewController {
     func getAllNotes() {
         noteService.getAllQuestions(completion: {[weak self] (notes, error) in
             if error == nil {
+                let notes = notes.sorted(by: { (note1, note2) -> Bool in
+                    return note1.noteID < note2.noteID
+                })
                 if !(self?.openedNotes == notes) {
                     self?.openedNotes.removeAll()
-                    self?.openedNotes = notes.sorted(by: { (note1, note2) -> Bool in
-                        return note1.noteID < note2.noteID
-                    })
+                    self?.openedNotes = notes
                     DispatchQueue.main.async {
                         self?.noteCollectionView.reloadData()
                     }
