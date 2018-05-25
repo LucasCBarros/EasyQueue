@@ -32,7 +32,7 @@ class NoteService {
                 var notes: [Note] = []
                 
                 for (_, elem) in json{
-                    print(elem)
+//                    print(elem)
                     let jsonQuestion = elem as? [String: Any]
                     notes.append(Note(json: jsonQuestion!))
                 }
