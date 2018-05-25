@@ -150,6 +150,10 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: NoteCollectionViewLayoutDelegate {
     
+    func calculeColumn(width: CGFloat) -> CGFloat {
+        return width - (noteCollectionView.contentInset.left + noteCollectionView.contentInset.right) - 20
+    }
+    
     func getAllTexts() -> [String] {
         return self.openedNotes.reduce([], {result, element in
             var result = result
@@ -157,5 +161,5 @@ extension ViewController: NoteCollectionViewLayoutDelegate {
             return result
         })
     }
-    
+
 }
