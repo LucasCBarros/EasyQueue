@@ -28,10 +28,4 @@ class NoteViewCell: UICollectionViewCell {
 //        widthConstraint.constant = screenWidth - (2 * 12)
     }
     
-//    func configureWidth(_ widthSize: CGFloat) {
-//        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-//        widthConstraint.constant = widthSize
-//        self.setNeedsUpdateConstraints()
-//    }
-    
 }

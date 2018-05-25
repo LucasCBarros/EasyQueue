@@ -18,16 +18,10 @@ class ViewController: UIViewController {
     var topTimer: Timer!
     var dateFormatter: DateFormatter!
     
-//    var avisosMocados = [(texto: "Meu primeiro texto. Oié", data: "21 de maio às 18:36"), (texto: "Bola na área para ninguém cabecear.", data: "12 de fevereiro às 18:36"), (texto: "Quem veio de mato vai ter que ir embora. E quem veio a pé também. Quem veio de mato vai ter que ir embora. E quem veio a pé também.", data: "10 de outubro às 18:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00")]
-    
     @IBOutlet weak var questionTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        if let flowLayout = noteCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
-        }
         
         if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
             layout.delegate = self
@@ -40,17 +34,17 @@ class ViewController: UIViewController {
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
-        getAllQuestions()
         getAllNotes()
+        getAllQuestions()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
                                                 selector: #selector(ViewController.getAllInformations),
                                                 userInfo: nil, repeats: true)
     }
     
-    func getAllQuestions(){
+    func getAllQuestions() {
         questionService.getAllQuestions(completion: {[weak self] (questions, error) in
-            if error == nil{
-                if self?.openedQuestions != questions {
+            if error == nil {
+                if !(self?.openedQuestions == questions) {
                     self?.openedQuestions.removeAll()
                     self?.openedQuestions = questions.sorted(by: { (question1, question2) -> Bool in
                         return question1.questionID < question2.questionID
@@ -65,8 +59,8 @@ class ViewController: UIViewController {
     
     func getAllNotes() {
         noteService.getAllQuestions(completion: {[weak self] (notes, error) in
-            if error == nil{
-                if self?.openedNotes != notes {
+            if error == nil {
+                if !(self?.openedNotes == notes) {
                     self?.openedNotes.removeAll()
                     self?.openedNotes = notes.sorted(by: { (note1, note2) -> Bool in
                         return note1.noteID < note2.noteID
@@ -146,7 +140,6 @@ extension ViewController: UICollectionViewDataSource {
             let strDate = dateFormatter.string(from: openedNotes[indexPath.row].date)
             
             noteCell.dateLabel.text = strDate
-            
 //            noteCell.configureWidth(screenWidth)
         }
         

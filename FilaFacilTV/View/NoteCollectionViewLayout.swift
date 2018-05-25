@@ -14,6 +14,15 @@ protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
     
 }
 
+extension String {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+}
+
 class NoteCollectionViewLayout: UICollectionViewLayout {
     
     open weak var delegate: NoteCollectionViewLayoutDelegate?
@@ -64,11 +73,17 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
 
             let indexPath = IndexPath(item: item, section: 0)
             
-            var expectedHeight: CGFloat = 130
+            var expectedHeight: CGFloat = 96
             
-            if texts.count > indexPath.row {
-                expectedHeight += CGFloat(abs(Int32.init(CGFloat(texts[indexPath.row].count) * 30 / columnWidth))) * 10
+            for fontFamily in UIFont.familyNames {
+                for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
+                    print(fontName)
+                }
             }
+            
+            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 44, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
+            
+//            expectedHeight += CGFloat(Int32.init(CGFloat(texts[indexPath.row].count)) / 17 + 1) * 29
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: expectedHeight)
