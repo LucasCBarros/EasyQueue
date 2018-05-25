@@ -42,13 +42,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Note" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-hN-DSY">
-                                                    <rect key="frame" x="10" y="10" width="355" height="20.5"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-wv-Qfd">
-                                                    <rect key="frame" x="334" y="50.5" width="31" height="14"/>
+                                                    <rect key="frame" x="324" y="50.5" width="31" height="14"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -56,12 +56,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="top" secondItem="0Y0-hN-DSY" secondAttribute="bottom" constant="20" id="1QT-lk-PYH"/>
-                                                <constraint firstAttribute="trailing" secondItem="0Y0-hN-DSY" secondAttribute="trailing" constant="10" id="C3U-pz-mC2"/>
-                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="10" id="EQy-vd-XIC"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Y0-hN-DSY" secondAttribute="trailing" constant="20" id="C3U-pz-mC2"/>
+                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="EQy-vd-XIC"/>
                                                 <constraint firstItem="0Y0-hN-DSY" firstAttribute="top" secondItem="3Cv-zA-y0C" secondAttribute="top" constant="10" id="M0H-TS-tX5"/>
                                                 <constraint firstAttribute="bottom" secondItem="qdI-wv-Qfd" secondAttribute="bottom" constant="10" id="XA6-MT-Eu8"/>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="trailing" secondItem="0Y0-hN-DSY" secondAttribute="trailing" id="fh8-dR-ppV"/>
-                                                <constraint firstItem="qdI-wv-Qfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Cv-zA-y0C" secondAttribute="leading" id="gih-YS-Sj0"/>
+                                                <constraint firstItem="qdI-wv-Qfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="gih-YS-Sj0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
