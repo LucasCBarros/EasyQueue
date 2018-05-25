@@ -120,6 +120,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
             self.newNoteView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.newNoteView.alpha = 0
         }) {(_: Bool) in
+            self.noteTextField.text = ""
             self.newNoteView.removeFromSuperview()
         }
     }
