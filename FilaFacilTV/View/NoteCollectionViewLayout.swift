@@ -16,15 +16,6 @@ protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
     
 }
 
-extension String {
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
-        
-        return ceil(boundingBox.height)
-    }
-}
-
 class NoteCollectionViewLayout: UICollectionViewLayout {
     
     open weak var delegate: NoteCollectionViewLayoutDelegate?
@@ -52,6 +43,7 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
+        cache.removeAll()
         super.prepare()
         // 1. Only calculate once
         guard cache.isEmpty == true, let collectionView = collectionView else {
@@ -77,12 +69,6 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
             let indexPath = IndexPath(item: item, section: 0)
             
             var expectedHeight: CGFloat = 96
-            
-            for fontFamily in UIFont.familyNames {
-                for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
-                    print(fontName)
-                }
-            }
             
             expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 44, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
             

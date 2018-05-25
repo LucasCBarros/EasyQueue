@@ -69,6 +69,7 @@ class ViewController: UIViewController {
                     self?.openedNotes = notes
                     DispatchQueue.main.async {
                         self?.noteCollectionView.reloadData()
+                        self?.noteCollectionView.collectionViewLayout.invalidateLayout()
                     }
                 }
             }
