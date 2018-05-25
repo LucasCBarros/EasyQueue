@@ -77,6 +77,10 @@
                                     <outlet property="delegate" destination="pey-OP-sAc" id="OOq-c3-qdu"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="95E-Ig-233">
+                                <rect key="frame" x="177" y="331" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -84,6 +88,8 @@
                             <constraint firstItem="67Z-lA-Nae" firstAttribute="width" secondItem="fi8-H8-o9u" secondAttribute="width" id="OFg-mY-6D6"/>
                             <constraint firstItem="67Z-lA-Nae" firstAttribute="centerY" secondItem="xk3-2Y-ek9" secondAttribute="centerY" id="fyi-15-gZI"/>
                             <constraint firstItem="67Z-lA-Nae" firstAttribute="height" secondItem="fi8-H8-o9u" secondAttribute="height" id="pBl-58-hIU"/>
+                            <constraint firstItem="95E-Ig-233" firstAttribute="centerX" secondItem="xk3-2Y-ek9" secondAttribute="centerX" id="rh0-PP-EZP"/>
+                            <constraint firstItem="95E-Ig-233" firstAttribute="centerY" secondItem="xk3-2Y-ek9" secondAttribute="centerY" id="wra-Fr-Pbk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xk3-2Y-ek9"/>
                     </view>
@@ -105,6 +111,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="95E-Ig-233" id="bHn-LJ-7ex"/>
                         <outlet property="navigationBar" destination="fIg-zM-8dG" id="Cce-Sp-gys"/>
                         <outlet property="newNoteView" destination="Wm7-KS-xAy" id="xoi-2D-Szh"/>
                         <outlet property="noteTableView" destination="OOi-ih-1qy" id="6da-mK-l98"/>

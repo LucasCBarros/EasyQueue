@@ -14,6 +14,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var hidenButton: UIBarButtonItem!
     
@@ -71,15 +72,21 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func retrieveAllNotes() {
-        noteProfileManager.retrieveAllOpenNotes { (noteProfile) in
+        noteProfileManager.retrieveAllOpenNotes {[weak self] (noteProfile) in
             if let noteProfile = noteProfile {
-                self.allNoteProfiles = noteProfile
+                self?.allNoteProfiles = noteProfile
             }
 
             // Add to main Thread
             DispatchQueue.main.async {
-                self.orderListElements()
-                self.noteTableView.reloadData()
+                self?.orderListElements()
+                self?.activityIndicator.stopAnimating()
+                self?.noteTableView.reloadData()
+                if self?.allNoteProfiles?.count == 0 {
+                    self?.noteTableView.separatorStyle = .none
+                } else {
+                    self?.noteTableView.separatorStyle = .singleLine
+                }
             }
         }
     }
@@ -132,11 +139,7 @@ extension CreateNoteViewController {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if allNoteProfiles == nil {
-            return 3
-        } else {
-            return allNoteProfiles!.count
-        }
+        return self.allNoteProfiles?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -144,7 +147,7 @@ extension CreateNoteViewController {
         
         cell?.selectionStyle = .none // Removes selection
         
-        if allNoteProfiles != nil {
+        if self.allNoteProfiles != nil {
             let timeInterval = Double(Int((self.allNoteProfiles?[indexPath.row].noteID)!)!)
             let date = Date(timeIntervalSince1970: timeInterval / 1000)
             let dateFormatter = DateFormatter()
@@ -155,9 +158,6 @@ extension CreateNoteViewController {
             
             cell?.noteDate.text = strDate
             cell?.noteText.text = self.allNoteProfiles?[indexPath.row].noteText
-        } else {
-            cell?.noteText.text = "Hello"
-            cell?.noteDate.text = "\(Date())"
         }
         
         return cell!
