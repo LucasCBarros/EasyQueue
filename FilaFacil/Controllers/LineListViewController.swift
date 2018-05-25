@@ -58,7 +58,7 @@ class LineListViewController: UIViewController {
     // MARK: - Methods
     func refreshControlStart() {
         refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         refreshControl.tintColor = UIColor().UIGreen()
         listTableView.addSubview(refreshControl)
@@ -268,18 +268,18 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewData
         
         switch teacherArray[indexPath.row] {
         case "Developer":
-            cell?.segmentTitle.textColor = UIColor.white//UIColor.cyan
+            cell?.segmentTitle.textColor = UIColor.cyan
         case "Design":
-            cell?.segmentTitle.textColor = UIColor.white//UIColor.yellow
+            cell?.segmentTitle.textColor = UIColor.yellow
         case "Business":
-            cell?.segmentTitle.textColor = UIColor.white//UIColor.green
+            cell?.segmentTitle.textColor = UIColor.green
         default:
             cell?.segmentTitle.textColor = UIColor.white
         }
         
         cell?.segmentTitle.text = teacherArray[indexPath.row]
         cell?.segmentSelection.isHidden = true
-        cell?.backgroundColor = UIColor.white//UIColor().UIBlack()
+        cell?.backgroundColor = UIColor().UIBlack()
 
         if selectedTab == teacherArray[indexPath.row] {
             cell?.backgroundColor = UIColor().UIGreen()
@@ -292,7 +292,7 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewData
         // Remove Bg from previous cell
      
         if selectedTab == teacherArray[indexPath.row] {
-            cell.backgroundColor = UIColor.white//UIColor().UIBlack()
+            cell.backgroundColor = UIColor().UIGreen()
         } else {
             cell.backgroundColor = UIColor().UIBlack()
         }
@@ -300,7 +300,7 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if selectedTab == teacherArray[indexPath.row] {
-            cell.backgroundColor = UIColor.white//UIColor().UIBlack()
+            cell.backgroundColor = UIColor().UIGreen()
         } else {
             cell.backgroundColor = UIColor().UIBlack()
         }
@@ -317,23 +317,8 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewData
 
         // Color selected cell
         let cell = collectionView.cellForItem(at: indexPath)
-        
+        cell?.backgroundColor = UIColor().UIGreen()
         selectedTab = teacherArray[indexPath.row]
-        
-        UIView.animate(withDuration: 0.7, delay: 0.0, animations: {
-            
-            switch self.selectedTab {
-            case "Developer":
-                cell?.backgroundColor = UIColor.cyan
-            case "Design":
-                cell?.backgroundColor = UIColor.yellow
-            case "Business":
-                cell?.backgroundColor = UIColor.green
-            default:
-                cell?.backgroundColor = UIColor.white
-            }
-            
-        }, completion: nil)
 
 //        listTableView.reloadData()
         self.reloadViewData()
