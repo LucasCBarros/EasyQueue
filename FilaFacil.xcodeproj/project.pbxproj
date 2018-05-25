@@ -55,6 +55,14 @@
 		E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384620B36CFD00D88578 /* NoteProfile.swift */; };
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
+<<<<<<< HEAD
+=======
+		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
+		FA3DF91A20B85B7500D8DA5C /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DF91920B85B7500D8DA5C /* Extension String.swift */; };
+		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
+		FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
+		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
+>>>>>>> 0acbdb9fa3378c7a170b186cc20ba75aa493432a
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -178,6 +186,13 @@
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		FA3DF91920B85B7500D8DA5C /* Extension String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
+		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
+		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+>>>>>>> 0acbdb9fa3378c7a170b186cc20ba75aa493432a
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -313,6 +328,7 @@
 				DEDF0FCA20AE20470064A247 /* Assets.xcassets */,
 				DEDF0FCC20AE20470064A247 /* Info.plist */,
 				DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */,
+				FA3DF91920B85B7500D8DA5C /* Extension String.swift */,
 			);
 			path = FilaFacilTV;
 			sourceTree = "<group>";
@@ -653,6 +669,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */,
+				FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */,
 				DEDF0FC920AE20470064A247 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,6 +843,7 @@
 				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
 				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
 				DEBC40C020B1E81100870D4C /* Question.swift in Sources */,
+				FA3DF91A20B85B7500D8DA5C /* Extension String.swift in Sources */,
 				DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */,
 				DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */,
 				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,

@@ -12,6 +12,8 @@ protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
     
     func getAllTexts() -> [String]
     
+    func calculeColumn(width: CGFloat) -> CGFloat
+    
 }
 
 class NoteCollectionViewLayout: UICollectionViewLayout {
@@ -41,34 +43,34 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
+        cache.removeAll()
         super.prepare()
         // 1. Only calculate once
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
         // 2. Pre-Calculates the X Offset for every column and adds an array to increment the currently max Y Offset for each column
-        let columnWidth = contentWidth / CGFloat(numberOfColumns)
+        var texts = [String]()
+        var columnWidth = contentWidth / CGFloat(numberOfColumns)
         var xOffset = [CGFloat]()
+        if let delegate = self.delegate {
+            texts = delegate.getAllTexts()
+            columnWidth = delegate.calculeColumn(width: columnWidth)
+        }
         for column in 0 ..< numberOfColumns {
             xOffset.append(CGFloat(column) * columnWidth)
         }
         var column = 0
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
-        var texts = [String]()
-        if let delegate = self.delegate {
-            texts = delegate.getAllTexts()
-        }
         
         // 3. Iterates through the list of items in the first section
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
 
             let indexPath = IndexPath(item: item, section: 0)
             
-            var expectedHeight: CGFloat = 130
+            var expectedHeight: CGFloat = 96
             
-            if texts.count > indexPath.row {
-                expectedHeight += CGFloat(abs(Int32.init(CGFloat(texts[indexPath.row].count) * 30 / columnWidth))) * 10
-            }
+            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 44, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: expectedHeight)

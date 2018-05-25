@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var noteActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noteCollectionView: UICollectionView!
+    @IBOutlet weak var questionActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var noQuestions: UILabel!
+    @IBOutlet weak var noNotes: UILabel!
     var questionService = QuestionService()
     var openedQuestions:[Question] = []
     var noteService = NoteService()
@@ -18,21 +22,13 @@ class ViewController: UIViewController {
     var topTimer: Timer!
     var dateFormatter: DateFormatter!
     
-//    var avisosMocados = [(texto: "Meu primeiro texto. Oié", data: "21 de maio às 18:36"), (texto: "Bola na área para ninguém cabecear.", data: "12 de fevereiro às 18:36"), (texto: "Quem veio de mato vai ter que ir embora. E quem veio a pé também. Quem veio de mato vai ter que ir embora. E quem veio a pé também.", data: "10 de outubro às 18:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00"), (texto: "Bolsonaro foi eleito presidente do Brasil.", data: "30 de outubro às 22:00")]
-    
     @IBOutlet weak var questionTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        if let flowLayout = noteCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
-        }
-        
         if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
             layout.delegate = self
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,16 +43,24 @@ class ViewController: UIViewController {
                                                 userInfo: nil, repeats: true)
     }
     
-    func getAllQuestions(){
+    func getAllQuestions() {
         questionService.getAllQuestions(completion: {[weak self] (questions, error) in
-            if error == nil{
-                if self?.openedQuestions != questions {
+            if error == nil {
+                let questions = questions.sorted(by: { (question1, question2) -> Bool in
+                    return question1.questionID < question2.questionID
+                })
+                if !(self?.openedQuestions == questions) {
                     self?.openedQuestions.removeAll()
-                    self?.openedQuestions = questions.sorted(by: { (question1, question2) -> Bool in
-                        return question1.questionID < question2.questionID
-                    })
+                    self?.openedQuestions = questions
                     DispatchQueue.main.async {
                         self?.questionTableView.reloadData()
+                        self?.questionActivityIndicator.stopAnimating()
+                        if self?.openedQuestions.count == 0 {
+                            self?.noQuestions.isHidden = false
+                        }
+                        else {
+                            self?.noQuestions.isHidden = true
+                        }
                     }
                 }
             }
@@ -65,14 +69,23 @@ class ViewController: UIViewController {
     
     func getAllNotes() {
         noteService.getAllQuestions(completion: {[weak self] (notes, error) in
-            if error == nil{
+            if error == nil {
+                let notes = notes.sorted(by: { (note1, note2) -> Bool in
+                    return note1.noteID < note2.noteID
+                })
                 if self?.openedNotes != notes {
                     self?.openedNotes.removeAll()
-                    self?.openedNotes = notes.sorted(by: { (note1, note2) -> Bool in
-                        return note1.noteID < note2.noteID
-                    })
+                    self?.openedNotes = notes
                     DispatchQueue.main.async {
                         self?.noteCollectionView.reloadData()
+                        self?.noteCollectionView.collectionViewLayout.invalidateLayout()
+                        self?.noteActivityIndicator.stopAnimating()
+                        if self?.openedNotes.count == 0 {
+                            self?.noNotes.isHidden = false
+                        }
+                        else {
+                            self?.noNotes.isHidden = true
+                        }
                     }
                 }
             }
@@ -81,8 +94,8 @@ class ViewController: UIViewController {
     
     
     @objc func getAllInformations() {
-        getAllNotes()
         getAllQuestions()
+        getAllNotes()
     }
     
     override func didReceiveMemoryWarning() {
@@ -146,7 +159,6 @@ extension ViewController: UICollectionViewDataSource {
             let strDate = dateFormatter.string(from: openedNotes[indexPath.row].date)
             
             noteCell.dateLabel.text = strDate
-            
 //            noteCell.configureWidth(screenWidth)
         }
         
@@ -157,6 +169,10 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: NoteCollectionViewLayoutDelegate {
     
+    func calculeColumn(width: CGFloat) -> CGFloat {
+        return width - (noteCollectionView.contentInset.left + noteCollectionView.contentInset.right) - 20
+    }
+    
     func getAllTexts() -> [String] {
         return self.openedNotes.reduce([], {result, element in
             var result = result
@@ -164,5 +180,5 @@ extension ViewController: NoteCollectionViewLayoutDelegate {
             return result
         })
     }
-    
+
 }

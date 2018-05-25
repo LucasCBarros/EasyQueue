@@ -8,10 +8,7 @@
 
 import Foundation
 
-struct Question: Equatable{
-    static func ==(lhs: Question, rhs: Question) -> Bool {
-        return lhs.questionID == rhs.questionID
-    }
+struct Question: Equatable {
     
     let questionID: String
     let questionTitle: String
@@ -19,6 +16,14 @@ struct Question: Equatable{
     let requestedTeacher: String
     let userID: String
     let username: String
+    
+    static func ==(lhs: Question, rhs: Question) -> Bool {
+        return lhs.questionID == rhs.questionID
+    }
+    
+    static func !=(lhs: Question, rhs: Question) -> Bool {
+        return !(lhs == rhs)
+    }
     
     init(json: [String: Any]) {
         questionID = json["questionID"] as? String ?? "?"
