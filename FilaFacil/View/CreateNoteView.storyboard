@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,16 +88,24 @@
                         <viewLayoutGuide key="safeArea" id="xk3-2Y-ek9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recados" id="fIg-zM-8dG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fnc-5h-9bk">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="newNote_Action:" destination="pey-OP-sAc" id="C34-AN-kmM"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="fnc-5h-9bk">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="newNote_Action:" destination="pey-OP-sAc" id="C34-AN-kmM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="save" id="Y7r-TQ-A0U">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="createNote_Action:" destination="pey-OP-sAc" id="DCJ-Iw-cXI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="createNoteButton" destination="KUI-aa-LQ3" id="mcz-OE-qA4"/>
+                        <outlet property="navigationBar" destination="fIg-zM-8dG" id="Cce-Sp-gys"/>
                         <outlet property="newNoteView" destination="Wm7-KS-xAy" id="xoi-2D-Szh"/>
                         <outlet property="noteTableView" destination="OOi-ih-1qy" id="6da-mK-l98"/>
                         <outlet property="noteTextField" destination="VaU-3f-uoY" id="rcE-l8-HZo"/>
@@ -107,31 +116,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="365" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaU-3f-uoY">
-                            <rect key="frame" x="92" y="235" width="181" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaU-3f-uoY">
+                            <rect key="frame" x="10" y="30" width="345" height="21"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L99-Dj-ZMt">
-                            <rect key="frame" x="145" y="194" width="74" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUI-aa-LQ3">
-                            <rect key="frame" x="130" y="388" width="105" height="85"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Send"/>
-                            <connections>
-                                <action selector="createNote_Action:" destination="pey-OP-sAc" eventType="touchUpInside" id="HrE-ow-bKg"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="VaU-3f-uoY" firstAttribute="leading" secondItem="S6J-64-lW6" secondAttribute="leading" constant="10" id="DXR-cH-luO"/>
+                        <constraint firstItem="VaU-3f-uoY" firstAttribute="top" secondItem="S6J-64-lW6" secondAttribute="top" constant="10" id="ZmE-en-bd8"/>
+                        <constraint firstItem="S6J-64-lW6" firstAttribute="trailing" secondItem="VaU-3f-uoY" secondAttribute="trailing" constant="10" id="n21-mx-Vd8"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="S6J-64-lW6"/>
                 </view>
             </objects>

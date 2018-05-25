@@ -13,7 +13,9 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var newNoteView: UIView!
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var noteTableView: UITableView!
-    @IBOutlet weak var createNoteButton: UIButton!
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    
+    var hidenButton: UIBarButtonItem!
     
     var allNoteProfiles: [NoteProfile]?
     
@@ -41,6 +43,8 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         newNoteView.frame.size.width = self.view.frame.width
+        
+        self.hidenButton = self.navigationBar.rightBarButtonItems?.popLast()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +103,9 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         newNoteView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         newNoteView.alpha = 0
         
+        let addButon = self.navigationBar.rightBarButtonItems?.popLast()
+        self.navigationBar.rightBarButtonItems?.append(self.hidenButton)
+        self.hidenButton = addButon
         UIView.animate(withDuration: 0.4) {
             self.newNoteView.alpha = 1
             self.newNoteView.transform = CGAffineTransform.identity
@@ -106,6 +113,9 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @objc func animateOut() {
+        let saveButton = self.navigationBar.rightBarButtonItems?.popLast()
+        self.navigationBar.rightBarButtonItems?.append(hidenButton)
+        self.hidenButton = saveButton
         UIView.animate(withDuration: 0.3, animations: {
             self.newNoteView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.newNoteView.alpha = 0
