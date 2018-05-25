@@ -16,11 +16,14 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var viewTypeQuestion: UIView!
     @IBOutlet weak var timeInputQuestion: UILabel!
-    
+    @IBOutlet weak var categoryColor: UIView!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        categoryColor.clipsToBounds = true
+        profileImage.clipsToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
