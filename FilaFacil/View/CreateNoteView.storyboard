@@ -28,11 +28,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-notes" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-lA-Nae">
-                                <rect key="frame" x="-0.5" y="-24.5" width="375" height="603"/>
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-ih-1qy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-ih-1qy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="75" id="Mro-n1-9Cf" customClass="NoteCell" customModule="FilaFacil" customModuleProvider="target">
@@ -49,7 +48,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-wv-Qfd">
-                                                    <rect key="frame" x="324" y="50.5" width="31" height="14"/>
+                                                    <rect key="frame" x="334" y="50.5" width="31" height="14"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -61,8 +60,8 @@
                                                 <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="EQy-vd-XIC"/>
                                                 <constraint firstItem="0Y0-hN-DSY" firstAttribute="top" secondItem="3Cv-zA-y0C" secondAttribute="top" constant="10" id="M0H-TS-tX5"/>
                                                 <constraint firstAttribute="bottom" secondItem="qdI-wv-Qfd" secondAttribute="bottom" constant="10" id="XA6-MT-Eu8"/>
-                                                <constraint firstItem="qdI-wv-Qfd" firstAttribute="trailing" secondItem="0Y0-hN-DSY" secondAttribute="trailing" id="fh8-dR-ppV"/>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="gih-YS-Sj0"/>
+                                                <constraint firstAttribute="trailing" secondItem="qdI-wv-Qfd" secondAttribute="trailing" constant="10" id="vaF-dD-n8l"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,16 +83,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="67Z-lA-Nae" firstAttribute="centerX" secondItem="xk3-2Y-ek9" secondAttribute="centerX" id="2ao-dQ-SSn"/>
-                            <constraint firstItem="67Z-lA-Nae" firstAttribute="width" secondItem="fi8-H8-o9u" secondAttribute="width" id="OFg-mY-6D6"/>
-                            <constraint firstItem="67Z-lA-Nae" firstAttribute="centerY" secondItem="xk3-2Y-ek9" secondAttribute="centerY" id="fyi-15-gZI"/>
-                            <constraint firstItem="67Z-lA-Nae" firstAttribute="height" secondItem="fi8-H8-o9u" secondAttribute="height" id="pBl-58-hIU"/>
+                            <constraint firstAttribute="bottom" secondItem="67Z-lA-Nae" secondAttribute="bottom" id="2Ti-ha-f7g"/>
+                            <constraint firstItem="OOi-ih-1qy" firstAttribute="leading" secondItem="xk3-2Y-ek9" secondAttribute="leading" id="Qy0-2t-dNf"/>
+                            <constraint firstItem="67Z-lA-Nae" firstAttribute="top" secondItem="fi8-H8-o9u" secondAttribute="top" id="epY-xK-yiq"/>
+                            <constraint firstAttribute="bottom" secondItem="OOi-ih-1qy" secondAttribute="bottom" id="fhm-HU-3CB"/>
+                            <constraint firstItem="67Z-lA-Nae" firstAttribute="leading" secondItem="fi8-H8-o9u" secondAttribute="leading" id="hU2-hM-Enw"/>
+                            <constraint firstItem="OOi-ih-1qy" firstAttribute="top" secondItem="fi8-H8-o9u" secondAttribute="top" id="kk3-0F-0gP"/>
+                            <constraint firstItem="xk3-2Y-ek9" firstAttribute="trailing" secondItem="67Z-lA-Nae" secondAttribute="trailing" id="ljv-aj-aXb"/>
                             <constraint firstItem="95E-Ig-233" firstAttribute="centerX" secondItem="xk3-2Y-ek9" secondAttribute="centerX" id="rh0-PP-EZP"/>
                             <constraint firstItem="95E-Ig-233" firstAttribute="centerY" secondItem="xk3-2Y-ek9" secondAttribute="centerY" id="wra-Fr-Pbk"/>
+                            <constraint firstItem="OOi-ih-1qy" firstAttribute="trailing" secondItem="xk3-2Y-ek9" secondAttribute="trailing" id="x0V-A9-bfQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xk3-2Y-ek9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recados" id="fIg-zM-8dG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XM6-qb-FCx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancelNewNote:" destination="pey-OP-sAc" id="Odx-cT-gyU"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="fnc-5h-9bk">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

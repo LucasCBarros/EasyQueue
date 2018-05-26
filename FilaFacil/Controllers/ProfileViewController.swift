@@ -12,14 +12,12 @@ import Firebase
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
-    @IBOutlet weak var photoColorBg: UIImageView!
     @IBOutlet weak var editPhotoBtn: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var profileTypeLabel: UILabel!
-    @IBOutlet weak var editCancelButton: UIBarButtonItem!
-    @IBOutlet weak var saveBtn: UIBarButtonItem!
+    @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: - Properties
     let userProfileManager = UserProfileService()
@@ -31,9 +29,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
     
-    // MARK: - Life Cycle
-    override func viewWillAppear(_ animated: Bool) {
-        retrieveCurrentUserProfile()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        logoutButton.clipsToBounds = true
+        logoutButton.layer.cornerRadius = 10
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -153,7 +153,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor().UIBlack().cgColor, UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
-        self.photoColorBg.layer.insertSublayer(gradient, at: 0)
         
         profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
         profilePhoto.clipsToBounds = true

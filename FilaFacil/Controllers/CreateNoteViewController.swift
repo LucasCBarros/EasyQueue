@@ -17,11 +17,26 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var hidenButton: UIBarButtonItem!
+    var cancelButton: UIBarButtonItem!
     
     var allNoteProfiles: [NoteProfile]?
     
     let noteProfileManager = NoteProfileService()
     let userProfileManager = UserProfileService()
+    
+    @IBAction func createNote_Action(_ sender: Any) {
+        self.createNote()
+        noteTableView.reloadData()
+        animateOut()
+    }
+    
+    @IBAction func newNote_Action(_ sender: Any) {
+        animateIn()
+    }
+    
+    @IBAction func cancelNewNote(_ sender: UIBarButtonItem) {
+        animateOut()
+    }
     
     var currentProfile: UserProfile {
         get {
@@ -43,9 +58,9 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newNoteView.frame.size.width = self.view.frame.width
-        
+        self.newNoteView.frame = self.noteTableView.frame
         self.hidenButton = self.navigationBar.rightBarButtonItems?.popLast()
+        self.cancelButton = self.navigationBar.leftBarButtonItems?.popLast()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,16 +70,6 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
         }
-    }
-    
-    @IBAction func createNote_Action(_ sender: Any) {
-        self.createNote()
-        noteTableView.reloadData()
-        animateOut()
-    }
-    
-    @IBAction func newNote_Action(_ sender: Any) {
-        animateIn()
     }
     
     func orderListElements() {
@@ -104,15 +109,13 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func animateIn() {
-        self.view.addSubview(newNoteView)
-        newNoteView.center = self.view.center
-        
-        newNoteView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        newNoteView.alpha = 0
+        self.view.addSubview(self.newNoteView)
+        self.newNoteView.alpha = 0
         
         let addButon = self.navigationBar.rightBarButtonItems?.popLast()
         self.navigationBar.rightBarButtonItems?.append(self.hidenButton)
         self.hidenButton = addButon
+        self.navigationBar.leftBarButtonItems?.append(self.cancelButton)
         UIView.animate(withDuration: 0.4) {
             self.newNoteView.alpha = 1
             self.newNoteView.transform = CGAffineTransform.identity
@@ -123,6 +126,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         let saveButton = self.navigationBar.rightBarButtonItems?.popLast()
         self.navigationBar.rightBarButtonItems?.append(hidenButton)
         self.hidenButton = saveButton
+        self.navigationBar.leftBarButtonItems?.removeFirst()
         UIView.animate(withDuration: 0.3, animations: {
             self.newNoteView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.newNoteView.alpha = 0
