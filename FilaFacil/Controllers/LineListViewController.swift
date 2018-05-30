@@ -9,17 +9,19 @@
 import UIKit
 import Firebase
 
+//selectedTab = teacherArray[indexPath.row]
+
 class LineListViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var listTableView: UITableView!
-    @IBOutlet weak var customSegmentControl: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var questionTypeSegmentation: UISegmentedControl!
     
     // MARK: - Properties
     // Array with all registered teachers
-    var teacherArray = ["All", "Developer", "Design", "Business"]
-    var selectedTab = "All"
+    let teacherArray = ["Developer", "Design", "Business"]
+    var selectedTab = "Developer"
     
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
@@ -32,6 +34,12 @@ class LineListViewController: UIViewController {
     var usersInLine: [UserProfile]?
     var inLineQuestions: [QuestionProfile]?
     var refreshControl: UIRefreshControl!
+    
+    // MARK: - Actions
+    @IBAction func segmentationAction(_ sender: UISegmentedControl) {
+        self.selectedTab = self.teacherArray[sender.selectedSegmentIndex]
+        self.loadViewData()
+    }
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +63,6 @@ class LineListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         refreshControlStart()
     }
     
@@ -66,6 +73,14 @@ class LineListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         refreshControl.tintColor = UIColor().UIGreen()
         listTableView.addSubview(refreshControl)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  "newQuestionView" {
+            if let view = segue.destination as? NewQuestionViewController {
+                view.delegate = self
+            }
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -224,18 +239,12 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             if let inLineQuestions = inLineQuestions {
                 if inLineQuestions.count == (usersInLine?.count)! {
                     cell?.questionLabel?.text = inLineQuestions[indexPath.row].questionTitle
+                    //Tirar o timestamp e colocar a data e hora
+                    let timeInterval = Double.init(inLineQuestions[indexPath.row].questionID)
+                    let date = Date(timeIntervalSince1970: timeInterval! / 1000)
+                    let strDate = Formatter.dateToString(date)
+                    cell?.dateLabel.text = strDate
                 }
-            }
-            
-            if selectedTab == "All" {
-//                userProfileManager.updateLinePosition(userID:usersInLine![indexPath.row].userID, position: indexPath.row+1 )
-                if usersInLine![indexPath.row].userLinePosition != indexPath.row+1 {
-                    cell?.numberLabel.text = "\(indexPath.row+1)"// Number in line
-                } else {
-                    cell?.numberLabel.text = "\(usersInLine![indexPath.row].userLinePosition)"// Number in line
-                }
-            } else {
-                cell?.numberLabel.text = "\(usersInLine![indexPath.row].userLinePosition)"// Number in line
             }
         }
         
@@ -246,9 +255,6 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.profilePhoto.alpha = 0.5
         cell?.profilePhoto.layer.cornerRadius = (cell?.profilePhoto.layer.frame.width)!/2
         cell?.profilePhoto.clipsToBounds = true
-        cell?.numberLabel.layer.cornerRadius = (cell?.numberLabel.layer.frame.width)!/2
-        cell?.numberLabel.layer.borderWidth = 0.5
-        cell?.numberLabel.layer.borderColor = UIColor.gray.cgColor
         
         return cell!
     }
@@ -264,13 +270,12 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             // Reload View
             viewWillAppear(true)
-//            listTableView.reloadData()
         }
     }
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if currentProfile?.profileType == "Teacher" {
+        if self.inLineQuestions?[indexPath.row].userID == currentProfile!.userID || currentProfile?.profileType == "Teacher" {
             return true
         } else {
             return false
@@ -278,72 +283,14 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - CollectionView functions
-extension LineListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension LineListViewController: NewQuestionTableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 3
-        return teacherArray.count
+    func saveQuestion(text: String, selectedTeacher: String) {
+        // Inserts question info in Firebase and updates users status
+        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
+                                              username: currentProfile!.username,
+                                              requestedTeacher: selectedTeacher,
+                                              positionInLine: (usersInLine?.count)!+1)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "segmentCell", for: indexPath) as? MainSegmentationCell
-        
-        switch teacherArray[indexPath.row] {
-        case "Developer":
-            cell?.segmentTitle.textColor = UIColor.cyan
-        case "Design":
-            cell?.segmentTitle.textColor = UIColor.yellow
-        case "Business":
-            cell?.segmentTitle.textColor = UIColor.green
-        default:
-            cell?.segmentTitle.textColor = UIColor.white
-        }
-        
-        cell?.segmentTitle.text = teacherArray[indexPath.row]
-        cell?.segmentSelection.isHidden = true
-        cell?.backgroundColor = UIColor().UIBlack()
-
-        if selectedTab == teacherArray[indexPath.row] {
-            cell?.backgroundColor = UIColor().UIGreen()
-        }
-        
-        return cell!
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        // Remove Bg from previous cell
-     
-        if selectedTab == teacherArray[indexPath.row] {
-            cell.backgroundColor = UIColor().UIGreen()
-        } else {
-            cell.backgroundColor = UIColor().UIBlack()
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if selectedTab == teacherArray[indexPath.row] {
-            cell.backgroundColor = UIColor().UIGreen()
-        } else {
-            cell.backgroundColor = UIColor().UIBlack()
-        }
-    }
-    
-    // Function to make border in selected item
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        // Remove Bg from previous cell
-        for item in customSegmentControl.indexPathsForVisibleItems {
-            let lastCell = collectionView.cellForItem(at: item)
-            lastCell?.backgroundColor = UIColor().UIBlack()
-        }
-
-        // Color selected cell
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = UIColor().UIGreen()
-        selectedTab = teacherArray[indexPath.row]
-
-//        listTableView.reloadData()
-        self.reloadViewData()
-    }
 }

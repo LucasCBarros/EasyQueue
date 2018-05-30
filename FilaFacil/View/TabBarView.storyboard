@@ -21,7 +21,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="YiC-gr-hBU" kind="relationship" relationship="viewControllers" id="dAB-Ko-1Ag"/>
-                        <segue destination="b3Z-vp-h6K" kind="relationship" relationship="viewControllers" id="vE5-Od-FJK"/>
                         <segue destination="CY3-7W-Bdt" kind="relationship" relationship="viewControllers" id="i5G-RV-Fhz"/>
                         <segue destination="g6i-mf-Pja" kind="relationship" relationship="viewControllers" id="09K-MO-4i8"/>
                     </connections>
@@ -29,16 +28,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1C-Jr-Z9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-689" y="-589"/>
-        </scene>
-        <!--QuestionStatusView-->
-        <scene sceneID="XSs-Z9-svb">
-            <objects>
-                <viewControllerPlaceholder storyboardName="QuestionStatusView" id="b3Z-vp-h6K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gS8-hT-RoK"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="duq-gZ-j4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-90" y="-649"/>
         </scene>
         <!--LineListView-->
         <scene sceneID="oUe-GH-8f1">
@@ -48,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxx-Ir-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="-785"/>
+            <point key="canvasLocation" x="-116" y="-693"/>
         </scene>
         <!--CreateNoteView-->
         <scene sceneID="Xsr-ue-Bvc">

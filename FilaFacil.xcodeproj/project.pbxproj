@@ -56,8 +56,11 @@
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
-		FA3DF91A20B85B7500D8DA5C /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DF91920B85B7500D8DA5C /* Extension String.swift */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
+		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
+		FA8148B920BF304700F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
+		FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
+		FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */; };
 		FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
@@ -184,8 +187,9 @@
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
-		FA3DF91920B85B7500D8DA5C /* Extension String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
@@ -328,7 +332,6 @@
 				DEDF0FCA20AE20470064A247 /* Assets.xcassets */,
 				DEDF0FCC20AE20470064A247 /* Info.plist */,
 				DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */,
-				FA3DF91920B85B7500D8DA5C /* Extension String.swift */,
 			);
 			path = FilaFacilTV;
 			sourceTree = "<group>";
@@ -359,9 +362,9 @@
 		E6022997203FA29E00336FC3 /* FilaFacil */ = {
 			isa = PBXGroup;
 			children = (
+				FA8148B720BF2F2600F2FADD /* Mechanism */,
 				E60367DA204DE65A0064A8EC /* FilaFacil.entitlements */,
 				E6022998203FA29E00336FC3 /* AppDelegate.swift */,
-				E60229E92040ACA100336FC3 /* Extensions.swift */,
 				E60229AA203FA4D200336FC3 /* Services */,
 				E60229AB203FA4DB00336FC3 /* Model */,
 				E60229AC203FA4F500336FC3 /* Persistence */,
@@ -444,6 +447,7 @@
 				E60229B5203FC94000336FC3 /* MainSegmentationCell.swift */,
 				E6FC384420B35DE300D88578 /* NoteCell.swift */,
 				E60229B7203FC98000336FC3 /* MainListCell.swift */,
+				FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -473,6 +477,15 @@
 				968F783760985A1FDB86908E /* Pods_FilaFacil.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA8148B720BF2F2600F2FADD /* Mechanism */ = {
+			isa = PBXGroup;
+			children = (
+				E60229E92040ACA100336FC3 /* Extensions.swift */,
+				FA8148B820BF304700F2FADD /* Formatter.swift */,
+			);
+			path = Mechanism;
 			sourceTree = "<group>";
 		};
 		FAB3363F20B3319B00D6B61F /* Fonts */ = {
@@ -840,13 +853,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDF0FC320AE20470064A247 /* ViewController.swift in Sources */,
+				FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */,
 				FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */,
 				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
 				FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */,
 				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
 				DEBC40C020B1E81100870D4C /* Question.swift in Sources */,
-				FA3DF91A20B85B7500D8DA5C /* Extension String.swift in Sources */,
 				DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */,
+				FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */,
 				FA834E0B20B5E953002F3E32 /* Note.swift in Sources */,
 				DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */,
 				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,
@@ -863,6 +877,7 @@
 				E60229E22040938300336FC3 /* UserProfileDAO.swift in Sources */,
 				E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
+				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
 				E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */,
@@ -872,6 +887,7 @@
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
+				FA8148B920BF304700F2FADD /* Formatter.swift in Sources */,
 				E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */,
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
 				E60229B6203FC94000336FC3 /* MainSegmentationCell.swift in Sources */,

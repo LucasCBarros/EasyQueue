@@ -38,29 +38,14 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         animateOut()
     }
     
-    var currentProfile: UserProfile {
-        get {
-            var profile = UserProfile(dictionary: [:])
-
-            if let tabbarcontroller = self.tabBarController,
-                let firstTabController = tabbarcontroller.viewControllers?.first,
-                let lineListController = firstTabController as? LineListViewController {
-                if let currentProfile = lineListController.currentProfile {
-                    profile = currentProfile
-                }
-            }
-            return profile
-        }
-        set(newValue) {
-            (self.tabBarController!.viewControllers![0] as? LineListViewController)?.currentProfile = newValue
-        }
-    }
+    var currentProfile: UserProfile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newNoteView.frame = self.noteTableView.frame
         self.hidenButton = self.navigationBar.rightBarButtonItems?.popLast()
         self.cancelButton = self.navigationBar.leftBarButtonItems?.popLast()
+        self.retrieveCurrentUserProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +54,15 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         // Update currentUser
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
+        }
+    }
+    
+    // Retrieve logged user
+    func retrieveCurrentUserProfile() {
+        userProfileManager.retrieveCurrentUserProfile { (userProfile) in
+            if let userProfile = userProfile {
+                self.currentProfile = userProfile
+            }
         }
     }
     
@@ -104,7 +98,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         }
 
         // Inserts question info in Firebase and updates users status
-        noteProfileManager.createNote(userID: currentProfile.userID, noteText: noteText)
+        noteProfileManager.createNote(userID: currentProfile!.userID, noteText: noteText)
         self.retrieveAllNotes()
     }
     
@@ -181,7 +175,7 @@ extension CreateNoteViewController {
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if self.allNoteProfiles?[indexPath.row].userID == currentProfile.userID || self.currentProfile.profileType == "Teacher" {
+        if self.allNoteProfiles?[indexPath.row].userID == currentProfile!.userID || self.currentProfile!.profileType == "Teacher" {
             return true
         } else {
             return false

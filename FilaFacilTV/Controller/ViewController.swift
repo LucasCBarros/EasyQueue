@@ -16,11 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var noQuestions: UILabel!
     @IBOutlet weak var noNotes: UILabel!
     var questionService = QuestionService()
-    var openedQuestions:[Question] = []
+    var openedQuestions: [Question] = []
     var noteService = NoteService()
-    var openedNotes:[Note] = []
+    var openedNotes: [Note] = []
     var topTimer: Timer!
-    var dateFormatter: DateFormatter!
     
     @IBOutlet weak var questionTableView: UITableView!
     
@@ -32,10 +31,6 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
         getAllQuestions()
         getAllNotes()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
@@ -119,7 +114,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionTableViewCell
         
-        if(self.openedQuestions.count > 0) {
+        if self.openedQuestions.count > 0 {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = self.openedQuestions[indexPath.row].questionTitle
             cell?.numberLabel.text = "\(indexPath.row+1)"
@@ -128,7 +123,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             //Tirar o timestamp e colocar a data e hora
             let timeInterval = Double.init(self.openedQuestions[indexPath.row].questionID)
             let date = Date(timeIntervalSince1970: timeInterval! / 1000)
-            let strDate = dateFormatter.string(from: date)
+            let strDate = Formatter.dateToString(date)
             cell?.timeInputQuestion.text = strDate
             
         }
