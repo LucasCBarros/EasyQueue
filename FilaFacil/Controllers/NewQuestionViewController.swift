@@ -22,7 +22,7 @@ class NewQuestionViewController: UIViewController {
     var allUserProfiles: [UserProfile]?
     var usersInLine: [UserProfile]?
     var selectedTeacher = "Developer"
-    var teacherArray = [("Developer", UIColor.developer()), ("Design", UIColor.design()), ("Business", UIColor.bussines())]
+    var teacherArray = [("Developer", UIColor.developer()), ("Design", UIColor.design()), ("Business", UIColor.business())]
     
     weak var delegate: NewQuestionTableViewDelegate?
     

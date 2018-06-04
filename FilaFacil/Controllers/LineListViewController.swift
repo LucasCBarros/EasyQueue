@@ -39,6 +39,21 @@ class LineListViewController: UIViewController {
     @IBAction func segmentationAction(_ sender: UISegmentedControl) {
         self.selectedTab = self.teacherArray[sender.selectedSegmentIndex]
         self.loadViewData()
+        
+        switch selectedTab {
+        case "Developer":
+            //questionTypeSegmentation.tintColor = UIColor.developer()
+            self.navigationController?.navigationBar.barTintColor = UIColor.developer()
+        case "Design":
+            //questionTypeSegmentation.tintColor = UIColor.design()
+            self.navigationController?.navigationBar.barTintColor = UIColor.design()
+        case "Business":
+            //questionTypeSegmentation.tintColor = UIColor.business()
+            self.navigationController?.navigationBar.barTintColor = UIColor.business()
+        default:
+            questionTypeSegmentation.tintColor = UIColor.white
+            
+        }
     }
     
     // MARK: - Life Cycle
@@ -69,9 +84,9 @@ class LineListViewController: UIViewController {
     // MARK: - Methods
     func refreshControlStart() {
         refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: "")
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
-        refreshControl.tintColor = UIColor().UIGreen()
+        refreshControl.tintColor = UIColor.white
         listTableView.addSubview(refreshControl)
     }
     
@@ -81,10 +96,6 @@ class LineListViewController: UIViewController {
                 view.delegate = self
             }
         }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     @objc func refreshTableView(refreshControl: UIRefreshControl) {

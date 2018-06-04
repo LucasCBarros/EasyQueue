@@ -40,7 +40,7 @@ extension UIColor {
         return color
     }
 
-    static func bussines() -> UIColor {
+    static func business() -> UIColor {
         let color = #colorLiteral(red: 0.3411764706, green: 0.6078431373, blue: 0.05098039216, alpha: 1)
         return color
     }
