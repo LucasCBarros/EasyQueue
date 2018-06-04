@@ -55,6 +55,8 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
         }
+        
+        self.noteTextField.becomeFirstResponder()
     }
     
     // Retrieve logged user

@@ -22,7 +22,8 @@ class NewQuestionViewController: UIViewController {
     var allUserProfiles: [UserProfile]?
     var usersInLine: [UserProfile]?
     var selectedTeacher = "Developer"
-    var teacherArray = ["Developer", "Design", "Business"]
+    var teacherArray = [("Developer", UIColor.developer()), ("Design", UIColor.design()), ("Business", UIColor.bussines())]
+    
     weak var delegate: NewQuestionTableViewDelegate?
     
     // MARK: - Actions
@@ -70,9 +71,9 @@ extension NewQuestionViewController: UITableViewDelegate {
                     cell.checkView.backgroundColor = UIColor.clear
                 }
             }
-            cell.checkView.backgroundColor = UIColor.blue
+            cell.checkView.backgroundColor = teacherArray[indexPath.row].1
         }
-        selectedTeacher = teacherArray[indexPath.row]
+        selectedTeacher = teacherArray[indexPath.row].0
     }
     
 }
@@ -87,9 +88,9 @@ extension NewQuestionViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newQuestionCell", for: indexPath)
         
         if let cell = cell as? NewQuestionTableViewCell {
-            cell.typeQuestionLabel.text = teacherArray[indexPath.row]
-            if teacherArray[indexPath.row] == selectedTeacher {
-                cell.checkView.backgroundColor = UIColor.blue
+            cell.typeQuestionLabel.text = teacherArray[indexPath.row].0
+            if teacherArray[indexPath.row].0 == selectedTeacher {
+                cell.checkView.backgroundColor = teacherArray[indexPath.row].1
             }
         }
         
