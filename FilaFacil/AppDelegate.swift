@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //Personlayze status bar
+        application.statusBarStyle = .lightContent
+        UIApplication.shared.isStatusBarHidden = false
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
         
