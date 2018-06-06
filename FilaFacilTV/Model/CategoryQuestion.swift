@@ -35,7 +35,7 @@ class CategoryQuestion {
             color = UIColor.design()
         case .business:
             title = "Business"
-            color = UIColor.bussines()
+            color = UIColor.business()
         case .other:
             title = "Other"
             color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
