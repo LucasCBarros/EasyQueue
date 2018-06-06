@@ -36,12 +36,12 @@ extension UIColor {
     }
     
     static func design() -> UIColor {
-        let color = #colorLiteral(red: 0.9390600324, green: 0.7066840529, blue: 0, alpha: 1)
+        let color = #colorLiteral(red: 0.9647058824, green: 0.4431372549, blue: 0.2392156863, alpha: 1)
         return color
     }
 
     static func business() -> UIColor {
-        let color = #colorLiteral(red: 0.3411764706, green: 0.6078431373, blue: 0.05098039216, alpha: 1)
+        let color = #colorLiteral(red: 0.9333333333, green: 0.7019607843, blue: 0.02745098039, alpha: 1)
         return color
     }
     

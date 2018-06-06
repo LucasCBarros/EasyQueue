@@ -57,6 +57,7 @@
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
+		FA740EAD20C7015D002DDFC5 /* OurSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA740EAC20C7015D002DDFC5 /* OurSegmentedControl.swift */; };
 		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		FA8148B920BF304700F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
@@ -188,6 +189,7 @@
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FA740EAC20C7015D002DDFC5 /* OurSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurSegmentedControl.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */,
 				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
 				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
+				FA740EAC20C7015D002DDFC5 /* OurSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
+				FA740EAD20C7015D002DDFC5 /* OurSegmentedControl.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
 				E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */,
 				E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */,

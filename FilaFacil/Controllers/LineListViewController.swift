@@ -16,7 +16,7 @@ class LineListViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var questionTypeSegmentation: UISegmentedControl!
+    @IBOutlet weak var questionTypeSegmentation: OurSegmentedControl!
     
     // MARK: - Properties
     // Array with all registered teachers
@@ -39,28 +39,19 @@ class LineListViewController: UIViewController {
     @IBAction func segmentationAction(_ sender: UISegmentedControl) {
         self.selectedTab = self.teacherArray[sender.selectedSegmentIndex]
         self.loadViewData()
-        
-        switch selectedTab {
-        case "Developer":
-            //questionTypeSegmentation.tintColor = UIColor.developer()
-            self.navigationController?.navigationBar.barTintColor = UIColor.developer()
-        case "Design":
-            //questionTypeSegmentation.tintColor = UIColor.design()
-            self.navigationController?.navigationBar.barTintColor = UIColor.design()
-        case "Business":
-            //questionTypeSegmentation.tintColor = UIColor.business()
-            self.navigationController?.navigationBar.barTintColor = UIColor.business()
-        default:
-            questionTypeSegmentation.tintColor = UIColor.white
-            
-        }
     }
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         loadViewData()
+        questionTypeSegmentation.layer.cornerRadius = 4.5
+        let font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        var titleTextAttributes: [AnyHashable: Any] = [:]
+        titleTextAttributes[NSAttributedStringKey.font] = font
+        titleTextAttributes[kCTForegroundColorAttributeName] = UIColor.white
+        questionTypeSegmentation.setTitleTextAttributes(titleTextAttributes, for: .normal)
     }
-    
+
     func loadViewData() {
         self.activityIndicator.startAnimating()
         
@@ -79,6 +70,7 @@ class LineListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControlStart()
+        questionTypeSegmentation.delegate = self
     }
     
     // MARK: - Methods
@@ -302,6 +294,30 @@ extension LineListViewController: NewQuestionTableViewDelegate {
                                               username: currentProfile!.username,
                                               requestedTeacher: selectedTeacher,
                                               positionInLine: (usersInLine?.count)!+1)
+    }
+    
+}
+
+extension LineListViewController: OurSegmentedControlDelegate {
+    
+    func tintColorFor(_ index: Int, isSelected: Bool) -> UIColor? {
+        if !isSelected {
+            return UIColor.white
+        }
+        switch index {
+        case 0:
+            return UIColor.developer()
+        case 1:
+            return UIColor.design()
+        case 2:
+            return UIColor.business()
+        default:
+            return nil
+        }
+    }
+    
+    func backgroundColorFor(_ index: Int, isSelected: Bool) -> UIColor? {
+        return UIColor.white
     }
     
 }
