@@ -16,11 +16,13 @@ class LineListViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var questionTypeSegmentation: OurSegmentedControl!
+    @IBOutlet weak var linesCollectionView: UICollectionView!
     
     // MARK: - Properties
     // Array with all registered teachers
     let teacherArray = ["Developer", "Design", "Business"]
+    var lineTotalWidth: CGFloat = 20
+    var totalLines: CGFloat = 1
     var selectedTab = "Developer"
     
     let storageRef = Storage.storage().reference()
@@ -35,21 +37,9 @@ class LineListViewController: UIViewController {
     var inLineQuestions: [QuestionProfile]?
     var refreshControl: UIRefreshControl!
     
-    // MARK: - Actions
-    @IBAction func segmentationAction(_ sender: UISegmentedControl) {
-        self.selectedTab = self.teacherArray[sender.selectedSegmentIndex]
-        self.loadViewData()
-    }
-    
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         loadViewData()
-        questionTypeSegmentation.layer.cornerRadius = 4.5
-        let font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        var titleTextAttributes: [AnyHashable: Any] = [:]
-        titleTextAttributes[NSAttributedStringKey.font] = font
-        titleTextAttributes[kCTForegroundColorAttributeName] = UIColor.white
-        questionTypeSegmentation.setTitleTextAttributes(titleTextAttributes, for: .normal)
     }
 
     func loadViewData() {
@@ -70,7 +60,7 @@ class LineListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControlStart()
-        questionTypeSegmentation.delegate = self
+        linesCollectionView.setNeedsLayout()
     }
     
     // MARK: - Methods
@@ -284,6 +274,10 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             return false
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
 
 extension LineListViewController: NewQuestionTableViewDelegate {
@@ -298,30 +292,59 @@ extension LineListViewController: NewQuestionTableViewDelegate {
     
 }
 
-extension LineListViewController: OurSegmentedControlDelegate {
+extension LineListViewController: UICollectionViewDataSource {
     
-    func tintColorFor(_ index: Int, isSelected: Bool) -> UIColor? {
-        if !isSelected {
-            return UIColor.white
-        }
-        switch index {
-        case 0:
-            return UIColor.developer()
-        case 1:
-            return UIColor.design()
-        case 2:
-            return UIColor.business()
-        default:
-            return nil
-        }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.lineTotalWidth = 0
+        self.totalLines = 0
+        return teacherArray.count
     }
     
-    func backgroundColorFor(_ index: Int, isSelected: Bool) -> UIColor? {
-        return UIColor.white
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lineCell", for: indexPath)
+        
+        if let lineCell = cell as? LineCell {
+            lineCell.title.text = teacherArray[indexPath.row]
+            if lineCell.title.text == selectedTab {
+                switch indexPath.row {
+                case 0:
+                    lineCell.colorfulBar.backgroundColor =  UIColor.developer()
+                case 1:
+                    lineCell.colorfulBar.backgroundColor = UIColor.design()
+                case 2:
+                    lineCell.colorfulBar.backgroundColor = UIColor.business()
+                default:
+                    lineCell.colorfulBar.backgroundColor = UIColor.white
+                }
+            } else {
+                lineCell.colorfulBar.backgroundColor = UIColor.clear
+            }
+        }
+        
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+}
+
+extension LineListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedTab = teacherArray[indexPath.row]
+        self.loadViewData()
+        self.linesCollectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let heitgh: CGFloat = 45.0
+        let size = CGSize(width: teacherArray[indexPath.row].width(withConstrainedHeight: heitgh, font: UIFont(name: "SFProText-Medium", size: 17)!) + 27, height: heitgh)
+        
+        self.lineTotalWidth += size.width
+        self.totalLines += 1
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return (collectionView.frame.width - self.lineTotalWidth) / (self.totalLines - 1)
     }
     
 }

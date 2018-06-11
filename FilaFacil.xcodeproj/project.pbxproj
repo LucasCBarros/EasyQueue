@@ -22,7 +22,6 @@
 		E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229A1203FA29E00336FC3 /* LaunchScreen.storyboard */; };
 		E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229B1203FC87F00336FC3 /* UserProfile.swift */; };
 		E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229B3203FC8B300336FC3 /* QuestionProfile.swift */; };
-		E60229B6203FC94000336FC3 /* MainSegmentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229B5203FC94000336FC3 /* MainSegmentationCell.swift */; };
 		E60229B8203FC98000336FC3 /* MainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229B7203FC98000336FC3 /* MainListCell.swift */; };
 		E60229BA203FCB6F00336FC3 /* TabBarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229B9203FCB6F00336FC3 /* TabBarView.storyboard */; };
 		E60229BC203FCC3E00336FC3 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229BB203FCC3E00336FC3 /* LoginView.storyboard */; };
@@ -57,7 +56,6 @@
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
-		FA740EAD20C7015D002DDFC5 /* OurSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA740EAC20C7015D002DDFC5 /* OurSegmentedControl.swift */; };
 		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		FA8148B920BF304700F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
@@ -118,6 +116,7 @@
 		FAB336AA20B331BB00D6B61F /* SF Pro Font License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3367520B331B900D6B61F /* SF Pro Font License.rtf */; };
 		FAB336AB20B331BB00D6B61F /* SF Compact Font License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3367620B331BA00D6B61F /* SF Compact Font License.rtf */; };
 		FAB336AF20B374A200D6B61F /* NoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB336AE20B374A200D6B61F /* NoteViewCell.swift */; };
+		FABAB6F720CAFBD800E46E3E /* LineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAB6F620CAFBD800E46E3E /* LineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,7 +150,6 @@
 		E60229A4203FA29E00336FC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60229B1203FC87F00336FC3 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E60229B3203FC8B300336FC3 /* QuestionProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfile.swift; sourceTree = "<group>"; };
-		E60229B5203FC94000336FC3 /* MainSegmentationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSegmentationCell.swift; sourceTree = "<group>"; };
 		E60229B7203FC98000336FC3 /* MainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCell.swift; sourceTree = "<group>"; };
 		E60229B9203FCB6F00336FC3 /* TabBarView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarView.storyboard; sourceTree = "<group>"; };
 		E60229BB203FCC3E00336FC3 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
-		FA740EAC20C7015D002DDFC5 /* OurSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurSegmentedControl.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
@@ -248,6 +245,7 @@
 		FAB3367520B331B900D6B61F /* SF Pro Font License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "SF Pro Font License.rtf"; sourceTree = "<group>"; };
 		FAB3367620B331BA00D6B61F /* SF Compact Font License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "SF Compact Font License.rtf"; sourceTree = "<group>"; };
 		FAB336AE20B374A200D6B61F /* NoteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewCell.swift; sourceTree = "<group>"; };
+		FABAB6F620CAFBD800E46E3E /* LineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,7 +437,6 @@
 				E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */,
 				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
 				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
-				FA740EAC20C7015D002DDFC5 /* OurSegmentedControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,10 +444,10 @@
 		E60229AF203FA56900336FC3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E60229B5203FC94000336FC3 /* MainSegmentationCell.swift */,
 				E6FC384420B35DE300D88578 /* NoteCell.swift */,
 				E60229B7203FC98000336FC3 /* MainListCell.swift */,
 				FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */,
+				FABAB6F620CAFBD800E46E3E /* LineCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -882,7 +879,6 @@
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
-				FA740EAD20C7015D002DDFC5 /* OurSegmentedControl.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
 				E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */,
 				E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */,
@@ -894,7 +890,6 @@
 				FA8148B920BF304700F2FADD /* Formatter.swift in Sources */,
 				E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */,
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
-				E60229B6203FC94000336FC3 /* MainSegmentationCell.swift in Sources */,
 				E60229DE20408F0D00336FC3 /* DAO.swift in Sources */,
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
@@ -903,6 +898,7 @@
 				E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */,
 				E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */,
 				E60229DC203FD5AB00336FC3 /* AuthService.swift in Sources */,
+				FABAB6F720CAFBD800E46E3E /* LineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
