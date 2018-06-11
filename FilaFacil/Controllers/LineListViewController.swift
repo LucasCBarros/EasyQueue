@@ -61,6 +61,7 @@ class LineListViewController: UIViewController {
         super.viewDidLoad()
         refreshControlStart()
         linesCollectionView.setNeedsLayout()
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     // MARK: - Methods
@@ -268,7 +269,10 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if self.inLineQuestions?[indexPath.row].userID == currentProfile!.userID || currentProfile?.profileType == "Teacher" {
+        if self.inLineQuestions?[indexPath.row].userID == currentProfile!.userID {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+            return true
+        } else if currentProfile?.profileType == "Teacher" {
             return true
         } else {
             return false
@@ -288,6 +292,7 @@ extension LineListViewController: NewQuestionTableViewDelegate {
                                               username: currentProfile!.username,
                                               requestedTeacher: selectedTeacher,
                                               positionInLine: (usersInLine?.count)!+1)
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
 }

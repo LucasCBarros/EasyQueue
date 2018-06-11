@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fqf-cL-ySA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fqf-cL-ySA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-notes" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-lA-Nae">
-                                <rect key="frame" x="-0.5" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="554"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-ih-1qy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -84,11 +84,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="67Z-lA-Nae" secondAttribute="bottom" id="2Ti-ha-f7g"/>
+                            <constraint firstItem="xk3-2Y-ek9" firstAttribute="leading" secondItem="67Z-lA-Nae" secondAttribute="leading" id="Dpq-cl-HmG"/>
+                            <constraint firstItem="67Z-lA-Nae" firstAttribute="bottom" secondItem="xk3-2Y-ek9" secondAttribute="bottom" id="LxR-SR-0oq"/>
                             <constraint firstItem="OOi-ih-1qy" firstAttribute="leading" secondItem="xk3-2Y-ek9" secondAttribute="leading" id="Qy0-2t-dNf"/>
-                            <constraint firstItem="67Z-lA-Nae" firstAttribute="top" secondItem="fi8-H8-o9u" secondAttribute="top" id="epY-xK-yiq"/>
+                            <constraint firstItem="xk3-2Y-ek9" firstAttribute="top" secondItem="67Z-lA-Nae" secondAttribute="top" id="Vdc-EI-wfC"/>
                             <constraint firstAttribute="bottom" secondItem="OOi-ih-1qy" secondAttribute="bottom" id="fhm-HU-3CB"/>
-                            <constraint firstItem="67Z-lA-Nae" firstAttribute="leading" secondItem="fi8-H8-o9u" secondAttribute="leading" id="hU2-hM-Enw"/>
                             <constraint firstItem="OOi-ih-1qy" firstAttribute="top" secondItem="fi8-H8-o9u" secondAttribute="top" id="kk3-0F-0gP"/>
                             <constraint firstItem="xk3-2Y-ek9" firstAttribute="trailing" secondItem="67Z-lA-Nae" secondAttribute="trailing" id="ljv-aj-aXb"/>
                             <constraint firstItem="95E-Ig-233" firstAttribute="centerX" secondItem="xk3-2Y-ek9" secondAttribute="centerX" id="rh0-PP-EZP"/>
@@ -151,11 +151,19 @@
             </objects>
             <point key="canvasLocation" x="1175.2" y="-45.42728635682159"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Recados-->
         <scene sceneID="xez-E3-ORg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fqf-cL-ySA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="icons8-communicate-30" systemItem="bookmarks" id="E5n-Go-jKR"/>
+                    <tabBarItem key="tabBarItem" title="Recados" image="recado_unselect" springLoaded="YES" id="E5n-Go-jKR">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="recado_select"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="F7h-Ul-BS9">
@@ -178,6 +186,7 @@
     </scenes>
     <resources>
         <image name="background-notes" width="375" height="667"/>
-        <image name="icons8-communicate-30" width="30" height="30"/>
+        <image name="recado_select" width="33" height="33"/>
+        <image name="recado_unselect" width="33" height="33"/>
     </resources>
 </document>
