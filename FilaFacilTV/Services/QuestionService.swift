@@ -8,7 +8,7 @@
 
 import Foundation
 
-class QuestionService{
+class QuestionService {
     
     func getAllQuestions(completion: @escaping (_ questions: [Question], _ error: Error?) -> Void) {
         let URL: String = "https://filafacildev.firebaseio.com/Questions.json"
