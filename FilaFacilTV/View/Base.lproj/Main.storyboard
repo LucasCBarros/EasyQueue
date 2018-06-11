@@ -89,7 +89,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-vB-1qY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_filled" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-vB-1qY">
                                                     <rect key="frame" x="95" y="9" width="72" height="72"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="u5o-vB-1qY" secondAttribute="height" multiplier="1:1" id="qML-SD-no9"/>
@@ -404,5 +404,6 @@
     </scenes>
     <resources>
         <image name="background" width="1920" height="1079"/>
+        <image name="icons8-user_filled" width="60" height="60"/>
     </resources>
 </document>

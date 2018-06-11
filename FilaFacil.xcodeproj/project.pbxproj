@@ -296,6 +296,7 @@
 		DEBC40BE20B1E7F100870D4C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */,
 				DEDF0FC720AE20470064A247 /* Main.storyboard */,
 				FAB336AE20B374A200D6B61F /* NoteViewCell.swift */,
 				FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */,
@@ -315,7 +316,6 @@
 		DEBC40C220B1E87A00870D4C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */,
 				DEDF0FC220AE20470064A247 /* ViewController.swift */,
 			);
 			path = Controller;

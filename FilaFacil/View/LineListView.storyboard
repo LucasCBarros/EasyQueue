@@ -137,7 +137,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="profile_3" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-eg-e60">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="icons8-user_filled" translatesAutoresizingMaskIntoConstraints="NO" id="c4q-eg-e60">
                                                     <rect key="frame" x="10" y="20" width="60" height="59"/>
                                                     <color key="backgroundColor" red="0.38138809839999999" green="0.41090129339999998" blue="0.51302744290000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -251,6 +251,6 @@
         <image name="background-notes" width="375" height="667"/>
         <image name="fila_select" width="36" height="27"/>
         <image name="fila_unselect" width="36" height="27"/>
-        <image name="profile_3" width="733" height="593"/>
+        <image name="icons8-user_filled" width="60" height="60"/>
     </resources>
 </document>
