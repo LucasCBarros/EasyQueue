@@ -31,7 +31,7 @@ extension UIColor {
     }
     
     static func developer() -> UIColor {
-        let color = #colorLiteral(red: 0.03921568627, green: 0.4549019608, blue: 0.7921568627, alpha: 1)
+        let color = #colorLiteral(red: 0.2, green: 0.6431372549, blue: 1, alpha: 1)
         return color
     }
     
