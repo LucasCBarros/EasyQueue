@@ -268,7 +268,7 @@
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="749" text="Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb7-3H-xcW">
-                                                            <rect key="frame" x="10" y="20" width="150" height="78"/>
+                                                            <rect key="frame" x="20" y="20" width="140" height="78"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="27"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -287,7 +287,7 @@
                                                         <constraint firstItem="Wb7-3H-xcW" firstAttribute="top" secondItem="nEy-hH-Pkb" secondAttribute="top" constant="20" id="Hxo-4m-pdL"/>
                                                         <constraint firstItem="Wb7-3H-xcW" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Z2s-WR-0fm" secondAttribute="top" constant="-45" id="JyA-Ue-CZx"/>
                                                         <constraint firstItem="KRc-9h-p3p" firstAttribute="height" secondItem="nEy-hH-Pkb" secondAttribute="height" id="Qzc-Lj-QWp"/>
-                                                        <constraint firstItem="Wb7-3H-xcW" firstAttribute="leading" secondItem="nEy-hH-Pkb" secondAttribute="leading" constant="10" id="Sj4-9i-5Il"/>
+                                                        <constraint firstItem="Wb7-3H-xcW" firstAttribute="leading" secondItem="nEy-hH-Pkb" secondAttribute="leading" constant="20" id="Sj4-9i-5Il"/>
                                                         <constraint firstAttribute="trailing" secondItem="Wb7-3H-xcW" secondAttribute="trailing" constant="20" id="ThR-ia-0IX"/>
                                                         <constraint firstAttribute="trailing" secondItem="Z2s-WR-0fm" secondAttribute="trailing" constant="10" id="hNW-uc-tPv"/>
                                                         <constraint firstItem="Z2s-WR-0fm" firstAttribute="leading" secondItem="nEy-hH-Pkb" secondAttribute="leading" constant="10" id="iiq-QQ-7JL"/>
