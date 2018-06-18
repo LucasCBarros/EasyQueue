@@ -14,9 +14,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: - Outlets
     @IBOutlet weak var editPhotoBtn: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var profileTypeLabel: UILabel!
+
     @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: - Properties
@@ -90,9 +89,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func loadUserProfileInfo() {
         if currentProfile != nil {
-            usernameLabel.text = currentProfile.username
             emailLabel.text = currentProfile.email
-            profileTypeLabel.text = currentProfile.profileType
         }
     }
     
@@ -162,7 +159,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         if isPhotoEdited {
             databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dict = snapshot.value as? [String: AnyObject] {
-                    self.usernameLabel.text = dict["username"] as? String
                     if let profileImageURL = dict["photo"] as? String {
                         let url = URL(string: profileImageURL)
                         URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
