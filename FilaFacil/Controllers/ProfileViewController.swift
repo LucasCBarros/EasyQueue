@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
 
+    @IBOutlet weak var tableViewCellEmail: UITableViewCell!
     @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: - Properties
