@@ -25,6 +25,9 @@ class QuestionProfile: NSObject, PersistenceObject {
     // Empty or one of the existing
     var requestedTeacher: String = ""
     
+    // Empty or one of the existing
+    var userPhoto: String = ""
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
@@ -45,21 +48,26 @@ class QuestionProfile: NSObject, PersistenceObject {
         if let requestedTeacher = dictionary["requestedTeacher"] as? String {
             self.requestedTeacher = requestedTeacher
         }
+        if let userPhoto = dictionary["userPhoto"] as? String {
+            self.userPhoto = userPhoto
+        }
         self.dictInfo = dictionary
     }
     
-    init(questionTitle: String, questionID: String, userID: String, username: String, requestedTeacher: String) {
+    init(questionTitle: String, questionID: String, userID: String, username: String, requestedTeacher: String, userPhoto: String) {
         self.questionTitle = questionTitle
         self.questionID = questionID
         self.userID = userID
         self.username = username
         self.requestedTeacher = requestedTeacher
+        self.userPhoto = userPhoto
         self.dictInfo = [
             "questionTitle": questionTitle,
             "questionID": questionID,
             "userID": userID,
             "username": username,
-            "requestedTeacher": requestedTeacher
+            "requestedTeacher": requestedTeacher,
+            "userPhoto": userPhoto
         ]
     }
     

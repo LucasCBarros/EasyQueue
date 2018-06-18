@@ -27,7 +27,8 @@ class UserProfileDAO: DAO {
             "questionID": "",
             "userInLine": false,
             "userLinePosition": 0,
-            "deviceID": userDeviceID
+            "deviceID": userDeviceID,
+            "userPhoto": ""
             ])
         
         let path = "Users"

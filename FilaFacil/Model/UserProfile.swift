@@ -37,6 +37,9 @@ class UserProfile: NSObject, PersistenceObject {
     // Users Position in the Line
     var deviceID: String = ""
     
+    // Users photo if it has
+    var userPhoto: String = ""
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
@@ -66,11 +69,14 @@ class UserProfile: NSObject, PersistenceObject {
         if let deviceID = dictionary["deviceID"] as? String {
             self.deviceID = deviceID
         }
+        if let userPhoto = dictionary["userPhoto"] as? String {
+            self.userPhoto = userPhoto
+        }
         self.dictInfo = dictionary
     }
     
     init(userID: String, username: String, profileType: String, email: String,
-         lineNumber: Int, questionID: String, userInLine: Bool, userLinePosition: Int, deviceID: String) {
+         lineNumber: Int, questionID: String, userInLine: Bool, userLinePosition: Int, deviceID: String, userPhoto: String) {
         self.userID = userID
         self.username = username
         self.profileType = profileType
@@ -79,6 +85,7 @@ class UserProfile: NSObject, PersistenceObject {
         self.userInLine = userInLine
         self.userLinePosition = userLinePosition
         self.deviceID = deviceID
+        self.userPhoto = userPhoto
         self.dictInfo = [
             "userID": userID,
             "username": username,
@@ -87,7 +94,8 @@ class UserProfile: NSObject, PersistenceObject {
             "questionID": questionID,
             "userInLine": userInLine,
             "userLinePosition": userLinePosition,
-            "deviceID": deviceID
+            "deviceID": deviceID,
+            "userPhoto": userPhoto
         ]
     }
     

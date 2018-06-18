@@ -56,19 +56,21 @@ class QuestionProfileDAO: DAO {
     }
     
     // Create a question
-    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, positionInLine: Int) {
+    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
         
         let path = "Questions/"
         
         let newQuestionData = [userID,
                                questionTxt,
                                username,
-                               requestedTeacher]
+                               requestedTeacher,
+                               userPhoto]
         
         let questionFields = ["userID",
                             "questionTitle",
                             "username",
-                            "requestedTeacher"]
+                            "requestedTeacher",
+                            "userPhoto"]
         
         let timeStampID = "\(Date().millisecondsSince1970)"
         let pathWithID = path + timeStampID
@@ -80,7 +82,6 @@ class QuestionProfileDAO: DAO {
         ref?.child(pathWithID).child("questionID").setValue(timeStampID)
         
         ref?.child("Users").child(userID).child("questionID").setValue(timeStampID)
-        ref?.child("Users").child(userID).child("userLinePosition").setValue(positionInLine)
         ref?.child("Users").child(userID).child("userInLine").setValue(true)
     }
 }

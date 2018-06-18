@@ -28,12 +28,12 @@ class QuestionProfileService: NSObject {
     }
     
     // Create a question
-    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, positionInLine: Int) {
+    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
         questionProfileManager.createQuestion(userID: userID,
                                               questionTxt: questionTxt,
                                               username: username,
                                               requestedTeacher: requestedTeacher,
-                                              positionInLine: positionInLine)
+                                              userPhoto: userPhoto)
     }
     
     func filterQuestionsInLine(allUsers: [UserProfile], allQuestions: [QuestionProfile]) -> [QuestionProfile] {
