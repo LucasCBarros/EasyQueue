@@ -16,6 +16,7 @@ struct Question: Equatable {
     let requestedTeacher: String
     let userID: String
     let username: String
+    var userPhoto: String
     
     static func ==(lhs: Question, rhs: Question) -> Bool {
         return lhs.questionID == rhs.questionID
@@ -44,5 +45,7 @@ struct Question: Equatable {
         
         userID = json["userID"] as? String ?? "????"
         username = json["username"] as? String ?? "?????"
+        userPhoto = json["userPhoto"] as? String ?? "?????"
+        
     }
 }
