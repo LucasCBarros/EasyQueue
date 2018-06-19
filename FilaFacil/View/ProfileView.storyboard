@@ -336,7 +336,7 @@
         <!--Editar Senha-->
         <scene sceneID="wXZ-zh-1po">
             <objects>
-                <viewController id="Dlq-cZ-YB7" sceneMemberID="viewController">
+                <viewController id="Dlq-cZ-YB7" customClass="EditPasswordViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uhY-7j-cWQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -433,8 +433,16 @@
                         <viewLayoutGuide key="safeArea" id="ouJ-Lg-2v6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Editar Senha" id="WH5-ka-RTK">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="shV-LD-DiB"/>
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="shV-LD-DiB">
+                            <connections>
+                                <action selector="okButton:" destination="Dlq-cZ-YB7" id="P7T-Ds-q92"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="AZu-Aw-TEw" id="CfX-7p-owZ"/>
+                        <outlet property="passwordTextField" destination="Zqk-IC-4hf" id="HNV-rr-912"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFW-8G-k4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

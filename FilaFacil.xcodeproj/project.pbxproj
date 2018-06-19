@@ -63,6 +63,7 @@
 		FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
+		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -193,6 +194,7 @@
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
+		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				E60229D9203FD20200336FC3 /* LineStatusViewController.swift */,
 				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
 				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
+				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */,
 				E60229E82040A03C00336FC3 /* QuestionProfileService.swift in Sources */,
 				E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */,
+				FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,

@@ -9,9 +9,7 @@
 import UIKit
 
 protocol EditEmailViewControllerDelegate: NSObjectProtocol {
-    
     func newEmail(_ email: String)
-    
 }
 
 class EditEmailViewController: UIViewController {
