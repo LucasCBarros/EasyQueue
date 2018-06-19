@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "FIRDatabaseSwiftNameSupport.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * Note that changes made to a child FIRMutableData instance will be visible to the parent.
  */
-NS_SWIFT_NAME(MutableData)
+FIR_SWIFT_NAME(MutableData)
 @interface FIRMutableData : NSObject
 
 
@@ -115,7 +116,7 @@ NS_SWIFT_NAME(MutableData)
  * Note that this enumerator operates on an immutable copy of the child list. So, you can modify the instance
  * during iteration, but the new additions will not be visible until you get a new enumerator.
  */
-@property (readonly, nonatomic, strong) NSEnumerator<FIRMutableData *>* children;
+@property (readonly, nonatomic, strong) NSEnumerator* children;
 
 
 /**

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -128,9 +129,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let strDate = Formatter.dateToString(date)
             cell?.timeInputQuestion.text = strDate
             
+            if(openedQuestions[indexPath.row].userPhoto != "") {
+                let photoUrl = URL(string: openedQuestions[indexPath.row].userPhoto)!
+                cell?.profileImage.kf.setImage(with: photoUrl)
+            } else {
+                cell?.profileImage.image = #imageLiteral(resourceName: "icons8-user_filled")
+            }
             
-//            let url = URL(string: "https://example.com/image.jpg")!
-//            imageView.kf.setImage(with: url)
             
         }
         

@@ -20,6 +20,7 @@
 #import "FIRStorageConstants.h"
 #import "FIRStorageDownloadTask.h"
 #import "FIRStorageMetadata.h"
+#import "FIRStorageSwiftNameSupport.h"
 #import "FIRStorageTask.h"
 #import "FIRStorageUploadTask.h"
 
@@ -31,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  * path.
  * @see https://cloud.google.com/storage/
  */
-NS_SWIFT_NAME(StorageReference)
+FIR_SWIFT_NAME(StorageReference)
 @interface FIRStorageReference : NSObject
 
 /**
@@ -99,7 +100,7 @@ NS_SWIFT_NAME(StorageReference)
  * @param uploadData The NSData to upload.
  * @return An instance of FIRStorageUploadTask, which can be used to monitor or manage the upload.
  */
-- (FIRStorageUploadTask *)putData:(NSData *)uploadData NS_SWIFT_NAME(putData(_:));
+- (FIRStorageUploadTask *)putData:(NSData *)uploadData FIR_SWIFT_NAME(putData(_:));
 
 /**
  * Asynchronously uploads data to the currently specified FIRStorageReference.
@@ -109,11 +110,9 @@ NS_SWIFT_NAME(StorageReference)
  * about the object being uploaded.
  * @return An instance of FIRStorageUploadTask, which can be used to monitor or manage the upload.
  */
-// clang-format off
 - (FIRStorageUploadTask *)putData:(NSData *)uploadData
                          metadata:(nullable FIRStorageMetadata *)metadata
-NS_SWIFT_NAME(putData(_:metadata:));
-// clang-format on
+    FIR_SWIFT_NAME(putData(_:metadata:));
 
 /**
  * Asynchronously uploads data to the currently specified FIRStorageReference.
@@ -125,13 +124,11 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * or an error on failure.
  * @return An instance of FIRStorageUploadTask, which can be used to monitor or manage the upload.
  */
-// clang-format off
 - (FIRStorageUploadTask *)putData:(NSData *)uploadData
                          metadata:(nullable FIRStorageMetadata *)metadata
                        completion:(nullable void (^)(FIRStorageMetadata *_Nullable metadata,
                                                      NSError *_Nullable error))completion
-            NS_SWIFT_NAME(putData(_:metadata:completion:));
-// clang-format on
+    FIR_SWIFT_NAME(putData(_:metadata:completion:));
 
 /**
  * Asynchronously uploads a file to the currently specified FIRStorageReference,
@@ -139,7 +136,7 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * @param fileURL A URL representing the system file path of the object to be uploaded.
  * @return An instance of FIRStorageUploadTask, which can be used to monitor or manage the upload.
  */
-- (FIRStorageUploadTask *)putFile:(NSURL *)fileURL NS_SWIFT_NAME(putFile(from:));
+- (FIRStorageUploadTask *)putFile:(NSURL *)fileURL FIR_SWIFT_NAME(putFile(from:));
 
 /**
  * Asynchronously uploads a file to the currently specified FIRStorageReference.
@@ -148,11 +145,8 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * about the object being uploaded.
  * @return An instance of FIRStorageUploadTask, which can be used to monitor or manage the upload.
  */
-// clang-format off
-- (FIRStorageUploadTask *)putFile:(NSURL *)fileURL
-                         metadata:(nullable FIRStorageMetadata *)metadata
-           NS_SWIFT_NAME(putFile(from:metadata:));
-// clang-format on
+- (FIRStorageUploadTask *)putFile:(NSURL *)fileURL metadata:(nullable FIRStorageMetadata *)metadata
+    FIR_SWIFT_NAME(putFile(from:metadata:));
 
 /**
  * Asynchronously uploads a file to the currently specified FIRStorageReference.
@@ -163,13 +157,11 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * or an error on failure.
  * @return An instance of FIRStorageUploadTask, which can be used to monitor or manage the upload.
  */
-// clang-format off
 - (FIRStorageUploadTask *)putFile:(NSURL *)fileURL
                          metadata:(nullable FIRStorageMetadata *)metadata
                        completion:(nullable void (^)(FIRStorageMetadata *_Nullable metadata,
                                                      NSError *_Nullable error))completion
-           NS_SWIFT_NAME(putFile(from:metadata:completion:));
-// clang-format on
+    FIR_SWIFT_NAME(putFile(from:metadata:completion:));
 
 #pragma mark - Downloads
 
@@ -183,12 +175,10 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * or an error on failure.
  * @return An FIRStorageDownloadTask that can be used to monitor or manage the download.
  */
-// clang-format off
 - (FIRStorageDownloadTask *)dataWithMaxSize:(int64_t)size
                                  completion:(void (^)(NSData *_Nullable data,
                                                       NSError *_Nullable error))completion
-                     NS_SWIFT_NAME(getData(maxSize:completion:));
-// clang-format on
+    FIR_SWIFT_NAME(getData(maxSize:completion:));
 
 /**
  * Asynchronously retrieves a long lived download URL with a revokable token.
@@ -226,9 +216,9 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * @param completion A completion block which returns the object metadata on success,
  * or an error on failure.
  */
-- (void)metadataWithCompletion:
-    (void (^)(FIRStorageMetadata *_Nullable metadata, NSError *_Nullable error))completion
-    NS_SWIFT_NAME(getMetadata(completion:));
+- (void)metadataWithCompletion:(void (^)(FIRStorageMetadata *_Nullable metadata,
+                                         NSError *_Nullable error))completion
+    FIR_SWIFT_NAME(getMetadata(completion:));
 
 /**
  * Updates the metadata associated with an object at the current path.
@@ -236,12 +226,10 @@ NS_SWIFT_NAME(putData(_:metadata:));
  * @param completion A completion block which returns the FIRStorageMetadata on success,
  * or an error on failure.
  */
-// clang-format off
 - (void)updateMetadata:(FIRStorageMetadata *)metadata
             completion:(nullable void (^)(FIRStorageMetadata *_Nullable metadata,
                                           NSError *_Nullable error))completion
-NS_SWIFT_NAME(updateMetadata(_:completion:));
-// clang-format on
+    FIR_SWIFT_NAME(updateMetadata(_:completion:));
 
 #pragma mark - Delete
 

@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "FIRDatabaseSwiftNameSupport.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  * They can't be modified and will never change. To modify data at a location,
  * use a FIRDatabaseReference (e.g. with setValue:).
  */
-NS_SWIFT_NAME(DataSnapshot)
+FIR_SWIFT_NAME(DataSnapshot)
 @interface FIRDataSnapshot : NSObject
 
 
@@ -37,7 +38,7 @@ NS_SWIFT_NAME(DataSnapshot)
 
 /**
  * Gets a FIRDataSnapshot for the location at the specified relative path.
- * The relative path can either be a simple child key (e.g. 'fred')
+ * The relative path can either be a simple child key (e.g. 'fred') 
  * or a deeper slash-separated path (e.g. 'fred/name/first'). If the child
  * location has no data, an empty FIRDataSnapshot is returned.
  *
@@ -58,7 +59,7 @@ NS_SWIFT_NAME(DataSnapshot)
 
 /**
  * Return YES if the DataSnapshot has any children.
- *
+ * 
  * @return YES if this snapshot has any children, else NO.
  */
 - (BOOL) hasChildren;
@@ -77,7 +78,7 @@ NS_SWIFT_NAME(DataSnapshot)
 /**
  * Returns the raw value at this location, coupled with any metadata, such as priority.
  *
- * Priorities, where they exist, are accessible under the ".priority" key in instances of NSDictionary.
+ * Priorities, where they exist, are accessible under the ".priority" key in instances of NSDictionary. 
  * For leaf locations with priorities, the value will be under the ".value" key.
  */
 - (id __nullable) valueInExportFormat;
@@ -133,7 +134,7 @@ NS_SWIFT_NAME(DataSnapshot)
  *
  * @return An NSEnumerator of the children.
  */
-@property (strong, readonly, nonatomic) NSEnumerator<FIRDataSnapshot *>* children;
+@property (strong, readonly, nonatomic) NSEnumerator* children;
 
 /**
  * The priority of the data in this FIRDataSnapshot.

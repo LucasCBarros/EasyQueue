@@ -8,8 +8,8 @@ target 'FilaFacil' do
   # Pods for FilaFacil
 
   pod 'Firebase/Core', '4.0.1'
-  pod 'Firebase/Messaging', '2.0.0'
-  pod 'Firebase/InstanceID', '2.0.0'
+  pod 'Firebase/Messaging'
+  #pod 'Firebase/InstanceID', '2.0.0'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
@@ -17,4 +17,11 @@ target 'FilaFacil' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftLint'
 
+end
+
+target 'FilaFacilTV' do
+    use_frameworks!
+    
+    platform :tvos, '9.0'
+    pod 'Kingfisher', '~> 4.0'
 end
