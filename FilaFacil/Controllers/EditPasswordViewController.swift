@@ -9,13 +9,14 @@
 import UIKit
 
 protocol EditPasswordViewControllerDelegate: NSObjectProtocol {
-    func newPassword(_ password: String)
+    func change(password: String, to newPassword: String)
 }
 
 class EditPasswordViewController: UIViewController {
     
     open weak var delegate: EditPasswordViewControllerDelegate?
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     let alert = UIAlertController(title: "Senha inválida", message: "Senha deve ter no mínimo 6 caracteres e ser igual a confirmação.", preferredStyle: UIAlertControllerStyle.alert)
     
@@ -25,8 +26,8 @@ class EditPasswordViewController: UIViewController {
     }
     
     @IBAction func okButton(_ sender: UIBarButtonItem) {
-        if let password = passwordTextField.text, password == confirmPasswordTextField.text && password.count > 5 {
-            self.delegate?.newPassword(password)
+        if let newPassword = newPasswordTextField.text, let password = passwordTextField.text, newPassword == confirmPasswordTextField.text && password.count > 5 {
+            self.delegate?.change(password: password, to: newPassword)
             
             self.navigationController?.popViewController(animated: true)
         } else {

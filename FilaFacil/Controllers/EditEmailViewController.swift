@@ -9,12 +9,13 @@
 import UIKit
 
 protocol EditEmailViewControllerDelegate: NSObjectProtocol {
-    func newEmail(_ email: String)
+    func change(email: String, _ password: String)
 }
 
 class EditEmailViewController: UIViewController {
     
     open weak var delegate: EditEmailViewControllerDelegate?
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     let alert = UIAlertController(title: "Email inválido", message: nil, preferredStyle: UIAlertControllerStyle.alert)
     
@@ -24,8 +25,8 @@ class EditEmailViewController: UIViewController {
     }
     
     @IBAction func okButton(_ sender: UIBarButtonItem) {
-        if let email = emailTextField.text, email.count > 5 {
-            self.delegate?.newEmail(email)
+        if let email = emailTextField.text, let password = passwordTextField.text, email.count > 5 {
+            self.delegate?.change(email: email, password)
             self.navigationController?.popViewController(animated: true)
         } else {
             self.present(alert, animated: true, completion: nil)

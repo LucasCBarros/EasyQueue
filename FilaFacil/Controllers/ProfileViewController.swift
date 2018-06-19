@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
 
-    @IBOutlet weak var tableViewCellEmail: UITableViewCell!
     @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: - Properties
@@ -77,6 +76,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: - Methods
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let emailVC = segue.destination as? EditEmailViewController {
+            emailVC.delegate = self
+        } else if let passwordVC = segue.destination as? EditPasswordViewController {
+            passwordVC.delegate = self
+        }
     }
     
     func retrieveCurrentUserProfile() {
@@ -140,7 +147,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                 print(error!)
                                 return
                             }
-                        })                    }
+                        })
+                    }
                 })
             })
         }
@@ -185,5 +193,44 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
         let appDelegate = UIApplication.shared.delegate as? AppDelegate!
         appDelegate?.window?.rootViewController = viewController
+    }
+}
+
+extension ProfileViewController: EditEmailViewControllerDelegate {
+    func change(email: String, _ password: String) {
+        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
+            if user != nil {
+                self.databaseRef.child("Users").child(self.currentProfile.userID).updateChildValues(["email": email], withCompletionBlock: {(error, _) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    } else {
+                        Auth.auth().currentUser?.updateEmail(to: email, completion: {[weak self](error) in
+                            if error == nil {
+                                DispatchQueue.main.async {
+                                    self?.emailLabel.text = email
+                                }
+                            } else {
+                                print(error!)
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+}
+
+extension ProfileViewController: EditPasswordViewControllerDelegate {
+    func change(password: String, to newPassword: String) {
+        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
+            if user != nil {
+                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: {error in
+                    if error != nil {
+                        print(error!)
+                    }
+                })
+            }
+        })
     }
 }
