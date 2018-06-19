@@ -260,7 +260,7 @@
         <!--Editar Email-->
         <scene sceneID="8vo-C3-VG7">
             <objects>
-                <viewController id="q87-RL-paB" sceneMemberID="viewController">
+                <viewController id="q87-RL-paB" customClass="EditEmailViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z45-qX-1RM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,7 +287,7 @@
                                         <rect key="frame" x="20" y="57" width="350" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="wA8-sZ-7at"/>
+                                            <constraint firstAttribute="height" constant="0.5" id="wA8-sZ-7at"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -320,8 +320,14 @@
                     <navigationItem key="navigationItem" title="Editar Email" id="1Yl-lu-4zq">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="5FG-lf-iLY">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="okButton:" destination="q87-RL-paB" id="SDL-eO-Ub0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="aMq-iw-8FP" id="VrD-ea-4nH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hh-gu-Jiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,13 +348,13 @@
                                 <rect key="frame" x="0.0" y="2" width="375" height="58"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1Q-oe-bbq">
-                                        <rect key="frame" x="29" y="19" width="53" height="21"/>
+                                        <rect key="frame" x="29" y="19.5" width="52.5" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zqk-IC-4hf">
-                                        <rect key="frame" x="106" y="19" width="240" height="21"/>
+                                        <rect key="frame" x="105.5" y="19" width="240.5" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
@@ -357,7 +363,7 @@
                                         <rect key="frame" x="20" y="57" width="350" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="CZe-OL-hz8"/>
+                                            <constraint firstAttribute="height" constant="0.5" id="CZe-OL-hz8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -378,13 +384,13 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="58"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repetir Senha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-6W-ccI">
-                                        <rect key="frame" x="29" y="19" width="118" height="21"/>
+                                        <rect key="frame" x="29" y="19.5" width="117.5" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZu-Aw-TEw">
-                                        <rect key="frame" x="171" y="19" width="175" height="21"/>
+                                        <rect key="frame" x="170.5" y="19" width="175.5" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>
@@ -393,7 +399,7 @@
                                         <rect key="frame" x="20" y="57" width="350" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="icY-7H-4mZ"/>
+                                            <constraint firstAttribute="height" constant="0.5" id="icY-7H-4mZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
