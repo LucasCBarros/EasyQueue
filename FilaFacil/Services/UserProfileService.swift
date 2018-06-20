@@ -40,8 +40,8 @@ class UserProfileService: NSObject {
     }
     
     // Remove LineData from User
-    func removeQuestionFromLine(questionID: String) {
-        userProfileManager.removeQuestionFromLine(questionID: questionID)
+    func removeQuestionFromLine(lineName: String, questionID: String) {
+        userProfileManager.removeQuestionFromLine(lineName: lineName, questionID: questionID)
     }
     
     func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {

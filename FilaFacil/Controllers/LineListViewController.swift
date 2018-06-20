@@ -160,7 +160,8 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             
             // update line status in Firebase
             if inLineQuestions.count > 0 {
-                userProfileManager.removeQuestionFromLine(questionID: inLineQuestions[indexPath.row].questionID)
+                let question = inLineQuestions[indexPath.row]
+                userProfileManager.removeQuestionFromLine(lineName: selectedTab, questionID: question.questionID)
             }
             // Reload View
             viewWillAppear(true)

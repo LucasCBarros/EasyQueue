@@ -77,8 +77,8 @@ class UserProfileDAO: DAO {
     }
 
     // Remove user from Line
-    func removeQuestionFromLine(questionID: String) {
-        ref?.child("Questions").child(questionID).removeValue()
+    func removeQuestionFromLine(lineName: String, questionID: String) {
+        ref?.child("Lines").child(lineName).child(questionID).removeValue()
     }
     
     func updateUserLinePosition(userID: String, position: Int) {
