@@ -130,34 +130,29 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as? MainListCell
         
         // Check if there are questions in Line
-        if inLineQuestions.count > 0 {
-            databaseRef.child("Questions").child(inLineQuestions[indexPath.row].userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dict = snapshot.value as? [String: AnyObject] {
-                    if let profileImageURL = dict["photo"] as? String {
-                        let url = URL(string: profileImageURL)
-                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
-                            if error != nil {
-                                print(error!)
-                                return
-                            }
-                            DispatchQueue.main.async {
-                                cell?.profilePhoto?.image = UIImage(data: data!)
-                            }
-                        }).resume()
+        if inLineQuestions.count >= indexPath.row - 1 {
+            
+            let question = inLineQuestions[indexPath.row]
+            cell?.profileName?.text = question.username
+            cell?.questionLabel?.text = question.questionTitle
+            
+            //Tirar o timestamp e colocar a data e hora
+            let timeInterval = Double.init(question.questionID)
+            let date = Date(timeIntervalSince1970: timeInterval! / 1000)
+            let strDate = Formatter.dateToString(date)
+            cell?.dateLabel.text = strDate
+            
+            //Recuperando foto
+            if let urlPhoto = URL(string: question.userPhoto) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: urlPhoto), let photo = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell?.profilePhoto.image = photo
+                        }
                     }
                 }
-            })
+            }
             
-            // Get users questions
-            cell?.profileName?.text = inLineQuestions[indexPath.row].username
-                if inLineQuestions.count > 0 {
-                    cell?.questionLabel?.text = inLineQuestions[indexPath.row].questionTitle
-                    //Tirar o timestamp e colocar a data e hora
-                    let timeInterval = Double.init(inLineQuestions[indexPath.row].questionID)
-                    let date = Date(timeIntervalSince1970: timeInterval! / 1000)
-                    let strDate = Formatter.dateToString(date)
-                    cell?.dateLabel.text = strDate
-                }
         }
         
         // Cell apperance
