@@ -584,7 +584,6 @@
 				DEDF0FBB20AE20470064A247 /* Frameworks */,
 				DEDF0FBC20AE20470064A247 /* Resources */,
 				14887C977ED0D492404F27FF /* [CP] Embed Pods Frameworks */,
-				1FEE836178FCDB299850B16E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -605,7 +604,6 @@
 				E6022992203FA29E00336FC3 /* Frameworks */,
 				E6022993203FA29E00336FC3 /* Resources */,
 				5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */,
-				F8A14F0F3F8EDC596B79735A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -798,21 +796,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1FEE836178FCDB299850B16E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -887,21 +870,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config FilaFacil/.swiftlint.yml";
-		};
-		F8A14F0F3F8EDC596B79735A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
