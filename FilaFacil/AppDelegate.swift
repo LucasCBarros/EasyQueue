@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //        let deviceID = UIDevice.current.identifierForVendor!.uuidString
         let deviceToken = Messaging.messaging().fcmToken
         UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
-        
+
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self

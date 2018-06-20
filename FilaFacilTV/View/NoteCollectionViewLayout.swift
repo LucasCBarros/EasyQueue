@@ -68,9 +68,9 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
 
             let indexPath = IndexPath(item: item, section: 0)
             
-            var expectedHeight: CGFloat = 96
+            var expectedHeight: CGFloat = 141
             
-            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 44, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
+            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 54, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: expectedHeight)
