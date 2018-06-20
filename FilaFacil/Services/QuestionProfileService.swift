@@ -35,14 +35,4 @@ class QuestionProfileService: NSObject {
                                               requestedTeacher: requestedTeacher,
                                               userPhoto: userPhoto)
     }
-    
-    func filterQuestionsInLine(allUsers: [UserProfile], allQuestions: [QuestionProfile]) -> [QuestionProfile] {
-        var questionsInLine: [QuestionProfile] = []
-        for user in allUsers {
-            for question in allQuestions where user.questionID == question.questionID {
-                questionsInLine.append(question) //.append(question)
-            }
-        }
-        return questionsInLine
-    }
 }

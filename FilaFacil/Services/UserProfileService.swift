@@ -53,25 +53,15 @@ class UserProfileService: NSObject {
         userProfileManager.removeQuestionFromLine(questionID: questionID)
     }
     
-    func filterUsersInLine(allUsers: [UserProfile]) -> [UserProfile] {
-        var usersInLine: [UserProfile] = []
-        for user in allUsers where user.userInLine {
-            usersInLine.append(user)
-        }
-        return usersInLine
-    }
-    
     func filterLineByTab(allUsers: [UserProfile], allQuestions: [QuestionProfile],
-                         selectedTab: String) -> ([UserProfile], [QuestionProfile]) {
+                         selectedTab: String) -> ([QuestionProfile]) {
         var usersInLine: [UserProfile] = []
         var questionsInLine: [QuestionProfile] = []
         for user in allUsers {
-            for question in allQuestions where
-                (user.questionID == question.questionID) && (question.requestedTeacher == selectedTab) {
-                    usersInLine.append(user)
+            for question in allQuestions where (question.requestedTeacher == selectedTab) {
                     questionsInLine.append(question)
             }
         }
-        return (usersInLine, questionsInLine)
+        return questionsInLine
     }
 }

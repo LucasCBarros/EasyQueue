@@ -22,18 +22,6 @@ class UserProfile: NSObject, PersistenceObject {
     // Users E-mail
     var email: String = ""
     
-    // Users Photo
-//    var profilePhoto: UIImage?
-    
-    // Empty or questionID (To know if enters list or not)
-    var questionID: String = ""
-    
-    // Indicator if user is in the Line
-    var userInLine: Bool = false
-    
-    // Users Position in the Line
-    var userLinePosition: Int = 0
-    
     // Users Position in the Line
     var deviceID: String = ""
     
@@ -57,15 +45,6 @@ class UserProfile: NSObject, PersistenceObject {
         if let email = dictionary["email"] as? String {
             self.email = email
         }
-        if let questionID = dictionary["questionID"] as? String {
-            self.questionID = questionID
-        }
-        if let userInLine = dictionary["userInLine"] as? Bool {
-            self.userInLine = userInLine
-        }
-        if let userLinePosition = dictionary["userLinePosition"] as? Int {
-            self.userLinePosition = userLinePosition
-        }
         if let deviceID = dictionary["deviceID"] as? String {
             self.deviceID = deviceID
         }
@@ -81,9 +60,6 @@ class UserProfile: NSObject, PersistenceObject {
         self.username = username
         self.profileType = profileType
         self.email = email
-        self.questionID = questionID
-        self.userInLine = userInLine
-        self.userLinePosition = userLinePosition
         self.deviceID = deviceID
         self.userPhoto = userPhoto
         self.dictInfo = [
@@ -91,9 +67,6 @@ class UserProfile: NSObject, PersistenceObject {
             "username": username,
             "profileType": profileType,
             "email": email,
-            "questionID": questionID,
-            "userInLine": userInLine,
-            "userLinePosition": userLinePosition,
             "deviceID": deviceID,
             "userPhoto": userPhoto
         ]

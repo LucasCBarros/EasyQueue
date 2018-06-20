@@ -46,11 +46,11 @@ class QuestionStatusViewController: UIViewController {
         if currentProfile?.profileType == "Teacher" {
             presentLineStatusView()
         } else if currentProfile?.profileType == "Aluno" {
-            if(currentProfile?.userInLine)! {
-                presentProfileQuestionStatusView()
-            } else {
+//            if(currentProfile?.userInLine)! {
+//                presentProfileQuestionStatusView()
+//            } else {
                 presentNewQuestionView()
-            }
+//            }
         }
     }
     
