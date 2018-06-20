@@ -10,7 +10,12 @@ import Foundation
 import WatchKit
 
 class RowController: NSObject {
-    @IBOutlet var rowLabel: WKInterfaceLabel!
+    
+    @IBOutlet var questionLabel: WKInterfaceLabel!
+    @IBOutlet var usernameLabel: WKInterfaceLabel!
+    @IBOutlet var userPhoto: WKInterfaceImage!
+    @IBOutlet var questionTypeColor: WKInterfaceGroup!
+    @IBOutlet var userPhotoGroup: WKInterfaceGroup!
     
 }
 
