@@ -20,7 +20,7 @@ class NoteViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 6
+        self.layer.cornerRadius = 7
         self.layer.masksToBounds = true
         
 //        self.contentView.translatesAutoresizingMaskIntoConstraints = false
