@@ -32,7 +32,6 @@ class LineListViewController: UIViewController {
     let questionProfileManager = QuestionProfileService()
     var currentProfile: UserProfile?
     var allUserProfiles: [UserProfile]?
-    var allQuestionProfiles: [QuestionProfile]?
     var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
     
@@ -49,7 +48,7 @@ class LineListViewController: UIViewController {
     }
     
     func reloadViewData() {
-        self.retrieveAllQuestions()
+        self.retrieveAllQuestions(lineName: selectedTab)
     }
     
     override func viewDidLoad() {
@@ -77,17 +76,8 @@ class LineListViewController: UIViewController {
     }
     
     @objc func refreshTableView(refreshControl: UIRefreshControl) {
-        self.retrieveAllQuestions()
+        self.retrieveAllQuestions(lineName: selectedTab)
         refreshControl.endRefreshing()
-    }
-    
-    func filterListByArea() {
-        self.inLineQuestions.removeAll()
-        for question in self.allQuestionProfiles! where question.requestedTeacher == selectedTab {
-                self.inLineQuestions.append(question)
-        }
-        self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
-        listTableView.reloadData()
     }
     
     // Retrieve logged user
@@ -99,17 +89,16 @@ class LineListViewController: UIViewController {
         }
     }
     
-    func retrieveAllQuestions() {
-        questionProfileManager.retrieveAllOpenQuestions { (questionProfile) in
+    func retrieveAllQuestions(lineName: String) {
+        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName) { (questionProfile) in
             if let questionProfile = questionProfile {
-                self.allQuestionProfiles = questionProfile
+                self.inLineQuestions = questionProfile
             }
             
             // Add to main Thread
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-                self.allQuestionProfiles = self.allQuestionProfiles?.sorted { $0.questionID < $1.questionID }
-                self.filterListByArea()
+                self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
                 self.listTableView.reloadData()
             }
         }
@@ -203,7 +192,6 @@ extension LineListViewController: NewQuestionTableViewDelegate {
                                               username: currentProfile!.username,
                                               requestedTeacher: selectedTeacher,
                                               userPhoto: (self.currentProfile?.photo)!)
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
 }

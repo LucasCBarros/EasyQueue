@@ -23,8 +23,8 @@ class QuestionProfileService: NSObject {
     
     ///:BAD CODE - Will retrieve all questions
     // Return all open questions
-    func retrieveAllOpenQuestions(completion: @escaping ([QuestionProfile]?) -> Void) {
-       questionProfileManager.retrieveAllOpenQuestions(completionHandler: completion)
+    func retrieveAllOpenQuestions(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
+        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: completion)
     }
     
     // Create a question

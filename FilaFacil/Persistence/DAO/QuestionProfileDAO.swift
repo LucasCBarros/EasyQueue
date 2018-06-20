@@ -47,8 +47,8 @@ class QuestionProfileDAO: DAO {
     }
     
     // Return all open questions
-    func retrieveAllOpenQuestions(completionHandler: @escaping ([QuestionProfile]?) -> Void) {
-        let path = "Questions/"
+    func retrieveAllOpenQuestions(lineName: String, completionHandler: @escaping ([QuestionProfile]?) -> Void) {
+        let path = "Lines/" + lineName
         
         self.retrieveAll(dump: QuestionProfile.self, path: path) { (questions) in
             completionHandler(questions)
@@ -58,27 +58,25 @@ class QuestionProfileDAO: DAO {
     // Create a question
     func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
         
-        let path = "Questions/"
+        let path = "Lines/" + requestedTeacher
         
         let newQuestionData = [userID,
                                questionTxt,
                                username,
-                               requestedTeacher,
                                userPhoto]
         
         let questionFields = ["userID",
                             "questionTitle",
                             "username",
-                            "requestedTeacher",
                             "userPhoto"]
         
         let timeStampID = "\(Date().millisecondsSince1970)"
-        let pathWithID = path + timeStampID
+        let pathWithID = path
         
         for question in 0..<questionFields.count {
-            ref?.child(pathWithID).child(questionFields[question]).setValue(newQuestionData[question])
+            ref?.child(pathWithID).child(timeStampID).child(questionFields[question]).setValue(newQuestionData[question])
         }
         
-        ref?.child(pathWithID).child("questionID").setValue(timeStampID)
+        ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
     }
 }
