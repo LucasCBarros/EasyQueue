@@ -7,12 +7,12 @@ target 'FilaFacil' do
 
   # Pods for FilaFacil
 
-  pod 'Firebase/Core', '4.0.1'
-  pod 'Firebase/Messaging'
+  pod 'Firebase/Core', '5.0.0'
+  pod 'Firebase/Messaging', '5.0.0'
   #pod 'Firebase/InstanceID', '2.0.0'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
+  pod 'Firebase/Auth', '5.0.0'
+  pod 'Firebase/Database', '5.0.0'
+  pod 'Firebase/Storage', '5.0.0'
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftLint'
