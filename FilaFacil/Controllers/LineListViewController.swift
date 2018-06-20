@@ -33,7 +33,6 @@ class LineListViewController: UIViewController {
     var currentProfile: UserProfile?
     var allUserProfiles: [UserProfile]?
     var allQuestionProfiles: [QuestionProfile]?
-    var usersInLine: [UserProfile]?
     var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
     
@@ -175,10 +174,9 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             
-            // update student status in Firebase
-            if (usersInLine?.count)! > 0 {
-                userProfileManager.removeUserFromLine(userID: usersInLine![indexPath.row].userID,
-                                                      questionID: inLineQuestions[indexPath.row].questionID)
+            // update line status in Firebase
+            if inLineQuestions.count > 0 {
+                userProfileManager.removeQuestionFromLine(questionID: inLineQuestions[indexPath.row].questionID)
             }
             // Reload View
             viewWillAppear(true)

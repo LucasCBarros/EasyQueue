@@ -49,8 +49,8 @@ class UserProfileService: NSObject {
     }
     
     // Remove LineData from User
-    func removeUserFromLine(userID: String, questionID: String) {
-        userProfileManager.removeUserFromLine(userID: userID, questionID: questionID)
+    func removeQuestionFromLine(questionID: String) {
+        userProfileManager.removeQuestionFromLine(questionID: questionID)
     }
     
     func filterUsersInLine(allUsers: [UserProfile]) -> [UserProfile] {

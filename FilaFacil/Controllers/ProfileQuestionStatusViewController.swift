@@ -68,7 +68,7 @@ class ProfileQuestionStatusViewController: UIViewController {
     
     // Remove user from line and changes his status
     func leaveLine() {
-        userProfileManager.removeUserFromLine(userID: currentProfile.userID, questionID: currentProfile.questionID)
+        userProfileManager.removeQuestionFromLine(questionID: currentProfile.questionID)
         presentNewQuestionView()
     }
     

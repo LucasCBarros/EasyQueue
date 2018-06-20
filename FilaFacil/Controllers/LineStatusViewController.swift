@@ -53,7 +53,7 @@ class LineStatusViewController: UIViewController {
     // MARK: - Actions
     @IBAction func click_CallNextBtn(_ sender: Any) {
         if(usersInLine?.count)! > 0 {
-            userProfileManager.removeUserFromLine(userID: usersInLine![0].userID, questionID: inLineQuestions![0].questionID)
+            userProfileManager.removeQuestionFromLine(questionID: inLineQuestions![0].questionID)
             self.reloadViewData()
         }
         
