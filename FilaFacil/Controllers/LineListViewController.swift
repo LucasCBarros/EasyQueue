@@ -202,7 +202,7 @@ extension LineListViewController: NewQuestionTableViewDelegate {
         questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
                                               username: currentProfile!.username,
                                               requestedTeacher: selectedTeacher,
-                                              userPhoto: (self.currentProfile?.userPhoto)!)
+                                              userPhoto: (self.currentProfile?.photo)!)
         self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     

@@ -33,15 +33,6 @@ class UserProfileService: NSObject {
     }
     
     /// Other functions:
-    // Retrieve all users
-    func retrieveAllUsersInLine(completion: @escaping ([UserProfile]?) -> Void) {
-        userProfileManager.retrieveAllUsersInLine(completionHandler: completion)
-    }
-    
-    // Update user (Field: UserInLine<Bool> and QuestionID<String> and userLinePosition<Int>
-    func updateLinePosition(userID: String, position: Int) {
-        userProfileManager.updateUserLinePosition(userID: userID, position: position)
-    }
     
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
@@ -53,14 +44,10 @@ class UserProfileService: NSObject {
         userProfileManager.removeQuestionFromLine(questionID: questionID)
     }
     
-    func filterLineByTab(allUsers: [UserProfile], allQuestions: [QuestionProfile],
-                         selectedTab: String) -> ([QuestionProfile]) {
-        var usersInLine: [UserProfile] = []
+    func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {
         var questionsInLine: [QuestionProfile] = []
-        for user in allUsers {
-            for question in allQuestions where (question.requestedTeacher == selectedTab) {
-                    questionsInLine.append(question)
-            }
+        for question in allQuestions where (question.requestedTeacher == selectedTab) {
+                questionsInLine.append(question)
         }
         return questionsInLine
     }

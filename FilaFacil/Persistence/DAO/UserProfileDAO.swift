@@ -24,11 +24,7 @@ class UserProfileDAO: DAO {
             "username": username,
             "profileType": profileType,
             "email": email,
-            "questionID": "",
-            "userInLine": false,
-            "userLinePosition": 0,
-            "deviceID": userDeviceID,
-            "userPhoto": ""
+            "deviceID": userDeviceID
             ])
         
         let path = "Users"

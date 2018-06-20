@@ -26,7 +26,7 @@ class UserProfile: NSObject, PersistenceObject {
     var deviceID: String = ""
     
     // Users photo if it has
-    var userPhoto: String = ""
+    var photo: String = ""
     
     // Dictionary
     var dictInfo: [AnyHashable: Any]
@@ -48,27 +48,24 @@ class UserProfile: NSObject, PersistenceObject {
         if let deviceID = dictionary["deviceID"] as? String {
             self.deviceID = deviceID
         }
-        if let userPhoto = dictionary["userPhoto"] as? String {
-            self.userPhoto = userPhoto
+        if let photo = dictionary["photo"] as? String {
+            self.photo = photo
         }
         self.dictInfo = dictionary
     }
     
-    init(userID: String, username: String, profileType: String, email: String,
-         lineNumber: Int, questionID: String, userInLine: Bool, userLinePosition: Int, deviceID: String, userPhoto: String) {
+    init(userID: String, username: String, profileType: String, email: String, deviceID: String) {
         self.userID = userID
         self.username = username
         self.profileType = profileType
         self.email = email
         self.deviceID = deviceID
-        self.userPhoto = userPhoto
         self.dictInfo = [
             "userID": userID,
             "username": username,
             "profileType": profileType,
             "email": email,
-            "deviceID": deviceID,
-            "userPhoto": userPhoto
+            "deviceID": deviceID
         ]
     }
     

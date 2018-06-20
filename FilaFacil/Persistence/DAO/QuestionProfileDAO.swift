@@ -80,8 +80,5 @@ class QuestionProfileDAO: DAO {
         }
         
         ref?.child(pathWithID).child("questionID").setValue(timeStampID)
-        
-        ref?.child("Users").child(userID).child("questionID").setValue(timeStampID)
-        ref?.child("Users").child(userID).child("userInLine").setValue(true)
     }
 }
