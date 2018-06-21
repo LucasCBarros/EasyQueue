@@ -22,20 +22,11 @@ class UserProfile: NSObject, PersistenceObject {
     // Users E-mail
     var email: String = ""
     
-    // Users Photo
-//    var profilePhoto: UIImage?
-    
-    // Empty or questionID (To know if enters list or not)
-    var questionID: String = ""
-    
-    // Indicator if user is in the Line
-    var userInLine: Bool = false
-    
-    // Users Position in the Line
-    var userLinePosition: Int = 0
-    
     // Users Position in the Line
     var deviceID: String = ""
+    
+    // Users photo if it has
+    var photo: String = ""
     
     // Dictionary
     var dictInfo: [AnyHashable: Any]
@@ -54,39 +45,26 @@ class UserProfile: NSObject, PersistenceObject {
         if let email = dictionary["email"] as? String {
             self.email = email
         }
-        if let questionID = dictionary["questionID"] as? String {
-            self.questionID = questionID
-        }
-        if let userInLine = dictionary["userInLine"] as? Bool {
-            self.userInLine = userInLine
-        }
-        if let userLinePosition = dictionary["userLinePosition"] as? Int {
-            self.userLinePosition = userLinePosition
-        }
         if let deviceID = dictionary["deviceID"] as? String {
             self.deviceID = deviceID
+        }
+        if let photo = dictionary["photo"] as? String {
+            self.photo = photo
         }
         self.dictInfo = dictionary
     }
     
-    init(userID: String, username: String, profileType: String, email: String,
-         lineNumber: Int, questionID: String, userInLine: Bool, userLinePosition: Int, deviceID: String) {
+    init(userID: String, username: String, profileType: String, email: String, deviceID: String) {
         self.userID = userID
         self.username = username
         self.profileType = profileType
         self.email = email
-        self.questionID = questionID
-        self.userInLine = userInLine
-        self.userLinePosition = userLinePosition
         self.deviceID = deviceID
         self.dictInfo = [
             "userID": userID,
             "username": username,
             "profileType": profileType,
             "email": email,
-            "questionID": questionID,
-            "userInLine": userInLine,
-            "userLinePosition": userLinePosition,
             "deviceID": deviceID
         ]
     }

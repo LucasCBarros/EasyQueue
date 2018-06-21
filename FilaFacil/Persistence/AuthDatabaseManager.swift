@@ -22,7 +22,7 @@ class AuthDatabaseManager: NSObject {
             
             if user != nil {
                 print("User logged succesfully")
-                completionHandler(true, (user?.uid)!)
+                completionHandler(true, (user?.user.uid)!)
             } else {
                 print("Error on loging in: \(error.debugDescription)")
                 completionHandler(false, self.treatError(error: error! as NSError))
@@ -58,7 +58,7 @@ class AuthDatabaseManager: NSObject {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let newUser = user {
                 print("User created succesfully")
-                completionHandler(true, newUser.uid)
+                completionHandler(true, newUser.user.uid)
             } else {
                 print("Error on register: \(String(describing: (error?.localizedDescription)!))")
                 completionHandler(false, self.treatError(error: error! as NSError))

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -15,13 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noQuestions: UILabel!
     @IBOutlet weak var noNotes: UILabel!
+    @IBOutlet weak var questionTableView: UITableView!
+    
     var questionService = QuestionService()
     var openedQuestions: [Question] = []
     var noteService = NoteService()
     var openedNotes: [Note] = []
     var topTimer: Timer!
-    
-    @IBOutlet weak var questionTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +115,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionTableViewCell
         
+        
+        
         if self.openedQuestions.count > 0 {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = self.openedQuestions[indexPath.row].questionTitle
@@ -125,6 +128,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let date = Date(timeIntervalSince1970: timeInterval! / 1000)
             let strDate = Formatter.dateToString(date)
             cell?.timeInputQuestion.text = strDate
+            
+            if(openedQuestions[indexPath.row].userPhoto != "") {
+                let photoUrl = URL(string: openedQuestions[indexPath.row].userPhoto)!
+                cell?.profileImage.kf.setImage(with: photoUrl)
+            } else {
+                cell?.profileImage.image = #imageLiteral(resourceName: "icons8-user_filled")
+            }
+            
             
         }
         

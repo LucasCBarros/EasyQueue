@@ -24,9 +24,6 @@ class UserProfileDAO: DAO {
             "username": username,
             "profileType": profileType,
             "email": email,
-            "questionID": "",
-            "userInLine": false,
-            "userLinePosition": 0,
             "deviceID": userDeviceID
             ])
         
@@ -80,12 +77,8 @@ class UserProfileDAO: DAO {
     }
 
     // Remove user from Line
-    func removeUserFromLine(userID: String, questionID: String) {
-        ref?.child("Questions").child(questionID).removeValue()
-        
-        ref?.child("Users").child(userID).child("questionID").setValue("")
-        ref?.child("Users").child(userID).child("userInLine").setValue(false)
-        ref?.child("Users").child(userID).child("userLinePosition").setValue(0)
+    func removeQuestionFromLine(lineName: String, questionID: String) {
+        ref?.child("Lines").child(lineName).child(questionID).removeValue()
     }
     
     func updateUserLinePosition(userID: String, position: Int) {

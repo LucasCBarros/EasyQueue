@@ -32,9 +32,7 @@ class LineListViewController: UIViewController {
     let questionProfileManager = QuestionProfileService()
     var currentProfile: UserProfile?
     var allUserProfiles: [UserProfile]?
-    var allQuestionProfiles: [QuestionProfile]?
-    var usersInLine: [UserProfile]?
-    var inLineQuestions: [QuestionProfile]?
+    var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
     
     // MARK: - Life Cycle
@@ -47,14 +45,10 @@ class LineListViewController: UIViewController {
         
         self.retrieveCurrentUserProfile()
         self.reloadViewData()
-        
-        if usersInLine?.first?.userLinePosition != 1 {
-            reloadViewData()
-        }
     }
     
     func reloadViewData() {
-        self.retrieveAllUsers()
+        self.retrieveAllQuestions(lineName: selectedTab)
     }
     
     override func viewDidLoad() {
@@ -82,52 +76,8 @@ class LineListViewController: UIViewController {
     }
     
     @objc func refreshTableView(refreshControl: UIRefreshControl) {
-        self.retrieveAllUsers()
+        self.retrieveAllQuestions(lineName: selectedTab)
         refreshControl.endRefreshing()
-    }
-    
-    // Order list of elements by QuestionID
-    func orderListElements() {
-        usersInLine = usersInLine?.sorted { $0.questionID < $1.questionID }
-        inLineQuestions = inLineQuestions?.sorted { $0.questionID < $1.questionID }
-        if selectedTab == "All" {
-            self.addLinePosition()
-        }
-    }
-    
-    func addLinePosition() {
-        if usersInLine != nil {
-            let numberOfUsers: Int = usersInLine!.count
-            
-            for user in (0..<numberOfUsers) {
-                userProfileManager.updateLinePosition(userID: usersInLine![user].userID, position: user+1)
-            }
-        }
-    }
-    
-    func filterListByTab() {
-        if selectedTab != "All" {
-            self.retrieveAllUsersInLine()
-            self.retrieveAllQuestionsInLine()
-            
-            // Protective code against Nil values
-            var currentQuestions: [QuestionProfile] = []
-            if inLineQuestions != nil {
-                currentQuestions = self.inLineQuestions!
-            }
-            
-            let (newUsers, newQuestions) = userProfileManager.filterLineByTab(
-                allUsers: self.usersInLine!,
-                allQuestions: currentQuestions,
-                selectedTab: selectedTab)
-            
-            self.usersInLine = newUsers
-            self.inLineQuestions = newQuestions
-            
-            orderListElements()
-            
-            listTableView.reloadData()
-        }
     }
     
     // Retrieve logged user
@@ -139,55 +89,18 @@ class LineListViewController: UIViewController {
         }
     }
     
-    // Retrieve all users registered in Firebase
-    func retrieveAllUsers() {
-        userProfileManager.retrieveAllUsersInLine { (userProfile) in
-            if let userProfile = userProfile {
-                self.allUserProfiles = userProfile
-            }
-            
-            // Filters returned users array
-            self.retrieveAllUsersInLine()
-            
-            // Add to main Thread
-            DispatchQueue.main.async {
-                self.retrieveAllQuestions()
-            }
-        }
-    }
-    
-    // Filters AllUsers array for users in line
-    func retrieveAllUsersInLine() {
-        if self.allUserProfiles != nil {
-            self.usersInLine = self.userProfileManager.filterUsersInLine(allUsers: self.allUserProfiles!)
-        }
-    }
-    
-    // Retrieve all questions registered in Firebase
-    func retrieveAllQuestions() {
-        questionProfileManager.retrieveAllOpenQuestions { (questionProfile) in
+    func retrieveAllQuestions(lineName: String) {
+        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName) { (questionProfile) in
             if let questionProfile = questionProfile {
                 self.inLineQuestions = questionProfile
             }
             
-            // Filter questions for each user in the line
-            self.retrieveAllQuestionsInLine()
-            
             // Add to main Thread
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-                self.orderListElements()
-                self.filterListByTab()
+                self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
                 self.listTableView.reloadData()
             }
-        }
-    }
-    
-    func retrieveAllQuestionsInLine() {
-        if self.allQuestionProfiles != nil {
-            self.inLineQuestions = self.questionProfileManager.filterQuestionsInLine(
-                allUsers: self.usersInLine!,
-                allQuestions: self.allQuestionProfiles!)
         }
     }
 }
@@ -197,53 +110,41 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if usersInLine != nil {
-            return (usersInLine?.count)!
-        } else {
-            return 0
-        }
+        return (inLineQuestions.count)
     }
     
     // Shows tableView cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as? MainListCell
-       
-        if usersInLine != nil {
-            // Gets users Profile
-            databaseRef.child("Users").child(usersInLine![indexPath.row].userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dict = snapshot.value as? [String: AnyObject] {
-                    if let profileImageURL = dict["photo"] as? String {
-                        let url = URL(string: profileImageURL)
-                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
-                            if error != nil {
-                                print(error!)
-                                return
-                            }
-                            DispatchQueue.main.async {
-                                cell?.profilePhoto?.image = UIImage(data: data!)
-                            }
-                        }).resume()
+        
+        // Check if there are questions in Line
+        if inLineQuestions.count >= indexPath.row - 1 {
+            
+            let question = inLineQuestions[indexPath.row]
+            cell?.profileName?.text = question.username
+            cell?.questionLabel?.text = question.questionTitle
+            
+            //Tirar o timestamp e colocar a data e hora
+            let timeInterval = Double.init(question.questionID)
+            let date = Date(timeIntervalSince1970: timeInterval! / 1000)
+            let strDate = Formatter.dateToString(date)
+            cell?.dateLabel.text = strDate
+            
+            //Recuperando foto
+            if let urlPhoto = URL(string: question.userPhoto) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: urlPhoto), let photo = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell?.profilePhoto.image = photo
+                        }
                     }
                 }
-            })
-            
-            // Get users questions
-            cell?.profileName?.text = usersInLine![indexPath.row].username
-            if let inLineQuestions = inLineQuestions {
-                if inLineQuestions.count == (usersInLine?.count)! {
-                    cell?.questionLabel?.text = inLineQuestions[indexPath.row].questionTitle
-                    //Tirar o timestamp e colocar a data e hora
-                    let timeInterval = Double.init(inLineQuestions[indexPath.row].questionID)
-                    let date = Date(timeIntervalSince1970: timeInterval! / 1000)
-                    let strDate = Formatter.dateToString(date)
-                    cell?.dateLabel.text = strDate
-                }
             }
+            
         }
         
         // Cell apperance
-        
         cell?.selectionStyle = .none // Removes selection
         cell?.profilePhoto.backgroundColor = UIColor.lightGray
         cell?.profilePhoto.alpha = 0.5
@@ -257,10 +158,10 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             
-            // update student status in Firebase
-            if (usersInLine?.count)! > 0 {
-                userProfileManager.removeUserFromLine(userID: usersInLine![indexPath.row].userID,
-                                                      questionID: inLineQuestions![indexPath.row].questionID)
+            // update line status in Firebase
+            if inLineQuestions.count > 0 {
+                let question = inLineQuestions[indexPath.row]
+                userProfileManager.removeQuestionFromLine(lineName: selectedTab, questionID: question.questionID)
             }
             // Reload View
             viewWillAppear(true)
@@ -269,7 +170,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if self.inLineQuestions?[indexPath.row].userID == currentProfile!.userID {
+        if self.inLineQuestions[indexPath.row].userID == currentProfile?.userID {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
             return true
         } else if currentProfile?.profileType == "Teacher" {
@@ -291,8 +192,7 @@ extension LineListViewController: NewQuestionTableViewDelegate {
         questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
                                               username: currentProfile!.username,
                                               requestedTeacher: selectedTeacher,
-                                              positionInLine: (usersInLine?.count)!+1)
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
+                                              userPhoto: (self.currentProfile?.photo)!)
     }
     
 }

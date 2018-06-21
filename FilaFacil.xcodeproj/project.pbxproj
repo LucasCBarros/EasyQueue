@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
+		AB199A8F610D98551665E9C3 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
@@ -62,6 +63,8 @@
 		FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */; };
 		FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
+		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
+		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -130,8 +133,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV.debug.xcconfig"; sourceTree = "<group>"; };
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD586EBD97A8980EC8981BDF /* Pods-FilaFacilTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV.release.xcconfig"; sourceTree = "<group>"; };
 		DEBC40BF20B1E81100870D4C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuestion.swift; sourceTree = "<group>"; };
 		DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacilTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +197,8 @@
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
+		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -253,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB199A8F610D98551665E9C3 /* Pods_FilaFacilTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +288,8 @@
 			children = (
 				82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */,
 				EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */,
+				253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */,
+				DD586EBD97A8980EC8981BDF /* Pods-FilaFacilTV.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -419,6 +430,8 @@
 				E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */,
 				E60229D9203FD20200336FC3 /* LineStatusViewController.swift */,
 				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
+				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
+				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -475,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				968F783760985A1FDB86908E /* Pods_FilaFacil.framework */,
+				BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -571,9 +585,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */;
 			buildPhases = (
+				ADC88CFA428C61706395F949 /* [CP] Check Pods Manifest.lock */,
 				DEDF0FBA20AE20470064A247 /* Sources */,
 				DEDF0FBB20AE20470064A247 /* Frameworks */,
 				DEDF0FBC20AE20470064A247 /* Resources */,
+				14887C977ED0D492404F27FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -588,13 +604,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60229A7203FA29E00336FC3 /* Build configuration list for PBXNativeTarget "FilaFacil" */;
 			buildPhases = (
-				E6CB80C12077F929007B0661 /* ShellScript */,
 				B95BEEBF526AE9F662811CBB /* [CP] Check Pods Manifest.lock */,
+				E6CB80C12077F929007B0661 /* ShellScript */,
 				E6022991203FA29E00336FC3 /* Sources */,
 				E6022992203FA29E00336FC3 /* Frameworks */,
 				E6022993203FA29E00336FC3 /* Resources */,
 				5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */,
-				F8A14F0F3F8EDC596B79735A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -769,6 +784,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14887C977ED0D492404F27FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -797,6 +830,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADC88CFA428C61706395F949 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilaFacilTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B95BEEBF526AE9F662811CBB /* [CP] Check Pods Manifest.lock */ = {
@@ -830,21 +881,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config FilaFacil/.swiftlint.yml";
 		};
-		F8A14F0F3F8EDC596B79735A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -877,6 +913,7 @@
 				E60229E22040938300336FC3 /* UserProfileDAO.swift in Sources */,
 				E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
+				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
@@ -884,6 +921,7 @@
 				E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */,
 				E60229E82040A03C00336FC3 /* QuestionProfileService.swift in Sources */,
 				E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */,
+				FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
@@ -942,6 +980,7 @@
 /* Begin XCBuildConfiguration section */
 		DEDF0FCD20AE20470064A247 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -960,6 +999,7 @@
 		};
 		DEDF0FCE20AE20470064A247 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD586EBD97A8980EC8981BDF /* Pods-FilaFacilTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

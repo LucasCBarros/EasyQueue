@@ -23,26 +23,16 @@ class QuestionProfileService: NSObject {
     
     ///:BAD CODE - Will retrieve all questions
     // Return all open questions
-    func retrieveAllOpenQuestions(completion: @escaping ([QuestionProfile]?) -> Void) {
-       questionProfileManager.retrieveAllOpenQuestions(completionHandler: completion)
+    func retrieveAllOpenQuestions(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
+        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: completion)
     }
     
     // Create a question
-    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, positionInLine: Int) {
+    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
         questionProfileManager.createQuestion(userID: userID,
                                               questionTxt: questionTxt,
                                               username: username,
                                               requestedTeacher: requestedTeacher,
-                                              positionInLine: positionInLine)
-    }
-    
-    func filterQuestionsInLine(allUsers: [UserProfile], allQuestions: [QuestionProfile]) -> [QuestionProfile] {
-        var questionsInLine: [QuestionProfile] = []
-        for user in allUsers {
-            for question in allQuestions where user.questionID == question.questionID {
-                questionsInLine.append(question) //.append(question)
-            }
-        }
-        return questionsInLine
+                                              userPhoto: userPhoto)
     }
 }

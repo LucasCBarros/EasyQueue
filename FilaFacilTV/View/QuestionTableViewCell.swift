@@ -24,6 +24,7 @@ class QuestionTableViewCell: UITableViewCell {
         // Initialization code
         categoryColor.clipsToBounds = true
         profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = profileImage.frame.width/2
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

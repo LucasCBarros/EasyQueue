@@ -11,7 +11,7 @@ import Foundation
 class QuestionService {
     
     func getAllQuestions(completion: @escaping (_ questions: [Question], _ error: Error?) -> Void) {
-        let URL: String = "https://filafacildev.firebaseio.com/Questions.json"
+        let URL: String = "https://filafacildev.firebaseio.com/Lines.json"
         
         //creating a NSURL
         guard let url = NSURL(string: URL) else { return }
@@ -29,10 +29,19 @@ class QuestionService {
                 
                 var questions: [Question] = []
                 
-                for (_, elem) in json {
-                    let jsonQuestion = elem as? [String: Any]
-                    questions.append(Question(json: jsonQuestion!))
+                for (categoryLine , line) in json {
+                    if let line = line as? [String: Any] {
+                        for (_ , elem) in line {
+                            var jsonQuestion = elem as? [String: Any]
+                            jsonQuestion?["requestedTeacher"] = categoryLine
+                            questions.append(Question(json: jsonQuestion!))
+                        }
+                    }
                 }
+                
+                questions = questions.sorted(by: {(question1, question2) in
+                    return question1.questionID < question2.questionID
+                })
                 
                 completion(questions, nil)
                 

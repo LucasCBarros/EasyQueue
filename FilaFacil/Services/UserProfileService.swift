@@ -33,15 +33,6 @@ class UserProfileService: NSObject {
     }
     
     /// Other functions:
-    // Retrieve all users
-    func retrieveAllUsersInLine(completion: @escaping ([UserProfile]?) -> Void) {
-        userProfileManager.retrieveAllUsersInLine(completionHandler: completion)
-    }
-    
-    // Update user (Field: UserInLine<Bool> and QuestionID<String> and userLinePosition<Int>
-    func updateLinePosition(userID: String, position: Int) {
-        userProfileManager.updateUserLinePosition(userID: userID, position: position)
-    }
     
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
@@ -49,29 +40,15 @@ class UserProfileService: NSObject {
     }
     
     // Remove LineData from User
-    func removeUserFromLine(userID: String, questionID: String) {
-        userProfileManager.removeUserFromLine(userID: userID, questionID: questionID)
+    func removeQuestionFromLine(lineName: String, questionID: String) {
+        userProfileManager.removeQuestionFromLine(lineName: lineName, questionID: questionID)
     }
     
-    func filterUsersInLine(allUsers: [UserProfile]) -> [UserProfile] {
-        var usersInLine: [UserProfile] = []
-        for user in allUsers where user.userInLine {
-            usersInLine.append(user)
-        }
-        return usersInLine
-    }
-    
-    func filterLineByTab(allUsers: [UserProfile], allQuestions: [QuestionProfile],
-                         selectedTab: String) -> ([UserProfile], [QuestionProfile]) {
-        var usersInLine: [UserProfile] = []
+    func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {
         var questionsInLine: [QuestionProfile] = []
-        for user in allUsers {
-            for question in allQuestions where
-                (user.questionID == question.questionID) && (question.requestedTeacher == selectedTab) {
-                    usersInLine.append(user)
-                    questionsInLine.append(question)
-            }
+        for question in allQuestions where (question.requestedTeacher == selectedTab) {
+                questionsInLine.append(question)
         }
-        return (usersInLine, questionsInLine)
+        return questionsInLine
     }
 }
