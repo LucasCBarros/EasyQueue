@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FilaFacilWatch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="7Uz-cy-GNB">
+                            <items>
+                                <tableRow identifier="RowController" id="ems-k9-m8i" customClass="RowController" customModule="FilaFacilWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="I5X-dV-sgY">
+                                        <items>
+                                            <group width="5" height="30" alignment="left" verticalAlignment="center" radius="2" id="wIv-XV-Rpr"/>
+                                            <group width="5" height="30" alignment="right" verticalAlignment="center" id="Uyz-8E-p8a"/>
+                                            <group width="30" height="30" alignment="center" verticalAlignment="center" radius="15" id="ytb-NM-bfe">
+                                                <items>
+                                                    <imageView width="30" height="30" alignment="center" verticalAlignment="center" id="z4P-Ww-qSy"/>
+                                                </items>
+                                            </group>
+                                            <group width="90" alignment="right" layout="vertical" id="UGt-vi-lJO">
+                                                <items>
+                                                    <label width="100" height="18" alignment="center" verticalAlignment="center" text="Question" textAlignment="left" id="d2b-RL-rUa">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                    <label width="96" height="12" alignment="center" verticalAlignment="center" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="qjX-gs-aMX">
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="questionLabel" destination="d2b-RL-rUa" id="IfU-Mk-Ok5"/>
+                                        <outlet property="questionTypeColor" destination="wIv-XV-Rpr" id="r2T-4k-BOg"/>
+                                        <outlet property="userPhoto" destination="z4P-Ww-qSy" id="saN-1p-rSC"/>
+                                        <outlet property="userPhotoGroup" destination="ytb-NM-bfe" id="PrX-lH-a36"/>
+                                        <outlet property="usernameLabel" destination="qjX-gs-aMX" id="fhn-0l-KNU"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="lineTableView" destination="7Uz-cy-GNB" id="CdB-rw-qaG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="N9f-dd-dD3">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="KCv-DD-p67" customClass="DetailInterfaceController" customModule="FilaFacilWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" radius="10" id="Lvd-jE-ufI">
+                            <items>
+                                <group width="5" alignment="left" id="6eb-Ww-tnE"/>
+                                <group width="8" height="40" alignment="left" radius="3" id="dHx-FY-Rra"/>
+                                <group width="5" alignment="left" id="qyF-9e-lUj"/>
+                                <group width="40" height="40" alignment="left" radius="20" id="KBS-y8-rGL">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="left" id="GPk-xG-YH5"/>
+                                    </items>
+                                </group>
+                                <label width="70" height="40" alignment="left" text="Username" textAlignment="center" id="Qsi-C9-MmY">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="3" alignment="left" id="UZo-nS-l0j"/>
+                        <group width="135" alignment="center" verticalAlignment="center" radius="10" id="jig-Y3-6IK">
+                            <items>
+                                <label width="136" height="95" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="oq2-sy-SC9">
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label width="136" height="16" alignment="right" verticalAlignment="bottom" text="Label" textAlignment="right" id="hd7-LJ-FgE">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="questionDescription" destination="oq2-sy-SC9" id="HGC-P2-3T9"/>
+                        <outlet property="questionDescriptionBG" destination="jig-Y3-6IK" id="uuH-PH-eCj"/>
+                        <outlet property="questionTypeColor" destination="dHx-FY-Rra" id="spy-lc-IKY"/>
+                        <outlet property="timeStampLabel" destination="hd7-LJ-FgE" id="07g-hz-cG5"/>
+                        <outlet property="topPanelBG" destination="Lvd-jE-ufI" id="KSs-T1-RYS"/>
+                        <outlet property="userPhoto" destination="GPk-xG-YH5" id="0Fz-1w-aFX"/>
+                        <outlet property="usernameLabel" destination="Qsi-C9-MmY" id="pbR-5u-R2v"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="341.5"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="FilaFacilWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

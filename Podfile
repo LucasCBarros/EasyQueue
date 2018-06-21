@@ -25,3 +25,11 @@ target 'FilaFacilTV' do
     platform :tvos, '9.0'
     pod 'Kingfisher', '~> 4.0'
 end
+
+target 'FilaFacilWatch Extension' do
+    use_frameworks!
+    
+    #platform :watchos, '2.0'
+    pod 'Kingfisher', '~> 4.0'
+    
+end
