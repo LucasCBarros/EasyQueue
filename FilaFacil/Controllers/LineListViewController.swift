@@ -138,8 +138,14 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                         DispatchQueue.main.async {
                             cell?.profilePhoto.image = photo
                         }
+                    } else {
+                        DispatchQueue.main.async {
+                            cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+                        }
                     }
                 }
+            } else {
+                cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
             }
             
         }
