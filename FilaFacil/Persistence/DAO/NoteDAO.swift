@@ -39,7 +39,6 @@ class NoteDAO: DAO {
         
         ref?.child(pathWithID).child("noteID").setValue(timeStampID)
         
-        ref?.child("Users").child(userID).child("noteID").setValue(timeStampID)
     }
     
     // Remove note from DB
