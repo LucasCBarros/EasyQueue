@@ -14,8 +14,8 @@ class Formatter {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.current
         dateFormatter.timeZone = NSTimeZone.local
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
-        return dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "dd/MM - HH'h'mm" //Specify your format that you want
+        return dateFormatter.string(from: date) + "min"
     }
 
 }
