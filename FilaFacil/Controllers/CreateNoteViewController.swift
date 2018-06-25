@@ -152,10 +152,10 @@ extension CreateNoteViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
             dateFormatter.locale = NSLocale.current
-            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm" //Specify your format that you want
+            dateFormatter.dateFormat = "dd/MM - HH'h'mm" //Specify your format that you want
             let strDate = dateFormatter.string(from: date)
             
-            cell?.noteDate.text = strDate
+            cell?.noteDate.text = strDate + "min"
             cell?.noteText.text = self.allNoteProfiles?[indexPath.row].noteText
         }
         
