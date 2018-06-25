@@ -160,18 +160,31 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
-    // Delete cell and update student status in Firebase
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .normal, title: "Editar", handler: { (rowAction, indexPath) in
             
+        })
+        editAction.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3490196078, blue: 0.8274509804, alpha: 1)
+        
+        let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
-            if inLineQuestions.count > 0 {
-                let question = inLineQuestions[indexPath.row]
-                userProfileManager.removeQuestionFromLine(lineName: selectedTab, questionID: question.questionID)
+            if let this = self, this.inLineQuestions.count > 0 {
+                let alert = UIAlertController(title: "Excluir da Fila", message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
+                    let question = this.inLineQuestions[indexPath.row]
+                    this.userProfileManager.removeQuestionFromLine(lineName: this.selectedTab, questionID: question.questionID)
+                    // Reload View
+                    DispatchQueue.main.async {
+                        this.viewWillAppear(true)
+                    }
+                }))
+                this.present(alert, animated: true, completion: nil)
             }
-            // Reload View
-            viewWillAppear(true)
-        }
+        })
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        
+        return [deleteAction, editAction]
     }
     
     // Allows to edit cell according to profile type
@@ -192,6 +205,10 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension LineListViewController: NewQuestionTableViewDelegate {
+    
+    func selectedLine() -> String {
+        return self.selectedTab
+    }
     
     func saveQuestion(text: String, selectedTeacher: String) {
         // Inserts question info in Firebase and updates users status

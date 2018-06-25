@@ -9,6 +9,7 @@
 import UIKit
 
 protocol NewQuestionTableViewDelegate: NSObjectProtocol {
+    func selectedLine() -> String
     func saveQuestion(text: String, selectedTeacher: String)
 }
 
@@ -21,7 +22,7 @@ class NewQuestionViewController: UIViewController {
     let questionProfileManager = QuestionProfileService()
     var allUserProfiles: [UserProfile]?
     var usersInLine: [UserProfile]?
-    var selectedTeacher = "Developer"
+    var selectedLine = "Developer"
     var teacherArray = [("Developer", UIColor.developer()), ("Design", UIColor.design()), ("Business", UIColor.business())]
     
     weak var delegate: NewQuestionTableViewDelegate?
@@ -36,6 +37,11 @@ class NewQuestionViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.selectedLine = self.delegate?.selectedLine() ?? self.selectedLine
+    }
+    
     // MARK: - Methods
     // Create new question in Firebase
     func createQuestion() {
@@ -44,7 +50,7 @@ class NewQuestionViewController: UIViewController {
         if !(questionField.text?.isEmpty)! {
             questionText = questionField.text!
         }
-        delegate?.saveQuestion(text: questionText, selectedTeacher: selectedTeacher)
+        delegate?.saveQuestion(text: questionText, selectedTeacher: selectedLine)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -73,7 +79,7 @@ extension NewQuestionViewController: UITableViewDelegate {
             }
             cell.checkView.backgroundColor = teacherArray[indexPath.row].1
         }
-        selectedTeacher = teacherArray[indexPath.row].0
+        selectedLine = teacherArray[indexPath.row].0
     }
     
 }
@@ -89,7 +95,7 @@ extension NewQuestionViewController: UITableViewDataSource {
         
         if let cell = cell as? NewQuestionTableViewCell {
             cell.typeQuestionLabel.text = teacherArray[indexPath.row].0
-            if teacherArray[indexPath.row].0 == selectedTeacher {
+            if teacherArray[indexPath.row].0 == selectedLine {
                 cell.checkView.backgroundColor = teacherArray[indexPath.row].1
             }
         }
