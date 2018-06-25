@@ -31,26 +31,25 @@ class NewQuestionViewController: UIViewController {
     // Create new question
     @IBAction func save(_ sender: UIBarButtonItem) {
         // create new question function
-        self.createQuestion()
-        // Present next view
-//        self.presentProfileQuestionStatusView()
-        self.navigationController?.popViewController(animated: true)
+        if let questionText = questionField.text, !questionText.isEmpty {
+            if questionText.count > 131 {
+                let alert = UIAlertController(title: "Até 130 caracteres!", message: "Ultrapassou o limite de caracteres", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                delegate?.saveQuestion(text: questionText, selectedTeacher: selectedLine)
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else {
+            let alert = UIAlertController(title: "Vazio!", message: "Assunto vazio", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.selectedLine = self.delegate?.selectedLine() ?? self.selectedLine
-    }
-    
-    // MARK: - Methods
-    // Create new question in Firebase
-    func createQuestion() {
-        var questionText = " "
-        // Get typed text if not empty
-        if !(questionField.text?.isEmpty)! {
-            questionText = questionField.text!
-        }
-        delegate?.saveQuestion(text: questionText, selectedTeacher: selectedLine)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

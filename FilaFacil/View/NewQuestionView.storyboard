@@ -12,6 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Light.otf">
+            <string>SFProDisplay-Light</string>
+        </array>
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
         </array>
@@ -66,13 +69,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-KG-Shq">
-                                <rect key="frame" x="10" y="146" width="86.5" height="21.5"/>
+                                <rect key="frame" x="10" y="167" width="86.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MKK-yi-rfR">
-                                <rect key="frame" x="20" y="177.5" width="335" height="376.5"/>
+                                <rect key="frame" x="20" y="198.5" width="335" height="355.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newQuestionCell" id="rLY-Ci-Fnc" customClass="NewQuestionTableViewCell" customModule="FilaFacil" customModuleProvider="target">
@@ -117,15 +120,23 @@
                                     <outlet property="delegate" destination="8nf-Gf-Jxt" id="ESJ-BH-f5O"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limite de 130 caracteres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-E9-QLB">
+                                <rect key="frame" x="28" y="120" width="140" height="17"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="14"/>
+                                <color key="textColor" red="0.80784313725490198" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15636768940000001" green="0.16786375640000001" blue="0.2093632221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ndp-By-Pxc" firstAttribute="top" secondItem="ndb-O9-dha" secondAttribute="bottom" constant="10" id="3fF-Kq-fnY"/>
+                            <constraint firstItem="FL2-KG-Shq" firstAttribute="top" secondItem="Ugz-E9-QLB" secondAttribute="bottom" constant="30" id="5fi-ER-KQQ"/>
                             <constraint firstItem="Ndp-By-Pxc" firstAttribute="height" secondItem="ndb-O9-dha" secondAttribute="height" multiplier="3" id="H37-5u-efN"/>
+                            <constraint firstItem="Ugz-E9-QLB" firstAttribute="top" secondItem="Ndp-By-Pxc" secondAttribute="bottom" constant="4" id="HAa-9h-iJu"/>
                             <constraint firstItem="MKK-yi-rfR" firstAttribute="leading" secondItem="FL2-KG-Shq" secondAttribute="leading" constant="10" id="IK7-SR-U8L"/>
                             <constraint firstItem="uhD-tp-TAQ" firstAttribute="leading" secondItem="PMJ-oC-zXI" secondAttribute="leading" id="MPj-dw-tZ7"/>
                             <constraint firstItem="ndb-O9-dha" firstAttribute="leading" secondItem="PMJ-oC-zXI" secondAttribute="leading" constant="10" id="RB7-XD-1iz"/>
-                            <constraint firstItem="FL2-KG-Shq" firstAttribute="top" secondItem="Ndp-By-Pxc" secondAttribute="bottom" constant="30" id="RiS-El-FpP"/>
+                            <constraint firstItem="Ugz-E9-QLB" firstAttribute="leading" secondItem="Ndp-By-Pxc" secondAttribute="leading" constant="8" id="Rb3-JD-lPb"/>
                             <constraint firstItem="PMJ-oC-zXI" firstAttribute="trailing" secondItem="uhD-tp-TAQ" secondAttribute="trailing" id="SIj-xa-9QK"/>
                             <constraint firstItem="Ndp-By-Pxc" firstAttribute="leading" secondItem="ndb-O9-dha" secondAttribute="leading" constant="10" id="TR9-Sq-rBk"/>
                             <constraint firstItem="MKK-yi-rfR" firstAttribute="top" secondItem="FL2-KG-Shq" secondAttribute="bottom" constant="10" id="WHK-BN-uMc"/>
