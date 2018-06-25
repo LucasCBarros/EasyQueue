@@ -184,7 +184,14 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
         
-        return [deleteAction, editAction]
+        var actions: [UITableViewRowAction] = []
+        
+        if self.inLineQuestions[indexPath.row].userID == self.currentProfile?.userID {
+            actions.append(editAction)
+        }
+        actions.append(deleteAction)
+        
+        return actions
     }
     
     // Allows to edit cell according to profile type
