@@ -41,7 +41,7 @@ class NewQuestionViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         } else {
-            let alert = UIAlertController(title: "Vazio!", message: "Assunto vazio", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Assunto vazio!", message: "Preencha o campo de assunto", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
