@@ -161,10 +161,10 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let editAction = UITableViewRowAction(style: .normal, title: "Editar", handler: { (rowAction, indexPath) in
-            
-        })
-        editAction.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3490196078, blue: 0.8274509804, alpha: 1)
+//        let editAction = UITableViewRowAction(style: .normal, title: "Editar", handler: { (rowAction, indexPath) in
+//
+//        })
+//        editAction.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3490196078, blue: 0.8274509804, alpha: 1)
         
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
@@ -187,7 +187,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         var actions: [UITableViewRowAction] = []
         
         if self.inLineQuestions[indexPath.row].userID == self.currentProfile?.userID {
-            actions.append(editAction)
+//            actions.append(editAction)
         }
         actions.append(deleteAction)
         
