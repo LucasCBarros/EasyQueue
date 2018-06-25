@@ -14,34 +14,45 @@ class UserProfileDAO: DAO {
     
     /// Login Functions
     // Create a new user
-    func createUserProfile(userID: String, username: String, profileType: String, email: String,
-                           questionID: String ) {
+    func createUserProfile(userID: String, username: String, profileType: String? = nil, email: String) {
         // Retrieve users DeviceID from defaults
         let userDeviceID = UserDefaults.standard.string(forKey: "userDeviceID")  ?? ""
         
         let newUser = UserProfile(dictionary: [
             "userID": userID,
             "username": username,
-            "profileType": profileType,
             "email": email,
             "deviceID": userDeviceID
             ])
         
         let path = "Users"
         
+        if let profileType = newUser.profileType {
+            let path = "Admins/\(userID)"
+            let newAdmin = ProfileType(userID: userID, userName: newUser.username, profileType: profileType)
+            
+            self.create(dump: ProfileType.self, object: newAdmin, path: path, newObjectID: userID)
+        }
         self.create(dump: UserProfile.self, object: newUser, path: path, newObjectID: userID)
     }
     
     // Retrieve existing user
     func retrieveUserProfile(userID: String, completionHandler: @escaping (UserProfile?) -> Void) {
-        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: {[weak self] (snapshot) in
             let user = snapshot.value as? NSDictionary
             
-            if let actualUser = user {
+            if let actualUser = user as? [AnyHashable: Any] {
                 
-                let newUser = UserProfile(dictionary: (actualUser as? [AnyHashable: Any])!)
+                let newUser = UserProfile(dictionary: actualUser)
                 
-                completionHandler(newUser)
+                self?.ref?.child("ProfileType/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
+                    let profileType = snapshot.value as? NSDictionary
+                    if let profileType = profileType as? [AnyHashable: Any] {
+                        newUser.profileType = ProfileType(dictionary: profileType).profileType
+                    }
+                    completionHandler(newUser)
+                })
+                
             } else {
                 completionHandler(nil)
             }
@@ -53,14 +64,21 @@ class UserProfileDAO: DAO {
     func retrieveCurrentUserProfile(completionHandler: @escaping (UserProfile?) -> Void) {
         let authManager = AuthDatabaseManager()
         let userID = authManager.retrieveCurrentUserID()
-        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: {[weak self] (snapshot) in
             let user = snapshot.value as? NSDictionary
-            
-            if let actualUser = user {
+
+            if let actualUser = user as? [AnyHashable: Any] {
                 
-                let newUser = UserProfile(dictionary: (actualUser as? [AnyHashable: Any])!)
+                let newUser = UserProfile(dictionary: actualUser)
                 
-                completionHandler(newUser)
+                self?.ref?.child("ProfileType/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
+                    let profileType = snapshot.value as? NSDictionary
+                    if let profileType = profileType as? [AnyHashable: Any] {
+                        newUser.profileType = ProfileType(dictionary: profileType).profileType
+                    }
+                    completionHandler(newUser)
+                })
+                
             } else {
                 completionHandler(nil)
             }

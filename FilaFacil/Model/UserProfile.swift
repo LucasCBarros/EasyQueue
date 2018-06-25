@@ -17,7 +17,7 @@ class UserProfile: NSObject, PersistenceObject {
     var username: String = ""
     
     // Users profile type = Student or Teacher
-    var profileType: String = ""
+    var profileType: String?
     
     // Users E-mail
     var email: String = ""
@@ -63,7 +63,6 @@ class UserProfile: NSObject, PersistenceObject {
         self.dictInfo = [
             "userID": userID,
             "username": username,
-            "profileType": profileType,
             "email": email,
             "deviceID": deviceID
         ]
