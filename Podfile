@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'FilaFacil' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -29,7 +29,7 @@ end
 target 'FilaFacilWatch Extension' do
     use_frameworks!
     
-    #platform :watchos, '2.0'
+    platform :watchos, '2.0'
     pod 'Kingfisher', '~> 4.0'
     
 end
