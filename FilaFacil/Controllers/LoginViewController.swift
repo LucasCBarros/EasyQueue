@@ -31,6 +31,8 @@ class LoginViewController: MyViewController {
         usernameTxtField.textColor = UIColor.white
         usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+        loginBtn.clipsToBounds = true
+        loginBtn.layer.cornerRadius = 10
         
     }
     
