@@ -161,7 +161,7 @@ class LoginViewController: UIViewController {
     func presentLoggedInScreen() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "TabBarView", bundle: nil)
         let tabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate!
-        appDelegate?.window?.rootViewController = tabBarController
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate?
+        appDelegate??.window?.rootViewController = tabBarController
     }
 }

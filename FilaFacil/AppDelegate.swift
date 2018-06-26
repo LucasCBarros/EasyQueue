@@ -16,11 +16,6 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
-    
-    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-        
-    }
-    
     var window: UIWindow?
     
     override init() {
@@ -84,12 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("Device Token: \(token)")
         
         Messaging.messaging().apnsToken = deviceToken
-    }
-
-    @objc func tokenRefreshNotification(notification: NSNotification) {
-        if let refreshedToken = InstanceID.instanceID().token() {
-            print("InstanceID token: \(refreshedToken)")
-        }
     }
     
 }
