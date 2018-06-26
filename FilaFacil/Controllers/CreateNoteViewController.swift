@@ -172,7 +172,7 @@ extension CreateNoteViewController {
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if self.allNoteProfiles?[indexPath.row].userID == currentProfile!.userID || self.currentProfile!.profileType == "Teacher" {
+        if self.allNoteProfiles?[indexPath.row].userID == currentProfile?.userID || self.currentProfile?.profileType == "Teacher" {
             return true
         } else {
             return false
