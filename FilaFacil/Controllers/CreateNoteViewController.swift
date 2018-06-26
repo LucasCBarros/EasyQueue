@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CreateNoteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CreateNoteViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var newNoteView: UIView!
-    @IBOutlet weak var noteTextField: UITextField!
+    @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -25,9 +25,24 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     let userProfileManager = UserProfileService()
     
     @IBAction func createNote_Action(_ sender: Any) {
-        self.createNote()
-        noteTableView.reloadData()
-        animateOut()
+        // Get typed text if not empty
+        if let noteText = noteTextView.text, !noteText.isEmpty {
+            if noteText.count < 131 {
+                // Inserts question info in Firebase and updates users status
+                noteProfileManager.createNote(userID: currentProfile!.userID, noteText: noteText)
+                self.retrieveAllNotes()
+                noteTableView.reloadData()
+                animateOut()
+            } else {
+                let alert = UIAlertController(title: "Até 130 caracteres!", message: "Ultrapassou o limite de caracteres", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        } else {
+            let alert = UIAlertController(title: "Assunto vazio!", message: "Preencha o campo de assunto", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func newNote_Action(_ sender: Any) {
@@ -42,6 +57,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.noteTextView.delegate = self
         self.newNoteView.frame = self.noteTableView.frame
         self.hidenButton = self.navigationBar.rightBarButtonItems?.popLast()
         self.cancelButton = self.navigationBar.leftBarButtonItems?.popLast()
@@ -90,18 +106,6 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    func createNote() {
-        var noteText = " "
-        // Get typed text if not empty
-        if !(noteTextField.text?.isEmpty)! {
-            noteText = noteTextField.text!
-        }
-
-        // Inserts question info in Firebase and updates users status
-        noteProfileManager.createNote(userID: currentProfile!.userID, noteText: noteText)
-        self.retrieveAllNotes()
-    }
-    
     func animateIn() {
         self.view.addSubview(self.newNoteView)
         self.newNoteView.alpha = 0
@@ -113,7 +117,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
         UIView.animate(withDuration: 0.4) {
             self.newNoteView.alpha = 1
             self.newNoteView.transform = CGAffineTransform.identity
-            self.noteTextField.becomeFirstResponder()
+            self.noteTextView.becomeFirstResponder()
         }
     }
     
@@ -126,7 +130,7 @@ class CreateNoteViewController: UIViewController, UITableViewDataSource, UITable
             self.newNoteView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.newNoteView.alpha = 0
         }) {(_: Bool) in
-            self.noteTextField.text = ""
+            self.noteTextView.text = ""
             self.newNoteView.removeFromSuperview()
         }
     }
@@ -179,4 +183,26 @@ extension CreateNoteViewController {
         }
     }
 
+}
+
+extension CreateNoteViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if let text = textView.text, text == "Até 130 caracteres" {
+            textView.text = ""
+            textView.textColor = .black
+            textView.font = UIFont(name: "SFProText-Regular", size: 17)
+        }
+        textView.becomeFirstResponder()
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if let text = textView.text, text.isEmpty {
+            textView.text = "Até 130 caracteres"
+            textView.textColor = .lightGray
+            textView.font = UIFont(name: "SFProDisplay-Regular", size: 17)
+        }
+        textView.resignFirstResponder()
+    }
+    
 }

@@ -12,7 +12,7 @@ protocol EditEmailViewControllerDelegate: NSObjectProtocol {
     func change(email: String, _ password: String)
 }
 
-class EditEmailViewController: UIViewController {
+class EditEmailViewController: MyViewController {
     
     open weak var delegate: EditEmailViewControllerDelegate?
     @IBOutlet weak var passwordTextField: UITextField!

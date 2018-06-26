@@ -12,7 +12,7 @@ protocol EditPasswordViewControllerDelegate: NSObjectProtocol {
     func change(password: String, to newPassword: String)
 }
 
-class EditPasswordViewController: UIViewController {
+class EditPasswordViewController: MyViewController {
     
     open weak var delegate: EditPasswordViewControllerDelegate?
     @IBOutlet weak var passwordTextField: UITextField!

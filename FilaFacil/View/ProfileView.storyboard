@@ -277,7 +277,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3K-hj-SDe">
-                                <rect key="frame" x="0.0" y="2" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="58"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSR-02-cPH">
                                         <rect key="frame" x="29" y="19.5" width="52.5" height="20"/>
@@ -313,16 +313,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WX-An-1dD">
-                                <rect key="frame" x="0.0" y="60" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="2" width="375" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7J-Qe-NX6">
-                                        <rect key="frame" x="29" y="19" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novo email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7J-Qe-NX6">
+                                        <rect key="frame" x="29" y="19" width="92" height="21"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-iw-8FP">
-                                        <rect key="frame" x="98" y="19" width="248" height="21"/>
+                                        <rect key="frame" x="145" y="19" width="201" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
@@ -352,12 +352,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7WX-An-1dD" firstAttribute="leading" secondItem="gaY-v6-KKb" secondAttribute="leading" id="0F4-cw-E3y"/>
+                            <constraint firstItem="7WX-An-1dD" firstAttribute="top" secondItem="gaY-v6-KKb" secondAttribute="top" constant="2" id="2BH-R8-VM6"/>
                             <constraint firstItem="A3K-hj-SDe" firstAttribute="leading" secondItem="gaY-v6-KKb" secondAttribute="leading" id="Fgo-SX-y2N"/>
-                            <constraint firstItem="A3K-hj-SDe" firstAttribute="top" secondItem="gaY-v6-KKb" secondAttribute="top" constant="2" id="FlZ-Ak-Nci"/>
                             <constraint firstItem="gaY-v6-KKb" firstAttribute="bottom" secondItem="dKz-7M-J7r" secondAttribute="bottom" id="HRd-gb-0gI"/>
                             <constraint firstItem="dKz-7M-J7r" firstAttribute="top" secondItem="gaY-v6-KKb" secondAttribute="top" id="IAh-uz-CRj"/>
                             <constraint firstItem="gaY-v6-KKb" firstAttribute="trailing" secondItem="7WX-An-1dD" secondAttribute="trailing" id="Yy4-RX-anN"/>
-                            <constraint firstItem="7WX-An-1dD" firstAttribute="top" secondItem="A3K-hj-SDe" secondAttribute="bottom" id="bQ1-aY-SSk"/>
+                            <constraint firstItem="7WX-An-1dD" firstAttribute="bottom" secondItem="A3K-hj-SDe" secondAttribute="top" id="bQ1-aY-SSk"/>
                             <constraint firstItem="gaY-v6-KKb" firstAttribute="trailing" secondItem="A3K-hj-SDe" secondAttribute="trailing" id="ocX-9T-TJS"/>
                             <constraint firstItem="dKz-7M-J7r" firstAttribute="leading" secondItem="gaY-v6-KKb" secondAttribute="leading" id="vKc-tQ-DeI"/>
                             <constraint firstItem="gaY-v6-KKb" firstAttribute="trailing" secondItem="dKz-7M-J7r" secondAttribute="trailing" id="wIx-6M-iZe"/>
@@ -395,14 +395,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3q-Hx-7ZK">
                                 <rect key="frame" x="0.0" y="2" width="375" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzW-E0-4PS">
-                                        <rect key="frame" x="29" y="19.5" width="52.5" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha antiga" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzW-E0-4PS">
+                                        <rect key="frame" x="29" y="19.5" width="109" height="20"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVa-Mi-5aC">
-                                        <rect key="frame" x="105.5" y="19" width="240.5" height="21"/>
+                                        <rect key="frame" x="162" y="19" width="184" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES" textContentType="password"/>

@@ -13,7 +13,7 @@ protocol NewQuestionTableViewDelegate: NSObjectProtocol {
     func saveQuestion(text: String, selectedTeacher: String)
 }
 
-class NewQuestionViewController: UIViewController {
+class NewQuestionViewController: MyViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var questionField: UITextField!

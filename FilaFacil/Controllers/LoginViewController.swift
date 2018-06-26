@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: MyViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var emailTxtField: UITextField!
@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         usernameTxtField.textColor = UIColor.white
         usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
