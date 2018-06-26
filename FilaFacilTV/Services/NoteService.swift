@@ -11,7 +11,7 @@ import Foundation
 class NoteService {
     
     func getAllQuestions(completion: @escaping (_ questions: [Note], _ error: Error?) -> Void) {
-        let URL: String = "https://filafacildev.firebaseio.com/Notes.json"
+        let URL: String = "https://fila-facil.firebaseio.com/Notes.json"
         
         //creating a NSURL
         guard let url = NSURL(string: URL) else { return }
