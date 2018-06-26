@@ -14,7 +14,7 @@ class UserProfileDAO: DAO {
     
     /// Login Functions
     // Create a new user
-    func createUserProfile(userID: String, username: String, profileType: String? = nil, email: String) {
+    func createUserProfile(userID: String, username: String, profileType: String? = nil, email: String, deviceID: String) {
         // Retrieve users DeviceID from defaults
         let userDeviceID = UserDefaults.standard.string(forKey: "userDeviceID")  ?? ""
         

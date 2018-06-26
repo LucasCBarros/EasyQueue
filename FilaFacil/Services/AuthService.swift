@@ -39,7 +39,7 @@ class AuthService: NSObject {
             if success {
                 self.userProfileService.createUser(userID: idOrErrorMessage,
                                                    username: username,
-                                                   email: email)
+                                                   email: email, deviceID: UserDefaults.standard.string(forKey: "userDeviceID") ?? "")
                 completionHandler(true, "")
             } else {
                 completionHandler(false, idOrErrorMessage)

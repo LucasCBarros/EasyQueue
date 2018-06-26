@@ -14,8 +14,8 @@ class UserProfileService: NSObject {
     
     /// AuthBase functions:
     // Register - Creates new user
-    func createUser(userID: String, username: String, email: String) {
-        userProfileManager.createUserProfile(userID: userID, username: username, email: email)
+    func createUser(userID: String, username: String, email: String, deviceID: String) {
+        userProfileManager.createUserProfile(userID: userID, username: username, email: email, deviceID: deviceID)
     }
     
     // Login - Retrieve user info
