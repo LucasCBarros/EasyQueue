@@ -22,6 +22,7 @@ class LoginViewController: MyViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         emailTxtField.textColor = UIColor.white
         emailTxtField.attributedPlaceholder = NSAttributedString(string: "E-mail",
                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
@@ -33,6 +34,8 @@ class LoginViewController: MyViewController {
                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
         loginBtn.clipsToBounds = true
         loginBtn.layer.cornerRadius = 10
+        registerBtn.clipsToBounds = true
+        registerBtn.layer.cornerRadius = 10
         
     }
     
