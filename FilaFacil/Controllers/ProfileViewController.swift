@@ -48,26 +48,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         retrieveCurrentUserProfile()
     }
     
-    // MARK: - Actions
-    @IBAction func saveBtn_Action(_ sender: Any) {
-        saveChanges()
-    }
-    
-    @IBAction func editCancel_Action(_ sender: Any) {
-//        if isEditing {
-//            editPhotoBtn.isEnabled = true
-//            editPhotoBtn.isHidden = false
-//            saveBtn.isEnabled = true
-//            saveBtn.tintColor = UIColor().UIGreen()
-//
-//        } else {
-//            editPhotoBtn.isEnabled = false
-//            editPhotoBtn.isHidden = true
-//            saveBtn.isEnabled = false
-//            editPhotoBtn.isHidden = false
-//        }
-    }
-    
     @IBAction func editPhoto_Action(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -123,9 +103,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if let selectedImage = selectedImageFromPicker {
             profilePhoto.image = selectedImage
+            saveChanges()
         }
         dismiss(animated: true, completion: nil)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

@@ -252,14 +252,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ow7-qS-Quq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="lod-Mc-Zyc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ems-a3-JyF">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="saveBtn_Action:" destination="Wck-Ig-pHW" id="app-l8-vvY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Profile" id="lod-Mc-Zyc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editPhotoBtn" destination="dcQ-fE-yik" id="jz1-4G-gtw"/>
