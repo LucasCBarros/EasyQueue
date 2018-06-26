@@ -217,7 +217,7 @@
                         <viewLayoutGuide key="safeArea" id="uuB-EE-s3X"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fila" id="6SD-bq-az2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BOO-UK-zxk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BOO-UK-zxk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="ArV-XD-19R" kind="show" identifier="newQuestionView" id="UzO-el-Rmy"/>

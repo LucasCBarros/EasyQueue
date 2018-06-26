@@ -44,7 +44,7 @@ class DetailInterfaceController:  InterfaceController {
             timeStampLabel.setText(strDate)
             
             if openedQuestion.userPhoto != "" {
-                userPhoto.setImageWithUrl(url: openedQuestion.userPhoto, scale: 0.5)
+                _ = userPhoto.setImageWithUrl(url: openedQuestion.userPhoto, scale: 0.5)
             }
         }
     }
