@@ -58,7 +58,6 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noteTextView.delegate = self
-        self.newNoteView.frame = self.noteTableView.frame
         self.hidenButton = self.navigationBar.rightBarButtonItems?.popLast()
         self.cancelButton = self.navigationBar.leftBarButtonItems?.popLast()
         self.retrieveCurrentUserProfile()
@@ -71,6 +70,12 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.newNoteView.frame = self.noteTableView.frame
     }
     
     // Retrieve logged user
