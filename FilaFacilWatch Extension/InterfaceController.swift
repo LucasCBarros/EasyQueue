@@ -54,7 +54,7 @@ class InterfaceController: WKInterfaceController {
                         rowController.questionTypeColor.setBackgroundColor(openedQuestions[index].categoryQuestion.color)
                         
                         if openedQuestions[index].userPhoto != "" {
-                            rowController.userPhoto.setImageWithUrl(url: openedQuestions[index].userPhoto, scale: 0.5)
+                            _ = rowController.userPhoto.setImageWithUrl(url: openedQuestions[index].userPhoto, scale: 0.5)
                         }
                     }
                 }
