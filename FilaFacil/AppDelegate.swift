@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.statusBarStyle = .lightContent
         UIApplication.shared.isStatusBarHidden = false
         // Override point for customization after application launch.
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
         
         // Finds and saves users DeviceID
 //        let deviceID = UIDevice.current.identifierForVendor!.uuidString

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
-		AB199A8F610D98551665E9C3 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
-		CAD2BF0E9E327C77C746E180 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
@@ -72,6 +71,7 @@
 		E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384620B36CFD00D88578 /* NoteProfile.swift */; };
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
+		E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
 		FA3DEDF920E169800022E0E2 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DEDF820E169800022E0E2 /* ProfileType.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
@@ -349,7 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB199A8F610D98551665E9C3 /* Pods_FilaFacilTV.framework in Frameworks */,
+				E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +365,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAD2BF0E9E327C77C746E180 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */,
+				35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +781,6 @@
 				E616DB4920D991940009E9FD /* Sources */,
 				E616DB4A20D991940009E9FD /* Frameworks */,
 				E616DB4B20D991940009E9FD /* Resources */,
-				970FBD2C6AFB829B50EC65F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -991,7 +990,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher-tvOS/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1048,24 +1047,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		970FBD2C6AFB829B50EC65F9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher-watchOS/Kingfisher.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ADC88CFA428C61706395F949 /* [CP] Check Pods Manifest.lock */ = {

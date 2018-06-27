@@ -30,6 +30,6 @@ target 'FilaFacilWatch Extension' do
     use_frameworks!
     
     platform :watchos, '2.0'
-    pod 'Kingfisher', '~> 4.0'
+    #pod 'Kingfisher', '~> 4.0'
     
 end

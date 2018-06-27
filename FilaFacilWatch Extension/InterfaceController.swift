@@ -8,8 +8,6 @@
 
 import WatchKit
 import Foundation
-import Kingfisher
-
 
 class InterfaceController: WKInterfaceController {
 
