@@ -723,6 +723,7 @@
 				DEDF0FBB20AE20470064A247 /* Frameworks */,
 				DEDF0FBC20AE20470064A247 /* Resources */,
 				14887C977ED0D492404F27FF /* [CP] Embed Pods Frameworks */,
+				C1AB9895531B5667EB33DEF5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -744,6 +745,7 @@
 				E6022993203FA29E00336FC3 /* Resources */,
 				5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */,
 				E616DB6620D991950009E9FD /* Embed Watch Content */,
+				FABC5842AF4236D6A5CBB065 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -781,6 +783,8 @@
 				E616DB4920D991940009E9FD /* Sources */,
 				E616DB4A20D991940009E9FD /* Frameworks */,
 				E616DB4B20D991940009E9FD /* Resources */,
+				3D7765D00121F458067BBDB7 /* [CP] Embed Pods Frameworks */,
+				E179DDB7B279E236FC05A4CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1001,6 +1005,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3D7765D00121F458067BBDB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1085,6 +1104,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C1AB9895531B5667EB33DEF5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E179DDB7B279E236FC05A4CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E6CB80C12077F929007B0661 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1097,6 +1146,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config FilaFacil/.swiftlint.yml";
+		};
+		FABC5842AF4236D6A5CBB065 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

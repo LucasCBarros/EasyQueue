@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -17,22 +22,24 @@
                         <table alignment="left" id="7Uz-cy-GNB">
                             <items>
                                 <tableRow identifier="RowController" id="ems-k9-m8i" customClass="RowController" customModule="FilaFacilWatch_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="I5X-dV-sgY">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="I5X-dV-sgY">
                                         <items>
-                                            <group width="5" height="30" alignment="left" verticalAlignment="center" radius="2" id="wIv-XV-Rpr"/>
-                                            <group width="5" height="30" alignment="right" verticalAlignment="center" id="Uyz-8E-p8a"/>
-                                            <group width="30" height="30" alignment="center" verticalAlignment="center" radius="15" id="ytb-NM-bfe">
-                                                <items>
-                                                    <imageView width="30" height="30" alignment="center" verticalAlignment="center" id="z4P-Ww-qSy"/>
-                                                </items>
+                                            <group width="2.7999999999999998" height="1" heightAdjustment="-16" alignment="left" verticalAlignment="center" radius="1.3999999999999999" id="wIv-XV-Rpr">
+                                                <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </group>
-                                            <group width="90" alignment="right" layout="vertical" id="UGt-vi-lJO">
+                                            <group width="8.4000000000000004" height="1" alignment="left" id="5Wl-7t-KaW"/>
+                                            <group height="1" alignment="left" layout="vertical" id="UGt-vi-lJO">
                                                 <items>
-                                                    <label width="100" height="18" alignment="center" verticalAlignment="center" text="Question" textAlignment="left" id="d2b-RL-rUa">
-                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    <label alignment="left" text="Question" textAlignment="left" numberOfLines="0" id="d2b-RL-rUa">
+                                                        <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                                                     </label>
-                                                    <label width="96" height="12" alignment="center" verticalAlignment="center" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="qjX-gs-aMX">
-                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    <label alignment="left" text="Name" textAlignment="left" numberOfLines="0" minimumScaleFactor="0.5" id="qjX-gs-aMX">
+                                                        <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
+                                                    </label>
+                                                    <label alignment="left" text="Name" textAlignment="left" numberOfLines="0" minimumScaleFactor="0.5" id="7tn-YU-aBf">
+                                                        <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
                                                     </label>
                                                 </items>
                                             </group>
@@ -41,8 +48,6 @@
                                     <connections>
                                         <outlet property="questionLabel" destination="d2b-RL-rUa" id="IfU-Mk-Ok5"/>
                                         <outlet property="questionTypeColor" destination="wIv-XV-Rpr" id="r2T-4k-BOg"/>
-                                        <outlet property="userPhoto" destination="z4P-Ww-qSy" id="saN-1p-rSC"/>
-                                        <outlet property="userPhotoGroup" destination="ytb-NM-bfe" id="PrX-lH-a36"/>
                                         <outlet property="usernameLabel" destination="qjX-gs-aMX" id="fhn-0l-KNU"/>
                                     </connections>
                                 </tableRow>

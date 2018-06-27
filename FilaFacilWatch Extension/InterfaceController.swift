@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         pushController(withName: "DetailInterfaceController", context: openedQuestions[rowIndex])
     }
-    
+        
     @objc func getAllInformations() {
         getAllQuestions()
 //        getAllNotes()
@@ -86,6 +86,7 @@ class InterfaceController: WKInterfaceController {
             }
         })
     }
+    
     
 //    func getAllNotes() {
 //        noteService.getAllQuestions(completion: {[weak self] (notes, error) in
