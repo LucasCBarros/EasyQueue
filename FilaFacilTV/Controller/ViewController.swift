@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
             layout.delegate = self
         }
+        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
