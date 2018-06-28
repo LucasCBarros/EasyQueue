@@ -85,6 +85,7 @@ class LineListViewController: UIViewController {
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             if let userProfile = userProfile {
                 self.currentProfile = userProfile
+                self.userProfileManager.attualizeTokenID(user: userProfile)
             }
         }
     }
