@@ -27,25 +27,31 @@
                                             <group width="2.7999999999999998" height="1" heightAdjustment="-16" alignment="left" verticalAlignment="center" radius="1.3999999999999999" id="wIv-XV-Rpr">
                                                 <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </group>
-                                            <group width="8.4000000000000004" height="1" alignment="left" id="5Wl-7t-KaW"/>
-                                            <group height="1" alignment="left" layout="vertical" id="UGt-vi-lJO">
+                                            <group width="4.5" height="1" alignment="left" id="5Wl-7t-KaW"/>
+                                            <group alignment="left" layout="vertical" id="UGt-vi-lJO">
                                                 <items>
-                                                    <label alignment="left" text="Question" textAlignment="left" numberOfLines="0" id="d2b-RL-rUa">
+                                                    <group width="1" height="2" alignment="left" id="b3Z-BO-M9O"/>
+                                                    <label alignment="left" text="Question" textAlignment="left" numberOfLines="2" id="d2b-RL-rUa">
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
                                                         <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                                                     </label>
-                                                    <label alignment="left" text="Name" textAlignment="left" numberOfLines="0" minimumScaleFactor="0.5" id="qjX-gs-aMX">
+                                                    <label alignment="left" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="qjX-gs-aMX">
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
                                                         <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
                                                     </label>
-                                                    <label alignment="left" text="Name" textAlignment="left" numberOfLines="0" minimumScaleFactor="0.5" id="7tn-YU-aBf">
+                                                    <label alignment="left" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="7tn-YU-aBf">
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
                                                         <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
                                                     </label>
+                                                    <group width="1" height="8" alignment="left" id="VdI-2j-HZy"/>
                                                 </items>
                                             </group>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="dateLabel" destination="7tn-YU-aBf" id="S6t-UH-Y5B"/>
                                         <outlet property="questionLabel" destination="d2b-RL-rUa" id="IfU-Mk-Ok5"/>
                                         <outlet property="questionTypeColor" destination="wIv-XV-Rpr" id="r2T-4k-BOg"/>
                                         <outlet property="usernameLabel" destination="qjX-gs-aMX" id="fhn-0l-KNU"/>

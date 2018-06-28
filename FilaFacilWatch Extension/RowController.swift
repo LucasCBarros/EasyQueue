@@ -13,9 +13,7 @@ class RowController: NSObject {
     
     @IBOutlet var questionLabel: WKInterfaceLabel!
     @IBOutlet var usernameLabel: WKInterfaceLabel!
-    @IBOutlet var userPhoto: WKInterfaceImage!
+    @IBOutlet var dateLabel: WKInterfaceLabel!
     @IBOutlet var questionTypeColor: WKInterfaceGroup!
-    @IBOutlet var userPhotoGroup: WKInterfaceGroup!
     
 }
-

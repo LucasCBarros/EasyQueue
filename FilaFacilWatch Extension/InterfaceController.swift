@@ -47,13 +47,16 @@ class InterfaceController: WKInterfaceController {
             if openedQuestions.count > 0 {
                 for index in 0..<openedQuestions.count {
                     if let rowController = lineTableView.rowController(at: index) as? RowController {
-                        rowController.questionLabel.setText(openedQuestions[index].questionTitle)
-                        rowController.usernameLabel.setText(openedQuestions[index].username)
-                        rowController.questionTypeColor.setBackgroundColor(openedQuestions[index].categoryQuestion.color)
-                        
-                        if openedQuestions[index].userPhoto != "" {
-                            _ = rowController.userPhoto.setImageWithUrl(url: openedQuestions[index].userPhoto, scale: 0.5)
+                        let question = openedQuestions[index]
+                        rowController.questionLabel.setText(question.questionTitle)
+                        rowController.usernameLabel.setText(question.username)
+                        //Tirar o timestamp e colocar a data e hora
+                        if let timeInterval = Double.init(question.questionID) {
+                            let date = Date(timeIntervalSince1970: timeInterval / 1000)
+                            let strDate = Formatter.dateToString(date)
+                            rowController.dateLabel.setText(strDate)
                         }
+                        rowController.questionTypeColor.setBackgroundColor(question.categoryQuestion.color)
                     }
                 }
             }
