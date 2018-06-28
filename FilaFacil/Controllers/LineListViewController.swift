@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 //selectedTab = teacherArray[indexPath.row]
 
@@ -93,14 +94,15 @@ class LineListViewController: UIViewController {
     func retrieveAllQuestions(lineName: String) {
         questionProfileManager.retrieveAllOpenQuestions(lineName: lineName) { (questionProfile) in
             if let questionProfile = questionProfile {
-                self.inLineQuestions = questionProfile
-            }
-            
-            // Add to main Thread
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
-                self.listTableView.reloadData()
+                // Add to main Thread
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    if self.selectedTab == lineName {
+                        self.inLineQuestions = questionProfile
+                        self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
+                        self.listTableView.reloadData()
+                    }
+                }
             }
         }
     }
@@ -131,22 +133,26 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             let date = Date(timeIntervalSince1970: timeInterval! / 1000)
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
-            
-            //Recuperando foto
-            if let urlPhoto = URL(string: question.userPhoto) {
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: urlPhoto), let photo = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            cell?.profilePhoto.image = photo
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+            if let url = URL(string: question.userPhoto) {
+                KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: {[weak self] image, erro, _, url in
+                    DispatchQueue.main.async {
+                        if self != nil {
+                            if let image = image, let url = url, erro == nil {
+                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString == self!.inLineQuestions[indexPath.row].userPhoto {
+                                    cell?.profilePhoto.image = image
+                                } else {
+                                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+                                }
+                            } else {
+                                cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+                            }
                         }
                     }
-                }
+                })
             } else {
-                cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+                if self.inLineQuestions.count >= indexPath.row - 1 && question.userPhoto == self.inLineQuestions[indexPath.row].userPhoto {
+                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+                }
             }
             
         }
