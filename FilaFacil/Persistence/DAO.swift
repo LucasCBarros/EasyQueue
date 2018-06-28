@@ -65,6 +65,12 @@ class DAO: NSObject {
         })
     }
     
+    func editByID<T: PersistenceObject>(dump: T.Type, newObject: T, path: String, objectID: String) {
+        var dict = newObject.getDictInfo()
+        
+        ref?.child(path).child(objectID).updateChildValues(dict)
+    }
+    
     func create<T: PersistenceObject>(dump: T.Type, object: T, path: String, newObjectID: String?) {
         let newID = (newObjectID == nil) ? ref?.child(path).childByAutoId().key : newObjectID
         
