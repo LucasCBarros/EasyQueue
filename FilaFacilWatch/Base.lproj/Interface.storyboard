@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Interface Controller-->
+        <!--Smart Board-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FilaFacilWatch" customModuleProvider="target">
+                <controller title="Smart Board" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FilaFacilWatch" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="7Uz-cy-GNB">
                             <items>
                                 <tableRow identifier="RowController" id="ems-k9-m8i" customClass="RowController" customModule="FilaFacilWatch_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="I5X-dV-sgY">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="I5X-dV-sgY">
                                         <items>
-                                            <group width="5" height="30" alignment="left" verticalAlignment="center" radius="2" id="wIv-XV-Rpr"/>
-                                            <group width="5" height="30" alignment="right" verticalAlignment="center" id="Uyz-8E-p8a"/>
-                                            <group width="30" height="30" alignment="center" verticalAlignment="center" radius="15" id="ytb-NM-bfe">
-                                                <items>
-                                                    <imageView width="30" height="30" alignment="center" verticalAlignment="center" id="z4P-Ww-qSy"/>
-                                                </items>
+                                            <group width="2.7999999999999998" height="1" heightAdjustment="-16" alignment="left" verticalAlignment="center" radius="1.3999999999999999" id="wIv-XV-Rpr">
+                                                <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </group>
-                                            <group width="90" alignment="right" layout="vertical" id="UGt-vi-lJO">
+                                            <group width="4.5" height="1" alignment="left" id="5Wl-7t-KaW"/>
+                                            <group alignment="left" layout="vertical" id="UGt-vi-lJO">
                                                 <items>
-                                                    <label width="100" height="18" alignment="center" verticalAlignment="center" text="Question" textAlignment="left" id="d2b-RL-rUa">
-                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    <group width="1" height="2" alignment="left" id="b3Z-BO-M9O"/>
+                                                    <label alignment="left" text="Question" textAlignment="left" numberOfLines="2" id="d2b-RL-rUa">
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
+                                                        <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
                                                     </label>
-                                                    <label width="96" height="12" alignment="center" verticalAlignment="center" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="qjX-gs-aMX">
-                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    <label alignment="left" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="qjX-gs-aMX">
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
+                                                        <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
                                                     </label>
+                                                    <label alignment="left" text="Name" textAlignment="left" minimumScaleFactor="0.5" id="7tn-YU-aBf">
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" updatesFrequently="YES"/>
+                                                        <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
+                                                    </label>
+                                                    <group width="1" height="8" alignment="left" id="VdI-2j-HZy"/>
                                                 </items>
                                             </group>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="dateLabel" destination="7tn-YU-aBf" id="S6t-UH-Y5B"/>
                                         <outlet property="questionLabel" destination="d2b-RL-rUa" id="IfU-Mk-Ok5"/>
                                         <outlet property="questionTypeColor" destination="wIv-XV-Rpr" id="r2T-4k-BOg"/>
-                                        <outlet property="userPhoto" destination="z4P-Ww-qSy" id="saN-1p-rSC"/>
-                                        <outlet property="userPhotoGroup" destination="ytb-NM-bfe" id="PrX-lH-a36"/>
                                         <outlet property="usernameLabel" destination="qjX-gs-aMX" id="fhn-0l-KNU"/>
                                     </connections>
                                 </tableRow>
@@ -72,57 +86,78 @@
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
-        <!--DetailInterfaceController-->
-        <scene sceneID="N9f-dd-dD3">
-            <objects>
-                <controller identifier="DetailInterfaceController" id="KCv-DD-p67" customClass="DetailInterfaceController" customModule="FilaFacilWatch_Extension">
-                    <items>
-                        <group width="1" alignment="left" radius="10" id="Lvd-jE-ufI">
-                            <items>
-                                <group width="5" alignment="left" id="6eb-Ww-tnE"/>
-                                <group width="8" height="40" alignment="left" radius="3" id="dHx-FY-Rra"/>
-                                <group width="5" alignment="left" id="qyF-9e-lUj"/>
-                                <group width="40" height="40" alignment="left" radius="20" id="KBS-y8-rGL">
-                                    <items>
-                                        <imageView width="40" height="40" alignment="left" id="GPk-xG-YH5"/>
-                                    </items>
-                                </group>
-                                <label width="70" height="40" alignment="left" text="Username" textAlignment="center" id="Qsi-C9-MmY">
-                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                </label>
-                            </items>
-                        </group>
-                        <group width="1" height="3" alignment="left" id="UZo-nS-l0j"/>
-                        <group width="135" alignment="center" verticalAlignment="center" radius="10" id="jig-Y3-6IK">
-                            <items>
-                                <label width="136" height="95" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="oq2-sy-SC9">
-                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                </label>
-                            </items>
-                        </group>
-                        <label width="136" height="16" alignment="right" verticalAlignment="bottom" text="Label" textAlignment="right" id="hd7-LJ-FgE">
-                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                        </label>
-                    </items>
-                    <connections>
-                        <outlet property="questionDescription" destination="oq2-sy-SC9" id="HGC-P2-3T9"/>
-                        <outlet property="questionDescriptionBG" destination="jig-Y3-6IK" id="uuH-PH-eCj"/>
-                        <outlet property="questionTypeColor" destination="dHx-FY-Rra" id="spy-lc-IKY"/>
-                        <outlet property="timeStampLabel" destination="hd7-LJ-FgE" id="07g-hz-cG5"/>
-                        <outlet property="topPanelBG" destination="Lvd-jE-ufI" id="KSs-T1-RYS"/>
-                        <outlet property="userPhoto" destination="GPk-xG-YH5" id="0Fz-1w-aFX"/>
-                        <outlet property="usernameLabel" destination="Qsi-C9-MmY" id="pbR-5u-R2v"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="468" y="341.5"/>
-        </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="FilaFacilWatch" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Fila-->
+        <scene sceneID="Rry-5K-1Cy">
+            <objects>
+                <controller identifier="DetailInterfaceController" title="Fila" id="9hJ-vI-oB8" customClass="DetailInterfaceController" customModule="FilaFacilWatch_Extension">
+                    <items>
+                        <group width="1" alignment="center" radius="10" id="Ss1-Ti-PiX">
+                            <items>
+                                <group alignment="center" radius="27" id="hkH-vh-RHV">
+                                    <items>
+                                        <imageView width="57" height="57" alignment="center" verticalAlignment="center" id="vQc-Hr-HiM"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Question" textAlignment="left" numberOfLines="0" id="Fa1-dn-rJC">
+                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            </variation>
+                        </label>
+                        <label alignment="left" text="Username" textAlignment="left" id="Rcs-cU-LHh">
+                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="11"/>
+                            </variation>
+                        </label>
+                        <group width="1" height="12.6" alignment="left" id="qhd-PI-18o"/>
+                        <group width="1" alignment="center" hidden="YES" radius="10" id="TkF-9L-ceY">
+                            <items>
+                                <button width="0.5" height="27" alignment="left" title="Cancelar" id="ADz-kw-ub6">
+                                    <color key="titleColor" red="0.76470588235294112" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                    <variation key="device=watch38mm">
+                                        <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
+                                    </variation>
+                                </button>
+                                <button width="0.5" height="27" alignment="right" title="Começar" id="AJy-8C-pzg">
+                                    <color key="titleColor" red="0.011764705882352941" green="1" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.011764705882352941" green="0.20392156862745098" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                                    </variation>
+                                    <connections>
+                                        <action selector="startTimer" destination="9hJ-vI-oB8" id="SLu-uJ-Pvc"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="cancelButton" destination="ADz-kw-ub6" id="kMb-m2-qQu"/>
+                        <outlet property="questionDescription" destination="Fa1-dn-rJC" id="vdD-Pp-ONI"/>
+                        <outlet property="startButton" destination="AJy-8C-pzg" id="XeW-ls-Q41"/>
+                        <outlet property="topPanelBG" destination="Ss1-Ti-PiX" id="IK2-dr-cuh"/>
+                        <outlet property="userPhoto" destination="vQc-Hr-HiM" id="IJj-Ee-71v"/>
+                        <outlet property="usernameLabel" destination="Rcs-cU-LHh" id="pzN-bP-SAx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="346"/>
         </scene>
     </scenes>
 </document>

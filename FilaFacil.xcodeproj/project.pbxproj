@@ -94,6 +94,12 @@
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
 		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
 		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
+		FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
+		FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
+		FAA331C020E6B85000D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
+		FAA331C120E6B8B700D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
+		FAA331C220E6BA3B00D893DC /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365F20B331B800D6B61F /* SF-Pro-Display-Medium.otf */; };
+		FAA331C320E6BA3B00D893DC /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365F20B331B800D6B61F /* SF-Pro-Display-Medium.otf */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -1053,7 +1059,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E616DB4720D991940009E9FD /* Assets.xcassets in Resources */,
+				FAA331C020E6B85000D893DC /* SF-Pro-Display-Regular.otf in Resources */,
+				FAA331C120E6B8B700D893DC /* SF-Pro-Text-Regular.otf in Resources */,
 				E616DB4520D991910009E9FD /* Interface.storyboard in Resources */,
+				FAA331C320E6BA3B00D893DC /* SF-Pro-Display-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,7 +1070,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA331C220E6BA3B00D893DC /* SF-Pro-Display-Medium.otf in Resources */,
+				FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */,
 				E616DB5920D991950009E9FD /* Assets.xcassets in Resources */,
+				FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1251,6 +1263,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config FilaFacil/.swiftlint.yml";
+		};
+		FEEA53C87435D0E25ECD73E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
