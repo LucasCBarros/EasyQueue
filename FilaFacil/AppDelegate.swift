@@ -12,6 +12,7 @@ import IQKeyboardManagerSwift
 import FirebaseMessaging
 import FirebaseInstanceID
 import UserNotifications
+import Intents
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -28,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         
         Messaging.messaging().delegate = self
+    }
+    
+    fileprivate func requestAuthorisation() {
+        INPreferences.requestSiriAuthorization { status in }
     }
     
     func application(_ application: UIApplication,
@@ -62,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         Messaging.messaging().shouldEstablishDirectChannel = true
 
+        requestAuthorisation()
         return true
     }
     
