@@ -9,23 +9,20 @@
 import Foundation
 import WatchKit
 
-class DetailInterfaceController:  InterfaceController {
+class DetailInterfaceController: InterfaceController {
     
     @IBOutlet var topPanelBG: WKInterfaceGroup!
-    @IBOutlet var questionDescriptionBG: WKInterfaceGroup!
     @IBOutlet var questionDescription: WKInterfaceLabel!
     @IBOutlet var usernameLabel: WKInterfaceLabel!
     @IBOutlet var userPhoto: WKInterfaceImage!
-//    @IBOutlet var timeStampLabel: WKInterfaceLabel!
-//    @IBOutlet var questionTypeColor: WKInterfaceGroup!
+    @IBOutlet var cancelButton: WKInterfaceButton!
+    @IBOutlet var startButton: WKInterfaceButton!
     
     var openedQuestion: Question!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-//        topPanelBG.setBackgroundColor(UIColor.darkGray)
-        questionDescriptionBG.setBackgroundColor(UIColor.darkGray)
+
         
         if let detailData = context as? Question {
             openedQuestion = detailData

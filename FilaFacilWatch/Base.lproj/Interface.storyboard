@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Interface Controller-->
+        <!--Smart Board-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FilaFacilWatch" customModuleProvider="target">
+                <controller title="Smart Board" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FilaFacilWatch" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="7Uz-cy-GNB">
                             <items>
@@ -107,34 +107,47 @@
                                 </group>
                             </items>
                         </group>
-                        <label width="1" height="36" alignment="left" text="Huge question text from the user that asks to much" textAlignment="left" numberOfLines="0" id="Fa1-dn-rJC">
-                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                        <label alignment="left" text="Question" textAlignment="left" numberOfLines="0" id="Fa1-dn-rJC">
+                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="13"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                            </variation>
                         </label>
-                        <label width="1" height="14" alignment="left" text="Username" textAlignment="left" id="Rcs-cU-LHh">
-                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
+                        <label alignment="left" text="Username" textAlignment="left" id="Rcs-cU-LHh">
+                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="10"/>
+                            <variation key="device=watch42mm">
+                                <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="11"/>
+                            </variation>
                         </label>
+                        <group width="1" height="12.6" alignment="left" id="qhd-PI-18o"/>
                         <group width="1" alignment="center" radius="10" id="TkF-9L-ceY">
                             <items>
-                                <group width="1" alignment="center" id="cPs-Dk-ffZ">
-                                    <items>
-                                        <button width="0.5" height="27" alignment="left" verticalAlignment="center" title="Cancelar" id="Ilu-1U-n14">
-                                            <color key="titleColor" red="0.76470588240000004" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
-                                        </button>
-                                        <button width="0.5" height="27" alignment="right" verticalAlignment="center" title="Começar" id="G8i-Gw-D0o">
-                                            <color key="titleColor" red="0.01176470588" green="1" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" red="0.01176470588" green="0.20784313730000001" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
-                                        </button>
-                                    </items>
-                                </group>
+                                <button width="0.5" height="27" alignment="left" title="Cancelar" id="ADz-kw-ub6">
+                                    <color key="titleColor" red="0.76470588235294112" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                    <variation key="device=watch38mm">
+                                        <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="12"/>
+                                    </variation>
+                                </button>
+                                <button width="0.5" height="27" alignment="right" title="Começar" id="AJy-8C-pzg">
+                                    <color key="titleColor" red="0.011764705882352941" green="1" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.011764705882352941" green="0.20392156862745098" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="10"/>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                                    </variation>
+                                </button>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="cancelButton" destination="ADz-kw-ub6" id="kMb-m2-qQu"/>
                         <outlet property="questionDescription" destination="Fa1-dn-rJC" id="vdD-Pp-ONI"/>
-                        <outlet property="questionDescriptionBG" destination="TkF-9L-ceY" id="Wcu-SX-DTN"/>
+                        <outlet property="startButton" destination="AJy-8C-pzg" id="XeW-ls-Q41"/>
                         <outlet property="topPanelBG" destination="Ss1-Ti-PiX" id="IK2-dr-cuh"/>
                         <outlet property="userPhoto" destination="vQc-Hr-HiM" id="IJj-Ee-71v"/>
                         <outlet property="usernameLabel" destination="Rcs-cU-LHh" id="pzN-bP-SAx"/>
