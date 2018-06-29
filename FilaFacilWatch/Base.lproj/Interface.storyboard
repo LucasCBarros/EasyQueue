@@ -12,6 +12,9 @@
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Interface Controller-->
@@ -83,57 +86,62 @@
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
-        <!--DetailInterfaceController-->
-        <scene sceneID="N9f-dd-dD3">
-            <objects>
-                <controller identifier="DetailInterfaceController" id="KCv-DD-p67" customClass="DetailInterfaceController" customModule="FilaFacilWatch_Extension">
-                    <items>
-                        <group width="1" alignment="left" radius="10" id="Lvd-jE-ufI">
-                            <items>
-                                <group width="5" alignment="left" id="6eb-Ww-tnE"/>
-                                <group width="8" height="40" alignment="left" radius="3" id="dHx-FY-Rra"/>
-                                <group width="5" alignment="left" id="qyF-9e-lUj"/>
-                                <group width="40" height="40" alignment="left" radius="20" id="KBS-y8-rGL">
-                                    <items>
-                                        <imageView width="40" height="40" alignment="left" id="GPk-xG-YH5"/>
-                                    </items>
-                                </group>
-                                <label width="70" height="40" alignment="left" text="Username" textAlignment="center" id="Qsi-C9-MmY">
-                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                </label>
-                            </items>
-                        </group>
-                        <group width="1" height="3" alignment="left" id="UZo-nS-l0j"/>
-                        <group width="135" alignment="center" verticalAlignment="center" radius="10" id="jig-Y3-6IK">
-                            <items>
-                                <label width="136" height="95" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="oq2-sy-SC9">
-                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                                </label>
-                            </items>
-                        </group>
-                        <label width="136" height="16" alignment="right" verticalAlignment="bottom" text="Label" textAlignment="right" id="hd7-LJ-FgE">
-                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                        </label>
-                    </items>
-                    <connections>
-                        <outlet property="questionDescription" destination="oq2-sy-SC9" id="HGC-P2-3T9"/>
-                        <outlet property="questionDescriptionBG" destination="jig-Y3-6IK" id="uuH-PH-eCj"/>
-                        <outlet property="questionTypeColor" destination="dHx-FY-Rra" id="spy-lc-IKY"/>
-                        <outlet property="timeStampLabel" destination="hd7-LJ-FgE" id="07g-hz-cG5"/>
-                        <outlet property="topPanelBG" destination="Lvd-jE-ufI" id="KSs-T1-RYS"/>
-                        <outlet property="userPhoto" destination="GPk-xG-YH5" id="0Fz-1w-aFX"/>
-                        <outlet property="usernameLabel" destination="Qsi-C9-MmY" id="pbR-5u-R2v"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="468" y="341.5"/>
-        </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="FilaFacilWatch" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Fila-->
+        <scene sceneID="Rry-5K-1Cy">
+            <objects>
+                <controller identifier="DetailInterfaceController" title="Fila" id="9hJ-vI-oB8" customClass="DetailInterfaceController" customModule="FilaFacilWatch_Extension">
+                    <items>
+                        <group width="1" alignment="center" radius="10" id="Ss1-Ti-PiX">
+                            <items>
+                                <group alignment="center" radius="27" id="hkH-vh-RHV">
+                                    <items>
+                                        <imageView width="57" height="57" alignment="center" verticalAlignment="center" id="vQc-Hr-HiM"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <label width="1" height="36" alignment="left" text="Huge question text from the user that asks to much" textAlignment="left" numberOfLines="0" id="Fa1-dn-rJC">
+                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
+                        </label>
+                        <label width="1" height="14" alignment="left" text="Username" textAlignment="left" id="Rcs-cU-LHh">
+                            <fontDescription key="font" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="12"/>
+                        </label>
+                        <group width="1" alignment="center" radius="10" id="TkF-9L-ceY">
+                            <items>
+                                <group width="1" alignment="center" id="cPs-Dk-ffZ">
+                                    <items>
+                                        <button width="0.5" height="27" alignment="left" verticalAlignment="center" title="Cancelar" id="Ilu-1U-n14">
+                                            <color key="titleColor" red="0.76470588240000004" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                                        </button>
+                                        <button width="0.5" height="27" alignment="right" verticalAlignment="center" title="Começar" id="G8i-Gw-D0o">
+                                            <color key="titleColor" red="0.01176470588" green="1" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.01176470588" green="0.20784313730000001" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="12"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="questionDescription" destination="Fa1-dn-rJC" id="vdD-Pp-ONI"/>
+                        <outlet property="questionDescriptionBG" destination="TkF-9L-ceY" id="Wcu-SX-DTN"/>
+                        <outlet property="topPanelBG" destination="Ss1-Ti-PiX" id="IK2-dr-cuh"/>
+                        <outlet property="userPhoto" destination="vQc-Hr-HiM" id="IJj-Ee-71v"/>
+                        <outlet property="usernameLabel" destination="Rcs-cU-LHh" id="pzN-bP-SAx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="346"/>
         </scene>
     </scenes>
 </document>
