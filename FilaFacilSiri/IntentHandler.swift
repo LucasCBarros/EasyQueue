@@ -31,17 +31,39 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         completion(response)
     }
     
+    func confirm(intent: INSearchForMessagesIntent, completion: @escaping (INSearchForMessagesIntentResponse) -> Void) {
+        let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
+        let response = INSearchForMessagesIntentResponse(code: .success, userActivity: userActivity)
+        completion(response)
+    }
+
+
+    
     // Handle the completed intent (required).
     
     func handle(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Void) {
         // Implement your application logic to send a message here.
         
         let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
-        let response = INSendMessageIntentResponse(code: .success, userActivity: userActivity)
+        let response = INSendMessageIntentResponse(code: .ready, userActivity: userActivity)
         completion(response)
     }
     
     // MARK: - INSearchForMessagesIntentHandling
+    
+    func resolveRecipients(for intent: INSearchForMessagesIntent, with completion: @escaping ([INPersonResolutionResult]) -> Void) {
+        
+        let person = INPersonResolutionResult.success(with: INPerson(personHandle: INPersonHandle(value: "B", type: .unknown),
+                                                                    nameComponents: nil, displayName: "Developer",
+                                                                    image: nil, contactIdentifier: nil, customIdentifier: nil))
+        
+        completion([person])
+    }
+    
+    func resolveRecipients(for intent: INSendMessageIntent, with completion: @escaping ([INPersonResolutionResult]) -> Void) {
+        let notRequired = INPersonResolutionResult.notRequired()
+        completion([notRequired])
+    }
     
     func handle(intent: INSearchForMessagesIntent, completion: @escaping (INSearchForMessagesIntentResponse) -> Void) {
         
@@ -50,7 +72,7 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         questionService.getAllQuestions(completion: {(questions, error) in
             if error == nil {
                 let questions = questions.sorted(by: { (question1, question2) -> Bool in
-                    return question1.questionID < question2.questionID
+                    return question1.questionID > question2.questionID
                 })
                 if questions.count > 0 {
                     let messages = questions.map { (question) -> INMessage in
@@ -58,10 +80,10 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
                             identifier: question.questionID,
                             content: question.questionTitle,
                             dateSent: Date(),
-                            sender: INPerson(personHandle: INPersonHandle(value: "", type: .unknown),
-                                             nameComponents: nil, displayName: question.username,
+                            sender: INPerson(personHandle: INPersonHandle(value: "A", type: .unknown),
+                                             nameComponents: nil, displayName: "\(question.username)",
                                              image: nil, contactIdentifier: nil, customIdentifier: nil),
-                            recipients: [INPerson(personHandle: INPersonHandle(value: "", type: .unknown),
+                            recipients: [INPerson(personHandle: INPersonHandle(value: "B", type: .unknown),
                                                   nameComponents: nil, displayName: "Developer",
                                                   image: nil, contactIdentifier: nil, customIdentifier: nil)]
                         )
@@ -69,7 +91,11 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
                 
                     let response = INSearchForMessagesIntentResponse(code: .success, userActivity: userActivity)
                     response.messages = messages
-                    completion(response)
+                    
+                    let notResponse = INSearchForMessagesIntentResponse(code: INSearchForMessagesIntentResponseCode.success, userActivity: userActivity)
+                    notResponse.messages = messages
+                    
+                    completion(notResponse)
 
                 } else {
                     let response = INSearchForMessagesIntentResponse(code: .success, userActivity: userActivity)
