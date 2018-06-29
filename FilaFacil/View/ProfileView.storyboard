@@ -44,7 +44,6 @@
                             <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcQ-fE-yik">
                                 <rect key="frame" x="124.5" y="20" width="125" height="125"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="-----------"/>
                                 <connections>
                                     <action selector="editPhoto_Action:" destination="Wck-Ig-pHW" eventType="touchUpInside" id="kTd-MQ-8Fq"/>
                                 </connections>
