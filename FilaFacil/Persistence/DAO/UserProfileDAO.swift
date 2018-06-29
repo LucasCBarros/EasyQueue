@@ -36,6 +36,12 @@ class UserProfileDAO: DAO {
         self.create(dump: UserProfile.self, object: newUser, path: path, newObjectID: userID)
     }
     
+    func editUser(user: UserProfile) {
+        let path = "Users/"
+        
+        self.editByID(dump: UserProfile.self, newObject: user, path: path, objectID: user.userID)
+    }
+    
     // Retrieve existing user
     func retrieveUserProfile(userID: String, completionHandler: @escaping (UserProfile?) -> Void) {
         ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: {[weak self] (snapshot) in

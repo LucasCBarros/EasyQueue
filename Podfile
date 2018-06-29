@@ -16,6 +16,7 @@ target 'FilaFacil' do
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftLint'
+  pod 'Kingfisher', '~> 4.0'
 
 end
 

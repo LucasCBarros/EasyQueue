@@ -41,6 +41,13 @@ class UserProfileService: NSObject {
         userProfileManager.removeQuestionFromLine(lineName: lineName, questionID: questionID)
     }
     
+    func attualizeTokenID(user: UserProfile) {
+        if let deviceID = UserDefaults.standard.string(forKey: "userDeviceID") {
+            user.deviceID = deviceID
+            userProfileManager.editUser(user: user)
+        }
+    }
+    
     func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {
         var questionsInLine: [QuestionProfile] = []
         for question in allQuestions where (question.requestedTeacher == selectedTab) {
