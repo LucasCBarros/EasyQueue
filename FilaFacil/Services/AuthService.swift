@@ -15,10 +15,9 @@ class AuthService: NSObject {
     let userProfileService = UserProfileService()
     
     func login(email: String, password: String, completionHandler: @escaping (UserProfile?) -> Void) {
-        authManager.signIn(email: email, password: password) { (success, idOrErrorMessage) in
+        authManager.signIn(email: email, password: password) {[weak self] (success, idOrErrorMessage) in
             if success {
-                
-                self.userProfileService.retrieveUser(userID: idOrErrorMessage, completionHandler: { (user) in
+                self?.userProfileService.retrieveUser(userID: idOrErrorMessage, completionHandler: { (user) in
                     if let currUser = user {
                         completionHandler(currUser)
                     } else {

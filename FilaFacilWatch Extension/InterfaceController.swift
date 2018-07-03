@@ -8,10 +8,12 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var lineTableView: WKInterfaceTable!
+    @IBOutlet var noQuestions: WKInterfaceLabel!
     
     var questionService = QuestionService()
     var openedQuestions: [Question] = []
@@ -45,6 +47,17 @@ class InterfaceController: WKInterfaceController {
             lineTableView.setNumberOfRows(openedQuestions.count, withRowType: "RowController")
             
             if openedQuestions.count > 0 {
+                if WCSession.isSupported() {
+                    // 2
+                    let session = WCSession.default
+                    do {
+                        let dictionary = ["request": "getUser"]
+                        try session.updateApplicationContext(dictionary)
+                    } catch {
+                        print("ERROR: \(error)")
+                    }
+                }
+                self.noQuestions.setHidden(true)
                 for index in 0..<openedQuestions.count {
                     if let rowController = lineTableView.rowController(at: index) as? RowController {
                         let question = openedQuestions[index]
@@ -59,6 +72,9 @@ class InterfaceController: WKInterfaceController {
                         rowController.questionTypeColor.setBackgroundColor(question.categoryQuestion.color)
                     }
                 }
+            } else {
+                self.noQuestions.setHidden(false)
+                self.noQuestions.setText(UserDefaults.standard.string(forKey: "userID"))
             }
         }
     }

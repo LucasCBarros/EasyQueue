@@ -13,6 +13,7 @@ import FirebaseMessaging
 import FirebaseInstanceID
 import UserNotifications
 import Intents
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -68,6 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().shouldEstablishDirectChannel = true
 
         requestAuthorisation()
+        
+        setupWatchConnectivity()
+        
         return true
     }
     
@@ -90,6 +94,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("Device Token: \(token)")
         
         Messaging.messaging().apnsToken = deviceToken
+    }
+    
+}
+
+// MARK: - Watch Connectivity
+extension AppDelegate: WCSessionDelegate {
+    // 1
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("WC Session did become inactive")
+    }
+    
+    // 2
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("WC Session did deactivate")
+        WCSession.default.activate()
+    }
+    
+    // 3
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if let error = error {
+            print("WC Session activation failed with error: \(error.localizedDescription)")
+            return
+        }
+        print("WC Session activated with state: \(activationState.rawValue)")
+    }
+    
+    func setupWatchConnectivity() {
+        // 1
+        if WCSession.isSupported() {
+            // 2
+            let session = WCSession.default
+            // 3
+            session.delegate = self
+            // 4
+            session.activate()
+        }
+    }
+    
+    func sendToWatch() {
+        // 1
+        if WCSession.isSupported() {
+            // 2
+            let session = WCSession.default
+            if session.isWatchAppInstalled {
+                // 4
+                do {
+                    var dictionary = [String: Any]()
+                    dictionary["userID"] = UserDefaults.standard.string(forKey: "userID")
+                    dictionary["userType"] = UserDefaults.standard.string(forKey: "userType")
+                    try session.updateApplicationContext(dictionary)
+                } catch {
+                    print("ERROR: \(error)")
+                }
+            }
+        }
+    }
+    
+    // 1
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        // 2
+        print("\n\n\nFoi\n\n\n")
+        if let request = applicationContext["request"] as? String {
+            // 3
+            DispatchQueue.main.async {
+                switch request {
+                case "getUser":
+                    self.sendToWatch()
+                default:
+                    break
+                }
+            }
+        }
     }
     
 }

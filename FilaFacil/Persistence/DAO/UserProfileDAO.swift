@@ -78,10 +78,13 @@ class UserProfileDAO: DAO {
                 let newUser = UserProfile(dictionary: actualUser)
                 
                 self?.ref?.child("ProfileType/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
+                    UserDefaults.standard.set(userID, forKey: "userID")
                     let profileType = snapshot.value as? NSDictionary
                     if let profileType = profileType as? [AnyHashable: Any] {
                         newUser.profileType = ProfileType(dictionary: profileType).profileType
+                        UserDefaults.standard.set(newUser.profileType, forKey: "userType")
                     }
+                    
                     completionHandler(newUser)
                 })
                 
