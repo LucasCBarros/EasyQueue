@@ -55,8 +55,7 @@ class ViewController: UIViewController {
                         self?.questionActivityIndicator.stopAnimating()
                         if self?.openedQuestions.count == 0 {
                             self?.noQuestions.isHidden = false
-                        }
-                        else {
+                        } else {
                             self?.noQuestions.isHidden = true
                         }
                     }
@@ -80,8 +79,7 @@ class ViewController: UIViewController {
                         self?.noteActivityIndicator.stopAnimating()
                         if self?.openedNotes.count == 0 {
                             self?.noNotes.isHidden = false
-                        }
-                        else {
+                        } else {
                             self?.noNotes.isHidden = true
                         }
                     }
@@ -89,8 +87,7 @@ class ViewController: UIViewController {
             }
         })
     }
-    
-    
+
     @objc func getAllInformations() {
         getAllQuestions()
         getAllNotes()
@@ -117,8 +114,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionTableViewCell
         
-        
-        
         if self.openedQuestions.count > 0 {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = self.openedQuestions[indexPath.row].questionTitle
@@ -131,14 +126,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let strDate = Formatter.dateToString(date)
             cell?.timeInputQuestion.text = strDate
             
-            if(openedQuestions[indexPath.row].userPhoto != "") {
+            if openedQuestions[indexPath.row].userPhoto != "" {
                 let photoUrl = URL(string: openedQuestions[indexPath.row].userPhoto)!
                 cell?.profileImage.kf.setImage(with: photoUrl)
             } else {
                 cell?.profileImage.image = #imageLiteral(resourceName: "icons8-user_filled")
             }
-            
-            
         }
         
         return cell!

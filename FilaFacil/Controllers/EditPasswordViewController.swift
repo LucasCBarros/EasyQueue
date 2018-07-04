@@ -18,7 +18,10 @@ class EditPasswordViewController: MyViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    let alert = UIAlertController(title: "Senha inválida", message: "Senha deve ter no mínimo 6 caracteres e ser igual a confirmação.", preferredStyle: UIAlertControllerStyle.alert)
+    let alert = UIAlertController(
+        title: "Senha inválida",
+        message: "Senha deve ter no mínimo 6 caracteres e ser igual a confirmação.",
+        preferredStyle: UIAlertControllerStyle.alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,9 @@ class EditPasswordViewController: MyViewController {
     }
     
     @IBAction func okButton(_ sender: UIBarButtonItem) {
-        if let newPassword = newPasswordTextField.text, let password = passwordTextField.text, newPassword == confirmPasswordTextField.text && password.count > 5 {
+        if let newPassword = newPasswordTextField.text,
+            let password = passwordTextField.text,
+            newPassword == confirmPasswordTextField.text && password.count > 5 {
             self.delegate?.change(password: password, to: newPassword)
             
             self.navigationController?.popViewController(animated: true)

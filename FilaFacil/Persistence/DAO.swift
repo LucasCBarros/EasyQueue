@@ -66,7 +66,7 @@ class DAO: NSObject {
     }
     
     func editByID<T: PersistenceObject>(dump: T.Type, newObject: T, path: String, objectID: String) {
-        var dict = newObject.getDictInfo()
+        let dict = newObject.getDictInfo()
         
         ref?.child(path).child(objectID).updateChildValues(dict)
     }

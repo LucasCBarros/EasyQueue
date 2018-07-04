@@ -134,11 +134,15 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
             if let url = URL(string: question.userPhoto) {
-                KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: {[weak self] image, erro, _, url in
+                KingfisherManager.shared.retrieveImage(with: url,
+                                                       options: nil,
+                                                       progressBlock: nil,
+                                                       completionHandler: {[weak self] image, erro, _, url in
                     DispatchQueue.main.async {
                         if self != nil {
                             if let image = image, let url = url, erro == nil {
-                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString == self!.inLineQuestions[indexPath.row].userPhoto {
+                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString
+                                    == self!.inLineQuestions[indexPath.row].userPhoto {
                                     cell?.profilePhoto.image = image
                                 } else {
                                     cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
@@ -176,7 +180,10 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
             if let this = self, this.inLineQuestions.count > 0 {
-                let alert = UIAlertController(title: "Excluir da Fila", message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?", preferredStyle: .alert)
+                let alert = UIAlertController(
+                    title: "Excluir da Fila",
+                    message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?",
+                    preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
@@ -276,16 +283,23 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewDele
         self.linesCollectionView.reloadData()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let heitgh: CGFloat = 45.0
-        let size = CGSize(width: teacherArray[indexPath.row].width(withConstrainedHeight: heitgh, font: UIFont(name: "SFProText-Medium", size: 17)!) + 27, height: heitgh)
+        let size = CGSize(width: teacherArray[indexPath.row].width(
+            withConstrainedHeight: heitgh,
+            font: UIFont(name: "SFProText-Medium",
+                         size: 17)!) + 27, height: heitgh)
         
         self.lineTotalWidth += size.width
         self.totalLines += 1
         return size
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return (collectionView.frame.width - self.lineTotalWidth) / (self.totalLines - 1)
     }
     

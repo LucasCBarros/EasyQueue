@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     fileprivate func requestAuthorisation() {
-        INPreferences.requestSiriAuthorization { status in }
+        INPreferences.requestSiriAuthorization { _ in }
     }
     
     func application(_ application: UIApplication,
@@ -79,7 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().appDidReceiveMessage(userInfo)
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
@@ -152,7 +154,7 @@ extension AppDelegate: WCSessionDelegate {
     }
     
     // 1
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         // 2
         print("\n\n\nFoi\n\n\n")
         if let request = applicationContext["request"] as? String {

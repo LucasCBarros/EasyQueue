@@ -18,7 +18,7 @@ class NoteService {
         guard let url = NSURL(string: URL) else { return }
         
         //fetching the data from the url
-        URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, response, error) in
+        URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, _, error) in
             
             guard let data = data else {
                 completion([Note](), error)

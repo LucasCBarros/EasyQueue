@@ -4,7 +4,7 @@
 //
 //  Created by Jessica Batista de Barros Cherque on 17/05/18.
 //  Copyright © 2018 Lucas C Barros. All rights reserved.
-//
+// swiftlint:disable all
 
 import UIKit
 import CoreData
@@ -13,7 +13,6 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

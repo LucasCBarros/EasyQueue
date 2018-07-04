@@ -18,7 +18,7 @@ class QuestionService {
         guard let url = NSURL(string: URL) else { return }
         
         //fetching the data from the url
-        URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, response, error) in
+        URLSession.shared.dataTask(with: (url as URL), completionHandler: {(data, _, error) in
             
             guard let data = data else {
                 completion([Question](), error)
@@ -30,9 +30,9 @@ class QuestionService {
                 
                 var questions: [Question] = []
                 
-                for (categoryLine , line) in json {
+                for (categoryLine, line) in json {
                     if let line = line as? [String: Any] {
-                        for (_ , elem) in line {
+                        for (_, elem) in line {
                             var jsonQuestion = elem as? [String: Any]
                             jsonQuestion?["requestedTeacher"] = categoryLine
                             questions.append(Question(json: jsonQuestion!))

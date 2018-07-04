@@ -37,8 +37,6 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         completion(response)
     }
 
-
-    
     // Handle the completed intent (required).
     
     func handle(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Void) {
@@ -92,7 +90,9 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
                     let response = INSearchForMessagesIntentResponse(code: .success, userActivity: userActivity)
                     response.messages = messages
                     
-                    let notResponse = INSearchForMessagesIntentResponse(code: INSearchForMessagesIntentResponseCode.success, userActivity: userActivity)
+                    let notResponse = INSearchForMessagesIntentResponse(
+                        code: INSearchForMessagesIntentResponseCode.success,
+                        userActivity: userActivity)
                     notResponse.messages = messages
                     
                     completion(notResponse)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Note: Equatable{
+class Note: Equatable {
     
     let noteID: String
     let noteText: String
@@ -25,7 +25,7 @@ class Note: Equatable{
         self.date = Date(timeIntervalSince1970: timeInterval! / 1000)
     }
     
-    static func ==(lhs: Note, rhs: Note) -> Bool {
+    static func == (lhs: Note, rhs: Note) -> Bool {
         return lhs.noteID == rhs.noteID
     }
     

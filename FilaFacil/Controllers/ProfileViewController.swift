@@ -189,7 +189,10 @@ extension ProfileViewController: EditEmailViewControllerDelegate {
     func change(email: String, _ password: String) {
         AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
             if user != nil {
-                self.databaseRef.child("Users").child(self.currentProfile.userID).updateChildValues(["email": email], withCompletionBlock: {(error, _) in
+            self.databaseRef.child("Users").child(
+                self.currentProfile.userID).updateChildValues(
+                    ["email": email],
+                    withCompletionBlock: {(error, _) in
                     if error != nil {
                         print(error!)
                         return

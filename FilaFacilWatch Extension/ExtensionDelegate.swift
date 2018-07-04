@@ -20,7 +20,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
+    // Sent when the system needs to launch the application in the background to process tasks.
+    // Tasks arrive in a set, so loop through and process each one.
         for task in backgroundTasks {
             // Use a switch statement to check the task type
             switch task {
@@ -64,7 +65,7 @@ extension ExtensionDelegate: WCSessionDelegate {
     }
     
     // 1
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         if let userID = applicationContext["userID"] as? String {
             DispatchQueue.main.async {
                 UserDefaults.standard.set(userID, forKey: "userID")

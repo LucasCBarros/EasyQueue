@@ -18,11 +18,11 @@ struct Question: Equatable {
     let username: String
     var userPhoto: String
     
-    static func ==(lhs: Question, rhs: Question) -> Bool {
+    static func == (lhs: Question, rhs: Question) -> Bool {
         return lhs.questionID == rhs.questionID
     }
     
-    static func !=(lhs: Question, rhs: Question) -> Bool {
+    static func != (lhs: Question, rhs: Question) -> Bool {
         return !(lhs == rhs)
     }
     
@@ -31,7 +31,6 @@ struct Question: Equatable {
         questionTitle = json["questionTitle"] as? String ?? "??"
         requestedTeacher = json["requestedTeacher"] as? String ?? "???"
         
-        //TODO: Esse parse está na camada errada?
         switch requestedTeacher {
         case CategoryQuestionType.developer.rawValue:
             categoryQuestion = CategoryQuestion(type: CategoryQuestionType.developer)

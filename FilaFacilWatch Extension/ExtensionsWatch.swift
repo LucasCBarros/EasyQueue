@@ -13,13 +13,13 @@ import WatchKit
 // Extension imported to expose image by URL
 public extension WKInterfaceImage {
     
-    public func setImageWithUrl(url:String, scale: CGFloat = 1.0) -> WKInterfaceImage? {
+    public func setImageWithUrl(url: String, scale: CGFloat = 1.0) -> WKInterfaceImage? {
         
-        URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, response, error in
-            if (data != nil && error == nil) {
+        URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, _, error in
+            if data != nil && error == nil {
                 let image = UIImage(data: data!, scale: scale)
                 
-                DispatchQueue.main.async() {
+                DispatchQueue.main.async {
                     self.setImage(image)
                 }
             }
