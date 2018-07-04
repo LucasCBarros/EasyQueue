@@ -439,6 +439,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A995C8EB20ED400F002DF214 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E616DB5220D991940009E9FD /* InterfaceController.swift */,
+				E616DB5620D991940009E9FD /* NotificationController.swift */,
+				E6A52C4320D9A817001B4B16 /* DetailInterfaceController.swift */,
+				FACB456520EAE28A00E96A52 /* TimerInterfaceController.swift */,
+				E616DB6720D9957C0009E9FD /* RowController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A9FD78F320E56A3500DB9A1F /* FilaFacilSiri */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,16 +663,12 @@
 		E616DB5120D991940009E9FD /* FilaFacilWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A995C8EB20ED400F002DF214 /* Controller */,
 				FAA331C420E6E42800D893DC /* FilaFacilWatch Extension.entitlements */,
-				E616DB5220D991940009E9FD /* InterfaceController.swift */,
 				E616DB5420D991940009E9FD /* ExtensionDelegate.swift */,
-				E616DB5620D991940009E9FD /* NotificationController.swift */,
 				E616DB5820D991950009E9FD /* Assets.xcassets */,
 				E616DB5A20D991950009E9FD /* Info.plist */,
 				E616DB5B20D991950009E9FD /* PushNotificationPayload.apns */,
-				E616DB6720D9957C0009E9FD /* RowController.swift */,
-				E6A52C4320D9A817001B4B16 /* DetailInterfaceController.swift */,
-				FACB456520EAE28A00E96A52 /* TimerInterfaceController.swift */,
 				E6A52C4F20D9AE00001B4B16 /* ExtensionsWatch.swift */,
 				FAD6061820EAD66500A02366 /* WatchTimer.swift */,
 			);
