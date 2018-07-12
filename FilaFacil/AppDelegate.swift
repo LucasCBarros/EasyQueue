@@ -7,29 +7,29 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 import IQKeyboardManagerSwift
-import FirebaseMessaging
-import FirebaseInstanceID
+//import FirebaseMessaging
+//import FirebaseInstanceID
 import UserNotifications
 import Intents
 import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        let deviceToken = Messaging.messaging().fcmToken
-        UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
-    }
+//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+//        let deviceToken = Messaging.messaging().fcmToken
+//        UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
+//    }
     
     override init() {
         super.init()
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         
-        Messaging.messaging().delegate = self
+        //Messaging.messaging().delegate = self
     }
     
     fileprivate func requestAuthorisation() {
@@ -47,8 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // Finds and saves users DeviceID
 //        let deviceID = UIDevice.current.identifierForVendor!.uuidString
-        let deviceToken = Messaging.messaging().fcmToken
-        UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
+       // let deviceToken = Messaging.messaging().fcmToken
+        //UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
 
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         application.registerForRemoteNotifications()
-        Messaging.messaging().shouldEstablishDirectChannel = true
+        //Messaging.messaging().shouldEstablishDirectChannel = true
 
         requestAuthorisation()
         
@@ -75,9 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        Messaging.messaging().appDidReceiveMessage(userInfo)
-    }
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+//        Messaging.messaging().appDidReceiveMessage(userInfo)
+//    }
     
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let token = tokenParts.joined()
         print("Device Token: \(token)")
         
-        Messaging.messaging().apnsToken = deviceToken
+        //Messaging.messaging().apnsToken = deviceToken
     }
     
 }

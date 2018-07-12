@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -34,8 +34,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var isPhotoEdited: Bool = true
     
-    let storageRef = Storage.storage().reference()
-    let databaseRef = Database.database().reference()
+    //let storageRef = Storage.storage().reference()
+    //let databaseRef = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func click_Logout(_ sender: Any) {
-        authManager.signOut()
+        //authManager.signOut()
         presentLogoutScreen()
     }
     
@@ -113,34 +113,34 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func saveChanges() {
-        
-        let imageName = NSUUID().uuidString
-        
-        let storedImage = storageRef.child("profile_images").child(imageName)
-        
-        if let uploadData = UIImagePNGRepresentation(self.profilePhoto.image!) {
-            storedImage.putData(uploadData, metadata: nil, completion: { (_, error) in
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                storedImage.downloadURL(completion: { (url, error) in
-                    if error != nil {
-                        print(error!)
-                        return
-                    }
-                    if let urlText = url?.absoluteString {
-                        self.databaseRef.child("Users").child(self.currentProfile.userID)
-                            .updateChildValues(["photo": urlText], withCompletionBlock: { (error, _) in
-                            if error != nil {
-                                print(error!)
-                                return
-                            }
-                        })
-                    }
-                })
-            })
-        }
+//
+//        let imageName = NSUUID().uuidString
+//
+//        let storedImage = storageRef.child("profile_images").child(imageName)
+//
+//        if let uploadData = UIImagePNGRepresentation(self.profilePhoto.image!) {
+//            storedImage.putData(uploadData, metadata: nil, completion: { (_, error) in
+//                if error != nil {
+//                    print(error!)
+//                    return
+//                }
+//                storedImage.downloadURL(completion: { (url, error) in
+//                    if error != nil {
+//                        print(error!)
+//                        return
+//                    }
+//                    if let urlText = url?.absoluteString {
+//                        self.databaseRef.child("Users").child(self.currentProfile.userID)
+//                            .updateChildValues(["photo": urlText], withCompletionBlock: { (error, _) in
+//                            if error != nil {
+//                                print(error!)
+//                                return
+//                            }
+//                        })
+//                    }
+//                })
+//            })
+//        }
     }
     
     func setupProfile() {
@@ -155,22 +155,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         editPhotoBtn.clipsToBounds = true
         
         if isPhotoEdited {
-            databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dict = snapshot.value as? [String: AnyObject] {
-                    if let profileImageURL = dict["photo"] as? String {
-                        let url = URL(string: profileImageURL)
-                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
-                            if error != nil {
-                                print(error!)
-                                return
-                            }
-                            DispatchQueue.main.async {
-                                self.profilePhoto?.image = UIImage(data: data!)
-                            }
-                        }).resume()
-                    }
-                }
-            })
+//            databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in
+//                if let dict = snapshot.value as? [String: AnyObject] {
+//                    if let profileImageURL = dict["photo"] as? String {
+//                        let url = URL(string: profileImageURL)
+//                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
+//                            if error != nil {
+//                                print(error!)
+//                                return
+//                            }
+//                            DispatchQueue.main.async {
+//                                self.profilePhoto?.image = UIImage(data: data!)
+//                            }
+//                        }).resume()
+//                    }
+//                }
+//            })
         }
         isPhotoEdited = false
     }
@@ -187,42 +187,42 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 extension ProfileViewController: EditEmailViewControllerDelegate {
     func change(email: String, _ password: String) {
-        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
-            if user != nil {
-            self.databaseRef.child("Users").child(
-                self.currentProfile.userID).updateChildValues(
-                    ["email": email],
-                    withCompletionBlock: {(error, _) in
-                    if error != nil {
-                        print(error!)
-                        return
-                    } else {
-                        Auth.auth().currentUser?.updateEmail(to: email, completion: {[weak self](error) in
-                            if error == nil {
-                                DispatchQueue.main.async {
-                                    self?.emailLabel.text = email
-                                }
-                            } else {
-                                print(error!)
-                            }
-                        })
-                    }
-                })
-            }
-        })
+//        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
+//            if user != nil {
+//            self.databaseRef.child("Users").child(
+//                self.currentProfile.userID).updateChildValues(
+//                    ["email": email],
+//                    withCompletionBlock: {(error, _) in
+//                    if error != nil {
+//                        print(error!)
+//                        return
+//                    } else {
+//                        Auth.auth().currentUser?.updateEmail(to: email, completion: {[weak self](error) in
+//                            if error == nil {
+//                                DispatchQueue.main.async {
+//                                    self?.emailLabel.text = email
+//                                }
+//                            } else {
+//                                print(error!)
+//                            }
+//                        })
+//                    }
+//                })
+//            }
+//        })
     }
 }
 
 extension ProfileViewController: EditPasswordViewControllerDelegate {
     func change(password: String, to newPassword: String) {
-        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
-            if user != nil {
-                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: {error in
-                    if error != nil {
-                        print(error!)
-                    }
-                })
-            }
-        })
+//        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
+//            if user != nil {
+//                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: {error in
+//                    if error != nil {
+//                        print(error!)
+//                    }
+//                })
+//            }
+//        })
     }
 }

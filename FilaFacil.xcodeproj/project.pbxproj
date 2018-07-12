@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
+		A995C8EE20F51CDA002DF214 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A995C8ED20F51CDA002DF214 /* CloudKit.framework */; };
 		A9FD78F520E56A3500DB9A1F /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */; };
 		A9FD78F920E56A3500DB9A1F /* FilaFacilSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A9FD78FF20E56ECD00DB9A1F /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE420AE20D00064A247 /* QuestionService.swift */; };
@@ -92,8 +93,6 @@
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
-		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
-		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
 		FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
 		FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FAA331C020E6B85000D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
@@ -232,6 +231,9 @@
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53A0C9E131043C9A0A35EED /* Pods-FilaFacilWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		A962D0A920F7971E00923150 /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
+		A995C8EC20F51CD2002DF214 /* FilaFacil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacil.entitlements; sourceTree = "<group>"; };
+		A995C8ED20F51CDA002DF214 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FilaFacilSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		A9FD78F620E56A3500DB9A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,7 +283,6 @@
 		E60229E520409E8400336FC3 /* UserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
 		E60229E72040A03C00336FC3 /* QuestionProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfileService.swift; sourceTree = "<group>"; };
 		E60229E92040ACA100336FC3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E60367DA204DE65A0064A8EC /* FilaFacil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacil.entitlements; sourceTree = "<group>"; };
 		E616DB4120D991910009E9FD /* FilaFacilWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacilWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E616DB4420D991910009E9FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E616DB4620D991940009E9FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -315,9 +316,6 @@
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FA93520A20E2C656001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_DEV.plist"; sourceTree = "<group>"; };
-		FAA331C420E6E42800D893DC /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -405,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */,
+				A995C8EE20F51CDA002DF214 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,8 +544,8 @@
 		E6022997203FA29E00336FC3 /* FilaFacil */ = {
 			isa = PBXGroup;
 			children = (
+				A995C8EC20F51CD2002DF214 /* FilaFacil.entitlements */,
 				FA8148B720BF2F2600F2FADD /* Mechanism */,
-				E60367DA204DE65A0064A8EC /* FilaFacil.entitlements */,
 				E6022998203FA29E00336FC3 /* AppDelegate.swift */,
 				E60229AA203FA4D200336FC3 /* Services */,
 				E60229AB203FA4DB00336FC3 /* Model */,
@@ -555,8 +554,6 @@
 				E60229AE203FA52E00336FC3 /* View */,
 				E602299F203FA29E00336FC3 /* Assets.xcassets */,
 				E60229A4203FA29E00336FC3 /* Info.plist */,
-				FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */,
-				FA93520A20E2C656001E4988 /* GoogleService-Info.plist */,
 			);
 			path = FilaFacil;
 			sourceTree = "<group>";
@@ -664,8 +661,8 @@
 			isa = PBXGroup;
 			children = (
 				A995C8EB20ED400F002DF214 /* Controller */,
-				FAA331C420E6E42800D893DC /* FilaFacilWatch Extension.entitlements */,
 				E616DB5420D991940009E9FD /* ExtensionDelegate.swift */,
+				A962D0A920F7971E00923150 /* FilaFacilWatch Extension.entitlements */,
 				E616DB5820D991950009E9FD /* Assets.xcassets */,
 				E616DB5A20D991950009E9FD /* Info.plist */,
 				E616DB5B20D991950009E9FD /* PushNotificationPayload.apns */,
@@ -687,6 +684,7 @@
 		EEE9480C3407FA46BDEB6102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A995C8ED20F51CDA002DF214 /* CloudKit.framework */,
 				968F783760985A1FDB86908E /* Pods_FilaFacil.framework */,
 				BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */,
 				DD17A1D36A22534F1E524D6B /* Pods_FilaFacilWatch.framework */,
@@ -928,6 +926,9 @@
 							com.apple.Siri = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					E616DB4020D991910009E9FD = {
@@ -939,7 +940,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Siri = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1000,10 +1001,8 @@
 				FAB3369C20B331BB00D6B61F /* SF-Pro-Display-Ultralight.otf in Resources */,
 				E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */,
 				FAB3368920B331BB00D6B61F /* SFCompactText-HeavyItalic.otf in Resources */,
-				FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */,
 				FAB3369920B331BB00D6B61F /* SF-Pro-Text-Bold.otf in Resources */,
 				FAB3368D20B331BB00D6B61F /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
-				FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */,
 				FAB3368120B331BB00D6B61F /* SFCompactText-MediumItalic.otf in Resources */,
 				FAB336A720B331BB00D6B61F /* SF-Pro-Text-Medium.otf in Resources */,
 				FAB3369820B331BB00D6B61F /* SF-Pro-Text-Regular.otf in Resources */,
@@ -1122,25 +1121,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1376,11 +1365,11 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacilSiri/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.FilaFacilSiri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.FilaFacilSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1393,11 +1382,11 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacilSiri/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.FilaFacilSiri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.FilaFacilSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1563,13 +1552,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1582,13 +1573,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1603,10 +1596,10 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				IBSC_MODULE = FilaFacilWatch_Extension;
 				INFOPLIST_FILE = FilaFacilWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1625,10 +1618,10 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				IBSC_MODULE = FilaFacilWatch_Extension;
 				INFOPLIST_FILE = FilaFacilWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1646,12 +1639,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_ENTITLEMENTS = "FilaFacilWatch Extension/FilaFacilWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = "FilaFacilWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1669,12 +1661,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_ENTITLEMENTS = "FilaFacilWatch Extension/FilaFacilWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = "FilaFacilWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1688,7 +1679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacilUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacilUITests;
@@ -1703,7 +1694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacilUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacilUITests;

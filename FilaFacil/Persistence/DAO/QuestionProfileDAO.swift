@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
+import CloudKit
 
 class QuestionProfileDAO: DAO {
     
@@ -22,35 +21,34 @@ class QuestionProfileDAO: DAO {
     }
     
     func retrieveQuestionByID(questionID: String, completionHandler: @escaping (QuestionProfile?) -> Void) {
-        let path = "Questions/\(questionID)"
-        
-        self.retrieveByID(dump: QuestionProfile.self, path: path) { (question) in
-            completionHandler(question?.first)
-        }
+//        let path = "Questions/\(questionID)"
+//        
+//        self.retrieveByID(dump: QuestionProfile.self, path: path) { (question) in
+//            completionHandler(question?.first)
+//        }
     }
 
     // Retrieve Current User
     func retrieveCurrentQuestion(questionID: String, completionHandler: @escaping (QuestionProfile?) -> Void) {
         
-        ref?.child("Questions/\(questionID)").observeSingleEvent(of: .value, with: { (snapshot) in
-            let user = snapshot.value as? NSDictionary
-            
-            if let actualUser = user {
-                
-                let newUser = QuestionProfile(dictionary: (actualUser as? [AnyHashable: Any])!)
-                
-                completionHandler(newUser)
-            } else {
-                completionHandler(nil)
-            }
-        })
+//        ref?.child("Questions/\(questionID)").observeSingleEvent(of: .value, with: { (snapshot) in
+//            let user = snapshot.value as? NSDictionary
+//
+//            if let actualUser = user {
+//
+//                let newUser = QuestionProfile(dictionary: (actualUser as? [AnyHashable: Any])!)
+//
+//                completionHandler(newUser)
+//            } else {
+//                completionHandler(nil)
+//            }
+//        })
     }
     
     // Return all open questions
     func retrieveAllOpenQuestions(lineName: String, completionHandler: @escaping ([QuestionProfile]?) -> Void) {
-        let path = "Lines/" + lineName
-        
-        self.retrieveAll(dump: QuestionProfile.self, path: path) { (questions) in
+    
+        self.retrieveAll(dump: QuestionProfile.self, path: lineName) { (questions) in
             completionHandler(questions)
         }
     }
@@ -58,25 +56,47 @@ class QuestionProfileDAO: DAO {
     // Create a question
     func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
         
-        let path = "Lines/" + requestedTeacher
+        let uuid = UUID().uuidString
         
-        let newQuestionData = [userID,
-                               questionTxt,
-                               username,
-                               userPhoto]
+        let noteID = CKRecordID(recordName: uuid)
         
-        let questionFields = ["userID",
-                            "questionTitle",
-                            "username",
-                            "userPhoto"]
+        let record = CKRecord(recordType: "Question", recordID: noteID)
         
-        let timeStampID = "\(Date().millisecondsSince1970)"
-        let pathWithID = path
+        record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
+        record.setObject(username as CKRecordValue, forKey: "userName")
+        record.setObject(userID as CKRecordValue, forKey: "userId")
+        record.setObject(userPhoto as CKRecordValue, forKey: "userPhoto")
         
-        for question in 0..<questionFields.count {
-            ref?.child(pathWithID).child(timeStampID).child(questionFields[question]).setValue(newQuestionData[question])
-        }
+        publicDB.save(record, completionHandler: { record, error in
+            
+            guard let record = record else {
+                print("Error saving record: ", error as Any)
+                return
+            }
+            
+            print("Successfully saved record: ", record)
+
+        })
         
-        ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
+//        let path = "Lines/" + requestedTeacher
+//
+//        let newQuestionData = [userID,
+//                               questionTxt,
+//                               username,
+//                               userPhoto]
+//
+//        let questionFields = ["userID",
+//                            "questionTitle",
+//                            "username",
+//                            "userPhoto"]
+//
+//        let timeStampID = "\(Date().millisecondsSince1970)"
+//        let pathWithID = path
+//
+//        for question in 0..<questionFields.count {
+//            ref?.child(pathWithID).child(timeStampID).child(questionFields[question]).setValue(newQuestionData[question])
+//        }
+//
+//        ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
     }
 }

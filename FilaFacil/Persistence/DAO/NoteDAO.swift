@@ -22,27 +22,27 @@ class NoteDAO: DAO {
     // Create a note
     func createNote(userID: String, noteText: String ) {
         
-        let path = "Notes/"
-        
-        let newNoteData = [userID,
-                           noteText]
-        
-        let noteFields = ["userID",
-                          "noteText"]
-        
-        let timeStampID = "\(Date().millisecondsSince1970)"
-        let pathWithID = path + timeStampID
-        
-        for note in 0..<noteFields.count {
-            ref?.child(pathWithID).child(noteFields[note]).setValue(newNoteData[note])
-        }
-        
-        ref?.child(pathWithID).child("noteID").setValue(timeStampID)
+//        let path = "Notes/"
+//
+//        let newNoteData = [userID,
+//                           noteText]
+//
+//        let noteFields = ["userID",
+//                          "noteText"]
+//
+//        let timeStampID = "\(Date().millisecondsSince1970)"
+//        let pathWithID = path + timeStampID
+//
+//        for note in 0..<noteFields.count {
+//            ref?.child(pathWithID).child(noteFields[note]).setValue(newNoteData[note])
+//        }
+//
+//        ref?.child(pathWithID).child("noteID").setValue(timeStampID)
         
     }
     
     // Remove note from DB
     func removeNote(noteID: String) {
-        ref?.child("Notes").child(noteID).removeValue()
+       // ref?.child("Notes").child(noteID).removeValue()
     }
 }

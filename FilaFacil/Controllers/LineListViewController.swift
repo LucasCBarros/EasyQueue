@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import Kingfisher
 
 //selectedTab = teacherArray[indexPath.row]
@@ -26,8 +25,8 @@ class LineListViewController: UIViewController {
     var totalLines: CGFloat = 1
     var selectedTab = "Developer"
     
-    let storageRef = Storage.storage().reference()
-    let databaseRef = Database.database().reference()
+    //let storageRef = Storage.storage().reference()
+    //let databaseRef = Database.database().reference()
     
     let userProfileManager = UserProfileService()
     let questionProfileManager = QuestionProfileService()
