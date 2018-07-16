@@ -138,7 +138,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                     DispatchQueue.main.async {
                         if self != nil {
                             if let image = image, let url = url, erro == nil {
-                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString == self!.inLineQuestions[indexPath.row].userPhoto {
+                                if self!.inLineQuestions.count > indexPath.row - 1 && url.absoluteString == self!.inLineQuestions[indexPath.row].userPhoto {
                                     cell?.profilePhoto.image = image
                                 } else {
                                     cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
