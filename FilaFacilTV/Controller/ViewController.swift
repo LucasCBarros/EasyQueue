@@ -48,9 +48,12 @@ class ViewController: UIViewController {
                     return question1.questionID < question2.questionID
                 })
                 if questions.count == 0 || self?.openedQuestions != questions {
-                    self?.openedQuestions.removeAll()
-                    self?.openedQuestions = questions
                     DispatchQueue.main.async {
+                        if self?.openedQuestions.count == 0 {
+                            UIApplication.shared.isIdleTimerDisabled = true
+                        }
+                        self?.openedQuestions.removeAll()
+                        self?.openedQuestions = questions
                         self?.questionTableView.reloadData()
                         self?.questionActivityIndicator.stopAnimating()
                         if self?.openedQuestions.count == 0 {
