@@ -67,6 +67,74 @@ class UserProfileDAO: DAO {
     /// Other Actions
     // Retrieve Current User
     func retrieveCurrentUserProfile(completionHandler: @escaping (UserProfile?) -> Void) {
+        
+        container.fetchUserRecordID { recordID, error in
+            guard let recordID = recordID, error == nil else {
+                // error handling magic
+                return
+            }
+            
+            //print("Got user record ID \(recordID.recordName).")
+            // `recordID` is the record ID returned from CKContainer.fetchUserRecordID
+            self.publicDB.fetch(withRecordID: recordID) { record, error in
+                guard let record = record, error == nil else {
+                    // show off your error handling skills
+                    return
+                }
+                
+                print("The user record is: \(record.recordID.recordName)")
+                
+                let predicate = NSPredicate(format: "self contains %@", record.recordID.recordName)
+                let query = CKQuery(recordType: "User", predicate: predicate)
+                
+                self.publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
+                    if let error = error {
+                    
+                        
+                        return
+                    }
+                    for result in results! {
+                        print(result)
+                    }
+                
+            }
+        }
+        }
+        
+        
+            // `recordID` is the record ID returned from CKContainer.fetchUserRecordID
+//            self.publicDB.fetch(withRecordID: recordID) { record, error in
+//                guard let record = record, error == nil else {
+//                    // show off your error handling skills
+//                    return
+//                }
+//
+////                print("The user record is: \(record.object(forKey: "createdBy"))")
+//            }
+            
+//            let predicate = NSPredicate(format: "Name == %s", recordID)
+//            let predicate = NSPredicate(value: true)
+//            let query = CKQuery(recordType: "Users", predicate: predicate)
+//            self?.publicDB.perform(query, inZoneWith: nil, completionHandler: {records, error in
+//                if let records = records {
+//                    for record in records {
+//                        print("ak: \(record.creatorUserRecordID)")
+//                    }
+//                }
+//            })
+//            self.curr
+//            self?.privateDB.perform(query, inZoneWith: nil, completionHandler: {records, error in
+//                if let records = records {
+//                    print(records)
+//                    for record in records {
+//                        print("ak: \(record.creatorUserRecordID)")
+//                    }
+//                }
+//            })
+            
+        
+        
+        
 //        let authManager = AuthDatabaseManager()
 //        let userID = authManager.retrieveCurrentUserID()
 //        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: {[weak self] (snapshot) in

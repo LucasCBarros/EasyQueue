@@ -232,10 +232,16 @@ extension LineListViewController: NewQuestionTableViewDelegate {
     
     func saveQuestion(text: String, selectedTeacher: String) {
         // Inserts question info in Firebase and updates users status
-        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
-                                              username: currentProfile!.username,
+//        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
+//                                              username: currentProfile!.username,
+//                                              requestedTeacher: selectedTeacher,
+//                                              userPhoto: (self.currentProfile?.photo)!)
+    
+        questionProfileManager.createQuestion(userID: "22222", questionTxt: text,
+                                              username: "Pedro",
                                               requestedTeacher: selectedTeacher,
-                                              userPhoto: (self.currentProfile?.photo)!)
+                                              userPhoto: "sadasdasdasd")
+    
     }
     
 }

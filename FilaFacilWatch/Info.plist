@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.LucasCB.FilaFacil</string>
+	<string>com.JoaoHergert.FilaFacil</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

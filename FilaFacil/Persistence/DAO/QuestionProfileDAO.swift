@@ -13,11 +13,11 @@ class QuestionProfileDAO: DAO {
     
     // Returns the question associated with the current User
     func retrieveUsersQuestion(questionID: String, completionHandler: @escaping (QuestionProfile?) -> Void) {
-        let path = "Questions/\(questionID)"
-        
-        self.retrieveAll(dump: QuestionProfile.self, path: path) { (question) in
-            completionHandler(question?.first)
-        }
+//        let path = "Questions/\(questionID)"
+//
+//        self.retrieveAll(dump: QuestionProfile.self, path: path) { (question) in
+//            completionHandler(question?.first)
+//        }
     }
     
     func retrieveQuestionByID(questionID: String, completionHandler: @escaping (QuestionProfile?) -> Void) {
@@ -58,13 +58,17 @@ class QuestionProfileDAO: DAO {
         
         let uuid = UUID().uuidString
         
+        let timeStampID = "\(Date().millisecondsSince1970)"
+        
         let noteID = CKRecordID(recordName: uuid)
         
         let record = CKRecord(recordType: "Question", recordID: noteID)
         
-        record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
-        record.setObject(username as CKRecordValue, forKey: "userName")
         record.setObject(userID as CKRecordValue, forKey: "userId")
+        record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
+        record.setObject(username as CKRecordValue, forKey: "username")
+        record.setObject(requestedTeacher as CKRecordValue, forKey: "requestedTeacher")
+        record.setObject(timeStampID as CKRecordValue, forKey: "questionID")
         record.setObject(userPhoto as CKRecordValue, forKey: "userPhoto")
         
         publicDB.save(record, completionHandler: { record, error in

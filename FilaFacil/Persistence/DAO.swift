@@ -37,7 +37,7 @@ class DAO: NSObject {
         var allObjects: [T] = []
 
         let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: path, predicate: predicate)
+        let query = CKQuery(recordType: "Question", predicate: predicate)
         
         publicDB.perform(query, inZoneWith: nil, completionHandler: {[weak self] (results, error) -> Void in
             if let error = error {
@@ -48,17 +48,24 @@ class DAO: NSObject {
                 
                     let dictionary = result.dictionaryWithValues(forKeys: result.allKeys())
                     
-                    for key in dictionary.keys {
-                        let objectDict = dictionary[key] as? [String: Any]
+                   // for key in dictionary.keys {
+                       // let objectDict = dictionary[key] as? [String: Any]
                         
-                        let newObj = T(dictionary: objectDict!)
-                        
-                        allObjects.append(newObj)
-                    }
+                       // let newObj = T(dictionary: objectDict!)
+                        let newObj = T(dictionary: dictionary)
+//                        let testeDict = ["username": "Joao",
+//                                                "questionID": "1111",
+//                                                "questionTitle": "Duvida de teste",
+//                                                "userID": "1111",
+//                                                "requestedTeacher": "Developer",
+//                                                "userPhoto": "dwdwdwdw"]
                     
+                        allObjects.append(newObj)
+                    //}
+                }
                 completionHandler(allObjects)
             
-                }
+                
             }
         })
     }

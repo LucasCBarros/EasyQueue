@@ -20,11 +20,16 @@ class QuestionProfileService: NSObject {
     func retrieveCurrentQuestion(questionID: String, completion: @escaping (QuestionProfile?) -> Void) {
         questionProfileManager.retrieveCurrentQuestion(questionID: questionID, completionHandler: completion)
     }
-    
+
     ///:BAD CODE - Will retrieve all questions
     // Return all open questions
     func retrieveAllOpenQuestions(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
-        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: completion)
+        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: {(allQuestions)  in
+            let filteredQuestions = allQuestions?.filter({ (question) -> Bool in
+                return question.requestedTeacher == lineName
+            })
+            completion(filteredQuestions)
+        })
     }
     
     // Create a question
