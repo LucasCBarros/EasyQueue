@@ -8,6 +8,8 @@
 
 import UIKit
 
+//protocol DismissKeyboardAtViewController:
+
 class MyViewController: UIViewController {
     
     override func viewDidLoad() {

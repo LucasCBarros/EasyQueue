@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         noteService.getAllQuestions(completion: {[weak self] (notes, error) in
             if error == nil {
                 let notes = notes.sorted(by: { (note1, note2) -> Bool in
-                    return note1.noteID < note2.noteID
+                    return note1.noteID > note2.noteID
                 })
                 if notes.count == 0 || self?.openedNotes != notes {
                     self?.openedNotes.removeAll()
@@ -147,6 +147,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? QuestionTableViewCell
         cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 }

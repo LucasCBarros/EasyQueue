@@ -88,7 +88,7 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
     }
     
     func orderListElements() {
-        allNoteProfiles = allNoteProfiles?.sorted { $0.noteID < $1.noteID }
+        allNoteProfiles = allNoteProfiles?.sorted { $0.noteID > $1.noteID }
     }
 
     func retrieveAllNotes() {

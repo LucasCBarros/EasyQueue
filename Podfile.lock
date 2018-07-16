@@ -19,17 +19,17 @@ PODS:
   - FirebaseAnalytics (5.0.0):
     - FirebaseCore (~> 5.0)
     - FirebaseInstanceID (~> 3.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseAuth (5.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (5.0.0):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseDatabase (5.0.0):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (3.1.0):
+  - FirebaseInstanceID (3.1.1):
     - FirebaseCore (~> 5.0)
   - FirebaseMessaging (3.0.0):
     - FirebaseCore (~> 5.0)
@@ -42,7 +42,7 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.4)
   - GoogleToolboxForMac/Logger (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
-  - GoogleToolboxForMac/NSData+zlib (2.1.4):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
   - IQKeyboardManagerSwift (6.0.4)
@@ -54,7 +54,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.0)
-  - SwiftLint (0.25.1)
+  - SwiftLint (0.26.0)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
@@ -68,13 +68,33 @@ DEPENDENCIES:
   - SwiftLint
   - SwiftyJSON (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - FirebaseStorage
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - leveldb-library
+    - nanopb
+    - Protobuf
+    - SwiftLint
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
   Firebase: 4bd804448ab2596794698773d41520a0af101e65
   FirebaseAnalytics: 19812b49fa5f283dd6b23edf8a14b5d477029ab8
   FirebaseAuth: acbeef02fe7c3a26624e309849f3fe30c84115af
   FirebaseCore: e46e4babb9de298fb2f736958edcc6da1dc60d73
   FirebaseDatabase: 697eb53e5b4fe7cd4fa8756c1f82a9fca011345f
-  FirebaseInstanceID: 05d779cbb97bd5bd5c51a38a903fc9cfe1b2454a
+  FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
   FirebaseMessaging: f2360a966ecfb0d14facf0fbdf306efc2df0ddbe
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
@@ -84,9 +104,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
-  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
 PODFILE CHECKSUM: 9ce35b4737d60b4da5d8203f9223e134f1959e4f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

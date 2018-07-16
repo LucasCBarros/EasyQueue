@@ -92,8 +92,8 @@
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
-		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
-		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
+		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
+		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
 		FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
 		FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FAA331C020E6B85000D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
@@ -315,8 +315,8 @@
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FA93520A20E2C656001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_DEV.plist"; sourceTree = "<group>"; };
+		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
+		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAA331C420E6E42800D893DC /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
@@ -543,8 +543,8 @@
 				E60229AE203FA52E00336FC3 /* View */,
 				E602299F203FA29E00336FC3 /* Assets.xcassets */,
 				E60229A4203FA29E00336FC3 /* Info.plist */,
-				FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */,
-				FA93520A20E2C656001E4988 /* GoogleService-Info.plist */,
+				FA93520C20E2C689001E4988 /* GoogleService-Info.plist */,
+				FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */,
 			);
 			path = FilaFacil;
 			sourceTree = "<group>";
@@ -992,10 +992,10 @@
 				FAB3369C20B331BB00D6B61F /* SF-Pro-Display-Ultralight.otf in Resources */,
 				E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */,
 				FAB3368920B331BB00D6B61F /* SFCompactText-HeavyItalic.otf in Resources */,
-				FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */,
+				FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */,
 				FAB3369920B331BB00D6B61F /* SF-Pro-Text-Bold.otf in Resources */,
 				FAB3368D20B331BB00D6B61F /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
-				FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */,
+				FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */,
 				FAB3368120B331BB00D6B61F /* SFCompactText-MediumItalic.otf in Resources */,
 				FAB336A720B331BB00D6B61F /* SF-Pro-Text-Medium.otf in Resources */,
 				FAB3369820B331BB00D6B61F /* SF-Pro-Text-Regular.otf in Resources */,
