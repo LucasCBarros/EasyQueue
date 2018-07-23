@@ -20,7 +20,6 @@ class ConfiguracoesController: UIViewController {
 
     }
     
-    
     //Leva para Notificações em configurações
     @IBAction func goNotification(_ sender: UIButton) {
         
@@ -36,11 +35,8 @@ class ConfiguracoesController: UIViewController {
         
     }
     
-    
     //Cuida do switch das filas
-    func handleLines(){
-    
+    func handleLines() {
     }
-    
     
 }
