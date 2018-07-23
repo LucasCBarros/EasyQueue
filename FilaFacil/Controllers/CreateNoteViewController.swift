@@ -17,7 +17,7 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var hidenButton: UIBarButtonItem!
-    var cancelButton: UIBarButtonItem!
+    //var cancelButton: UIBarButtonItem!
     
     var allNoteProfiles: [NoteProfile]?
     
@@ -59,7 +59,7 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         self.noteTextView.delegate = self
         self.hidenButton = self.navigationBar.rightBarButtonItems?.popLast()
-        self.cancelButton = self.navigationBar.leftBarButtonItems?.popLast()
+       // self.cancelButton = self.navigationBar.leftBarButtonItems?.popLast()
         self.retrieveCurrentUserProfile()
     }
     
@@ -118,7 +118,7 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
         let addButon = self.navigationBar.rightBarButtonItems?.popLast()
         self.navigationBar.rightBarButtonItems?.append(self.hidenButton)
         self.hidenButton = addButon
-        self.navigationBar.leftBarButtonItems?.append(self.cancelButton)
+        //self.navigationBar.leftBarButtonItems?.append(self.cancelButton)
         UIView.animate(withDuration: 0.4) {
             self.newNoteView.alpha = 1
             self.newNoteView.transform = CGAffineTransform.identity

@@ -80,6 +80,8 @@
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
+		EF9F9EF621064B0C00BAFAE5 /* ConfiguracoesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9F9EF521064B0C00BAFAE5 /* ConfiguracoesView.storyboard */; };
+		EF9F9EF821064B8400BAFAE5 /* ConfiguracoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */; };
 		FA3DEDF920E169800022E0E2 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DEDF820E169800022E0E2 /* ProfileType.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
@@ -306,6 +308,8 @@
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
+		EF9F9EF521064B0C00BAFAE5 /* ConfiguracoesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfiguracoesView.storyboard; sourceTree = "<group>"; };
+		EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesController.swift; sourceTree = "<group>"; };
 		FA3DEDF820E169800022E0E2 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -595,6 +599,7 @@
 				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
 				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
 				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
+				EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */,
 				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
 				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
+				EF9F9EF521064B0C00BAFAE5 /* ConfiguracoesView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1041,6 +1047,7 @@
 				FAB3367A20B331BA00D6B61F /* SFCompactDisplay-Light.otf in Resources */,
 				FAB3369A20B331BB00D6B61F /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				FAB336A420B331BB00D6B61F /* SF-Pro-Text-HeavyItalic.otf in Resources */,
+				EF9F9EF621064B0C00BAFAE5 /* ConfiguracoesView.storyboard in Resources */,
 				FAB336A620B331BB00D6B61F /* SF-Pro-Text-LightItalic.otf in Resources */,
 				FAB3368420B331BB00D6B61F /* SFCompactText-Light.otf in Resources */,
 				FAB3367E20B331BB00D6B61F /* SFCompactDisplay-Medium.otf in Resources */,
@@ -1251,6 +1258,7 @@
 				E60229B8203FC98000336FC3 /* MainListCell.swift in Sources */,
 				E60229E22040938300336FC3 /* UserProfileDAO.swift in Sources */,
 				E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */,
+				EF9F9EF821064B8400BAFAE5 /* ConfiguracoesController.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,

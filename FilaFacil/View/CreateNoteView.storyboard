@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,8 +19,8 @@
         <array key="SF-Pro-Text-Light.otf">
             <string>SFProText-Light</string>
         </array>
-        <array key="SF-Pro-Text-Regular.otf">
-            <string>SFProText-Regular</string>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -39,21 +40,30 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="75" id="Mro-n1-9Cf" customClass="NoteCell" customModule="FilaFacil" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="100" id="Mro-n1-9Cf" customClass="NoteCell" customModule="FilaFacil" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mro-n1-9Cf" id="3Cv-zA-y0C">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Note" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-hN-DSY">
-                                                    <rect key="frame" x="20" y="10" width="335" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Note" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y0-hN-DSY">
+                                                    <rect key="frame" x="20" y="16" width="335" height="21"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-wv-Qfd">
-                                                    <rect key="frame" x="334" y="50.5" width="31" height="14"/>
+                                                    <rect key="frame" x="334" y="57" width="31" height="33"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Usuario" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-zi-dL2">
+                                                    <rect key="frame" x="20" y="57" width="190" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="tpH-CX-F4t"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -61,9 +71,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="top" secondItem="0Y0-hN-DSY" secondAttribute="bottom" constant="20" id="1QT-lk-PYH"/>
+                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="yqM-zi-dL2" secondAttribute="trailing" constant="-190" id="ANe-oT-eHV"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Y0-hN-DSY" secondAttribute="trailing" constant="20" id="C3U-pz-mC2"/>
                                                 <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="EQy-vd-XIC"/>
-                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="top" secondItem="3Cv-zA-y0C" secondAttribute="top" constant="10" id="M0H-TS-tX5"/>
+                                                <constraint firstItem="yqM-zi-dL2" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="FHh-IB-wJJ"/>
+                                                <constraint firstItem="yqM-zi-dL2" firstAttribute="firstBaseline" secondItem="qdI-wv-Qfd" secondAttribute="firstBaseline" id="Hhi-vd-90E"/>
+                                                <constraint firstItem="yqM-zi-dL2" firstAttribute="baseline" secondItem="qdI-wv-Qfd" secondAttribute="baseline" id="Js6-S7-P3P"/>
+                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="top" secondItem="3Cv-zA-y0C" secondAttribute="top" constant="16" id="M0H-TS-tX5"/>
                                                 <constraint firstAttribute="bottom" secondItem="qdI-wv-Qfd" secondAttribute="bottom" constant="10" id="XA6-MT-Eu8"/>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="gih-YS-Sj0"/>
                                                 <constraint firstAttribute="trailing" secondItem="qdI-wv-Qfd" secondAttribute="trailing" constant="10" id="vaF-dD-n8l"/>
@@ -102,12 +116,6 @@
                         <viewLayoutGuide key="safeArea" id="xk3-2Y-ek9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recados" id="fIg-zM-8dG">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XM6-qb-FCx">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="cancelNewNote:" destination="pey-OP-sAc" id="Odx-cT-gyU"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="fnc-5h-9bk">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

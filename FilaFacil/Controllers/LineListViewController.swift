@@ -21,10 +21,10 @@ class LineListViewController: UIViewController {
     
     // MARK: - Properties
     // Array with all registered teachers
-    let teacherArray = ["Developer", "Design", "Business"]
+    let teacherArray = ["Desenvolvedor", "Design", "Business"]
     var lineTotalWidth: CGFloat = 20
     var totalLines: CGFloat = 1
-    var selectedTab = "Developer"
+    var selectedTab = "Desenvolvedor"
     
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
