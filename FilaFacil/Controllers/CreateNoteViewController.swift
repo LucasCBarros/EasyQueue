@@ -25,6 +25,7 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
     let userProfileManager = UserProfileService()
     
     @IBAction func createNote_Action(_ sender: Any) {
+        
         // Get typed text if not empty
         if let noteText = noteTextView.text, !noteText.isEmpty {
             if noteText.count < 131 {

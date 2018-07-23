@@ -36,4 +36,11 @@ class ConfiguracoesController: UIViewController {
         
     }
     
+    
+    //Cuida do switch das filas
+    func handleLines(){
+    
+    }
+    
+    
 }

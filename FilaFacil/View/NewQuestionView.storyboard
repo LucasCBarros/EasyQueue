@@ -31,7 +31,14 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="8nf-Gf-Jxt" kind="relationship" relationship="rootViewController" id="Zv6-pS-dDc"/>
@@ -41,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="-810" y="123"/>
         </scene>
-        <!--New Question View Controller-->
+        <!--Adicionar-->
         <scene sceneID="jdH-Df-sPC">
             <objects>
                 <viewController storyboardIdentifier="NewQuestionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8nf-Gf-Jxt" customClass="NewQuestionViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-By-Pxc">
-                                <rect key="frame" x="20" y="51.5" width="335" height="64.5"/>
+                                <rect key="frame" x="13" y="44.5" width="342" height="64.5"/>
                                 <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
@@ -69,13 +76,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL2-KG-Shq">
-                                <rect key="frame" x="10" y="167" width="86.5" height="21.5"/>
+                                <rect key="frame" x="10" y="160" width="86.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="18"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MKK-yi-rfR">
-                                <rect key="frame" x="20" y="198.5" width="335" height="355.5"/>
+                                <rect key="frame" x="20" y="191.5" width="335" height="362.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newQuestionCell" id="rLY-Ci-Fnc" customClass="NewQuestionTableViewCell" customModule="FilaFacil" customModuleProvider="target">
@@ -121,7 +128,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limite de 130 caracteres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-E9-QLB">
-                                <rect key="frame" x="28" y="120" width="140" height="17"/>
+                                <rect key="frame" x="21" y="113" width="140" height="17"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="14"/>
                                 <color key="textColor" red="0.80784313725490198" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -129,7 +136,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.15636768940000001" green="0.16786375640000001" blue="0.2093632221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ndp-By-Pxc" firstAttribute="top" secondItem="ndb-O9-dha" secondAttribute="bottom" constant="10" id="3fF-Kq-fnY"/>
+                            <constraint firstItem="Ndp-By-Pxc" firstAttribute="top" secondItem="ndb-O9-dha" secondAttribute="bottom" constant="3" id="3fF-Kq-fnY"/>
                             <constraint firstItem="FL2-KG-Shq" firstAttribute="top" secondItem="Ugz-E9-QLB" secondAttribute="bottom" constant="30" id="5fi-ER-KQQ"/>
                             <constraint firstItem="Ndp-By-Pxc" firstAttribute="height" secondItem="ndb-O9-dha" secondAttribute="height" multiplier="3" id="H37-5u-efN"/>
                             <constraint firstItem="Ugz-E9-QLB" firstAttribute="top" secondItem="Ndp-By-Pxc" secondAttribute="bottom" constant="4" id="HAa-9h-iJu"/>
@@ -138,7 +145,7 @@
                             <constraint firstItem="ndb-O9-dha" firstAttribute="leading" secondItem="PMJ-oC-zXI" secondAttribute="leading" constant="10" id="RB7-XD-1iz"/>
                             <constraint firstItem="Ugz-E9-QLB" firstAttribute="leading" secondItem="Ndp-By-Pxc" secondAttribute="leading" constant="8" id="Rb3-JD-lPb"/>
                             <constraint firstItem="PMJ-oC-zXI" firstAttribute="trailing" secondItem="uhD-tp-TAQ" secondAttribute="trailing" id="SIj-xa-9QK"/>
-                            <constraint firstItem="Ndp-By-Pxc" firstAttribute="leading" secondItem="ndb-O9-dha" secondAttribute="leading" constant="10" id="TR9-Sq-rBk"/>
+                            <constraint firstItem="Ndp-By-Pxc" firstAttribute="leading" secondItem="ndb-O9-dha" secondAttribute="leading" constant="3" id="TR9-Sq-rBk"/>
                             <constraint firstItem="MKK-yi-rfR" firstAttribute="top" secondItem="FL2-KG-Shq" secondAttribute="bottom" constant="10" id="WHK-BN-uMc"/>
                             <constraint firstItem="uhD-tp-TAQ" firstAttribute="top" secondItem="PMJ-oC-zXI" secondAttribute="top" id="Y6O-ie-18j"/>
                             <constraint firstItem="PMJ-oC-zXI" firstAttribute="trailing" secondItem="Ndp-By-Pxc" secondAttribute="trailing" constant="20" id="bb9-Cr-XWx"/>
@@ -150,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PMJ-oC-zXI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="19c-nd-UqT">
+                    <navigationItem key="navigationItem" title="Adicionar" id="19c-nd-UqT">
                         <barButtonItem key="rightBarButtonItem" title="OK" style="plain" id="R2Z-7l-Y8g">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -166,7 +173,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MW-rC-Rb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="1zn-6v-yhd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="245.59999999999999" y="100.29985007496252"/>
+            <point key="canvasLocation" x="268" y="123"/>
         </scene>
     </scenes>
     <resources>
