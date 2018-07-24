@@ -152,6 +152,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
 }
 
 extension ViewController: UICollectionViewDataSource {
