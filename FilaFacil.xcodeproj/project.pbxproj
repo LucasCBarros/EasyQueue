@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
+		69FC277C4F4226C2AD9FED28 /* Pods_FilaFacilTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287E8C559A5368AEE93E90 /* Pods_FilaFacilTests.framework */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
 		A9FD78F520E56A3500DB9A1F /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */; };
 		A9FD78F920E56A3500DB9A1F /* FilaFacilSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -74,7 +75,7 @@
 		E6A52C5120D9F661001B4B16 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		E6D7FB1C205314B600EEC89D /* FilaFacilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */; };
 		E6FC384120B3506400D88578 /* CreateNoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC384020B3506400D88578 /* CreateNoteView.storyboard */; };
-		E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384220B3514500D88578 /* CreateNoteViewController.swift */; };
+		E6FC384320B3514500D88578 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384220B3514500D88578 /* NoteViewController.swift */; };
 		E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384420B35DE300D88578 /* NoteCell.swift */; };
 		E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384620B36CFD00D88578 /* NoteProfile.swift */; };
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
@@ -93,9 +94,13 @@
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
+		FA8A73562107AE8E00BF0990 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A73552107AE8E00BF0990 /* CreateNoteViewController.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
 		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
 		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
+		FA94AEBF211234D70018CA2C /* FilaFacilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */; };
+		FA94AEC6211234FC0018CA2C /* QuestionProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */; };
+		FA94AEC8211244B00018CA2C /* PresentedLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEC7211244B00018CA2C /* PresentedLinesService.swift */; };
 		FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
 		FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FAA331C020E6B85000D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
@@ -190,6 +195,13 @@
 			remoteGlobalIDString = E6022994203FA29E00336FC3;
 			remoteInfo = FilaFacil;
 		};
+		FA94AEC1211234D70018CA2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6022994203FA29E00336FC3;
+			remoteInfo = FilaFacil;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -230,6 +242,9 @@
 
 /* Begin PBXFileReference section */
 		02328158D1EA4FBEF5F653FF /* Pods-FilaFacilWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		02FFFFB80106906C0583F4A2 /* Pods-FilaFacilTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests.release.xcconfig"; sourceTree = "<group>"; };
+		09FDDFFC685FE206C7A26945 /* Pods-FilaFacilTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests.debug.xcconfig"; sourceTree = "<group>"; };
+		15287E8C559A5368AEE93E90 /* Pods_FilaFacilTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV.debug.xcconfig"; sourceTree = "<group>"; };
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,7 +317,7 @@
 		E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaFacilUITests.swift; sourceTree = "<group>"; };
 		E6D7FB1D205314B600EEC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6FC384020B3506400D88578 /* CreateNoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNoteView.storyboard; sourceTree = "<group>"; };
-		E6FC384220B3514500D88578 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		E6FC384220B3514500D88578 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		E6FC384420B35DE300D88578 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		E6FC384620B36CFD00D88578 /* NoteProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfile.swift; sourceTree = "<group>"; };
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
@@ -318,9 +333,15 @@
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
+		FA8A73552107AE8E00BF0990 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
 		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfileTest.swift; sourceTree = "<group>"; };
+		FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaFacilTests.swift; sourceTree = "<group>"; };
+		FA94AEC0211234D70018CA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA94AEC7211244B00018CA2C /* PresentedLinesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedLinesService.swift; sourceTree = "<group>"; };
 		FAA331C420E6E42800D893DC /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
@@ -427,6 +448,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA94AEB9211234D70018CA2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69FC277C4F4226C2AD9FED28 /* Pods_FilaFacilTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -439,6 +468,8 @@
 				DD586EBD97A8980EC8981BDF /* Pods-FilaFacilTV.release.xcconfig */,
 				A53A0C9E131043C9A0A35EED /* Pods-FilaFacilWatch Extension.debug.xcconfig */,
 				02328158D1EA4FBEF5F653FF /* Pods-FilaFacilWatch Extension.release.xcconfig */,
+				09FDDFFC685FE206C7A26945 /* Pods-FilaFacilTests.debug.xcconfig */,
+				02FFFFB80106906C0583F4A2 /* Pods-FilaFacilTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -510,6 +541,7 @@
 			children = (
 				FAB3363F20B3319B00D6B61F /* Fonts */,
 				E6022997203FA29E00336FC3 /* FilaFacil */,
+				FA94AEBD211234D70018CA2C /* FilaFacilTests */,
 				E6D7FB1A205314B600EEC89D /* FilaFacilUITests */,
 				DEDF0FBF20AE20470064A247 /* FilaFacilTV */,
 				E616DB4220D991910009E9FD /* FilaFacilWatch */,
@@ -530,6 +562,7 @@
 				E616DB4120D991910009E9FD /* FilaFacilWatch.app */,
 				E616DB4D20D991940009E9FD /* FilaFacilWatch Extension.appex */,
 				A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */,
+				FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -560,6 +593,7 @@
 				E60229E520409E8400336FC3 /* UserProfileService.swift */,
 				E60229E72040A03C00336FC3 /* QuestionProfileService.swift */,
 				E6FC384A20B36FC600D88578 /* NoteProfileService.swift */,
+				FA94AEC7211244B00018CA2C /* PresentedLinesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -596,7 +630,8 @@
 				E60229D3203FD18200336FC3 /* NewQuestionViewController.swift */,
 				E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */,
 				E60229D9203FD20200336FC3 /* LineStatusViewController.swift */,
-				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
+				E6FC384220B3514500D88578 /* NoteViewController.swift */,
+				FA8A73552107AE8E00BF0990 /* CreateNoteViewController.swift */,
 				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
 				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
 				EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */,
@@ -689,6 +724,7 @@
 				BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */,
 				DD17A1D36A22534F1E524D6B /* Pods_FilaFacilWatch.framework */,
 				BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */,
+				15287E8C559A5368AEE93E90 /* Pods_FilaFacilTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -700,6 +736,16 @@
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 			);
 			path = Mechanism;
+			sourceTree = "<group>";
+		};
+		FA94AEBD211234D70018CA2C /* FilaFacilTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */,
+				FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */,
+				FA94AEC0211234D70018CA2C /* Info.plist */,
+			);
+			path = FilaFacilTests;
 			sourceTree = "<group>";
 		};
 		FAB3363F20B3319B00D6B61F /* Fonts */ = {
@@ -895,6 +941,26 @@
 			productReference = E6D7FB19205314B600EEC89D /* FilaFacilUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		FA94AEBB211234D70018CA2C /* FilaFacilTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA94AEC3211234D70018CA2C /* Build configuration list for PBXNativeTarget "FilaFacilTests" */;
+			buildPhases = (
+				7345DB31A4821788B2884661 /* [CP] Check Pods Manifest.lock */,
+				FA94AEB8211234D70018CA2C /* Sources */,
+				FA94AEB9211234D70018CA2C /* Frameworks */,
+				FA94AEBA211234D70018CA2C /* Resources */,
+				3757091A88A8A4BC3CE8F304 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA94AEC2211234D70018CA2C /* PBXTargetDependency */,
+			);
+			name = FilaFacilTests;
+			productName = FilaFacilTests;
+			productReference = FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -946,6 +1012,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = E6022994203FA29E00336FC3;
 					};
+					FA94AEBB211234D70018CA2C = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E6022994203FA29E00336FC3;
+					};
 				};
 			};
 			buildConfigurationList = E6022990203FA29E00336FC3 /* Build configuration list for PBXProject "FilaFacil" */;
@@ -967,6 +1038,7 @@
 				E616DB4020D991910009E9FD /* FilaFacilWatch */,
 				E616DB4C20D991940009E9FD /* FilaFacilWatch Extension */,
 				A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */,
+				FA94AEBB211234D70018CA2C /* FilaFacilTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1093,6 +1165,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA94AEBA211234D70018CA2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1112,6 +1191,38 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3757091A88A8A4BC3CE8F304 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
@@ -1158,6 +1269,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FilaFacilWatch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7345DB31A4821788B2884661 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilaFacilTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1261,6 +1390,7 @@
 				EF9F9EF821064B8400BAFAE5 /* ConfiguracoesController.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
+				FA8A73562107AE8E00BF0990 /* CreateNoteViewController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
@@ -1277,12 +1407,13 @@
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
 				E60229DE20408F0D00336FC3 /* DAO.swift in Sources */,
 				FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */,
+				FA94AEC8211244B00018CA2C /* PresentedLinesService.swift in Sources */,
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,
 				FA3DEDF920E169800022E0E2 /* ProfileType.swift in Sources */,
-				E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */,
+				E6FC384320B3514500D88578 /* NoteViewController.swift in Sources */,
 				E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */,
 				E60229DC203FD5AB00336FC3 /* AuthService.swift in Sources */,
 				FABAB6F720CAFBD800E46E3E /* LineCell.swift in Sources */,
@@ -1318,6 +1449,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA94AEB8211234D70018CA2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA94AEBF211234D70018CA2C /* FilaFacilTests.swift in Sources */,
+				FA94AEC6211234FC0018CA2C /* QuestionProfileTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1340,6 +1480,11 @@
 			isa = PBXTargetDependency;
 			target = E6022994203FA29E00336FC3 /* FilaFacil */;
 			targetProxy = E6D7FB1E205314B600EEC89D /* PBXContainerItemProxy */;
+		};
+		FA94AEC2211234D70018CA2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6022994203FA29E00336FC3 /* FilaFacil */;
+			targetProxy = FA94AEC1211234D70018CA2C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1714,6 +1859,44 @@
 			};
 			name = Release;
 		};
+		FA94AEC4211234D70018CA2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09FDDFFC685FE206C7A26945 /* Pods-FilaFacilTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 987J4BXX78;
+				INFOPLIST_FILE = FilaFacilTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LuanSobreira.FilaFacilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FilaFacil.app/FilaFacil";
+			};
+			name = Debug;
+		};
+		FA94AEC5211234D70018CA2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02FFFFB80106906C0583F4A2 /* Pods-FilaFacilTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 987J4BXX78;
+				INFOPLIST_FILE = FilaFacilTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LuanSobreira.FilaFacilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FilaFacil.app/FilaFacil";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1776,6 +1959,15 @@
 			buildConfigurations = (
 				E6D7FB20205314B600EEC89D /* Debug */,
 				E6D7FB21205314B600EEC89D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA94AEC3211234D70018CA2C /* Build configuration list for PBXNativeTarget "FilaFacilTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA94AEC4211234D70018CA2C /* Debug */,
+				FA94AEC5211234D70018CA2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

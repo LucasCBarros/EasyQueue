@@ -20,6 +20,26 @@ target 'FilaFacil' do
 
 end
 
+
+target 'FilaFacilTests' do
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    
+    # Pods for FilaFacil
+    
+    pod 'Firebase/Core', '5.0.0'
+    pod 'Firebase/Messaging', '5.0.0'
+    #pod 'Firebase/InstanceID', '2.0.0'
+    pod 'Firebase/Auth', '5.0.0'
+    pod 'Firebase/Database', '5.0.0'
+    pod 'Firebase/Storage', '5.0.0'
+    pod 'IQKeyboardManagerSwift'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'SwiftLint'
+    pod 'Kingfisher', '~> 4.0'
+    
+end
+
 target 'FilaFacilTV' do
     use_frameworks!
     

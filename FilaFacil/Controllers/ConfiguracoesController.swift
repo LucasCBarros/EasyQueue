@@ -8,16 +8,32 @@
 
 import UIKit
 
-class ConfiguracoesController: UIViewController {
-
+class ConfiguracoesController: UITableViewController {
     
-    @IBOutlet weak var switchDev: UISwitch!
-    @IBOutlet weak var switchDesign: UISwitch!
-    @IBOutlet weak var switchBusiness: UISwitch!
+    @IBOutlet weak var developerSwitch: UISwitch!
+    @IBOutlet weak var designerSwitch: UISwitch!
+    @IBOutlet weak var businessSwitch: UISwitch!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    @IBAction func switchDeveloperAction(_ sender: UISwitch) {
+        if sender.isOn {
+            PresentedLinesService.shared.add("Developer")
+        } else {
+            PresentedLinesService.shared.remove("Developer")
+        }
+    }
+    @IBAction func switchDesignerAction(_ sender: UISwitch) {
+        if sender.isOn {
+            PresentedLinesService.shared.add("Designer")
+        } else {
+            PresentedLinesService.shared.remove("Designer")
+        }
+    }
+    @IBAction func switchBusinessAction(_ sender: UISwitch) {
+        if sender.isOn {
+            PresentedLinesService.shared.add("Business")
+        } else {
+            PresentedLinesService.shared.remove("Business")
+        }
     }
     
     //Leva para Notificações em configurações
@@ -35,8 +51,23 @@ class ConfiguracoesController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let backgroundView = UIImageView(image: #imageLiteral(resourceName: "background-notes"))
+        backgroundView.frame = self.tableView.frame
+        self.tableView.backgroundView = backgroundView
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 3) {
+            cell.separatorInset = UIEdgeInsets(top: 0.0, left: cell.bounds.size.width, bottom: 0.0, right: 0.0)
+        }
+    }
+    
     //Cuida do switch das filas
     func handleLines() {
+        
     }
     
 }
