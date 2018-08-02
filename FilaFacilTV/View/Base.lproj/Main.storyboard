@@ -4,7 +4,6 @@
         <adaptation id="light"/>
     </device>
     <dependencies>
-        <deployment identifier="tvOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -77,7 +76,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-qe-TRc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Question" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-qe-TRc">
                                                     <rect key="frame" x="165" y="15" width="733" height="31"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="31"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,31 +270,40 @@
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="749" text="Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb7-3H-xcW">
-                                                            <rect key="frame" x="20" y="20" width="140" height="78"/>
+                                                            <rect key="frame" x="20" y="20" width="140" height="26"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="27"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="31"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Data" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2s-WR-0fm">
-                                                            <rect key="frame" x="10" y="143" width="160" height="27"/>
-                                                            <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Data" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2s-WR-0fm">
+                                                            <rect key="frame" x="10" y="91" width="160" height="33"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="27"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-rR-wTK">
+                                                            <rect key="frame" x="10" y="124" width="160" height="33"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="27"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="iL8-rR-wTK" firstAttribute="top" secondItem="Z2s-WR-0fm" secondAttribute="bottom" id="0f2-Mw-Rbz"/>
+                                                        <constraint firstItem="iL8-rR-wTK" firstAttribute="leading" secondItem="Z2s-WR-0fm" secondAttribute="leading" id="1Jc-7D-IUQ"/>
                                                         <constraint firstItem="KRc-9h-p3p" firstAttribute="width" secondItem="nEy-hH-Pkb" secondAttribute="width" id="C9H-xs-R2W"/>
                                                         <constraint firstItem="Wb7-3H-xcW" firstAttribute="top" secondItem="nEy-hH-Pkb" secondAttribute="top" constant="20" id="Hxo-4m-pdL"/>
                                                         <constraint firstItem="Wb7-3H-xcW" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Z2s-WR-0fm" secondAttribute="top" constant="-45" id="JyA-Ue-CZx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iL8-rR-wTK" secondAttribute="bottom" constant="23" id="LT4-D1-JoL"/>
                                                         <constraint firstItem="KRc-9h-p3p" firstAttribute="height" secondItem="nEy-hH-Pkb" secondAttribute="height" id="Qzc-Lj-QWp"/>
                                                         <constraint firstItem="Wb7-3H-xcW" firstAttribute="leading" secondItem="nEy-hH-Pkb" secondAttribute="leading" constant="20" id="Sj4-9i-5Il"/>
                                                         <constraint firstAttribute="trailing" secondItem="Wb7-3H-xcW" secondAttribute="trailing" constant="20" id="ThR-ia-0IX"/>
+                                                        <constraint firstItem="iL8-rR-wTK" firstAttribute="trailing" secondItem="Z2s-WR-0fm" secondAttribute="trailing" id="faS-Ze-a6c"/>
                                                         <constraint firstAttribute="trailing" secondItem="Z2s-WR-0fm" secondAttribute="trailing" constant="10" id="hNW-uc-tPv"/>
                                                         <constraint firstItem="Z2s-WR-0fm" firstAttribute="leading" secondItem="nEy-hH-Pkb" secondAttribute="leading" constant="10" id="iiq-QQ-7JL"/>
                                                         <constraint firstItem="KRc-9h-p3p" firstAttribute="centerY" secondItem="nEy-hH-Pkb" secondAttribute="centerY" id="khe-TE-G3h"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Z2s-WR-0fm" secondAttribute="bottom" constant="10" id="p3J-GD-EWT"/>
                                                         <constraint firstItem="KRc-9h-p3p" firstAttribute="centerX" secondItem="nEy-hH-Pkb" secondAttribute="centerX" id="p5O-Iy-EzJ"/>
                                                     </constraints>
                                                 </view>
@@ -310,7 +318,8 @@
                                         </constraints>
                                         <size key="customSize" width="180" height="180"/>
                                         <connections>
-                                            <outlet property="dateLabel" destination="Z2s-WR-0fm" id="53P-x2-Ydk"/>
+                                            <outlet property="dateLabel" destination="iL8-rR-wTK" id="U8l-er-NaU"/>
+                                            <outlet property="nameLabel" destination="Z2s-WR-0fm" id="53P-x2-Ydk"/>
                                             <outlet property="noteLabel" destination="Wb7-3H-xcW" id="Qcq-5f-k3P"/>
                                         </connections>
                                     </collectionViewCell>

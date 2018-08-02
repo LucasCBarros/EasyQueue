@@ -14,9 +14,11 @@ class NoteViewCell: UICollectionViewCell {
         
     @IBOutlet weak var noteLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var dateLabel: UILabel!
     
-//    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    //    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -175,7 +175,8 @@ extension ViewController: UICollectionViewDataSource {
             
             let strDate = Formatter.dateToString(openedNotes[indexPath.row].date)
             
-            noteCell.dateLabel.text = strDate
+            noteCell.nameLabel.text = "Vasolino"
+            noteCell.dateLabel.text = "\(strDate)"
 //            noteCell.configureWidth(screenWidth)
         }
         

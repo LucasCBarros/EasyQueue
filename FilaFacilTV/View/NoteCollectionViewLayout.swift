@@ -11,7 +11,7 @@ import UIKit
 protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
     
     func getAllTexts() -> [String]
-    
+        
     func calculeColumn(width: CGFloat) -> CGFloat
     
 }
@@ -68,11 +68,12 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
 
             let indexPath = IndexPath(item: item, section: 0)
             
-            var expectedHeight: CGFloat = 130
+            var expectedHeight: CGFloat = 180
             
-            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 54, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
+            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 54, font: UIFont(name: "SFProDisplay-Regular", size: 31)!)
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
+            
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: expectedHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
 
@@ -85,7 +86,8 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
             contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + expectedHeight
 
-            column = column < (numberOfColumns - 1) ? (column + 1) : 0
+//            column = column < (numberOfColumns - 1) ? (column + 1) : 0
+            column = (yOffset[0] <= yOffset[1]) ? 0 : 1
         }
     }
     
