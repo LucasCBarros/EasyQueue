@@ -68,7 +68,7 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
 
             let indexPath = IndexPath(item: item, section: 0)
             
-            var expectedHeight: CGFloat = 185
+            var expectedHeight: CGFloat = 130
             
             expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 54, font: UIFont(name: "SFProDisplay-Regular", size: 27)!)
             

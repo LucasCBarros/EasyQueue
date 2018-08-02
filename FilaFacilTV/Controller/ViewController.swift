@@ -49,7 +49,9 @@ class ViewController: UIViewController {
                 })
                 if questions.count == 0 || self?.openedQuestions != questions {
                     DispatchQueue.main.async {
-                        if self?.openedQuestions.count == 0 {
+                        if self?.openedQuestions.count == 0 && questions.count == 0 {
+                            UIApplication.shared.isIdleTimerDisabled = false
+                        } else {
                             UIApplication.shared.isIdleTimerDisabled = true
                         }
                         self?.openedQuestions.removeAll()
