@@ -21,10 +21,11 @@ class LineListViewController: UIViewController {
     
     // MARK: - Properties
     // Array with all registered teachers
-    let teacherArray = ["Developer", "Design", "Business"]
-    var lineTotalWidth: CGFloat = 20
-    var totalLines: CGFloat = 1
-    var selectedTab = "Developer"
+    var teacherArray: [String] = []
+    var lineTotalWidth: CGFloat = 0
+    lazy var selectedTab: String? = {
+       return teacherArray.first
+    }()
     
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
@@ -38,7 +39,10 @@ class LineListViewController: UIViewController {
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
-        loadViewData()
+        self.teacherArray = Array(PresentedLinesService.shared.lines.sorted(by: { (line1, line2) -> Bool in
+            return line1 > line2
+        }))
+        self.linesCollectionView.reloadData()
     }
 
     func loadViewData() {
@@ -49,7 +53,9 @@ class LineListViewController: UIViewController {
     }
     
     func reloadViewData() {
-        self.retrieveAllQuestions(lineName: selectedTab)
+        if let selectedTab = self.selectedTab {
+            self.retrieveAllQuestions(lineName: selectedTab)
+        }
     }
     
     override func viewDidLoad() {
@@ -77,7 +83,9 @@ class LineListViewController: UIViewController {
     }
     
     @objc func refreshTableView(refreshControl: UIRefreshControl) {
-        self.retrieveAllQuestions(lineName: selectedTab)
+        if let selectedTab = self.selectedTab {
+            self.retrieveAllQuestions(lineName: selectedTab)
+        }
         refreshControl.endRefreshing()
     }
     
@@ -98,9 +106,11 @@ class LineListViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                     if self.selectedTab == lineName {
-                        self.inLineQuestions = questionProfile
-                        self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
-                        self.listTableView.reloadData()
+                        let inLineQuestions = questionProfile.sorted { $0.questionID < $1.questionID }
+                        if self.inLineQuestions != inLineQuestions {
+                            self.inLineQuestions = inLineQuestions
+                            self.listTableView.reloadData()
+                        }
                     }
                 }
             }
@@ -138,7 +148,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                     DispatchQueue.main.async {
                         if self != nil {
                             if let image = image, let url = url, erro == nil {
-                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString == self!.inLineQuestions[indexPath.row].userPhoto {
+                                if self!.inLineQuestions.count > indexPath.row - 1 && url.absoluteString == self!.inLineQuestions[indexPath.row].userPhoto {
                                     cell?.profilePhoto.image = image
                                 } else {
                                     cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
@@ -175,12 +185,12 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
-            if let this = self, this.inLineQuestions.count > 0 {
+            if let this = self, this.inLineQuestions.count > 0, let selectedTab = this.selectedTab {
                 let alert = UIAlertController(title: "Excluir da Fila", message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
-                    this.userProfileManager.removeQuestionFromLine(lineName: this.selectedTab, questionID: question.questionID)
+                    this.userProfileManager.removeQuestionFromLine(lineName: selectedTab, questionID: question.questionID)
                     // Reload View
                     DispatchQueue.main.async {
                         this.viewWillAppear(true)
@@ -221,7 +231,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 extension LineListViewController: NewQuestionTableViewDelegate {
     
     func selectedLine() -> String {
-        return self.selectedTab
+        return self.selectedTab ?? ""
     }
     
     func saveQuestion(text: String, selectedTeacher: String) {
@@ -234,11 +244,11 @@ extension LineListViewController: NewQuestionTableViewDelegate {
     
 }
 
+// MARK: - Lines
 extension LineListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.lineTotalWidth = 0
-        self.totalLines = 0
         return teacherArray.count
     }
     
@@ -278,15 +288,26 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let heitgh: CGFloat = 45.0
-        let size = CGSize(width: teacherArray[indexPath.row].width(withConstrainedHeight: heitgh, font: UIFont(name: "SFProText-Medium", size: 17)!) + 27, height: heitgh)
-        
+        var size = CGSize(width: 0, height: heitgh)
+        if self.teacherArray.count > 2 {
+            let width = teacherArray[indexPath.row].width(withConstrainedHeight: heitgh, font: UIFont(name: "SFProText-Medium", size: 17)!) + 30
+            size.width = width
+        } else {
+            let width = (collectionView.frame.width / CGFloat(self.teacherArray.count))
+            size.width = width
+        }
         self.lineTotalWidth += size.width
-        self.totalLines += 1
         return size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return (collectionView.frame.width - self.lineTotalWidth) / (self.totalLines - 1)
+        if self.teacherArray.count > 1 {
+            let interitemSpacing = (collectionView.frame.width - self.lineTotalWidth) / CGFloat(self.teacherArray.count - 1)
+            let minimumInteritemSpacing: CGFloat = 20.0
+            return (minimumInteritemSpacing > interitemSpacing) ? minimumInteritemSpacing : interitemSpacing
+        } else {
+            return 0
+        }
     }
     
 }

@@ -31,6 +31,21 @@ class QuestionProfile: NSObject, PersistenceObject {
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
+    static func == (left: QuestionProfile, right: QuestionProfile) -> Bool {
+        return left.questionID == right.questionID && left.questionTitle == right.questionTitle
+    }
+    
+    static func != (left: QuestionProfile, right: QuestionProfile) -> Bool {
+        return !(left == right)
+    }
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        if let object = object as? QuestionProfile {
+            return self == object
+        } else {
+            return false
+        }
+    }
     required init(dictionary: [AnyHashable: Any]) {
         
         if let questionTitle = dictionary["questionTitle"] as? String {
@@ -74,4 +89,5 @@ class QuestionProfile: NSObject, PersistenceObject {
     func getDictInfo() -> [AnyHashable: Any] {
         return self.dictInfo
     }
+    
 }

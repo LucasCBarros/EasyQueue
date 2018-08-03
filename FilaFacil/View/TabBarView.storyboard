@@ -25,6 +25,7 @@
                         <segue destination="YiC-gr-hBU" kind="relationship" relationship="viewControllers" id="dAB-Ko-1Ag"/>
                         <segue destination="CY3-7W-Bdt" kind="relationship" relationship="viewControllers" id="i5G-RV-Fhz"/>
                         <segue destination="g6i-mf-Pja" kind="relationship" relationship="viewControllers" id="09K-MO-4i8"/>
+                        <segue destination="idR-kX-yGR" kind="relationship" relationship="viewControllers" id="jpw-cb-y73"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1C-Jr-Z9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,34 +36,46 @@
         <scene sceneID="oUe-GH-8f1">
             <objects>
                 <viewControllerPlaceholder storyboardName="LineListView" id="YiC-gr-hBU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="G0z-6f-YjI"/>
+                    <tabBarItem key="tabBarItem" title="Fila" id="G0z-6f-YjI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxx-Ir-0w1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="-693"/>
+            <point key="canvasLocation" x="42" y="-780"/>
         </scene>
         <!--CreateNoteView-->
         <scene sceneID="Xsr-ue-Bvc">
             <objects>
                 <viewControllerPlaceholder storyboardName="CreateNoteView" id="CY3-7W-Bdt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Dkz-nZ-DwK"/>
+                    <tabBarItem key="tabBarItem" title="Recados" id="Dkz-nZ-DwK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-nq-M72" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-110" y="-579"/>
+            <point key="canvasLocation" x="42" y="-622"/>
         </scene>
         <!--ProfileView-->
         <scene sceneID="N0c-0A-QSW">
             <objects>
                 <viewControllerPlaceholder storyboardName="ProfileView" id="g6i-mf-Pja" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zgU-e0-Aqh"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" id="zgU-e0-Aqh"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J10-Cr-qcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-121" y="-455"/>
+            <point key="canvasLocation" x="18" y="-529"/>
+        </scene>
+        <!--ConfiguracoesView-->
+        <scene sceneID="AeM-lc-mAN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ConfiguracoesView" id="idR-kX-yGR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Configurações" image="settings-unselect" selectedImage="settings-select" id="2Vp-YG-BrF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhl-LT-eLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-423"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="1600" height="1600"/>
+        <image name="settings-select" width="24" height="24"/>
+        <image name="settings-unselect" width="24" height="24"/>
     </resources>
 </document>
