@@ -124,7 +124,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fnc-5h-9bk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="2f9-6o-jjk" kind="show" id="hZR-FX-DJC"/>
+                                <segue destination="2f9-6o-jjk" kind="show" id="gpn-IJ-rfx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1178" y="-45"/>
         </scene>
-        <!--Create Note View Controller-->
+        <!--View Controller-->
         <scene sceneID="Fbx-rB-zfh">
             <objects>
-                <viewController id="2f9-6o-jjk" customClass="CreateNoteViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2f9-6o-jjk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I50-Pf-s40">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,14 +166,8 @@
                     <navigationItem key="navigationItem" id="89z-9B-ELj">
                         <barButtonItem key="rightBarButtonItem" title="OK" style="plain" id="ndl-Z0-4zP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="okAction:" destination="2f9-6o-jjk" id="um8-o9-Qf2"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="noteTextView" destination="UaL-kp-Bmd" id="85l-3N-nuA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gt-ot-ARJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
