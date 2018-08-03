@@ -48,7 +48,7 @@ class QuestionProfileDAO: DAO {
     // Return all open questions
     func retrieveAllOpenQuestions(lineName: String, completionHandler: @escaping ([QuestionProfile]?) -> Void) {
     
-        self.retrieveAll(dump: QuestionProfile.self, path: lineName) { (questions) in
+        self.retrieveAll(dump: QuestionProfile.self, path: "Question") { (questions) in
             completionHandler(questions)
         }
     }

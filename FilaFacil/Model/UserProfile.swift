@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class UserProfile: NSObject, PersistenceObject {
 
@@ -31,7 +32,7 @@ class UserProfile: NSObject, PersistenceObject {
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
-    required init(dictionary: [AnyHashable: Any]) {
+    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
         
         if let userID = dictionary["userID"] as? String {
             self.userID = userID

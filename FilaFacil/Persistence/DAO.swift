@@ -10,7 +10,7 @@ import UIKit
 import CloudKit
 
 protocol PersistenceObject {
-    init(dictionary: [AnyHashable: Any])
+    init(dictionary: [AnyHashable: Any], recordID: CKRecordID)
     func getDictInfo() -> [AnyHashable: Any]
 }
 
@@ -37,7 +37,7 @@ class DAO: NSObject {
         var allObjects: [T] = []
 
         let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Question", predicate: predicate)
+        let query = CKQuery(recordType: path, predicate: predicate)
         
         publicDB.perform(query, inZoneWith: nil, completionHandler: {[weak self] (results, error) -> Void in
             if let error = error {
@@ -52,7 +52,7 @@ class DAO: NSObject {
                        // let objectDict = dictionary[key] as? [String: Any]
                         
                        // let newObj = T(dictionary: objectDict!)
-                        let newObj = T(dictionary: dictionary)
+                    let newObj = T(dictionary: dictionary, recordID: result.recordID)
 //                        let testeDict = ["username": "Joao",
 //                                                "questionID": "1111",
 //                                                "questionTitle": "Duvida de teste",

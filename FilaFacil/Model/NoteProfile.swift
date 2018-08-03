@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class NoteProfile: NSObject, PersistenceObject {
 
@@ -19,10 +20,13 @@ class NoteProfile: NSObject, PersistenceObject {
     // UserID from Firebase
     var userID: String = ""
     
+    // Reference for cloudKit record
+    var recordID: CKRecordID?
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
 
-    required init(dictionary: [AnyHashable: Any]) {
+    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
 
         if let noteText = dictionary["noteText"] as? String {
             self.noteText = noteText
@@ -34,6 +38,8 @@ class NoteProfile: NSObject, PersistenceObject {
             self.userID = userID
         }
         self.dictInfo = dictionary
+        
+        self.recordID = recordID
     }
 
     init(noteText: String, noteID: String, userID: String) {

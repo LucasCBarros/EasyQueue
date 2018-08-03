@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 
 class ProfileType: NSObject, PersistenceObject {
     
@@ -20,7 +21,7 @@ class ProfileType: NSObject, PersistenceObject {
         self.profileType = profileType
     }
     
-    required init(dictionary: [AnyHashable: Any]) {
+    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
         self.userID = dictionary["userID"] as? String ?? "Error"
         self.userName = dictionary["userName"] as? String ?? "Error"
         self.profileType = dictionary["profileType"] as? String ?? "Error"

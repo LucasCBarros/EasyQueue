@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Firebase
 
 class AuthService: NSObject {
 
@@ -52,8 +51,6 @@ class AuthService: NSObject {
     }
     
     func checkUserLogged() -> Bool {
-       // return authManager.checkSignIn()
-        // force login by Joao 
-        return true
+       return authManager.checkSignIn()
     }
 }

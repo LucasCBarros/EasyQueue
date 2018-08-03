@@ -90,13 +90,11 @@ class UserProfileDAO: DAO {
                 self.publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
                     if let error = error {
                     
-                        
                         return
                     }
                     for result in results! {
                         print(result)
                     }
-                
             }
         }
         }

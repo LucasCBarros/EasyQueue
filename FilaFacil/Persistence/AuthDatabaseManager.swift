@@ -76,14 +76,19 @@ class AuthDatabaseManager: NSObject {
 //        }
 //    }
 //    
-//    func checkSignIn() -> Bool {
+    func checkSignIn() -> Bool {
+        if FileManager.default.ubiquityIdentityToken != nil {
+            return true
+        } else {
+            return false
+        }
 //        if Auth.auth().currentUser != nil {
 //            return true
 //        } else {
 //            return false
 //        }
-//    }
-//    
+    }
+//
 //    func retrieveCurrentUserID() -> String {
 //        let currentUser = Auth.auth().currentUser
 //        

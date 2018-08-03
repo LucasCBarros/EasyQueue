@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class QuestionProfile: NSObject, PersistenceObject {
 
@@ -28,10 +29,13 @@ class QuestionProfile: NSObject, PersistenceObject {
     // Empty or one of the existing
     var userPhoto: String = ""
     
+    // Reference for cloudKit record
+    var recordID: CKRecordID? = nil
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
-    required init(dictionary: [AnyHashable: Any]) {
+    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
         
         if let questionTitle = dictionary["questionTitle"] as? String {
             self.questionTitle = questionTitle
@@ -51,6 +55,9 @@ class QuestionProfile: NSObject, PersistenceObject {
         if let userPhoto = dictionary["userPhoto"] as? String {
             self.userPhoto = userPhoto
         }
+        
+        self.recordID = recordID
+        
         self.dictInfo = dictionary
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class CreateNoteViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -29,7 +30,9 @@ class CreateNoteViewController: MyViewController, UITableViewDataSource, UITable
         if let noteText = noteTextView.text, !noteText.isEmpty {
             if noteText.count < 131 {
                 // Inserts question info in Firebase and updates users status
-                noteProfileManager.createNote(userID: currentProfile!.userID, noteText: noteText)
+                //noteProfileManager.createNote(userID: currentProfile!.userID, noteText: noteText)
+                noteProfileManager.createNote(userID: "ddsdsd", noteText: noteText)
+
                 self.retrieveAllNotes()
                 noteTableView.reloadData()
                 animateOut()
@@ -172,19 +175,26 @@ extension CreateNoteViewController {
         
         if editingStyle == UITableViewCellEditingStyle.delete {
             
-            noteProfileManager.removeNote(noteID: (allNoteProfiles?[indexPath.row].noteID)!)
-//            noteTableView.reloadData()
-            self.viewWillAppear(true)
+            //noteProfileManager.removeNote(noteID: (allNoteProfiles?[indexPath.row].noteID)!)
+            if let noteID = allNoteProfiles?[indexPath.row].recordID {
+            
+                noteProfileManager.removeNote(noteID: noteID)
+
+  //            noteTableView.reloadData()
+            
+                self.viewWillAppear(true)
+            }
         }
     }
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if self.allNoteProfiles?[indexPath.row].userID == currentProfile?.userID || self.currentProfile?.profileType == "Teacher" {
-            return true
-        } else {
-            return false
-        }
+//        if self.allNoteProfiles?[indexPath.row].userID == currentProfile?.userID || self.currentProfile?.profileType == "Teacher" {
+//            return true
+//        } else {
+//            return false
+//        }
+        return true
     }
 
 }

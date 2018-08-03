@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CloudKit
 
 class NoteDAO: DAO {
     
     // Return all open notes
     func retrieveAllOpenNotes(completionHandler: @escaping ([NoteProfile]?) -> Void) {
-        let path = "Notes/"
+        let path = "Note"
         
         self.retrieveAll(dump: NoteProfile.self, path: path) { (notes) in
             completionHandler(notes)
@@ -21,28 +22,43 @@ class NoteDAO: DAO {
     
     // Create a note
     func createNote(userID: String, noteText: String ) {
+                
+        let timeStampID = "\(Date().millisecondsSince1970)"
+       
+        let uuid = UUID().uuidString
+
+        let noteID = CKRecordID(recordName: uuid)
         
-//        let path = "Notes/"
-//
-//        let newNoteData = [userID,
-//                           noteText]
-//
-//        let noteFields = ["userID",
-//                          "noteText"]
-//
-//        let timeStampID = "\(Date().millisecondsSince1970)"
-//        let pathWithID = path + timeStampID
-//
-//        for note in 0..<noteFields.count {
-//            ref?.child(pathWithID).child(noteFields[note]).setValue(newNoteData[note])
-//        }
-//
-//        ref?.child(pathWithID).child("noteID").setValue(timeStampID)
+        let record = CKRecord(recordType: "Note", recordID: noteID)
         
+        record.setObject(userID as CKRecordValue, forKey: "userId")
+        record.setObject(noteText as CKRecordValue, forKey: "noteText")
+        record.setObject(timeStampID as CKRecordValue, forKey: "noteID")
+        
+        publicDB.save(record, completionHandler: { record, error in
+            
+            guard let record = record else {
+                print("Error saving record: ", error as Any)
+                return
+            }
+            
+            print("Successfully saved record: ", record)
+            
+        })
     }
     
     // Remove note from DB
-    func removeNote(noteID: String) {
+    func removeNote(noteID: CKRecordID) {
+        
+        publicDB.delete(withRecordID: noteID) { (record, error) in
+           
+            guard let record = record else {
+                print("Error deleting record: ", error as Any)
+                return
+            }
+            
+            print("Successfully deleted record: ", record)
+        }
        // ref?.child("Notes").child(noteID).removeValue()
     }
 }
