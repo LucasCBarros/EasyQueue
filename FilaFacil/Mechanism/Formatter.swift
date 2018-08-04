@@ -9,27 +9,30 @@
 import Foundation
 
 class Formatter {
-
-    static func dateToString(_ date: Date) -> String {
+    
+    static var currentDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.current
         dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter
+    }
+
+    static func dateToString(_ date: Date) -> String {
+        let dateFormatter = currentDateFormatter
         dateFormatter.dateFormat = "dd/MM - HH'h'mm" //Specify your format that you want
         return dateFormatter.string(from: date) + "min"
     }
     
     static func fullDateToString(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.timeZone = NSTimeZone.local
+        let dateFormatter = currentDateFormatter
         dateFormatter.dateFormat = "eeee, dd 'de' MMMM 'de' yyyy"
         return dateFormatter.string(from: date)
     }
     
     static func currentHour() -> String {
-        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: Date())
-        
-        return "\(dateComponents.hour!):\(dateComponents.minute!)h"
+        let dateFormatter = currentDateFormatter
+        dateFormatter.dateFormat = "HH:mm'h'"
+        return dateFormatter.string(from: Date())
     }
 
 }
