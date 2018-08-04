@@ -17,5 +17,19 @@ class Formatter {
         dateFormatter.dateFormat = "dd/MM - HH'h'mm" //Specify your format that you want
         return dateFormatter.string(from: date) + "min"
     }
+    
+    static func fullDateToString(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.timeZone = NSTimeZone.local
+        dateFormatter.dateFormat = "eeee, dd 'de' MMMM 'de' yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
+    static func currentHour() -> String {
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: Date())
+        
+        return "\(dateComponents.hour!):\(dateComponents.minute!)h"
+    }
 
 }

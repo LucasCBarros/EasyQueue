@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var noQuestions: UILabel!
     @IBOutlet weak var noNotes: UILabel!
     @IBOutlet weak var questionTableView: UITableView!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var questionService = QuestionService()
     var openedQuestions: [Question] = []
@@ -36,9 +38,12 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         getAllQuestions()
         getAllNotes()
+        refreshDate()
+        refresHour()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
                                                 selector: #selector(ViewController.getAllInformations),
                                                 userInfo: nil, repeats: true)
+        
     }
     
     func getAllQuestions() {
@@ -99,11 +104,21 @@ class ViewController: UIViewController {
     @objc func getAllInformations() {
         getAllQuestions()
         getAllNotes()
+        refreshDate()
+        refresHour()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshDate() {
+        self.dateLabel.text = Formatter.fullDateToString(Date())
+    }
+    
+    func refresHour() {
+        self.hourLabel.text = Formatter.currentHour()
     }
     
 }
