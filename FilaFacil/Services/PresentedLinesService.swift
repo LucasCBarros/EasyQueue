@@ -54,6 +54,8 @@ final class PresentedLinesService {
     open func remove(_ line: String) {
         self.internalSemaphore.wait()
         self.lines.remove(line)
+        let data = NSKeyedArchiver.archivedData(withRootObject: self.lines)
+        UserDefaults.standard.setValue(data, forKey: PresentedLinesService.key)
         self.internalSemaphore.signal()
     }
     

@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1178" y="-45"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Note View Controller-->
         <scene sceneID="Fbx-rB-zfh">
             <objects>
-                <viewController id="2f9-6o-jjk" sceneMemberID="viewController">
+                <viewController id="2f9-6o-jjk" customClass="CreateNoteViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I50-Pf-s40">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,8 +166,14 @@
                     <navigationItem key="navigationItem" id="89z-9B-ELj">
                         <barButtonItem key="rightBarButtonItem" title="OK" style="plain" id="ndl-Z0-4zP">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="createNote_Action:" destination="2f9-6o-jjk" id="b4l-2U-6Uy"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteTextView" destination="UaL-kp-Bmd" id="LH9-N9-Lf0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gt-ot-ARJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,6 +36,21 @@ class ConfiguracoesController: UITableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let switchsState = PresentedLinesService.shared.lines
+        
+        if switchsState.contains("Developer") { } else {
+            self.developerSwitch.setOn(false, animated: false)
+        }
+        if switchsState.contains("Designer") { } else {
+            self.designerSwitch.setOn(false, animated: false)
+        }
+        if switchsState.contains("Business") { } else {
+            self.businessSwitch.setOn(false, animated: false)
+        }
+    }
+    
     //Leva para Notificações em configurações
     @IBAction func goNotification(_ sender: UIButton) {
         
@@ -51,23 +66,10 @@ class ConfiguracoesController: UITableViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let backgroundView = UIImageView(image: #imageLiteral(resourceName: "background-notes"))
-        backgroundView.frame = self.tableView.frame
-        self.tableView.backgroundView = backgroundView
-    }
-    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 3) {
             cell.separatorInset = UIEdgeInsets(top: 0.0, left: cell.bounds.size.width, bottom: 0.0, right: 0.0)
         }
-    }
-    
-    //Cuida do switch das filas
-    func handleLines() {
-        
     }
     
 }

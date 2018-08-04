@@ -83,6 +83,7 @@
 		E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
 		EF9F9EF621064B0C00BAFAE5 /* ConfiguracoesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9F9EF521064B0C00BAFAE5 /* ConfiguracoesView.storyboard */; };
 		EF9F9EF821064B8400BAFAE5 /* ConfiguracoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */; };
+		FA26F9522114F4930053422B /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F9512114F4930053422B /* CreateNoteViewController.swift */; };
 		FA3DEDF920E169800022E0E2 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DEDF820E169800022E0E2 /* ProfileType.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
@@ -324,6 +325,7 @@
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		EF9F9EF521064B0C00BAFAE5 /* ConfiguracoesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfiguracoesView.storyboard; sourceTree = "<group>"; };
 		EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesController.swift; sourceTree = "<group>"; };
+		FA26F9512114F4930053422B /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		FA3DEDF820E169800022E0E2 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
 				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
 				EF9F9EF721064B8400BAFAE5 /* ConfiguracoesController.swift */,
+				FA26F9512114F4930053422B /* CreateNoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1386,6 +1389,7 @@
 				E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */,
 				EF9F9EF821064B8400BAFAE5 /* ConfiguracoesController.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
+				FA26F9522114F4930053422B /* CreateNoteViewController.swift in Sources */,
 				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,

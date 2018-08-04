@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,13 +16,51 @@
     </customFonts>
     <scenes>
         <!--Configurações-->
+        <scene sceneID="rw7-dP-fVE">
+            <objects>
+                <viewController id="Ush-Vc-IqK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L8O-kI-pdf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-notes" translatesAutoresizingMaskIntoConstraints="NO" id="Wy2-mw-MK1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbB-6L-i0p">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="xur-Ou-fWP" kind="embed" id="c4z-aQ-Psa"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="btv-cu-xKy" firstAttribute="trailing" secondItem="MbB-6L-i0p" secondAttribute="trailing" id="5nQ-Rx-T0y"/>
+                            <constraint firstItem="Wy2-mw-MK1" firstAttribute="top" secondItem="btv-cu-xKy" secondAttribute="top" id="HlZ-1Z-8qw"/>
+                            <constraint firstItem="btv-cu-xKy" firstAttribute="trailing" secondItem="Wy2-mw-MK1" secondAttribute="trailing" id="Pit-mS-pzc"/>
+                            <constraint firstItem="MbB-6L-i0p" firstAttribute="top" secondItem="btv-cu-xKy" secondAttribute="top" id="Qua-9j-49v"/>
+                            <constraint firstItem="btv-cu-xKy" firstAttribute="bottom" secondItem="MbB-6L-i0p" secondAttribute="bottom" id="XGh-mk-3PO"/>
+                            <constraint firstItem="Wy2-mw-MK1" firstAttribute="leading" secondItem="btv-cu-xKy" secondAttribute="leading" id="k9Y-ee-Wki"/>
+                            <constraint firstItem="MbB-6L-i0p" firstAttribute="leading" secondItem="btv-cu-xKy" secondAttribute="leading" id="ldr-oi-7NS"/>
+                            <constraint firstItem="btv-cu-xKy" firstAttribute="bottom" secondItem="Wy2-mw-MK1" secondAttribute="bottom" id="n39-bu-OuT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="btv-cu-xKy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Configurações" id="A2O-ae-qi4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGP-DV-jmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="100"/>
+        </scene>
+        <!--Configurações-->
         <scene sceneID="aRI-yE-FxB">
             <objects>
                 <tableViewController id="xur-Ou-fWP" customClass="ConfiguracoesController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyU-6B-iwU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.44313725490196076" green="0.43137254901960786" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="IlS-Sy-cVZ">
@@ -182,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CmN-GV-kBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="100"/>
+            <point key="canvasLocation" x="1470" y="99"/>
         </scene>
         <!--Configurações-->
         <scene sceneID="pyV-8u-y6x">
@@ -201,7 +240,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xur-Ou-fWP" kind="relationship" relationship="rootViewController" id="FRN-fH-NdC"/>
+                        <segue destination="Ush-Vc-IqK" kind="relationship" relationship="rootViewController" id="bWu-zh-Q8n"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7u-hL-uYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,6 +249,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background-notes" width="375" height="667"/>
         <image name="settings-select" width="24" height="24"/>
         <image name="settings-unselect" width="24" height="24"/>
     </resources>
