@@ -210,6 +210,9 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if self.inLineQuestions[indexPath.row].userID == currentProfile?.userID {
+            
+            print()
+            
             self.navigationItem.rightBarButtonItem?.isEnabled = true
             return true
         } else if currentProfile?.profileType == "Teacher" {

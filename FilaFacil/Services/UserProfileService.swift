@@ -39,7 +39,7 @@ class UserProfileService: NSObject {
     
     // Remove LineData from User
     func removeQuestionFromLine(lineName: String, question: QuestionProfile) {
-        userProfileManager.removeQuestionFromLine(lineName: lineName, question: question.recordID!)
+        userProfileManager.removeQuestionFromLine(lineName: lineName, questionId: question.recordID!)
     }
     
     func attualizeTokenID(user: UserProfile) {
