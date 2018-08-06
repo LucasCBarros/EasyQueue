@@ -65,7 +65,6 @@ class DAO: NSObject {
                 }
                 completionHandler(allObjects)
             
-                
             }
         })
     }

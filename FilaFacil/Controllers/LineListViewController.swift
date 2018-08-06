@@ -178,7 +178,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
-            if let this = self, this.inLineQuestions.count == 0 {
+            if let this = self, this.inLineQuestions.count > 0 {
                 let alert = UIAlertController(
                     title: "Excluir da Fila",
                     message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?",
@@ -186,7 +186,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
-                    this.userProfileManager.removeQuestionFromLine(lineName: this.selectedTab, questionID: question.questionID)
+                    this.userProfileManager.removeQuestionFromLine(lineName: this.selectedTab, question: question)
                     // Reload View
                     DispatchQueue.main.async {
                         this.viewWillAppear(true)
