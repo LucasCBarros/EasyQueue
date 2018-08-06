@@ -83,23 +83,48 @@ class UserProfileDAO: DAO {
                 }
                 
                 print("The user record is: \(record.recordID.recordName)")
+
                 
-                let predicate = NSPredicate(format: "self contains %@", record.recordID.recordName)
-                let query = CKQuery(recordType: "User", predicate: predicate)
-                
-                self.publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
-                    if let error = error {
-                    
+                self.publicDB.fetch(withRecordID: record.recordID, completionHandler: { (result, error) in
+                    if error != nil {
                         return
                     }
-                    for result in results! {
-                        print(result)
+                    
+                    if let record = result {
+                    
+                        let userId = record.recordID.recordName
+                        let userName = record["username"] as? String
+                        let profileType = record["profileType"] as? String
+                        let userPhoto = record["userPhoto"] as? CKReference
+                        let photoModifiedAt = record["photoModifiedAt"] as? Date
+                        
+                        
+                        
+                
+                        completionHandler(UserProfile(userID: userId, username: userName!, profileType: profileType!, email: "gmail@gmail.com", deviceID: "12345"))
                     }
+        
+                })
+                
+                
+                
+//                let predicate = NSPredicate(format: "self contains %@", record.recordID.recordName)
+//                let query = CKQuery(recordType: "Users", predicate: predicate)
+//
+//                self.publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
+//                    if let error = error {
+//
+//                        return
+//                    }
+//                    for result in results! {
+//                        print(" >-- ")
+//                        print(result)
+//                    }
+//                }
             }
         }
-        }
         
-        
+    
             // `recordID` is the record ID returned from CKContainer.fetchUserRecordID
 //            self.publicDB.fetch(withRecordID: recordID) { record, error in
 //                guard let record = record, error == nil else {

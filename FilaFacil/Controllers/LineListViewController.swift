@@ -178,7 +178,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
-            if let this = self, this.inLineQuestions.count > 0 {
+            if let this = self, this.inLineQuestions.count == 0 {
                 let alert = UIAlertController(
                     title: "Excluir da Fila",
                     message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?",
@@ -199,9 +199,9 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         
         var actions: [UITableViewRowAction] = []
         
-        if self.inLineQuestions[indexPath.row].userID == self.currentProfile?.userID {
+//        if self.inLineQuestions[indexPath.row].userID == self.currentProfile?.userID {
 //            actions.append(editAction)
-        }
+//        }
         actions.append(deleteAction)
         
         return actions
@@ -237,8 +237,8 @@ extension LineListViewController: NewQuestionTableViewDelegate {
 //                                              requestedTeacher: selectedTeacher,
 //                                              userPhoto: (self.currentProfile?.photo)!)
     
-        questionProfileManager.createQuestion(userID: "22222", questionTxt: text,
-                                              username: "Pedro",
+        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
+                                              username: currentProfile!.username,
                                               requestedTeacher: selectedTeacher,
                                               userPhoto: "sadasdasdasd")
     

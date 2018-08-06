@@ -16,8 +16,8 @@ let weakPassword = 17026
 let emailInUse = 17007
 
 class AuthDatabaseManager: NSObject {
-//
-//    func signIn(email: String, password: String, completionHandler: @escaping (Bool, String) -> Void) {
+
+    func signIn(email: String, password: String, completionHandler: @escaping (Bool, String) -> Void) {
 //        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
 //            
 //            if user != nil {
@@ -28,7 +28,7 @@ class AuthDatabaseManager: NSObject {
 //                completionHandler(false, self.treatError(error: error! as NSError))
 //            }
 //        }
-//    }
+    }
 //    
 //    // Treat Possible errors from Firebase
 //    func treatError(error: NSError) -> String {
