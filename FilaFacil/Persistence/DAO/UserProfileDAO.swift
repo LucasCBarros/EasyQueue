@@ -194,9 +194,9 @@ class UserProfileDAO: DAO {
     }
 
     // Remove user from Line
-    func removeQuestionFromLine(lineName: String, question: CKRecordID) {
+    func removeQuestionFromLine(lineName: String, questionId: CKRecordID) {
         //ref?.child("Lines").child(lineName).child(questionID).removeValue()
-        publicDB.delete(withRecordID: question) { (record, error) in
+        publicDB.delete(withRecordID: questionId) { (record, error) in
             
             guard let record = record else {
                 print("Error deleting record: ", error as Any)

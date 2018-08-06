@@ -64,7 +64,7 @@ class QuestionProfileDAO: DAO {
         
         let record = CKRecord(recordType: "Question", recordID: noteID)
         
-        record.setObject(userID as CKRecordValue, forKey: "userId")
+        record.setObject(userID as CKRecordValue, forKey: "userID")
         record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
         record.setObject(username as CKRecordValue, forKey: "username")
         record.setObject(requestedTeacher as CKRecordValue, forKey: "requestedTeacher")
