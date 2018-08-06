@@ -522,11 +522,11 @@
 		DEDF0FBF20AE20470064A247 /* FilaFacilTV */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF0FC020AE20470064A247 /* AppDelegate.swift */,
 				DEBC40C220B1E87A00870D4C /* Controller */,
 				DEBC40C120B1E85500870D4C /* Services */,
 				DEBC40BD20B1E7DB00870D4C /* Model */,
 				DEBC40BE20B1E7F100870D4C /* View */,
-				DEDF0FC020AE20470064A247 /* AppDelegate.swift */,
 				DEDF0FCA20AE20470064A247 /* Assets.xcassets */,
 				DEDF0FCC20AE20470064A247 /* Info.plist */,
 				DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */,

@@ -11,12 +11,10 @@ import UIKit
 protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
     
     func getAllTexts() -> [String]
-        
-    func calculeColumn(width: CGFloat) -> CGFloat
     
 }
 
-class NoteCollectionViewLayout: UICollectionViewLayout {
+class NoteCollectionViewLayout: UICollectionViewFlowLayout {
     
     open weak var delegate: NoteCollectionViewLayoutDelegate?
     
@@ -35,7 +33,7 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
             return 0
         }
         let insets = collectionView.contentInset
-        return collectionView.bounds.width - (insets.left + insets.right)
+        return collectionView.bounds.width
     }
 
     override var collectionViewContentSize: CGSize {
@@ -51,11 +49,11 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
         }
         // 2. Pre-Calculates the X Offset for every column and adds an array to increment the currently max Y Offset for each column
         var texts = [String]()
-        var columnWidth = contentWidth / CGFloat(numberOfColumns)
+        let number = CGFloat(numberOfColumns)
+        var columnWidth = contentWidth / number
         var xOffset = [CGFloat]()
         if let delegate = self.delegate {
             texts = delegate.getAllTexts()
-            columnWidth = delegate.calculeColumn(width: columnWidth)
         }
         for column in 0 ..< numberOfColumns {
             xOffset.append(CGFloat(column) * columnWidth)
@@ -70,7 +68,7 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
             
             var expectedHeight: CGFloat = 180
             
-            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 54, font: UIFont(name: "SFProDisplay-Regular", size: 31)!)
+            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 74, font: UIFont(name: "SFProDisplay-Regular", size: 31)!)
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
             

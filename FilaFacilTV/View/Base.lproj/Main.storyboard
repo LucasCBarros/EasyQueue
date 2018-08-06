@@ -58,7 +58,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPd-yK-gfn">
-                                                    <rect key="frame" x="165" y="48" width="63" height="30"/>
+                                                    <rect key="frame" x="186" y="48" width="63" height="30"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="25"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -77,15 +77,15 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Question" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-qe-TRc">
-                                                    <rect key="frame" x="165" y="15" width="733" height="31"/>
+                                                    <rect key="frame" x="186" y="15" width="712" height="31"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="31"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_filled" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-vB-1qY">
-                                                    <rect key="frame" x="95" y="15" width="60" height="60"/>
+                                                    <rect key="frame" x="95" y="5" width="81" height="81"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="81" id="V8o-te-GNP"/>
+                                                        <constraint firstAttribute="height" constant="81" id="V8o-te-GNP"/>
                                                         <constraint firstAttribute="width" secondItem="u5o-vB-1qY" secondAttribute="height" multiplier="1:1" id="qML-SD-no9"/>
                                                     </constraints>
                                                 </imageView>
@@ -106,7 +106,6 @@
                                                 <constraint firstItem="ud5-FE-AO5" firstAttribute="top" secondItem="Ea0-sx-y1j" secondAttribute="top" constant="9" id="Ik6-Hg-ZDV"/>
                                                 <constraint firstItem="ysY-Sz-9lO" firstAttribute="centerY" secondItem="Ea0-sx-y1j" secondAttribute="centerY" id="O0V-Wh-bB2"/>
                                                 <constraint firstItem="u5o-vB-1qY" firstAttribute="leading" secondItem="ysY-Sz-9lO" secondAttribute="trailing" constant="12" id="QIz-wI-g1E"/>
-                                                <constraint firstItem="u5o-vB-1qY" firstAttribute="height" secondItem="ysY-Sz-9lO" secondAttribute="height" priority="750" id="Vs4-vA-gjc"/>
                                                 <constraint firstItem="ysY-Sz-9lO" firstAttribute="leading" secondItem="ud5-FE-AO5" secondAttribute="trailing" constant="13" id="YpX-mZ-Biy"/>
                                                 <constraint firstItem="ud5-FE-AO5" firstAttribute="leading" secondItem="Ea0-sx-y1j" secondAttribute="leading" constant="10" id="bKM-nJ-M5o"/>
                                                 <constraint firstAttribute="bottom" secondItem="mPd-yK-gfn" secondAttribute="bottom" constant="12" id="djQ-fd-ESx"/>
