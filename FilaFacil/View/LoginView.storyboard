@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GnY-X8-50C">
-                                <rect key="frame" x="44" y="276" width="286" height="30"/>
+                                <rect key="frame" x="44" y="240" width="286" height="30"/>
                                 <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -43,7 +43,7 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pHi-z4-HUM">
-                                <rect key="frame" x="44" y="322" width="286" height="30"/>
+                                <rect key="frame" x="44" y="286" width="286" height="30"/>
                                 <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" label="Email Text Field"/>
@@ -56,7 +56,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gjF-AL-Z4f">
-                                <rect key="frame" x="44" y="370" width="286" height="30"/>
+                                <rect key="frame" x="44" y="334" width="286" height="30"/>
                                 <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" label="Password Text Field"/>
@@ -68,38 +68,6 @@
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5co-hT-Dx6">
-                                <rect key="frame" x="73" y="438" width="229" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" label="Login Button"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="5co-hT-Dx6" secondAttribute="height" multiplier="229:45" id="4tM-e6-AoZ"/>
-                                    <constraint firstAttribute="width" constant="229" id="5TZ-vE-EgN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="19"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="click_Login:" destination="3vc-G5-VQo" eventType="touchUpInside" id="Et8-Mc-iPG"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-tt-vyh">
-                                <rect key="frame" x="73" y="205" width="229" height="29"/>
-                                <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="VlM-IK-B2T"/>
-                                    <constraint firstAttribute="width" secondItem="JDt-tt-vyh" secondAttribute="height" multiplier="229:28" id="jeh-Lb-pF6"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Login"/>
-                                    <segment title="Register"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="switch_LoginOrRegister:" destination="3vc-G5-VQo" eventType="valueChanged" id="h3L-tu-n6u"/>
-                                </connections>
-                            </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-fg-O6A">
                                 <rect key="frame" x="0.0" y="30" width="375" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,9 +78,12 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ad-Ur-giT">
-                                <rect key="frame" x="73" y="438" width="229" height="45"/>
+                                <rect key="frame" x="44.5" y="436" width="286" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" label="Create Account Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="9aR-D8-1Gf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="19"/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,30 +97,24 @@
                         <constraints>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="trailing" secondItem="2Z8-GS-aQT" secondAttribute="trailing" id="3Ik-0V-xXL"/>
                             <constraint firstItem="pHi-z4-HUM" firstAttribute="top" secondItem="GnY-X8-50C" secondAttribute="bottom" constant="16" id="3od-Bv-FP5"/>
-                            <constraint firstItem="5co-hT-Dx6" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="4Mo-r2-74v"/>
-                            <constraint firstItem="JDt-tt-vyh" firstAttribute="top" secondItem="SyE-fg-O6A" secondAttribute="bottom" constant="25" id="54G-ow-S7R"/>
                             <constraint firstAttribute="bottom" secondItem="hxe-1H-CXQ" secondAttribute="bottom" id="6Gb-tf-aVd"/>
                             <constraint firstItem="SyE-fg-O6A" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="73E-2D-YGf"/>
+                            <constraint firstItem="0ad-Ur-giT" firstAttribute="centerX" secondItem="soV-3b-Lp2" secondAttribute="centerX" id="7mO-YW-DHm"/>
                             <constraint firstItem="gjF-AL-Z4f" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="Elp-VN-0E9"/>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="top" secondItem="soV-3b-Lp2" secondAttribute="top" id="FSb-52-DkR"/>
+                            <constraint firstItem="0ad-Ur-giT" firstAttribute="top" secondItem="gjF-AL-Z4f" secondAttribute="bottom" constant="72" id="Fzb-gj-orV"/>
+                            <constraint firstItem="0ad-Ur-giT" firstAttribute="width" secondItem="gjF-AL-Z4f" secondAttribute="width" id="XJS-wb-Kav"/>
                             <constraint firstItem="GnY-X8-50C" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="Zwq-zT-ePv"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="width" secondItem="5co-hT-Dx6" secondAttribute="width" id="ccs-zv-xli"/>
+                            <constraint firstItem="GnY-X8-50C" firstAttribute="top" secondItem="SyE-fg-O6A" secondAttribute="bottom" constant="60" id="feJ-5t-RLp"/>
                             <constraint firstItem="gjF-AL-Z4f" firstAttribute="top" secondItem="pHi-z4-HUM" secondAttribute="bottom" constant="18" id="gA7-zr-9RU"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="height" secondItem="5co-hT-Dx6" secondAttribute="height" id="hud-Js-6iR"/>
-                            <constraint firstItem="GnY-X8-50C" firstAttribute="top" secondItem="JDt-tt-vyh" secondAttribute="bottom" constant="43" id="iUo-nZ-hE8"/>
                             <constraint firstItem="SyE-fg-O6A" firstAttribute="top" secondItem="2Z8-GS-aQT" secondAttribute="top" constant="10" id="nX9-9Y-JWe"/>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="leading" secondItem="2Z8-GS-aQT" secondAttribute="leading" id="o3j-g9-WOS"/>
                             <constraint firstItem="pHi-z4-HUM" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="o5J-b0-hkh"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="centerX" secondItem="5co-hT-Dx6" secondAttribute="centerX" id="v7p-ps-0lq"/>
-                            <constraint firstItem="JDt-tt-vyh" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="vgX-Va-lPK"/>
-                            <constraint firstItem="5co-hT-Dx6" firstAttribute="top" secondItem="gjF-AL-Z4f" secondAttribute="bottom" constant="38" id="yX6-rh-WjO"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="centerY" secondItem="5co-hT-Dx6" secondAttribute="centerY" id="zpk-f9-jse"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Z8-GS-aQT"/>
                     </view>
                     <connections>
                         <outlet property="emailTxtField" destination="pHi-z4-HUM" id="Od7-BL-Q6e"/>
-                        <outlet property="loginBtn" destination="5co-hT-Dx6" id="i6Q-A0-dq2"/>
                         <outlet property="passwordTxtField" destination="gjF-AL-Z4f" id="MAT-ym-XUi"/>
                         <outlet property="registerBtn" destination="0ad-Ur-giT" id="Wnb-g9-Vu9"/>
                         <outlet property="usernameTxtField" destination="GnY-X8-50C" id="OtZ-wD-a1D"/>

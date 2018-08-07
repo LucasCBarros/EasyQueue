@@ -32,25 +32,28 @@ class AuthService: NSObject {
     }
     
     func register(email: String, password: String, username: String, completionHandler: @escaping (Bool, String) -> Void) {
-//        authManager.register(email: email, password: password) { (success, idOrErrorMessage) in
-//
-//            if success {
-//                self.userProfileService.createUser(userID: idOrErrorMessage,
-//                                                   username: username,
-//                                                   email: email, deviceID: UserDefaults.standard.string(forKey: "userDeviceID") ?? "")
-//                completionHandler(true, "")
-//            } else {
-//                completionHandler(false, idOrErrorMessage)
-//            }
-//
-//        }
+        authManager.register(email: email, username: username) { (success, idOrErrorMessage) in
+
+            if success {
+                self.userProfileService.createUser(userID: idOrErrorMessage,
+                                                   username: username,
+                                                   email: email, deviceID: UserDefaults.standard.string(forKey: "userDeviceID") ?? "")
+                completionHandler(true, "")
+            } else {
+                completionHandler(false, idOrErrorMessage)
+            }
+        }
     }
     
     func signOut() {
         //authManager.signOut()
     }
     
-    func checkUserLogged() -> Bool {
-       return authManager.checkSignIn()
+    //func checkUserLogged() -> Bool {
+    func checkUserLogged(completion: @escaping(Bool) -> Void) {
+       //return authManager.checkSignIn()
+        authManager.checkSignIn { (authenticated) in
+            completion(authenticated)
+        }
     }
 }

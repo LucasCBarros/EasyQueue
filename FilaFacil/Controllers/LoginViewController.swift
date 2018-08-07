@@ -14,7 +14,6 @@ class LoginViewController: MyViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var usernameTxtField: UITextField!
-    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
     
     // MARK: - Properties
@@ -32,56 +31,39 @@ class LoginViewController: MyViewController {
         usernameTxtField.textColor = UIColor.white
         usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
-        loginBtn.clipsToBounds = true
-        loginBtn.layer.cornerRadius = 10
         registerBtn.clipsToBounds = true
         registerBtn.layer.cornerRadius = 10
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if authService.checkUserLogged() {
-            presentLoggedInScreen()
-        } else {
-            authService.signOut()
+        authService.checkUserLogged { (authenticated) in
+            if authenticated {
+                DispatchQueue.main.async {
+                    self.presentLoggedInScreen()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.authService.signOut()
+                }
+            }
         }
-        registerBtn.isHidden = true
-        usernameTxtField.isHidden = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if authService.checkUserLogged() {
-            presentLoggedInScreen()
-        } else {
-            authService.signOut()
-        }
-        registerBtn.isHidden = true
-        usernameTxtField.isHidden = true
-    }
-    
-    // MARK: - Actions
-    // Segmentation Efect LoginView
-    @IBAction func switch_LoginOrRegister(_ sender: UISegmentedControl) {
-        
-        if sender.selectedSegmentIndex == 0 {
-            usernameTxtField.isHidden = true
-            registerBtn.isHidden = true
-            loginBtn.isHidden = false
-        } else {
-            usernameTxtField.isHidden = false
-            registerBtn.isHidden = false
-            loginBtn.isHidden = true
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        authService.checkUserLogged { (authenticated) in
+//            if authenticated {
+//                self.presentLoggedInScreen()
+//            } else {
+//                self.authService.signOut()
+//            }
+//        }
+//    }
     
     // Creates a new Account in FB
     @IBAction func click_createAccount(_ sender: Any) {
         createAccount()
-    }
-    
-    // LogIn an existing Account in FB
-    @IBAction func click_Login(_ sender: Any) {
-        login()
     }
     
     // MARK: - Methods
@@ -151,9 +133,9 @@ class LoginViewController: MyViewController {
         }
     }
     
-    func isUserSignedIn() -> Bool {
-        return authService.checkUserLogged()
-    }
+//    func isUserSignedIn() -> Bool {
+//        return authService.checkUserLogged()
+//    }
     
     // Alert message case error
     func alertMessage(title: String, message: String) {

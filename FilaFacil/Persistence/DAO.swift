@@ -28,7 +28,7 @@ class DAO: NSObject {
         //ref.keepSynced(true)
         
         container = CKContainer.default()
-        publicDB = container.publicCloudDatabase
+        publicDB  = container.publicCloudDatabase
         privateDB = container.privateCloudDatabase
         
     }
