@@ -58,7 +58,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPd-yK-gfn">
-                                                    <rect key="frame" x="186" y="48" width="63" height="30"/>
+                                                    <rect key="frame" x="175" y="48" width="63" height="30"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="25"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -77,15 +77,15 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Question" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlU-qe-TRc">
-                                                    <rect key="frame" x="186" y="15" width="712" height="31"/>
+                                                    <rect key="frame" x="175" y="15" width="723" height="31"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="31"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_filled" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-vB-1qY">
-                                                    <rect key="frame" x="95" y="5" width="81" height="81"/>
+                                                    <rect key="frame" x="95" y="11" width="70" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="81" id="V8o-te-GNP"/>
+                                                        <constraint firstAttribute="height" constant="70" id="V8o-te-GNP"/>
                                                         <constraint firstAttribute="width" secondItem="u5o-vB-1qY" secondAttribute="height" multiplier="1:1" id="qML-SD-no9"/>
                                                     </constraints>
                                                 </imageView>
