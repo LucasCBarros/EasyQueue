@@ -87,7 +87,8 @@ class UserProfileDAO: DAO {
                 
                 self.publicDB.fetch(withRecordID: record.recordID, completionHandler: { (result, error) in
                     if error != nil {
-                        return
+                        //return
+                        completionHandler(nil)
                     }
                     
                     if let record = result {
@@ -98,15 +99,12 @@ class UserProfileDAO: DAO {
                         let userPhoto = record["userPhoto"] as? CKReference
                         let photoModifiedAt = record["photoModifiedAt"] as? Date
                         
-                        
-                        
                 
                         completionHandler(UserProfile(userID: userId, username: userName!, profileType: profileType!, email: "gmail@gmail.com", deviceID: "12345"))
+                    } else {
+                        completionHandler(nil)
                     }
-        
                 })
-                
-                
                 
 //                let predicate = NSPredicate(format: "self contains %@", record.recordID.recordName)
 //                let query = CKQuery(recordType: "Users", predicate: predicate)

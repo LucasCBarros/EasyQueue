@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 //import FirebaseAuth
 
 // Possible Error Codes
@@ -15,7 +16,10 @@ let userNotFound = 17011
 let weakPassword = 17026
 let emailInUse = 17007
 
-class AuthDatabaseManager: NSObject {
+let userServices = UserProfileService()
+
+
+class AuthDatabaseManager: DAO {
 
     func signIn(email: String, password: String, completionHandler: @escaping (Bool, String) -> Void) {
 //        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
@@ -53,8 +57,8 @@ class AuthDatabaseManager: NSObject {
 //        
 //        return message
 //    }
-//    
-//    func register(email: String, password: String, completionHandler: @escaping (Bool, String) -> Void) {
+    
+    func register(email: String, username: String, completionHandler: @escaping (Bool, String) -> Void) {
 //        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
 //            if let newUser = user {
 //                print("User created succesfully")
@@ -64,8 +68,36 @@ class AuthDatabaseManager: NSObject {
 //                completionHandler(false, self.treatError(error: error! as NSError))
 //            }
 //        }
-//    }
-//    
+        
+        let container = CKContainer.default()
+        let publicDB  = container.publicCloudDatabase
+        
+        let uuid = UUID().uuidString
+        
+        //let noteID = CKRecordID(recordName: uuid)
+        
+        let record = CKRecord(recordType: "Users")
+        
+        record.setObject(email as CKRecordValue, forKey: "profileType")
+//        record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
+        record.setObject(username as CKRecordValue, forKey: "username")
+//        record.setObject(requestedTeacher as CKRecordValue, forKey: "requestedTeacher")
+//        record.setObject(timeStampID as CKRecordValue, forKey: "questionID")
+//        record.setObject(userPhoto as CKRecordValue, forKey: "userPhoto")
+        
+        publicDB.save(record, completionHandler: { record, error in
+            
+            guard let record = record else {
+                print("Error saving record: ", error as Any)
+                return
+            }
+            
+            print("Successfully saved record: ", record)
+            
+        })
+        
+    }
+    
 //    func signOut() {
 //        do {
 //            try Auth.auth().signOut()
@@ -76,17 +108,45 @@ class AuthDatabaseManager: NSObject {
 //        }
 //    }
 //    
-    func checkSignIn() -> Bool {
-        if FileManager.default.ubiquityIdentityToken != nil {
-            return true
-        } else {
-            return false
+ //   func checkSignIn() -> Bool {
+   
+    func checkSignIn(completion: @escaping(Bool) -> Void) {
+        
+        //var authenticated: Bool = false
+        
+        container.fetchUserRecordID { recordID, error in
+            guard let recordID = recordID, error == nil else {
+                return
+            }
+            
+            self.publicDB.fetch(withRecordID: recordID) { record, error in
+                guard let record = record, error == nil else {
+
+                    return
+                }
+            
+                if let auth = record["authenticated"] as? Int64 {
+                    
+                    print("authHHHH: \(auth)")
+                    
+                    if auth != 0 {
+
+                        completion(true)
+                        //authenticated = true
+                    }
+                }
+            }
         }
-//        if Auth.auth().currentUser != nil {
+        completion(false)
+ //       return authenticated
+        
+//        if FileManager.default.ubiquityIdentityToken != nil {
+//
 //            return true
 //        } else {
 //            return false
 //        }
+        
     }
 //
 //    func retrieveCurrentUserID() -> String {
