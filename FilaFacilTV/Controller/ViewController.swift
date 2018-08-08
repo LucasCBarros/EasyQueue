@@ -19,6 +19,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionTableView: UITableView!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var simulatedDeveloperBadge: UIView! {
+        didSet {
+            simulatedDeveloperBadge.layer.cornerRadius = 17.5
+            simulatedDeveloperBadge.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var developerNumber: UILabel!
+    @IBOutlet weak var simulatedDesignBadge: UIView! {
+        didSet {
+            simulatedDesignBadge.layer.cornerRadius = 17.5
+            simulatedDesignBadge.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var designNumber: UILabel!
+    @IBOutlet weak var simulatedBusinessBadge: UIView! {
+        didSet {
+            simulatedBusinessBadge.layer.cornerRadius = 17.5
+            simulatedBusinessBadge.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var businessNumber: UILabel!
     
     var questionService = QuestionService()
     var openedQuestions: [Question] = []
@@ -54,23 +75,36 @@ class ViewController: UIViewController {
                 })
                 if questions.count == 0 || self?.openedQuestions != questions {
                     DispatchQueue.main.async {
-                        if self?.openedQuestions.count == 0 && questions.count == 0 {
-                            UIApplication.shared.isIdleTimerDisabled = false
-                        } else {
-                            UIApplication.shared.isIdleTimerDisabled = true
-                        }
-                        self?.openedQuestions.removeAll()
-                        self?.openedQuestions = questions
-                        self?.questionTableView.reloadData()
-                        self?.questionActivityIndicator.stopAnimating()
-                        if self?.openedQuestions.count == 0 {
-                            self?.noQuestions.isHidden = false
-                        }
-                        else {
-                            self?.noQuestions.isHidden = true
+                        if let this = self {
+                            if this.openedQuestions.count == 0 && questions.count == 0 {
+                                UIApplication.shared.isIdleTimerDisabled = false
+                            } else {
+                                UIApplication.shared.isIdleTimerDisabled = true
+                            }
+                            this.openedQuestions.removeAll()
+                            this.openedQuestions = questions
+                            this.questionTableView.reloadData()
+                            this.questionActivityIndicator.stopAnimating()
+                            this.developerNumber.text = String(this.lineNumber(questions, condition: { $0.categoryQuestion.type == .developer }))
+                            this.designNumber.text = String(this.lineNumber(questions, condition: { $0.categoryQuestion.type == .design }))
+                            this.businessNumber.text = String(this.lineNumber(questions, condition: { $0.categoryQuestion.type == .business }))
+                            if this.openedQuestions.count == 0 {
+                                this.noQuestions.isHidden = false
+                            }
+                            else {
+                                this.noQuestions.isHidden = true
+                            }
                         }
                     }
                 }
+            }
+        })
+    }
+    
+    func lineNumber(_ questions: [Question], condition: (Question)->Bool) -> Int {
+        return questions.reduce(into: 0, { (result, question) in
+            if condition(question) {
+                result += 1
             }
         })
     }
@@ -79,7 +113,7 @@ class ViewController: UIViewController {
         noteService.getAllQuestions(completion: {[weak self] (notes, error) in
             if error == nil {
                 let notes = notes.sorted(by: { (note1, note2) -> Bool in
-                    return note1.noteID < note2.noteID
+                    return note1.noteID > note2.noteID
                 })
                 if notes.count == 0 || self?.openedNotes != notes {
                     self?.openedNotes.removeAll()
