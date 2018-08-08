@@ -113,34 +113,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func saveChanges() {
-//
-//        let imageName = NSUUID().uuidString
-//
-//        let storedImage = storageRef.child("profile_images").child(imageName)
-//
-//        if let uploadData = UIImagePNGRepresentation(self.profilePhoto.image!) {
-//            storedImage.putData(uploadData, metadata: nil, completion: { (_, error) in
-//                if error != nil {
-//                    print(error!)
-//                    return
-//                }
-//                storedImage.downloadURL(completion: { (url, error) in
-//                    if error != nil {
-//                        print(error!)
-//                        return
-//                    }
-//                    if let urlText = url?.absoluteString {
-//                        self.databaseRef.child("Users").child(self.currentProfile.userID)
-//                            .updateChildValues(["photo": urlText], withCompletionBlock: { (error, _) in
-//                            if error != nil {
-//                                print(error!)
-//                                return
-//                            }
-//                        })
-//                    }
-//                })
-//            })
-//        }
+        
     }
     
     func setupProfile() {

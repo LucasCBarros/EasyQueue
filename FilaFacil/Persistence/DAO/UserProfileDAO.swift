@@ -9,6 +9,19 @@
 import UIKit
 import CloudKit
 
+extension ProfileType {
+    init(withString: String?) {
+        switch withString {
+        case "Student":
+            self = .user
+        case "Teacher":
+            self = .admin
+        default:
+            self = ProfileType.ptDefault
+        }
+    }
+}
+
 class UserProfileDAO: DAO {
     
     /// Login Functions
@@ -84,7 +97,6 @@ class UserProfileDAO: DAO {
                 
                 print("The user record is: \(record.recordID.recordName)")
 
-                
                 self.publicDB.fetch(withRecordID: record.recordID, completionHandler: { (result, error) in
                     if error != nil {
                         //return
@@ -99,8 +111,7 @@ class UserProfileDAO: DAO {
                         let userPhoto = record["userPhoto"] as? CKReference
                         let photoModifiedAt = record["photoModifiedAt"] as? Date
                         
-                
-                        completionHandler(UserProfile(userID: userId, username: userName!, profileType: profileType!, email: "gmail@gmail.com", deviceID: "12345"))
+                        completionHandler(UserProfile(userID: userId, username: userName!, profileType: ProfileType(withString: profileType), email: "gmail@gmail.com", deviceID: "12345"))
                     } else {
                         completionHandler(nil)
                     }

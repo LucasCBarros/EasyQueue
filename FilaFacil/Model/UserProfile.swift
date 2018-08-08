@@ -6,8 +6,14 @@
 //  Copyright © 2018 Lucas C Barros. All rights reserved.
 //
 
-import UIKit
-import CloudKit
+import Foundation
+
+enum ProfileType: Int {
+    case user = 0
+    case admin = 1
+    
+    static let ptDefault: ProfileType = .user
+}
 
 class UserProfile: NSObject, PersistenceObject {
 
@@ -17,8 +23,8 @@ class UserProfile: NSObject, PersistenceObject {
     // Users Name
     var username: String = ""
     
-    // Users profile type = Student or Teacher
-    var profileType: String?
+    // Users profile type
+    var profileType: ProfileType = ProfileType.user
     
     // Users E-mail
     var email: String = ""
@@ -27,12 +33,12 @@ class UserProfile: NSObject, PersistenceObject {
     var deviceID: String = ""
     
     // Users photo if it has
-    var photo: UIImage?
+    var photo: String?
     
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
-    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
+    required init(dictionary: [AnyHashable: Any]) {
         
         if let userID = dictionary["userID"] as? String {
             self.userID = userID
@@ -40,7 +46,7 @@ class UserProfile: NSObject, PersistenceObject {
         if let username = dictionary["username"] as? String {
             self.username = username
         }
-        if let profileType = dictionary["profileType"] as? String {
+        if let profileType = dictionary["profileType"] as? ProfileType {
             self.profileType = profileType
         }
         if let email = dictionary["email"] as? String {
@@ -49,13 +55,13 @@ class UserProfile: NSObject, PersistenceObject {
         if let deviceID = dictionary["deviceID"] as? String {
             self.deviceID = deviceID
         }
-        if let photo = dictionary["photo"] as? UIImage {
+        if let photo = dictionary["photo"] as? String {
             self.photo = photo
         }
         self.dictInfo = dictionary
     }
     
-    init(userID: String, username: String, profileType: String, email: String, deviceID: String) {
+    init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault, email: String, deviceID: String, photo: String? = nil) {
         self.userID = userID
         self.username = username
         self.profileType = profileType
@@ -67,6 +73,10 @@ class UserProfile: NSObject, PersistenceObject {
             "email": email,
             "deviceID": deviceID
         ]
+        if let photo = photo {
+            self.photo = photo
+            self.dictInfo["photo"] = photo
+        }
     }
     
     func getDictInfo() -> [AnyHashable: Any] {

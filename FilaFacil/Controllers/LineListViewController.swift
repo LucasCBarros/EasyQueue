@@ -132,31 +132,31 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             let date = Date(timeIntervalSince1970: timeInterval! / 1000)
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
-            if let url = URL(string: question.userPhoto) {
-                KingfisherManager.shared.retrieveImage(with: url,
-                                                       options: nil,
-                                                       progressBlock: nil,
-                                                       completionHandler: {[weak self] image, erro, _, url in
-                    DispatchQueue.main.async {
-                        if self != nil {
-                            if let image = image, let url = url, erro == nil {
-                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString
-                                    == self!.inLineQuestions[indexPath.row].userPhoto {
-                                    cell?.profilePhoto.image = image
-                                } else {
-                                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
-                                }
-                            } else {
-                                cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
-                            }
-                        }
-                    }
-                })
-            } else {
-                if self.inLineQuestions.count >= indexPath.row - 1 && question.userPhoto == self.inLineQuestions[indexPath.row].userPhoto {
-                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
-                }
-            }
+//            if let url = URL(string: question.userPhoto) {
+//                KingfisherManager.shared.retrieveImage(with: url,
+//                                                       options: nil,
+//                                                       progressBlock: nil,
+//                                                       completionHandler: {[weak self] image, erro, _, url in
+//                    DispatchQueue.main.async {
+//                        if self != nil {
+//                            if let image = image, let url = url, erro == nil {
+//                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString
+//                                    == self!.inLineQuestions[indexPath.row].userPhoto {
+//                                    cell?.profilePhoto.image = image
+//                                } else {
+//                                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+//                                }
+//                            } else {
+//                                cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+//                            }
+//                        }
+//                    }
+//                })
+//            } else {
+//                if self.inLineQuestions.count >= indexPath.row - 1 && question.userPhoto == self.inLineQuestions[indexPath.row].userPhoto {
+//                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
+//                }
+//            }
             
         }
         
@@ -210,12 +210,9 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if self.inLineQuestions[indexPath.row].userID == currentProfile?.userID {
-            
-            print()
-            
             self.navigationItem.rightBarButtonItem?.isEnabled = true
             return true
-        } else if currentProfile?.profileType == "Teacher" {
+        } else if currentProfile?.profileType == .admin {
             return true
         } else {
             return false
