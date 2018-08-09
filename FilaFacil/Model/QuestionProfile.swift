@@ -6,8 +6,7 @@
 //  Copyright © 2018 Lucas C Barros. All rights reserved.
 //
 
-import UIKit
-import CloudKit
+import Foundation
 
 class QuestionProfile: NSObject, PersistenceObject {
 
@@ -17,9 +16,6 @@ class QuestionProfile: NSObject, PersistenceObject {
     // TimeStamp to make ID
     var questionID: String = ""
     
-    // UserID from Firebase
-    var userID: String = ""
-    
     // Username from Firebase
     var username: String = ""
     
@@ -27,15 +23,15 @@ class QuestionProfile: NSObject, PersistenceObject {
     var requestedTeacher: String = ""
     
     // Empty or one of the existing
-    var userPhoto: String = ""
+    var userPhoto: String?
     
     // Reference for cloudKit record
-    var recordID: CKRecordID? = nil
+    var userID: String!
     
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
-    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
+    required init(dictionary: [AnyHashable: Any]) {
         
         if let questionTitle = dictionary["questionTitle"] as? String {
             self.questionTitle = questionTitle
@@ -55,8 +51,6 @@ class QuestionProfile: NSObject, PersistenceObject {
         if let userPhoto = dictionary["userPhoto"] as? String {
             self.userPhoto = userPhoto
         }
-        
-        self.recordID = recordID
         
         self.dictInfo = dictionary
     }

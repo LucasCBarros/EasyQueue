@@ -6,8 +6,7 @@
 //  Copyright © 2018 Lucas C Barros. All rights reserved.
 //
 
-import UIKit
-import CloudKit
+import Foundation
 
 class NoteProfile: NSObject, PersistenceObject {
 
@@ -20,13 +19,10 @@ class NoteProfile: NSObject, PersistenceObject {
     // UserID from Firebase
     var userID: String = ""
     
-    // Reference for cloudKit record
-    var recordID: CKRecordID?
-    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
 
-    required init(dictionary: [AnyHashable: Any], recordID: CKRecordID) {
+    required init(dictionary: [AnyHashable: Any]) {
 
         if let noteText = dictionary["noteText"] as? String {
             self.noteText = noteText
@@ -39,7 +35,6 @@ class NoteProfile: NSObject, PersistenceObject {
         }
         self.dictInfo = dictionary
         
-        self.recordID = recordID
     }
 
     init(noteText: String, noteID: String, userID: String) {

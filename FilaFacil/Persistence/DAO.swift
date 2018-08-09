@@ -10,7 +10,7 @@ import UIKit
 import CloudKit
 
 protocol PersistenceObject {
-    init(dictionary: [AnyHashable: Any], recordID: CKRecordID)
+    init(dictionary: [AnyHashable: Any])
     func getDictInfo() -> [AnyHashable: Any]
 }
 
@@ -52,7 +52,7 @@ class DAO: NSObject {
                        // let objectDict = dictionary[key] as? [String: Any]
                         
                        // let newObj = T(dictionary: objectDict!)
-                    let newObj = T(dictionary: dictionary, recordID: result.recordID)
+                    let newObj = T(dictionary: dictionary)
 //                        let testeDict = ["username": "Joao",
 //                                                "questionID": "1111",
 //                                                "questionTitle": "Duvida de teste",
