@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CloudKit
+//import CloudKit
 
 class UserProfileService: NSObject {
     
@@ -38,8 +38,11 @@ class UserProfileService: NSObject {
     }
     
     // Remove LineData from User
-    func removeQuestionFromLine(lineName: String, question: QuestionProfile) {
-        userProfileManager.removeQuestionFromLine(lineName: lineName, questionId: question.recordID!)
+    func removeQuestionFromLine(lineName: String, question: QuestionProfile, completionHandler: @escaping () -> Void) {
+        userProfileManager.removeQuestionFromLine(question: question, completionHandler: {(error) in
+            
+            print(error)
+        })
     }
     
     func attualizeTokenID(user: UserProfile) {

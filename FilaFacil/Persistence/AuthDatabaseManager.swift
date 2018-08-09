@@ -18,7 +18,6 @@ let emailInUse = 17007
 
 let userServices = UserProfileService()
 
-
 class AuthDatabaseManager: DAO {
 
     func signIn(email: String, password: String, completionHandler: @escaping (Bool, String) -> Void) {
@@ -72,18 +71,15 @@ class AuthDatabaseManager: DAO {
         let container = CKContainer.default()
         let publicDB  = container.publicCloudDatabase
         
-        let uuid = UUID().uuidString
+//        let uuid = UUID().uuidString
         
         //let noteID = CKRecordID(recordName: uuid)
         
         let record = CKRecord(recordType: "Users")
         
-        record.setObject(email as CKRecordValue, forKey: "profileType")
-//        record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
+        record.setObject("Student" as CKRecordValue, forKey: "profileType")
+//      record.setObject(email as CKRecordValue, forKey: "email")
         record.setObject(username as CKRecordValue, forKey: "username")
-//        record.setObject(requestedTeacher as CKRecordValue, forKey: "requestedTeacher")
-//        record.setObject(timeStampID as CKRecordValue, forKey: "questionID")
-//        record.setObject(userPhoto as CKRecordValue, forKey: "userPhoto")
         
         publicDB.save(record, completionHandler: { record, error in
             
@@ -108,7 +104,7 @@ class AuthDatabaseManager: DAO {
 //        }
 //    }
 //    
- //   func checkSignIn() -> Bool {
+//   func checkSignIn() -> Bool {
    
     func checkSignIn(completion: @escaping(Bool) -> Void) {
         

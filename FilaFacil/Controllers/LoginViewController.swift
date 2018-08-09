@@ -93,7 +93,7 @@ class LoginViewController: MyViewController {
             print("Password Error!")
             return
         }
-        guard  let username = usernameTxtField.text else {
+        guard let username = usernameTxtField.text else {
 //            self.alertMessage(title: "Register Error", message: "Name field can't be empty")
             print("Name Error!")
             return
@@ -111,27 +111,27 @@ class LoginViewController: MyViewController {
         
     }
 
-    func login() {
-        // Check if fields are empty
-        if let email = emailTxtField.text, let password = passwordTxtField.text {
-            
-            // Autenticates and finds Existing user
-            authService.login(email: email, password: password, completionHandler: { (user) in
-                if user != nil {
-                    self.presentLoggedInScreen()
-                    
-                } else {
-                    // Alert User not found!
-                    self.alertMessage(title: "Login Error", message: "Coulden't Find user!")
-                    print("Coulden't Find user!")
-                }
-            })
-            // Treat empty field problem
-        } else {
-            self.alertMessage(title: "Login Error", message: "Both email and password can't be empty")
-            print("Problem in login")
-        }
-    }
+//    func login() {
+//        // Check if fields are empty
+//        if let email = emailTxtField.text, let password = passwordTxtField.text {
+//            
+//            // Autenticates and finds Existing user
+//            authService.login(email: email, password: password, completionHandler: { (user) in
+//                if user != nil {
+//                    self.presentLoggedInScreen()
+//                    
+//                } else {
+//                    // Alert User not found!
+//                    self.alertMessage(title: "Login Error", message: "Coulden't Find user!")
+//                    print("Coulden't Find user!")
+//                }
+//            })
+//            // Treat empty field problem
+//        } else {
+//            self.alertMessage(title: "Login Error", message: "Both email and password can't be empty")
+//            print("Problem in login")
+//        }
+//    }
     
 //    func isUserSignedIn() -> Bool {
 //        return authService.checkUserLogged()
