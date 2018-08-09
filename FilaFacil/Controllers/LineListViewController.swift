@@ -128,8 +128,9 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.questionLabel?.text = question.questionTitle
             
             //Tirar o timestamp e colocar a data e hora
-            let timeInterval = Double.init(question.questionID)
-            let date = Date(timeIntervalSince1970: timeInterval! / 1000)
+            //let timeInterval = Double.init(question.questionID)
+            //let date = Date(timeIntervalSince1970: timeInterval! / 1000)
+            let date = question.createdAt ?? Date()
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
 //            if let url = URL(string: question.userPhoto) {
@@ -186,11 +187,15 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
-                    this.userProfileManager.removeQuestionFromLine(lineName: this.selectedTab, question: question)
-                    // Reload View
-                    DispatchQueue.main.async {
-                        this.viewWillAppear(true)
-                    }
+                    this.questionProfileManager.removeQuestionFromLine(lineName: this.selectedTab, question: question, completionHandler: {(error) in
+
+                        if error != nil {
+                            // Reload View
+                            DispatchQueue.main.async {
+                                this.viewWillAppear(true)
+                            }
+                        }
+                    })
                 }))
                 this.present(alert, animated: true, completion: nil)
             }

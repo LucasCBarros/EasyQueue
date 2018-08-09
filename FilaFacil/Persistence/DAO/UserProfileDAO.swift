@@ -202,22 +202,7 @@ class UserProfileDAO: DAO {
         }
     }
 
-    // Remove user from Line
-    func removeQuestionFromLine(question: QuestionProfile, completionHandler: @escaping((Error)->Void)) {
-        //ref?.child("Lines").child(lineName).child(questionID).removeValue()
-        let questionId = CKRecordID(recordName: question.questionID)
-        publicDB.delete(withRecordID: questionId) { (record, error) in
-            
-            if let error = error {
-                print("Error deleting record: ", error as Any)
-                //return
-                completionHandler(error)
-
-            }
-            
-            print("Successfully deleted record: ", record)
-        }
-    }
+    
     
     func updateUserLinePosition(userID: String, position: Int) {
         //ref?.child("Users").child(userID).child("userLinePosition").setValue(position)

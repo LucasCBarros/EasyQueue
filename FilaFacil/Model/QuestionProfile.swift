@@ -28,6 +28,9 @@ class QuestionProfile: NSObject, PersistenceObject {
     // Reference for cloudKit record
     var userID: String!
     
+    // Data da criacao da Questão
+    var createdAt: Date?
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
@@ -36,7 +39,10 @@ class QuestionProfile: NSObject, PersistenceObject {
         if let questionTitle = dictionary["questionTitle"] as? String {
             self.questionTitle = questionTitle
         }
-        if let questionID = dictionary["questionID"] as? String {
+        if let createdAt = dictionary["createdAt"] as? Date {
+            self.createdAt = createdAt
+        }
+        if let questionID = dictionary["recordId"] as? String {
             self.questionID = questionID
         }
         if let userID = dictionary["userID"] as? String {

@@ -103,4 +103,21 @@ class QuestionProfileDAO: DAO {
 //
 //        ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
     }
+    
+    func removeQuestionFromLine(question: QuestionProfile, completionHandler: @escaping((Error?) -> Void)) {
+
+        let questionId = CKRecordID(recordName: question.questionID)
+        
+        publicDB.delete(withRecordID: questionId) { (record, error) in
+            
+            if let error = error {
+                print("Error deleting record: ", error as Any)
+                //return
+                completionHandler(error)
+                
+            }
+            
+            print("Successfully deleted record: ", record as Any)
+        }
+    }
 }

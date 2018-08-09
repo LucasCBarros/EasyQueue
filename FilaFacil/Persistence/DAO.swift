@@ -46,12 +46,15 @@ class DAO: NSObject {
                 
                 for result in results {
                 
-                    let dictionary = result.dictionaryWithValues(forKeys: result.allKeys())
+                    var dictionary = result.dictionaryWithValues(forKeys: result.allKeys())
                     
                    // for key in dictionary.keys {
                        // let objectDict = dictionary[key] as? [String: Any]
                         
                        // let newObj = T(dictionary: objectDict!)
+                    dictionary["recordId"] = result.recordID.recordName
+                    dictionary["createdAt"] = result.creationDate
+                    
                     let newObj = T(dictionary: dictionary)
 //                        let testeDict = ["username": "Joao",
 //                                                "questionID": "1111",
@@ -63,6 +66,7 @@ class DAO: NSObject {
                         allObjects.append(newObj)
                     //}
                 }
+
                 completionHandler(allObjects)
             
             }

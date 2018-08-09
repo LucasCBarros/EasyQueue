@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import CloudKit
 
 class UserProfileService: NSObject {
     
@@ -35,14 +34,6 @@ class UserProfileService: NSObject {
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
         userProfileManager.retrieveCurrentUserProfile(completionHandler: completion)
-    }
-    
-    // Remove LineData from User
-    func removeQuestionFromLine(lineName: String, question: QuestionProfile, completionHandler: @escaping () -> Void) {
-        userProfileManager.removeQuestionFromLine(question: question, completionHandler: {(error) in
-            
-            print(error)
-        })
     }
     
     func attualizeTokenID(user: UserProfile) {

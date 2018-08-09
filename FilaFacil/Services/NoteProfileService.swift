@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CloudKit
 
 class NoteProfileService: NSObject {
 
@@ -24,7 +23,9 @@ class NoteProfileService: NSObject {
     }
     
     // Remove note
-    func removeNote(noteID: CKRecordID) {
-        noteProfileManager.removeNote(noteID: noteID)
+    func removeNote(note: NoteProfile, completion: @escaping (Error?) -> Void) {
+        noteProfileManager.removeNote(note: note, completionHandler: {error in
+            completion(error)
+        })
     }
 }

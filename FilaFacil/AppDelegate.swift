@@ -7,10 +7,7 @@
 //
 
 import UIKit
-//import Firebase
 import IQKeyboardManagerSwift
-//import FirebaseMessaging
-//import FirebaseInstanceID
 import UserNotifications
 import Intents
 import WatchConnectivity

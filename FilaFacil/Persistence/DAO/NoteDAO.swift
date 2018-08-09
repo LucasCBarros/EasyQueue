@@ -48,9 +48,11 @@ class NoteDAO: DAO {
     }
     
     // Remove note from DB
-    func removeNote(noteID: CKRecordID) {
+    func removeNote(note: NoteProfile, completionHandler: @escaping(Error?) -> Void) {
         
-        publicDB.delete(withRecordID: noteID) { (record, error) in
+        let noteRecordId = CKRecordID(recordName: note.noteID)
+
+        publicDB.delete(withRecordID: noteRecordId) { (record, error) in
            
             guard let record = record else {
                 print("Error deleting record: ", error as Any)
@@ -58,7 +60,7 @@ class NoteDAO: DAO {
             }
             
             print("Successfully deleted record: ", record)
+            completionHandler(error)
         }
-       // ref?.child("Notes").child(noteID).removeValue()
     }
 }

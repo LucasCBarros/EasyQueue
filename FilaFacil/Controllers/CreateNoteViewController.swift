@@ -176,12 +176,16 @@ extension CreateNoteViewController {
         if editingStyle == UITableViewCellEditingStyle.delete {
             
             //noteProfileManager.removeNote(noteID: (allNoteProfiles?[indexPath.row].noteID)!)
-            if let noteID = allNoteProfiles?[indexPath.row].noteID {
+            if let note = allNoteProfiles?[indexPath.row] {
             
-                noteProfileManager.removeNote(noteID: CKRecordID(recordName: noteID) )
+                noteProfileManager.removeNote(note: note, completion: {(error) in
+                    
+                    if error != nil {
+            
+                        self.noteTableView.reloadData()
+                    }
+                })
 
-  //            noteTableView.reloadData()
-            
                 self.viewWillAppear(true)
             }
         }
