@@ -95,9 +95,13 @@
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
+		FA8921CF211CA95C0030F295 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921CE211CA95C0030F295 /* Line.swift */; };
+		FA8921D1211CB40A0030F295 /* LineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D0211CB40A0030F295 /* LineService.swift */; };
+		FA8921D4211CB8440030F295 /* LineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D3211CB8440030F295 /* LineDAO.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
-		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
-		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
+		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
+		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
+		FA936588211E0A1E0072F3C9 /* PresentableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA936587211E0A1E0072F3C9 /* PresentableLine.swift */; };
 		FA94AEBF211234D70018CA2C /* FilaFacilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */; };
 		FA94AEC6211234FC0018CA2C /* QuestionProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */; };
 		FA94AEC8211244B00018CA2C /* PresentedLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEC7211244B00018CA2C /* PresentedLinesService.swift */; };
@@ -334,9 +338,13 @@
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
+		FA8921CE211CA95C0030F295 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		FA8921D0211CB40A0030F295 /* LineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineService.swift; sourceTree = "<group>"; };
+		FA8921D3211CB8440030F295 /* LineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDAO.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
-		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA93520A20E2C656001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_DEV.plist"; sourceTree = "<group>"; };
+		FA936587211E0A1E0072F3C9 /* PresentableLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableLine.swift; sourceTree = "<group>"; };
 		FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfileTest.swift; sourceTree = "<group>"; };
 		FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaFacilTests.swift; sourceTree = "<group>"; };
@@ -570,6 +578,7 @@
 		E6022997203FA29E00336FC3 /* FilaFacil */ = {
 			isa = PBXGroup;
 			children = (
+				FA8921D2211CB7F80030F295 /* Mock */,
 				FA8148B720BF2F2600F2FADD /* Mechanism */,
 				E60367DA204DE65A0064A8EC /* FilaFacil.entitlements */,
 				E6022998203FA29E00336FC3 /* AppDelegate.swift */,
@@ -580,8 +589,8 @@
 				E60229AE203FA52E00336FC3 /* View */,
 				E602299F203FA29E00336FC3 /* Assets.xcassets */,
 				E60229A4203FA29E00336FC3 /* Info.plist */,
-				FA93520C20E2C689001E4988 /* GoogleService-Info.plist */,
-				FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */,
+				FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */,
+				FA93520A20E2C656001E4988 /* GoogleService-Info.plist */,
 			);
 			path = FilaFacil;
 			sourceTree = "<group>";
@@ -590,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				E60229DB203FD5AB00336FC3 /* AuthService.swift */,
+				FA8921D0211CB40A0030F295 /* LineService.swift */,
 				E60229E520409E8400336FC3 /* UserProfileService.swift */,
 				E60229E72040A03C00336FC3 /* QuestionProfileService.swift */,
 				E6FC384A20B36FC600D88578 /* NoteProfileService.swift */,
@@ -602,6 +612,8 @@
 			isa = PBXGroup;
 			children = (
 				FA3DEDF820E169800022E0E2 /* ProfileType.swift */,
+				FA8921CE211CA95C0030F295 /* Line.swift */,
+				FA936587211E0A1E0072F3C9 /* PresentableLine.swift */,
 				E60229B1203FC87F00336FC3 /* UserProfile.swift */,
 				E60229B3203FC8B300336FC3 /* QuestionProfile.swift */,
 				E6FC384620B36CFD00D88578 /* NoteProfile.swift */,
@@ -736,6 +748,14 @@
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 			);
 			path = Mechanism;
+			sourceTree = "<group>";
+		};
+		FA8921D2211CB7F80030F295 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				FA8921D3211CB8440030F295 /* LineDAO.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		FA94AEBD211234D70018CA2C /* FilaFacilTests */ = {
@@ -1070,10 +1090,10 @@
 				FAB3369C20B331BB00D6B61F /* SF-Pro-Display-Ultralight.otf in Resources */,
 				E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */,
 				FAB3368920B331BB00D6B61F /* SFCompactText-HeavyItalic.otf in Resources */,
-				FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */,
+				FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */,
 				FAB3369920B331BB00D6B61F /* SF-Pro-Text-Bold.otf in Resources */,
 				FAB3368D20B331BB00D6B61F /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
-				FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */,
+				FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */,
 				FAB3368120B331BB00D6B61F /* SFCompactText-MediumItalic.otf in Resources */,
 				FAB336A720B331BB00D6B61F /* SF-Pro-Text-Medium.otf in Resources */,
 				FAB3369820B331BB00D6B61F /* SF-Pro-Text-Regular.otf in Resources */,
@@ -1386,11 +1406,13 @@
 				E60229CA203FD01900336FC3 /* LoginViewController.swift in Sources */,
 				E60229B8203FC98000336FC3 /* MainListCell.swift in Sources */,
 				E60229E22040938300336FC3 /* UserProfileDAO.swift in Sources */,
+				FA8921D4211CB8440030F295 /* LineDAO.swift in Sources */,
 				E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */,
 				EF9F9EF821064B8400BAFAE5 /* ConfiguracoesController.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA26F9522114F4930053422B /* CreateNoteViewController.swift in Sources */,
 				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
+				FA936588211E0A1E0072F3C9 /* PresentableLine.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
@@ -1402,6 +1424,7 @@
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
+				FA8921CF211CA95C0030F295 /* Line.swift in Sources */,
 				FA8148B920BF304700F2FADD /* Formatter.swift in Sources */,
 				E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */,
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
@@ -1415,6 +1438,7 @@
 				FA3DEDF920E169800022E0E2 /* ProfileType.swift in Sources */,
 				E6FC384320B3514500D88578 /* NoteViewController.swift in Sources */,
 				E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */,
+				FA8921D1211CB40A0030F295 /* LineService.swift in Sources */,
 				E60229DC203FD5AB00336FC3 /* AuthService.swift in Sources */,
 				FABAB6F720CAFBD800E46E3E /* LineCell.swift in Sources */,
 			);

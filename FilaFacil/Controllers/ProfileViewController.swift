@@ -18,15 +18,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var logoutButton: UIButton!
     
-    @IBAction func openSettings(_ sender: UIButton) {
-        let settingsUrl = URL(string: UIApplicationOpenSettingsURLString)!
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(settingsUrl, completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(settingsUrl)
-        }
-    }
-    
     // MARK: - Properties
     let userProfileManager = UserProfileService()
     let authManager = AuthDatabaseManager()

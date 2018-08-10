@@ -21,11 +21,9 @@ class LineListViewController: UIViewController {
     
     // MARK: - Properties
     // Array with all registered teachers
-    var teacherArray: [String] = []
+    var teacherArray: [PresentableLine] = []
     var lineTotalWidth: CGFloat = 0
-    lazy var selectedTab: String? = {
-       return teacherArray.first
-    }()
+    var selectedTab: PresentableLine?
     
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
@@ -37,12 +35,25 @@ class LineListViewController: UIViewController {
     var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
     
+//    var queueOperation = DispatchQueue.global(qos: .)
+    
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
-        self.teacherArray = Array(PresentedLinesService.shared.lines.sorted(by: { (line1, line2) -> Bool in
-            return line1 > line2
-        }))
-        self.linesCollectionView.reloadData()
+        LineService.shared.fetchAllLines(onlySelected: true, { (lines, _) in
+            DispatchQueue.main.async {
+                self.teacherArray = lines!
+                let existsSelected = self.teacherArray.contains(where: { (presentableLine) -> Bool in
+                    return self.selectedTab?.lineId == presentableLine.lineId
+                })
+                if !existsSelected {
+                    self.selectedTab = self.teacherArray.first
+                }
+                self.linesCollectionView.reloadData()
+            }
+        })
+//        self.teacherArray = Array(PresentedLinesService.shared.lines.sorted(by: { (line1, line2) -> Bool in
+//            return line1 > line2
+//        }))
     }
 
     func loadViewData() {
@@ -54,7 +65,7 @@ class LineListViewController: UIViewController {
     
     func reloadViewData() {
         if let selectedTab = self.selectedTab {
-            self.retrieveAllQuestions(lineName: selectedTab)
+            self.retrieveAllQuestions(lineName: selectedTab.name)
         }
     }
     
@@ -84,7 +95,7 @@ class LineListViewController: UIViewController {
     
     @objc func refreshTableView(refreshControl: UIRefreshControl) {
         if let selectedTab = self.selectedTab {
-            self.retrieveAllQuestions(lineName: selectedTab)
+            self.retrieveAllQuestions(lineName: selectedTab.name)
         }
         refreshControl.endRefreshing()
     }
@@ -105,7 +116,7 @@ class LineListViewController: UIViewController {
                 // Add to main Thread
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
-                    if self.selectedTab == lineName {
+                    if self.selectedTab?.name == lineName {
                         let inLineQuestions = questionProfile.sorted { $0.questionID < $1.questionID }
                         if self.inLineQuestions != inLineQuestions {
                             self.inLineQuestions = inLineQuestions
@@ -144,6 +155,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
             if let url = URL(string: question.userPhoto) {
+                
                 KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: {[weak self] image, erro, _, url in
                     DispatchQueue.main.async {
                         if self != nil {
@@ -159,6 +171,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     }
                 })
+                
             } else {
                 if self.inLineQuestions.count >= indexPath.row - 1 && question.userPhoto == self.inLineQuestions[indexPath.row].userPhoto {
                     cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
@@ -190,7 +203,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
-                    this.userProfileManager.removeQuestionFromLine(lineName: selectedTab, questionID: question.questionID)
+                    this.userProfileManager.removeQuestionFromLine(lineName: selectedTab.name, questionID: question.questionID)
                     // Reload View
                     DispatchQueue.main.async {
                         this.viewWillAppear(true)
@@ -231,7 +244,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 extension LineListViewController: NewQuestionTableViewDelegate {
     
     func selectedLine() -> String {
-        return self.selectedTab ?? ""
+        return self.selectedTab?.name ?? ""
     }
     
     func saveQuestion(text: String, selectedTeacher: String) {
@@ -256,21 +269,17 @@ extension LineListViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lineCell", for: indexPath)
         
         if let lineCell = cell as? LineCell {
-            lineCell.title.text = teacherArray[indexPath.row]
-            if lineCell.title.text == selectedTab {
-                switch indexPath.row {
-                case 0:
-                    lineCell.colorfulBar.backgroundColor =  UIColor.developer()
-                case 1:
-                    lineCell.colorfulBar.backgroundColor = UIColor.design()
-                case 2:
-                    lineCell.colorfulBar.backgroundColor = UIColor.business()
-                default:
-                    lineCell.colorfulBar.backgroundColor = UIColor.white
-                }
+            let line = teacherArray[indexPath.row]
+            lineCell.title.text = line.name
+            if lineCell.title.text == selectedTab?.name {
+                lineCell.colorfulBar.backgroundColor = UIColor(red: CGFloat(line.color.red), green: CGFloat(line.color.green), blue: CGFloat(line.color.blue), alpha: 1.0)
             } else {
                 lineCell.colorfulBar.backgroundColor = UIColor.clear
             }
+        }
+        
+        if indexPath.row == indexPath.last {
+            self.loadViewData()
         }
         
         return cell
@@ -290,7 +299,7 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewDele
         let heitgh: CGFloat = 45.0
         var size = CGSize(width: 0, height: heitgh)
         if self.teacherArray.count > 2 {
-            let width = teacherArray[indexPath.row].width(withConstrainedHeight: heitgh, font: UIFont(name: "SFProText-Medium", size: 17)!) + 30
+            let width = teacherArray[indexPath.row].name.width(withConstrainedHeight: heitgh, font: UIFont(name: "SFProText-Medium", size: 17)!) + 30
             size.width = width
         } else {
             let width = (collectionView.frame.width / CGFloat(self.teacherArray.count))

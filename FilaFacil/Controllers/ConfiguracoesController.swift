@@ -11,7 +11,7 @@ import UIKit
 class ConfiguracoesController: UITableViewController {
     
     @IBOutlet weak var developerSwitch: UISwitch!
-    @IBOutlet weak var designerSwitch: UISwitch!
+    @IBOutlet weak var designSwitch: UISwitch!
     @IBOutlet weak var businessSwitch: UISwitch!
     
     @IBAction func switchDeveloperAction(_ sender: UISwitch) {
@@ -21,11 +21,11 @@ class ConfiguracoesController: UITableViewController {
             PresentedLinesService.shared.remove("Developer")
         }
     }
-    @IBAction func switchDesignerAction(_ sender: UISwitch) {
+    @IBAction func switchDesignAction(_ sender: UISwitch) {
         if sender.isOn {
-            PresentedLinesService.shared.add("Designer")
+            PresentedLinesService.shared.add("Design")
         } else {
-            PresentedLinesService.shared.remove("Designer")
+            PresentedLinesService.shared.remove("Design")
         }
     }
     @IBAction func switchBusinessAction(_ sender: UISwitch) {
@@ -36,17 +36,23 @@ class ConfiguracoesController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let switchsState = PresentedLinesService.shared.lines
         
-        if switchsState.contains("Developer") { } else {
+        if switchsState.contains("Developer") {
+            self.developerSwitch.setOn(true, animated: false)
+        } else {
             self.developerSwitch.setOn(false, animated: false)
         }
-        if switchsState.contains("Designer") { } else {
-            self.designerSwitch.setOn(false, animated: false)
+        if switchsState.contains("Design") {
+            self.designSwitch.setOn(true, animated: false)
+        } else {
+            self.designSwitch.setOn(false, animated: false)
         }
-        if switchsState.contains("Business") { } else {
+        if switchsState.contains("Business") {
+            self.businessSwitch.setOn(true, animated: false)
+        } else {
             self.businessSwitch.setOn(false, animated: false)
         }
     }

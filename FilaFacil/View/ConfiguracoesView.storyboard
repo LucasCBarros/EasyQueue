@@ -131,11 +131,11 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27t-fS-q7h">
                                                     <rect key="frame" x="304" y="13.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="switchDesignerAction:" destination="xur-Ou-fWP" eventType="valueChanged" id="ur7-tD-2sx"/>
+                                                        <action selector="switchDesignAction:" destination="xur-Ou-fWP" eventType="valueChanged" id="ur7-tD-2sx"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjt-On-fTn">
-                                                    <rect key="frame" x="16" y="18.5" width="69" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjt-On-fTn" userLabel="Design">
+                                                    <rect key="frame" x="16" y="18.5" width="53.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -190,6 +190,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVD-aO-HaC">
+                                                    <rect key="frame" x="-0.5" y="-1" width="341" height="66"/>
+                                                    <connections>
+                                                        <action selector="goNotification:" destination="xur-Ou-fWP" eventType="touchUpInside" id="tP6-SB-sIN"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificação" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yO-u9-8zN">
                                                     <rect key="frame" x="16" y="22" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -199,7 +205,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9yO-u9-8zN" firstAttribute="centerY" secondItem="PWK-5E-h4X" secondAttribute="centerY" id="0oA-18-bR9"/>
+                                                <constraint firstItem="eVD-aO-HaC" firstAttribute="width" secondItem="PWK-5E-h4X" secondAttribute="width" id="8An-hW-mhR"/>
+                                                <constraint firstItem="eVD-aO-HaC" firstAttribute="centerX" secondItem="PWK-5E-h4X" secondAttribute="centerX" id="JT0-Ii-utT"/>
+                                                <constraint firstItem="eVD-aO-HaC" firstAttribute="height" secondItem="PWK-5E-h4X" secondAttribute="height" id="KI0-Zv-KIR"/>
                                                 <constraint firstItem="9yO-u9-8zN" firstAttribute="leading" secondItem="PWK-5E-h4X" secondAttribute="leading" constant="16" id="KXU-V8-cIh"/>
+                                                <constraint firstItem="eVD-aO-HaC" firstAttribute="centerY" secondItem="PWK-5E-h4X" secondAttribute="centerY" id="ivT-9H-SLk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,7 +225,7 @@
                     <navigationItem key="navigationItem" title="Configurações" id="8lu-wp-hbU"/>
                     <connections>
                         <outlet property="businessSwitch" destination="YQN-gv-eQE" id="scV-r2-hQN"/>
-                        <outlet property="designerSwitch" destination="27t-fS-q7h" id="4wR-6A-Of4"/>
+                        <outlet property="designSwitch" destination="27t-fS-q7h" id="4wR-6A-Of4"/>
                         <outlet property="developerSwitch" destination="0wC-dd-AGm" id="w8H-NI-opr"/>
                     </connections>
                 </tableViewController>
