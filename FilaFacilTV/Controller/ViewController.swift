@@ -69,16 +69,24 @@ class ViewController: UIViewController {
     
     func verifyThatNeedActivateScreenSaver(with questions: [Question]) {
         if questions.count == 0 {
-            if let screenSaver = self.screenSaverTimeInterval, Date().timeIntervalSince1970 - screenSaver >= 180 {
-                self.performSegue(withIdentifier: "screenSaver", sender: nil)
-            } else {
-                self.screenSaverTimeInterval = Date().timeIntervalSince1970
+            DispatchQueue.main.async {
+                self.questionActivityIndicator.stopAnimating()
+                self.noQuestions.isHidden = false
+                if let screenSaver = self.screenSaverTimeInterval {
+                    if Date().timeIntervalSince1970 - screenSaver >= 30 {
+                        self.performSegue(withIdentifier: "screenSaver", sender: nil)
+                    }
+                } else {
+                    self.screenSaverTimeInterval = Date().timeIntervalSince1970
+                }
             }
         } else {
             self.screenSaverTimeInterval = nil
-            self.screenSaverViewController?.dismiss(animated: true, completion: {
-                self.screenSaverViewController = nil
-            })
+            DispatchQueue.main.async {
+                self.screenSaverViewController?.dismiss(animated: true, completion: {
+                    self.screenSaverViewController = nil
+                })
+            }
         }
     }
     
