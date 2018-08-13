@@ -13,6 +13,9 @@
         <array key="SF-Pro-Text-Medium.otf">
             <string>SFProText-Medium</string>
         </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Configurações-->
@@ -27,21 +30,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbB-6L-i0p">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="xur-Ou-fWP" kind="embed" id="c4z-aQ-Psa"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v0.1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-n9-Xde">
+                                <rect key="frame" x="16" y="520" width="41" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="btv-cu-xKy" firstAttribute="trailing" secondItem="MbB-6L-i0p" secondAttribute="trailing" id="5nQ-Rx-T0y"/>
+                            <constraint firstItem="BEK-n9-Xde" firstAttribute="leading" secondItem="btv-cu-xKy" secondAttribute="leading" constant="16" id="6us-Qu-ZYg"/>
                             <constraint firstItem="Wy2-mw-MK1" firstAttribute="top" secondItem="btv-cu-xKy" secondAttribute="top" id="HlZ-1Z-8qw"/>
                             <constraint firstItem="btv-cu-xKy" firstAttribute="trailing" secondItem="Wy2-mw-MK1" secondAttribute="trailing" id="Pit-mS-pzc"/>
                             <constraint firstItem="MbB-6L-i0p" firstAttribute="top" secondItem="btv-cu-xKy" secondAttribute="top" id="Qua-9j-49v"/>
-                            <constraint firstItem="btv-cu-xKy" firstAttribute="bottom" secondItem="MbB-6L-i0p" secondAttribute="bottom" id="XGh-mk-3PO"/>
+                            <constraint firstItem="BEK-n9-Xde" firstAttribute="top" secondItem="MbB-6L-i0p" secondAttribute="bottom" constant="16" id="gPf-fF-NR1"/>
                             <constraint firstItem="Wy2-mw-MK1" firstAttribute="leading" secondItem="btv-cu-xKy" secondAttribute="leading" id="k9Y-ee-Wki"/>
+                            <constraint firstItem="btv-cu-xKy" firstAttribute="bottom" secondItem="BEK-n9-Xde" secondAttribute="bottom" constant="16" id="kyK-P9-4rE"/>
                             <constraint firstItem="MbB-6L-i0p" firstAttribute="leading" secondItem="btv-cu-xKy" secondAttribute="leading" id="ldr-oi-7NS"/>
                             <constraint firstItem="btv-cu-xKy" firstAttribute="bottom" secondItem="Wy2-mw-MK1" secondAttribute="bottom" id="n39-bu-OuT"/>
                         </constraints>
@@ -51,14 +62,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGP-DV-jmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="100"/>
+            <point key="canvasLocation" x="648.79999999999995" y="99.400299850074973"/>
         </scene>
         <!--Configurações-->
         <scene sceneID="aRI-yE-FxB">
             <objects>
                 <tableViewController id="xur-Ou-fWP" customClass="ConfiguracoesController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyU-6B-iwU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.44313725490196076" green="0.43137254901960786" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>

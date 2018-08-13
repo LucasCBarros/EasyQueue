@@ -2,19 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Disclosure Indicator.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "disclosureIndicator.pdf"
     }
   ],
   "info" : {
