@@ -47,6 +47,9 @@ class ViewController: UIViewController {
     var openedNotes: [Note] = []
     var topTimer: Timer!
     
+    var screenSaverTimeInterval: TimeInterval? = nil
+    var screenSaverViewController: UIViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
@@ -54,17 +57,35 @@ class ViewController: UIViewController {
         }
         
         UIApplication.shared.isIdleTimerDisabled = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         getAllQuestions()
         getAllNotes()
         refreshDate()
         refresHour()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
-                                                selector: #selector(ViewController.getAllInformations),
-                                                userInfo: nil, repeats: true)
-        
+                                        selector: #selector(ViewController.getAllInformations),
+                                        userInfo: nil, repeats: true)
+    }
+    
+    func verifyThatNeedActivateScreenSaver(with questions: [Question]) {
+        if questions.count == 0 {
+            if let screenSaver = self.screenSaverTimeInterval, Date().timeIntervalSince1970 - screenSaver >= 180 {
+                self.performSegue(withIdentifier: "screenSaver", sender: nil)
+            } else {
+                self.screenSaverTimeInterval = Date().timeIntervalSince1970
+            }
+        } else {
+            self.screenSaverTimeInterval = nil
+            self.screenSaverViewController?.dismiss(animated: true, completion: {
+                self.screenSaverViewController = nil
+            })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "screeSaver" {
+            self.screenSaverViewController = segue.destination
+        }
     }
     
     func getAllQuestions() {
@@ -73,26 +94,22 @@ class ViewController: UIViewController {
                 let questions = questions.sorted(by: { (question1, question2) -> Bool in
                     return question1.questionID < question2.questionID
                 })
-                if questions.count == 0 || self?.openedQuestions != questions {
+                self?.verifyThatNeedActivateScreenSaver(with: questions)
+                if self?.openedQuestions != questions {
                     DispatchQueue.main.async {
-                        if let this = self {
-                            if this.openedQuestions.count == 0 && questions.count == 0 {
-                                UIApplication.shared.isIdleTimerDisabled = false
-                            } else {
-                                UIApplication.shared.isIdleTimerDisabled = true
-                            }
-                            this.openedQuestions.removeAll()
-                            this.openedQuestions = questions
-                            this.questionTableView.reloadData()
-                            this.questionActivityIndicator.stopAnimating()
-                            this.developerNumber.text = String(this.lineNumber(questions, condition: { $0.categoryQuestion.type == .developer }))
-                            this.designNumber.text = String(this.lineNumber(questions, condition: { $0.categoryQuestion.type == .design }))
-                            this.businessNumber.text = String(this.lineNumber(questions, condition: { $0.categoryQuestion.type == .business }))
-                            if this.openedQuestions.count == 0 {
-                                this.noQuestions.isHidden = false
+                        if let viewController = self {
+                            viewController.openedQuestions.removeAll()
+                            viewController.openedQuestions = questions
+                            viewController.questionTableView.reloadData()
+                            viewController.questionActivityIndicator.stopAnimating()
+                            viewController.developerNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .developer }))
+                            viewController.designNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .design }))
+                            viewController.businessNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .business }))
+                            if viewController.openedQuestions.count == 0 {
+                                viewController.noQuestions.isHidden = false
                             }
                             else {
-                                this.noQuestions.isHidden = true
+                                viewController.noQuestions.isHidden = true
                             }
                         }
                     }

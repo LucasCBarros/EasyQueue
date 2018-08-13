@@ -147,8 +147,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instituto Eldorado Campinas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-po-kjT">
-                                <rect key="frame" x="144" y="126" width="529" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instituto de Pesquisas Eldorado Campinas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-po-kjT">
+                                <rect key="frame" x="144" y="126" width="786" height="54"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="45"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -217,10 +217,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="H0E-MN-DAX">
-                                        <rect key="frame" x="56" y="5" width="49" height="35"/>
+                                        <rect key="frame" x="63" y="5" width="35" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="99" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-qy-Mf2">
-                                                <rect key="frame" x="10" y="5" width="28" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gm-qy-Mf2">
+                                                <rect key="frame" x="10" y="5" width="14" height="26"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -241,7 +241,7 @@
                                         <rect key="frame" x="458" y="5" width="35" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7e-nA-Qyx">
-                                                <rect key="frame" x="11" y="5" width="14" height="26"/>
+                                                <rect key="frame" x="12" y="5" width="14" height="26"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -433,7 +433,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1K6-gh-Rqf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1K6-gh-Rqf">
                                 <rect key="frame" x="1206" y="150" width="624" height="54"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -442,6 +442,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSL-vt-TDo">
                                 <rect key="frame" x="1206" y="84" width="624" height="63"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v0.1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB4-Dg-ppC">
+                                <rect key="frame" x="1769" y="1039" width="61" height="28"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -475,11 +481,13 @@
                             <constraint firstItem="Cjg-po-kjT" firstAttribute="top" secondItem="wdx-1L-44u" secondAttribute="bottom" constant="3" id="bjv-tF-ZoK"/>
                             <constraint firstItem="OGs-4t-lJZ" firstAttribute="bottom" secondItem="nNR-pT-yoA" secondAttribute="bottom" id="cDT-8G-VmO"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="bottom" secondItem="OGs-4t-lJZ" secondAttribute="bottom" id="cFX-fU-t8f"/>
+                            <constraint firstItem="JB4-Dg-ppC" firstAttribute="trailing" secondItem="nNR-pT-yoA" secondAttribute="trailing" id="dzU-4b-Ov3"/>
                             <constraint firstItem="yfQ-0u-XBU" firstAttribute="leading" secondItem="Cjg-po-kjT" secondAttribute="leading" id="eKt-qx-Awd"/>
                             <constraint firstItem="WP3-z6-jIp" firstAttribute="leading" secondItem="yfQ-0u-XBU" secondAttribute="leading" id="iqn-JD-v9a"/>
                             <constraint firstItem="yRN-uP-1wa" firstAttribute="top" secondItem="Cjg-po-kjT" secondAttribute="bottom" constant="29" id="kEh-X6-VEW"/>
                             <constraint firstItem="tcg-pw-h3W" firstAttribute="top" secondItem="1K6-gh-Rqf" secondAttribute="bottom" constant="8" id="mb0-SX-FqU"/>
                             <constraint firstItem="OGs-4t-lJZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wdx-1L-44u" secondAttribute="trailing" id="oEn-hp-m3k"/>
+                            <constraint firstItem="JB4-Dg-ppC" firstAttribute="top" secondItem="nNR-pT-yoA" secondAttribute="bottom" constant="19" id="oav-19-39f"/>
                             <constraint firstItem="1K6-gh-Rqf" firstAttribute="trailing" secondItem="nNR-pT-yoA" secondAttribute="trailing" id="okQ-AP-Eb2"/>
                             <constraint firstItem="lSL-vt-TDo" firstAttribute="trailing" secondItem="1K6-gh-Rqf" secondAttribute="trailing" id="oyE-fM-ar3"/>
                             <constraint firstItem="wdx-1L-44u" firstAttribute="leading" secondItem="OGs-4t-lJZ" secondAttribute="leading" constant="54" id="qQ8-A5-bmS"/>
@@ -507,11 +515,20 @@
                         <outlet property="simulatedBusinessBadge" destination="PEK-Em-xvV" id="kgP-Pc-h2I"/>
                         <outlet property="simulatedDesignBadge" destination="tFV-LM-LyM" id="rYT-nG-9wJ"/>
                         <outlet property="simulatedDeveloperBadge" destination="H0E-MN-DAX" id="yTw-0w-QNI"/>
+                        <segue destination="pXO-po-DeO" kind="show" identifier="screenSaver" id="Ovc-zp-ekp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnL-yb-CFv" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-35" y="536"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="lee-aV-Zek">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="pXO-po-DeO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saL-du-WPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264" y="536"/>
         </scene>
     </scenes>
     <resources>

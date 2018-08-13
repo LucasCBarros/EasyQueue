@@ -25,8 +25,13 @@ class Formatter {
     
     static func fullDateToString(_ date: Date) -> String {
         let dateFormatter = currentDateFormatter
-        dateFormatter.dateFormat = "eeee, dd 'de' MMMM 'de' yyyy"
-        return dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "eee, dd 'de' "
+        var dayString = dateFormatter.string(from: date)
+        dayString = dayString.prefix(1).uppercased() + dayString.dropFirst()
+        dateFormatter.dateFormat = "MMMM"
+        var monthString = dateFormatter.string(from: date)
+        monthString = monthString.prefix(1).uppercased() + monthString.dropFirst()
+        return dayString + monthString
     }
     
     static func currentHour() -> String {
