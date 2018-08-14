@@ -12,7 +12,7 @@ import IQKeyboardManagerSwift
 import FirebaseMessaging
 import FirebaseInstanceID
 import UserNotifications
-import Intents
+//import Intents
 import WatchConnectivity
 
 @UIApplicationMain
@@ -32,9 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().delegate = self
     }
     
-    fileprivate func requestAuthorisation() {
-        INPreferences.requestSiriAuthorization { status in }
-    }
+//    fileprivate func requestAuthorisation() {
+//        INPreferences.requestSiriAuthorization { status in }
+//    }
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         Messaging.messaging().shouldEstablishDirectChannel = true
 
-        requestAuthorisation()
+//        requestAuthorisation()
         
         setupWatchConnectivity()
         

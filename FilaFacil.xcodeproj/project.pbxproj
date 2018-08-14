@@ -10,14 +10,6 @@
 		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
 		69FC277C4F4226C2AD9FED28 /* Pods_FilaFacilTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15287E8C559A5368AEE93E90 /* Pods_FilaFacilTests.framework */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
-		A9FD78F520E56A3500DB9A1F /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */; };
-		A9FD78F920E56A3500DB9A1F /* FilaFacilSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A9FD78FF20E56ECD00DB9A1F /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE420AE20D00064A247 /* QuestionService.swift */; };
-		A9FD790020E570FB00DB9A1F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
-		A9FD790120E5711300DB9A1F /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
-		A9FD790220E5713700DB9A1F /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
-		A9FD790320E5714100DB9A1F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
-		A9FD790420E5729300DB9A1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
@@ -99,8 +91,8 @@
 		FA8921D1211CB40A0030F295 /* LineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D0211CB40A0030F295 /* LineService.swift */; };
 		FA8921D4211CB8440030F295 /* LineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D3211CB8440030F295 /* LineDAO.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
-		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
-		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
+		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
+		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
 		FA936588211E0A1E0072F3C9 /* PresentableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA936587211E0A1E0072F3C9 /* PresentableLine.swift */; };
 		FA94AEBF211234D70018CA2C /* FilaFacilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */; };
 		FA94AEC6211234FC0018CA2C /* QuestionProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */; };
@@ -171,13 +163,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A9FD78F720E56A3500DB9A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A9FD78F120E56A3500DB9A1F;
-			remoteInfo = FilaFacilSiri;
-		};
 		E616DB4F20D991940009E9FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
@@ -215,7 +200,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A9FD78F920E56A3500DB9A1F /* FilaFacilSiri.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +237,6 @@
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53A0C9E131043C9A0A35EED /* Pods-FilaFacilWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FilaFacilSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		A9FD78F620E56A3500DB9A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,8 +325,8 @@
 		FA8921D0211CB40A0030F295 /* LineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineService.swift; sourceTree = "<group>"; };
 		FA8921D3211CB8440030F295 /* LineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDAO.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
-		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA93520A20E2C656001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_DEV.plist"; sourceTree = "<group>"; };
 		FA936587211E0A1E0072F3C9 /* PresentableLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableLine.swift; sourceTree = "<group>"; };
 		FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfileTest.swift; sourceTree = "<group>"; };
 		FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -412,13 +395,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		26365D6277A23DFC0C1BC3FE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9FD78EF20E56A3500DB9A1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -569,7 +545,6 @@
 				DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */,
 				E616DB4120D991910009E9FD /* FilaFacilWatch.app */,
 				E616DB4D20D991940009E9FD /* FilaFacilWatch Extension.appex */,
-				A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */,
 				FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */,
 			);
 			name = Products;
@@ -589,8 +564,8 @@
 				E60229AE203FA52E00336FC3 /* View */,
 				E602299F203FA29E00336FC3 /* Assets.xcassets */,
 				E60229A4203FA29E00336FC3 /* Info.plist */,
-				FA93520C20E2C689001E4988 /* GoogleService-Info.plist */,
-				FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */,
+				FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */,
+				FA93520A20E2C656001E4988 /* GoogleService-Info.plist */,
 			);
 			path = FilaFacil;
 			sourceTree = "<group>";
@@ -847,23 +822,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9FD78FC20E56A3500DB9A1F /* Build configuration list for PBXNativeTarget "FilaFacilSiri" */;
-			buildPhases = (
-				A9FD78EE20E56A3500DB9A1F /* Sources */,
-				A9FD78EF20E56A3500DB9A1F /* Frameworks */,
-				A9FD78F020E56A3500DB9A1F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FilaFacilSiri;
-			productName = FilaFacilSiri;
-			productReference = A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		DEDF0FBD20AE20470064A247 /* FilaFacilTV */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */;
@@ -900,7 +858,6 @@
 			);
 			dependencies = (
 				E616DB5D20D991950009E9FD /* PBXTargetDependency */,
-				A9FD78F820E56A3500DB9A1F /* PBXTargetDependency */,
 			);
 			name = FilaFacil;
 			productName = FilaFacil;
@@ -991,10 +948,6 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Lucas C Barros";
 				TargetAttributes = {
-					A9FD78F120E56A3500DB9A1F = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Automatic;
-					};
 					DEDF0FBD20AE20470064A247 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -1010,7 +963,7 @@
 								enabled = 1;
 							};
 							com.apple.Siri = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1023,7 +976,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Siri = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1057,20 +1010,12 @@
 				DEDF0FBD20AE20470064A247 /* FilaFacilTV */,
 				E616DB4020D991910009E9FD /* FilaFacilWatch */,
 				E616DB4C20D991940009E9FD /* FilaFacilWatch Extension */,
-				A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */,
 				FA94AEBB211234D70018CA2C /* FilaFacilTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A9FD78F020E56A3500DB9A1F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEDF0FBC20AE20470064A247 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1090,10 +1035,10 @@
 				FAB3369C20B331BB00D6B61F /* SF-Pro-Display-Ultralight.otf in Resources */,
 				E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */,
 				FAB3368920B331BB00D6B61F /* SFCompactText-HeavyItalic.otf in Resources */,
-				FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */,
+				FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */,
 				FAB3369920B331BB00D6B61F /* SF-Pro-Text-Bold.otf in Resources */,
 				FAB3368D20B331BB00D6B61F /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
-				FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */,
+				FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */,
 				FAB3368120B331BB00D6B61F /* SFCompactText-MediumItalic.otf in Resources */,
 				FAB336A720B331BB00D6B61F /* SF-Pro-Text-Medium.otf in Resources */,
 				FAB3369820B331BB00D6B61F /* SF-Pro-Text-Regular.otf in Resources */,
@@ -1365,20 +1310,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A9FD78EE20E56A3500DB9A1F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9FD790020E570FB00DB9A1F /* Question.swift in Sources */,
-				A9FD78F520E56A3500DB9A1F /* IntentHandler.swift in Sources */,
-				A9FD78FF20E56ECD00DB9A1F /* QuestionService.swift in Sources */,
-				A9FD790220E5713700DB9A1F /* NoteService.swift in Sources */,
-				A9FD790120E5711300DB9A1F /* CategoryQuestion.swift in Sources */,
-				A9FD790320E5714100DB9A1F /* Note.swift in Sources */,
-				A9FD790420E5729300DB9A1F /* Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEDF0FBA20AE20470064A247 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1485,11 +1416,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A9FD78F820E56A3500DB9A1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */;
-			targetProxy = A9FD78F720E56A3500DB9A1F /* PBXContainerItemProxy */;
-		};
 		E616DB5020D991940009E9FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E616DB4C20D991940009E9FD /* FilaFacilWatch Extension */;
@@ -1540,40 +1466,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A9FD78FA20E56A3500DB9A1F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
-				INFOPLIST_FILE = FilaFacilSiri/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.FilaFacilSiri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A9FD78FB20E56A3500DB9A1F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
-				INFOPLIST_FILE = FilaFacilSiri/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LucasCB.FilaFacil.FilaFacilSiri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DEDF0FCD20AE20470064A247 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */;
@@ -1815,7 +1707,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_ENTITLEMENTS = "FilaFacilWatch Extension/FilaFacilWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 987J4BXX78;
 				INFOPLIST_FILE = "FilaFacilWatch Extension/Info.plist";
@@ -1838,7 +1729,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_ENTITLEMENTS = "FilaFacilWatch Extension/FilaFacilWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 987J4BXX78;
 				INFOPLIST_FILE = "FilaFacilWatch Extension/Info.plist";
@@ -1924,15 +1814,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9FD78FC20E56A3500DB9A1F /* Build configuration list for PBXNativeTarget "FilaFacilSiri" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9FD78FA20E56A3500DB9A1F /* Debug */,
-				A9FD78FB20E56A3500DB9A1F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
