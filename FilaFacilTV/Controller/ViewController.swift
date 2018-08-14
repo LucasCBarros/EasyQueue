@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "screeSaver" {
+        if segue.identifier == "screenSaver" {
             self.screenSaverViewController = segue.destination
         }
     }

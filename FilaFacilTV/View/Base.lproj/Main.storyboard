@@ -241,7 +241,7 @@
                                         <rect key="frame" x="458" y="5" width="35" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7e-nA-Qyx">
-                                                <rect key="frame" x="11" y="5" width="14" height="26"/>
+                                                <rect key="frame" x="12" y="5" width="14" height="26"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -515,20 +515,30 @@
                         <outlet property="simulatedBusinessBadge" destination="PEK-Em-xvV" id="kgP-Pc-h2I"/>
                         <outlet property="simulatedDesignBadge" destination="tFV-LM-LyM" id="rYT-nG-9wJ"/>
                         <outlet property="simulatedDeveloperBadge" destination="H0E-MN-DAX" id="yTw-0w-QNI"/>
-                        <segue destination="pXO-po-DeO" kind="show" identifier="screenSaver" id="Ovc-zp-ekp"/>
+                        <segue destination="tji-1n-O4f" kind="show" identifier="screenSaver" id="r8F-mc-xnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnL-yb-CFv" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-35" y="536"/>
         </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="lee-aV-Zek">
+        <!--View Controller-->
+        <scene sceneID="pvU-fe-x7M">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="pXO-po-DeO" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="saL-du-WPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="tji-1n-O4f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BMa-46-mYz"/>
+                        <viewControllerLayoutGuide type="bottom" id="KkC-gu-TZv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFv-fU-l9g">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Gja-dt-kY0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnA-BC-QiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264" y="536"/>
+            <point key="canvasLocation" x="2491" y="536"/>
         </scene>
     </scenes>
     <resources>
