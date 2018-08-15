@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     var topTimer: Timer!
     
     var screenSaverTimeInterval: TimeInterval? = nil
-    var screenSaverViewController: UIViewController? = nil
+    weak var screenSaverViewController: ScreenSaverViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +69,14 @@ class ViewController: UIViewController {
     
     func verifyThatNeedActivateScreenSaver(with questions: [Question]) {
         if questions.count == 0 {
+            guard self.screenSaverViewController == nil else {
+                return
+            }
             DispatchQueue.main.async {
                 self.questionActivityIndicator.stopAnimating()
                 self.noQuestions.isHidden = false
                 if let screenSaver = self.screenSaverTimeInterval {
-                    if Date().timeIntervalSince1970 - screenSaver >= 30 {
+                    if Date().timeIntervalSince1970 - screenSaver >= 600 {
                         self.performSegue(withIdentifier: "screenSaver", sender: nil)
                     }
                 } else {
@@ -92,7 +95,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "screenSaver" {
-            self.screenSaverViewController = segue.destination
+            self.screenSaverViewController = segue.destination as? ScreenSaverViewController
+            self.screenSaverViewController?.screenDelegate = self
         }
     }
     
@@ -273,4 +277,12 @@ extension ViewController: NoteCollectionViewLayoutDelegate {
         })
     }
 
+}
+
+extension ViewController: ScreenSaverDelegate {
+    
+    func didDismiss() {
+        self.screenSaverViewController = nil
+    }
+    
 }

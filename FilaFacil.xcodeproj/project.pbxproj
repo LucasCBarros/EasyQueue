@@ -94,6 +94,8 @@
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
+		FA9251C62124855700F60C4D /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9251C52124855700F60C4D /* ResourceManager.swift */; };
+		FA9251CC2124C46000F60C4D /* ScreenSaver.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA9251CB2124C46000F60C4D /* ScreenSaver.mp4 */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
 		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
 		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
@@ -106,6 +108,7 @@
 		FAA331C120E6B8B700D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
 		FAA331C220E6BA3B00D893DC /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365F20B331B800D6B61F /* SF-Pro-Display-Medium.otf */; };
 		FAA331C320E6BA3B00D893DC /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365F20B331B800D6B61F /* SF-Pro-Display-Medium.otf */; };
+		FAAD129C21236C1B007F491F /* ScreenSaverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD129B21236C1B007F491F /* ScreenSaverViewController.swift */; };
 		FAB3367720B331BA00D6B61F /* SFCompactDisplay-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */; };
 		FAB3367820B331BA00D6B61F /* SFCompactText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */; };
 		FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */; };
@@ -332,6 +335,8 @@
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
+		FA9251C52124855700F60C4D /* ResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
+		FA9251CB2124C46000F60C4D /* ScreenSaver.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ScreenSaver.mp4; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
 		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -341,6 +346,7 @@
 		FA94AEC0211234D70018CA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA94AEC7211244B00018CA2C /* PresentedLinesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedLinesService.swift; sourceTree = "<group>"; };
 		FAA331C420E6E42800D893DC /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
+		FAAD129B21236C1B007F491F /* ScreenSaverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSaverViewController.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -507,6 +513,7 @@
 			children = (
 				DEDF0FE420AE20D00064A247 /* QuestionService.swift */,
 				FA834E0820B5E90C002F3E32 /* NoteService.swift */,
+				FA9251C52124855700F60C4D /* ResourceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -515,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDF0FC220AE20470064A247 /* ViewController.swift */,
+				FAAD129B21236C1B007F491F /* ScreenSaverViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -522,6 +530,7 @@
 		DEDF0FBF20AE20470064A247 /* FilaFacilTV */ = {
 			isa = PBXGroup;
 			children = (
+				FA9251C22124847800F60C4D /* Resources */,
 				DEDF0FC020AE20470064A247 /* AppDelegate.swift */,
 				DEBC40C220B1E87A00870D4C /* Controller */,
 				DEBC40C120B1E85500870D4C /* Services */,
@@ -733,6 +742,14 @@
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 			);
 			path = Mechanism;
+			sourceTree = "<group>";
+		};
+		FA9251C22124847800F60C4D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA9251CB2124C46000F60C4D /* ScreenSaver.mp4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FA94AEBD211234D70018CA2C /* FilaFacilTests */ = {
@@ -964,6 +981,9 @@
 		E602298D203FA29E00336FC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					ScreenSaver,
+				);
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Lucas C Barros";
@@ -1055,6 +1075,7 @@
 				DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */,
 				FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */,
 				DEDF0FC920AE20470064A247 /* Main.storyboard in Resources */,
+				FA9251CC2124C46000F60C4D /* ScreenSaver.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,12 +1385,14 @@
 				FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */,
 				FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */,
 				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
+				FA9251C62124855700F60C4D /* ResourceManager.swift in Sources */,
 				FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */,
 				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
 				DEBC40C020B1E81100870D4C /* Question.swift in Sources */,
 				DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */,
 				FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */,
 				FA834E0B20B5E953002F3E32 /* Note.swift in Sources */,
+				FAAD129C21236C1B007F491F /* ScreenSaverViewController.swift in Sources */,
 				DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */,
 				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,
 				FAB336AF20B374A200D6B61F /* NoteViewCell.swift in Sources */,
