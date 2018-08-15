@@ -23,10 +23,8 @@ class NoteDAO: DAO {
     func createNote(userID: String, noteText: String ) {
         
         let path = "Notes/"
-        
         let newNoteData = [userID,
                            noteText]
-        
         let noteFields = ["userID",
                           "noteText"]
         
@@ -44,5 +42,10 @@ class NoteDAO: DAO {
     // Remove note from DB
     func removeNote(noteID: String) {
         ref?.child("Notes").child(noteID).removeValue()
+    }
+    
+    // Update existing note with new text
+    func updateNote(noteID: String, newText: String) {
+        ref?.child("Notes").child(noteID).updateChildValues(["noteText": newText])
     }
 }

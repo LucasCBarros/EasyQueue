@@ -91,8 +91,8 @@
 		FA8921D1211CB40A0030F295 /* LineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D0211CB40A0030F295 /* LineService.swift */; };
 		FA8921D4211CB8440030F295 /* LineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D3211CB8440030F295 /* LineDAO.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
-		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
-		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
+		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
+		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
 		FA936588211E0A1E0072F3C9 /* PresentableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA936587211E0A1E0072F3C9 /* PresentableLine.swift */; };
 		FA94AEBF211234D70018CA2C /* FilaFacilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */; };
 		FA94AEC6211234FC0018CA2C /* QuestionProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */; };
@@ -325,8 +325,8 @@
 		FA8921D0211CB40A0030F295 /* LineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineService.swift; sourceTree = "<group>"; };
 		FA8921D3211CB8440030F295 /* LineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDAO.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FA93520A20E2C656001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_DEV.plist"; sourceTree = "<group>"; };
+		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
+		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA936587211E0A1E0072F3C9 /* PresentableLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableLine.swift; sourceTree = "<group>"; };
 		FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfileTest.swift; sourceTree = "<group>"; };
 		FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -564,8 +564,8 @@
 				E60229AE203FA52E00336FC3 /* View */,
 				E602299F203FA29E00336FC3 /* Assets.xcassets */,
 				E60229A4203FA29E00336FC3 /* Info.plist */,
-				FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */,
-				FA93520A20E2C656001E4988 /* GoogleService-Info.plist */,
+				FA93520C20E2C689001E4988 /* GoogleService-Info.plist */,
+				FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */,
 			);
 			path = FilaFacil;
 			sourceTree = "<group>";
@@ -831,6 +831,7 @@
 				DEDF0FBB20AE20470064A247 /* Frameworks */,
 				DEDF0FBC20AE20470064A247 /* Resources */,
 				14887C977ED0D492404F27FF /* [CP] Embed Pods Frameworks */,
+				ACEC50EEC73AC83A94EBF0BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -853,6 +854,7 @@
 				5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */,
 				E616DB6620D991950009E9FD /* Embed Watch Content */,
 				A9FD78FD20E56A3500DB9A1F /* Embed App Extensions */,
+				27D4FE107BDCE36627877F05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -890,6 +892,8 @@
 				E616DB4920D991940009E9FD /* Sources */,
 				E616DB4A20D991940009E9FD /* Frameworks */,
 				E616DB4B20D991940009E9FD /* Resources */,
+				41DF5323BD1ADA7B87FB8934 /* [CP] Embed Pods Frameworks */,
+				8F3B894FD66DCAC43960E4D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -927,6 +931,7 @@
 				FA94AEB9211234D70018CA2C /* Frameworks */,
 				FA94AEBA211234D70018CA2C /* Resources */,
 				3757091A88A8A4BC3CE8F304 /* [CP] Embed Pods Frameworks */,
+				186D856CE4144722C7FF5B62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1035,10 +1040,10 @@
 				FAB3369C20B331BB00D6B61F /* SF-Pro-Display-Ultralight.otf in Resources */,
 				E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */,
 				FAB3368920B331BB00D6B61F /* SFCompactText-HeavyItalic.otf in Resources */,
-				FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */,
+				FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */,
 				FAB3369920B331BB00D6B61F /* SF-Pro-Text-Bold.otf in Resources */,
 				FAB3368D20B331BB00D6B61F /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
-				FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */,
+				FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */,
 				FAB3368120B331BB00D6B61F /* SFCompactText-MediumItalic.otf in Resources */,
 				FAB336A720B331BB00D6B61F /* SF-Pro-Text-Medium.otf in Resources */,
 				FAB3369820B331BB00D6B61F /* SF-Pro-Text-Regular.otf in Resources */,
@@ -1158,6 +1163,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		186D856CE4144722C7FF5B62 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27D4FE107BDCE36627877F05 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3757091A88A8A4BC3CE8F304 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1188,6 +1223,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41DF5323BD1ADA7B87FB8934 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
@@ -1256,6 +1306,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F3B894FD66DCAC43960E4D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACEC50EEC73AC83A94EBF0BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ADC88CFA428C61706395F949 /* [CP] Check Pods Manifest.lock */ = {

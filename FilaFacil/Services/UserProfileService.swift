@@ -12,7 +12,7 @@ class UserProfileService: NSObject {
     
     let userProfileManager = UserProfileDAO()
     
-    /// AuthBase functions:
+    // MARK: - AuthBase functions:
     // Register - Creates new user
     func createUser(userID: String, username: String, email: String, deviceID: String) {
         userProfileManager.createUserProfile(userID: userID, username: username, email: email, deviceID: deviceID)
@@ -29,8 +29,7 @@ class UserProfileService: NSObject {
         }
     }
     
-    /// Other functions:
-    
+    // MARK: - Other functions:
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
         userProfileManager.retrieveCurrentUserProfile(completionHandler: completion)
@@ -41,7 +40,7 @@ class UserProfileService: NSObject {
         userProfileManager.removeQuestionFromLine(lineName: lineName, questionID: questionID)
     }
     
-    func attualizeTokenID(user: UserProfile) {
+    func updateTokenID(user: UserProfile) {
         if let deviceID = UserDefaults.standard.string(forKey: "userDeviceID") {
             user.deviceID = deviceID
             userProfileManager.editUser(user: user)

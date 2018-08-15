@@ -35,8 +35,6 @@ class LineListViewController: UIViewController {
     var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
     
-//    var queueOperation = DispatchQueue.global(qos: .)
-    
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         LineService.shared.fetchAllLines(onlySelected: true, { (lines, _) in
@@ -51,11 +49,16 @@ class LineListViewController: UIViewController {
                 self.linesCollectionView.reloadData()
             }
         })
-//        self.teacherArray = Array(PresentedLinesService.shared.lines.sorted(by: { (line1, line2) -> Bool in
-//            return line1 > line2
-//        }))
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        refreshControlStart()
+        linesCollectionView.setNeedsLayout()
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
+    // MARK: - Methods
     func loadViewData() {
         self.activityIndicator.startAnimating()
         
@@ -69,14 +72,6 @@ class LineListViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        refreshControlStart()
-        linesCollectionView.setNeedsLayout()
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
-    
-    // MARK: - Methods
     func refreshControlStart() {
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "")
@@ -105,7 +100,7 @@ class LineListViewController: UIViewController {
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             if let userProfile = userProfile {
                 self.currentProfile = userProfile
-                self.userProfileManager.attualizeTokenID(user: userProfile)
+                self.userProfileManager.updateTokenID(user: userProfile)
             }
         }
     }
@@ -191,10 +186,13 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let editAction = UITableViewRowAction(style: .normal, title: "Editar", handler: { (rowAction, indexPath) in
-//
-//        })
-//        editAction.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3490196078, blue: 0.8274509804, alpha: 1)
+        
+        let editAction = UITableViewRowAction.init(style: .normal, title: "Editar", handler: {[weak self] (_, indexPath) in
+            
+            if let this = self {
+                self?.performSegue(withIdentifier: "newQuestionView", sender: nil)
+            }
+        })
         
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
@@ -213,6 +211,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             }
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        editAction.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         
         var actions: [UITableViewRowAction] = []
         
@@ -220,6 +219,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 //            actions.append(editAction)
         }
         actions.append(deleteAction)
+        actions.append(editAction)
         
         return actions
     }

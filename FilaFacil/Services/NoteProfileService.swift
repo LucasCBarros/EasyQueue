@@ -26,4 +26,9 @@ class NoteProfileService: NSObject {
     func removeNote(noteID: String) {
         noteProfileManager.removeNote(noteID: noteID)
     }
+    
+    // Update current note
+    func updateNote(noteID: String, newText: String) {
+        noteProfileManager.updateNote(noteID: noteID, newText: newText)
+    }
 }

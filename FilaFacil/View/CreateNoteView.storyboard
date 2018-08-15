@@ -124,7 +124,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fnc-5h-9bk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="2f9-6o-jjk" kind="show" id="gpn-IJ-rfx"/>
+                                <segue destination="2f9-6o-jjk" kind="show" identifier="createNoteSegue" id="gpn-IJ-rfx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

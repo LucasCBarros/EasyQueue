@@ -10,16 +10,21 @@ import UIKit
 
 class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Outlets
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - Properties
     var allNoteProfiles: [NoteProfile]?
     
     let noteProfileManager = NoteProfileService()
     let userProfileManager = UserProfileService()
     
     var currentProfile: UserProfile?
+    var isNoteEdited = true
+    var editedNote: NoteProfile!
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.retrieveCurrentUserProfile()
@@ -36,6 +41,20 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    // MARK: - Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        if segue.identifier ==  "createNoteSegue" {
+            if let view = segue.destination as? CreateNoteViewController {
+                if isNoteEdited {
+                    view.editNote = editedNote
+                    isNoteEdited = false
+                }
+            }
+        }
     }
     
     // Retrieve logged user
@@ -70,8 +89,8 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
-    
 }
+
 extension NoteViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -100,15 +119,41 @@ extension NoteViewController {
     }
     
     // Delete cell and update student status in Firebase
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        // TODO: Verify ID from who created
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            
-            noteProfileManager.removeNote(noteID: (allNoteProfiles?[indexPath.row].noteID)!)
-//            noteTableView.reloadData()
-            self.viewWillAppear(true)
-        }
+        let editAction = UITableViewRowAction.init(style: .normal, title: "Editar", handler: {[weak self] (_, indexPath) in
+            print("Selected row \(indexPath.row)")
+            self?.editedNote = self?.allNoteProfiles?[indexPath.row]
+            self?.isNoteEdited = true
+            self?.performSegue(withIdentifier: "createNoteSegue", sender: nil)
+        })
+        
+        let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
+            if let this = self {
+                let alert = UIAlertController(title: "Excluir Aviso",
+                                              message: "Tem certeza que deseja excluir esse aviso?",
+                                            preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Excluir", style: .destructive, handler: { _ in
+                    this.noteProfileManager.removeNote(noteID: (self?.allNoteProfiles?[indexPath.row].noteID)!)
+                    
+                    // Reload View
+                    DispatchQueue.main.async {
+                        this.viewWillAppear(true)
+                    }
+                }))
+                this.present(alert, animated: true, completion: nil)
+            }
+        })
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+        editAction.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        
+        var actions: [UITableViewRowAction] = []
+        
+        actions.append(deleteAction)
+        actions.append(editAction)
+        
+        return actions
     }
     
     // Allows to edit cell according to profile type
