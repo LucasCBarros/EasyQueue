@@ -94,7 +94,6 @@
 		FA834E0B20B5E953002F3E32 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
-		FA9251C62124855700F60C4D /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9251C52124855700F60C4D /* ResourceManager.swift */; };
 		FA9251CC2124C46000F60C4D /* ScreenSaver.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA9251CB2124C46000F60C4D /* ScreenSaver.mp4 */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
 		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
@@ -335,7 +334,6 @@
 		FA834E0A20B5E953002F3E32 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
-		FA9251C52124855700F60C4D /* ResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
 		FA9251CB2124C46000F60C4D /* ScreenSaver.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ScreenSaver.mp4; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
@@ -513,7 +511,6 @@
 			children = (
 				DEDF0FE420AE20D00064A247 /* QuestionService.swift */,
 				FA834E0820B5E90C002F3E32 /* NoteService.swift */,
-				FA9251C52124855700F60C4D /* ResourceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1385,7 +1382,6 @@
 				FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */,
 				FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */,
 				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
-				FA9251C62124855700F60C4D /* ResourceManager.swift in Sources */,
 				FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */,
 				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
 				DEBC40C020B1E81100870D4C /* Question.swift in Sources */,
