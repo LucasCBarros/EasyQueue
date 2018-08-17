@@ -54,6 +54,49 @@ class UserProfileDAO: DAO {
 //        self.editByID(dump: UserProfile.self, newObject: user, path: path, objectID: user.userID)
     }
     
+    func retrieveImage(for userId: String, with completionHlandler: @escaping (Data?, Error?) -> Void) {
+        let recordId = CKRecordID(recordName: userId)
+        let reference = CKReference(recordID: recordId, action: CKReferenceAction.deleteSelf)
+        let predicate = NSPredicate(format: "userID == %@", reference)
+        let query = CKQuery(recordType: "photo", predicate: predicate)
+        container.publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            guard let record = records?.first, let asset = record["photo"] as? CKAsset else {
+                completionHlandler(nil, error)
+                return
+            }
+            do {
+                let image = try Data.init(contentsOf: asset.fileURL)
+                completionHlandler(image, error)
+            } catch {
+                completionHlandler(nil, error)
+            }
+        }
+    }
+    
+    func saveImage(_ data: Data, for userId: String, with completionHandler: @escaping (Error?) -> Void) {
+        let temporaryDirectory = FileManager.default.temporaryDirectory
+        let filename = ProcessInfo.processInfo.globallyUniqueString
+        let tempUrl = URL.init(fileURLWithPath: temporaryDirectory.path).appendingPathComponent(filename)
+        
+        do {
+            try data.write(to: tempUrl, options: .atomicWrite)
+        } catch {
+            completionHandler(error)
+            return
+        }
+        
+        let asset = CKAsset(fileURL: tempUrl)
+        
+        let record = CKRecord(recordType: "ProfilePhoto")
+        
+        record.setObject(asset, forKey: "photo")
+        record.setObject(userId as CKRecordValue, forKey: "userId")
+        
+        container.publicCloudDatabase.save(record) { (_, error) in
+            completionHandler(error)
+        }
+    }
+    
     // Retrieve existing user
     func retrieveUserProfile(userID: String, completionHandler: @escaping (UserProfile?) -> Void) {
 //        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: {[weak self] (snapshot) in
@@ -108,7 +151,6 @@ class UserProfileDAO: DAO {
                         let userId = record.recordID.recordName
                         let userName = record["username"] as? String
                         let profileType = record["profileType"] as? String
-                        let userPhoto = record["userPhoto"] as? CKReference
                         let photoModifiedAt = record["photoModifiedAt"] as? Date
                         
                         completionHandler(UserProfile(userID: userId, username: userName!, profileType: ProfileType(withString: profileType), email: "gmail@gmail.com", deviceID: "12345"))
