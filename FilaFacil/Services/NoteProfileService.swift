@@ -14,12 +14,22 @@ class NoteProfileService: NSObject {
     
     // Return all open notes
     func retrieveAllOpenNotes(completion: @escaping ([NoteProfile]?) -> Void) {
+        
         noteProfileManager.retrieveAllOpenNotes(completionHandler: completion)
     }
     
+    func retrieveOrderedNotes(completion: @escaping ([NoteProfile]?) -> Void) {
+       
+        retrieveAllOpenNotes { (allNotes) in
+            completion(allNotes?.sorted { $0.createdAt < $1.createdAt })
+        }
+    }
+    
     // Create a question
-    func createNote(userID: String, noteText: String) {
-        noteProfileManager.createNote(userID: userID, noteText: noteText)
+    func createNote(userID: String, username: String, noteText: String, completion: @escaping(Error?) -> Void) {
+        noteProfileManager.createNote(userID: userID, username: username, noteText: noteText, completionHandler: {(error) in
+            completion(error)
+        })
     }
     
     // Remove note

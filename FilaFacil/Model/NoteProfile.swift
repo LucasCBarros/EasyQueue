@@ -16,8 +16,10 @@ class NoteProfile: NSObject, PersistenceObject {
     // TimeStamp to make ID
     var noteID: String = ""
     
-    // UserID from Firebase
+    // UserID from Database
     var userID: String = ""
+    // Date of the note
+    var createdAt: Date!
     
     // Dictionary
     var dictInfo: [AnyHashable: Any]
@@ -27,8 +29,11 @@ class NoteProfile: NSObject, PersistenceObject {
         if let noteText = dictionary["noteText"] as? String {
             self.noteText = noteText
         }
-        if let noteID = dictionary["noteID"] as? String {
+        if let noteID = dictionary["recordId"] as? String {
             self.noteID = noteID
+        }
+        if let createdAt = dictionary["createdAt"] as? Date {
+            self.createdAt = createdAt
         }
         if let userID = dictionary["userID"] as? String {
             self.userID = userID
@@ -37,14 +42,16 @@ class NoteProfile: NSObject, PersistenceObject {
         
     }
 
-    init(noteText: String, noteID: String, userID: String) {
+    init(noteText: String, noteID: String, userID: String, createdAt: Date) {
         self.noteText = noteText
         self.noteID = noteID
         self.userID = userID
+        self.createdAt = createdAt
         self.dictInfo = [
             "noteText": noteText,
             "noteID": noteID,
-            "userID": userID ]
+            "userID": userID,
+            "createdAt": createdAt]
     }
 
     func getDictInfo() -> [AnyHashable: Any] {

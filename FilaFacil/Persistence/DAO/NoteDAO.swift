@@ -21,10 +21,8 @@ class NoteDAO: DAO {
     }
     
     // Create a note
-    func createNote(userID: String, noteText: String ) {
-                
-        let timeStampID = "\(Date().millisecondsSince1970)"
-       
+    func createNote(userID: String, username: String, noteText: String, completionHandler: @escaping(Error?) -> Void) {
+        
         let uuid = UUID().uuidString
 
         let noteID = CKRecordID(recordName: uuid)
@@ -33,7 +31,7 @@ class NoteDAO: DAO {
         
         record.setObject(userID as CKRecordValue, forKey: "userId")
         record.setObject(noteText as CKRecordValue, forKey: "noteText")
-        record.setObject(timeStampID as CKRecordValue, forKey: "noteID")
+        record.setObject(username as CKRecordValue, forKey: "username")
         
         publicDB.save(record, completionHandler: { record, error in
             
@@ -43,7 +41,7 @@ class NoteDAO: DAO {
             }
             
             print("Successfully saved record: ", record)
-            
+            completionHandler(error)
         })
     }
     

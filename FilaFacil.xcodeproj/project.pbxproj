@@ -9,15 +9,13 @@
 /* Begin PBXBuildFile section */
 		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
+		A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244D82124CFB500AACD1B /* NoteViewController.swift */; };
+		A93244DB2124D5E900AACD1B /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244DA2124D5E900AACD1B /* ProfileType.swift */; };
+		A93DFB142125F9A500231B1D /* ConfiguracoesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */; };
+		A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */; };
+		A93DFB182125FA4600231B1D /* PresentedLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB172125FA4500231B1D /* PresentedLinesService.swift */; };
+		A93DFB1A2126043D00231B1D /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB192126043D00231B1D /* VersionViewController.swift */; };
 		A995C8EE20F51CDA002DF214 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A995C8ED20F51CDA002DF214 /* CloudKit.framework */; };
-		A9FD78F520E56A3500DB9A1F /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */; };
-		A9FD78F920E56A3500DB9A1F /* FilaFacilSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A9FD78FF20E56ECD00DB9A1F /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE420AE20D00064A247 /* QuestionService.swift */; };
-		A9FD790020E570FB00DB9A1F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
-		A9FD790120E5711300DB9A1F /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
-		A9FD790220E5713700DB9A1F /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
-		A9FD790320E5714100DB9A1F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0A20B5E953002F3E32 /* Note.swift */; };
-		A9FD790420E5729300DB9A1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
@@ -160,13 +158,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A9FD78F720E56A3500DB9A1F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A9FD78F120E56A3500DB9A1F;
-			remoteInfo = FilaFacilSiri;
-		};
 		E616DB4F20D991940009E9FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
@@ -197,7 +188,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A9FD78F920E56A3500DB9A1F /* FilaFacilSiri.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,10 +222,15 @@
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53A0C9E131043C9A0A35EED /* Pods-FilaFacilWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		A93244D82124CFB500AACD1B /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		A93244DA2124D5E900AACD1B /* ProfileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
+		A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConfiguracoesView.storyboard; sourceTree = "<group>"; };
+		A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracoesController.swift; sourceTree = "<group>"; };
+		A93DFB172125FA4500231B1D /* PresentedLinesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedLinesService.swift; sourceTree = "<group>"; };
+		A93DFB192126043D00231B1D /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
 		A962D0A920F7971E00923150 /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		A995C8EC20F51CD2002DF214 /* FilaFacil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacil.entitlements; sourceTree = "<group>"; };
 		A995C8ED20F51CDA002DF214 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FilaFacilSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		A9FD78F620E56A3500DB9A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,13 +374,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		26365D6277A23DFC0C1BC3FE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9FD78EF20E56A3500DB9A1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,7 +526,6 @@
 				DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */,
 				E616DB4120D991910009E9FD /* FilaFacilWatch.app */,
 				E616DB4D20D991940009E9FD /* FilaFacilWatch Extension.appex */,
-				A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -568,6 +555,7 @@
 				FA92069A211A401F0005BAAF /* CKAssetService.swift */,
 				E60229E72040A03C00336FC3 /* QuestionProfileService.swift */,
 				E6FC384A20B36FC600D88578 /* NoteProfileService.swift */,
+				A93DFB172125FA4500231B1D /* PresentedLinesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -575,9 +563,10 @@
 		E60229AB203FA4DB00336FC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E6FC384620B36CFD00D88578 /* NoteProfile.swift */,
+				A93244DA2124D5E900AACD1B /* ProfileType.swift */,
 				E60229B1203FC87F00336FC3 /* UserProfile.swift */,
 				E60229B3203FC8B300336FC3 /* QuestionProfile.swift */,
-				E6FC384620B36CFD00D88578 /* NoteProfile.swift */,
 				FA93520820E2B80C001E4988 /* MyViewController.swift */,
 			);
 			path = Model;
@@ -604,8 +593,11 @@
 				E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */,
 				E60229D9203FD20200336FC3 /* LineStatusViewController.swift */,
 				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
+				A93244D82124CFB500AACD1B /* NoteViewController.swift */,
 				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
 				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
+				A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */,
+				A93DFB192126043D00231B1D /* VersionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -613,10 +605,10 @@
 		E60229AE203FA52E00336FC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E60229A1203FA29E00336FC3 /* LaunchScreen.storyboard */,
-				E60229B9203FCB6F00336FC3 /* TabBarView.storyboard */,
 				E60229AF203FA56900336FC3 /* Cells */,
 				E60229BB203FCC3E00336FC3 /* LoginView.storyboard */,
+				E60229A1203FA29E00336FC3 /* LaunchScreen.storyboard */,
+				E60229B9203FCB6F00336FC3 /* TabBarView.storyboard */,
 				E60229BD203FCC9E00336FC3 /* ProfileView.storyboard */,
 				E60229D1203FD12400336FC3 /* LineListView.storyboard */,
 				E60229C3203FCD7D00336FC3 /* QuestionStatusView.storyboard */,
@@ -624,6 +616,7 @@
 				E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */,
 				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
 				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
+				A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -784,23 +777,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9FD78FC20E56A3500DB9A1F /* Build configuration list for PBXNativeTarget "FilaFacilSiri" */;
-			buildPhases = (
-				A9FD78EE20E56A3500DB9A1F /* Sources */,
-				A9FD78EF20E56A3500DB9A1F /* Frameworks */,
-				A9FD78F020E56A3500DB9A1F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FilaFacilSiri;
-			productName = FilaFacilSiri;
-			productReference = A9FD78F220E56A3500DB9A1F /* FilaFacilSiri.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		DEDF0FBD20AE20470064A247 /* FilaFacilTV */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */;
@@ -837,7 +813,6 @@
 			);
 			dependencies = (
 				E616DB5D20D991950009E9FD /* PBXTargetDependency */,
-				A9FD78F820E56A3500DB9A1F /* PBXTargetDependency */,
 			);
 			name = FilaFacil;
 			productName = FilaFacil;
@@ -908,10 +883,6 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Lucas C Barros";
 				TargetAttributes = {
-					A9FD78F120E56A3500DB9A1F = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Automatic;
-					};
 					DEDF0FBD20AE20470064A247 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -972,19 +943,11 @@
 				DEDF0FBD20AE20470064A247 /* FilaFacilTV */,
 				E616DB4020D991910009E9FD /* FilaFacilWatch */,
 				E616DB4C20D991940009E9FD /* FilaFacilWatch Extension */,
-				A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A9FD78F020E56A3500DB9A1F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEDF0FBC20AE20470064A247 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1030,6 +993,7 @@
 				FAB3368E20B331BB00D6B61F /* SF-Pro-Text-Heavy.otf in Resources */,
 				FAB3367C20B331BB00D6B61F /* SFCompactText-BoldItalic.otf in Resources */,
 				FAB3368220B331BB00D6B61F /* SFCompactText-Semibold.otf in Resources */,
+				A93DFB142125F9A500231B1D /* ConfiguracoesView.storyboard in Resources */,
 				FAB3369520B331BB00D6B61F /* SF-Pro-Display-Heavy.otf in Resources */,
 				FAB3369D20B331BB00D6B61F /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				E60229C4203FCD7D00336FC3 /* QuestionStatusView.storyboard in Resources */,
@@ -1119,7 +1083,7 @@
 		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1209,20 +1173,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A9FD78EE20E56A3500DB9A1F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9FD790020E570FB00DB9A1F /* Question.swift in Sources */,
-				A9FD78F520E56A3500DB9A1F /* IntentHandler.swift in Sources */,
-				A9FD78FF20E56ECD00DB9A1F /* QuestionService.swift in Sources */,
-				A9FD790220E5713700DB9A1F /* NoteService.swift in Sources */,
-				A9FD790120E5711300DB9A1F /* CategoryQuestion.swift in Sources */,
-				A9FD790320E5714100DB9A1F /* Note.swift in Sources */,
-				A9FD790420E5729300DB9A1F /* Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DEDF0FBA20AE20470064A247 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1254,6 +1204,7 @@
 				FA92069B211A401F0005BAAF /* CKAssetService.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
+				A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
@@ -1262,16 +1213,20 @@
 				E60229E82040A03C00336FC3 /* QuestionProfileService.swift in Sources */,
 				E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */,
 				FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */,
+				A93DFB182125FA4600231B1D /* PresentedLinesService.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
 				FA8148B920BF304700F2FADD /* Formatter.swift in Sources */,
+				A93244DB2124D5E900AACD1B /* ProfileType.swift in Sources */,
 				E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */,
 				FA920699211A20EC0005BAAF /* Extensions in CK and Data.swift in Sources */,
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
+				A93DFB1A2126043D00231B1D /* VersionViewController.swift in Sources */,
 				E60229DE20408F0D00336FC3 /* DAO.swift in Sources */,
 				FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */,
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
+				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,
@@ -1314,11 +1269,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A9FD78F820E56A3500DB9A1F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A9FD78F120E56A3500DB9A1F /* FilaFacilSiri */;
-			targetProxy = A9FD78F720E56A3500DB9A1F /* PBXContainerItemProxy */;
-		};
 		E616DB5020D991940009E9FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E616DB4C20D991940009E9FD /* FilaFacilWatch Extension */;
@@ -1364,40 +1314,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A9FD78FA20E56A3500DB9A1F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
-				INFOPLIST_FILE = FilaFacilSiri/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.FilaFacilSiri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A9FD78FB20E56A3500DB9A1F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
-				INFOPLIST_FILE = FilaFacilSiri/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil.FilaFacilSiri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DEDF0FCD20AE20470064A247 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */;
@@ -1720,15 +1636,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9FD78FC20E56A3500DB9A1F /* Build configuration list for PBXNativeTarget "FilaFacilSiri" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A9FD78FA20E56A3500DB9A1F /* Debug */,
-				A9FD78FB20E56A3500DB9A1F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DEDF0FCF20AE20470064A247 /* Build configuration list for PBXNativeTarget "FilaFacilTV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
