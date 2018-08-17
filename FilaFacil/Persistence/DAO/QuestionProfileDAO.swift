@@ -36,9 +36,7 @@ class QuestionProfileDAO: DAO {
             let user = snapshot.value as? NSDictionary
             
             if let actualUser = user {
-                
                 let newUser = QuestionProfile(dictionary: (actualUser as? [AnyHashable: Any])!)
-                
                 completionHandler(newUser)
             } else {
                 completionHandler(nil)
@@ -78,5 +76,24 @@ class QuestionProfileDAO: DAO {
         }
         
         ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
+    }
+    
+    // Update existing question with new text or selectedArea
+    func updateQuestion(editedQuestion: QuestionProfile, newText: String, newLineName: String, oldLineName: String) {
+       
+        // Delete existing Question
+        removeQuestionFromLine(lineName: oldLineName, questionID: editedQuestion.questionID)
+        
+        // Recreate question with new Text and Line Name
+        createQuestion(userID: editedQuestion.userID,
+                       questionTxt: newText,
+                       username: editedQuestion.username,
+                       requestedTeacher: newLineName,
+                       userPhoto: editedQuestion.userPhoto)
+    }
+    
+    // Remove question from Line
+    func removeQuestionFromLine(lineName: String, questionID: String) {
+        ref?.child("Lines").child(lineName).child(questionID).removeValue()
     }
 }

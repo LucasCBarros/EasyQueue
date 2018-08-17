@@ -29,7 +29,6 @@ class CreateNoteViewController: MyViewController {
         if editNote != nil {
             noteTextView.text = editNote.noteText
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +36,6 @@ class CreateNoteViewController: MyViewController {
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     // MARK: - Actions

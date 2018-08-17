@@ -21,7 +21,6 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
     let userProfileManager = UserProfileService()
     
     var currentProfile: UserProfile?
-    var isNoteEdited = true
     var editedNote: NoteProfile!
     
     // MARK: - Life Cycle
@@ -49,9 +48,8 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
         // get a reference to the second view controller
         if segue.identifier ==  "createNoteSegue" {
             if let view = segue.destination as? CreateNoteViewController {
-                if isNoteEdited {
+                if editedNote != nil {
                     view.editNote = editedNote
-                    isNoteEdited = false
                 }
             }
         }
@@ -124,7 +122,6 @@ extension NoteViewController {
         let editAction = UITableViewRowAction.init(style: .normal, title: "Editar", handler: {[weak self] (_, indexPath) in
             print("Selected row \(indexPath.row)")
             self?.editedNote = self?.allNoteProfiles?[indexPath.row]
-            self?.isNoteEdited = true
             self?.performSegue(withIdentifier: "createNoteSegue", sender: nil)
         })
         

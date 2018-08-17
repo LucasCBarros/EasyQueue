@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol NewQuestionTableViewDelegate: NSObjectProtocol {
-    func selectedLine() -> String
-    func saveQuestion(text: String, selectedTeacher: String)
-}
-
 class NewQuestionViewController: MyViewController {
 
     // MARK: - Outlets
@@ -24,34 +19,20 @@ class NewQuestionViewController: MyViewController {
     var usersInLine: [UserProfile]?
     var selectedLine = "Developer"
     var teacherArray = [("Developer", UIColor.developer()), ("Design", UIColor.design()), ("Business", UIColor.business())]
+    var editQuestion: QuestionProfile!
+    lazy var oldLineName = selectedLine
+    var currentUser: UserProfile!
     
-    weak var delegate: NewQuestionTableViewDelegate?
-    
-    // MARK: - Actions
-    // Create new question
-    @IBAction func save(_ sender: UIBarButtonItem) {
-        // create new question function
-        if let questionText = questionField.text, !questionText.isEmpty {
-            if questionText.count > 131 {
-                let alert = UIAlertController(title: "Até 130 caracteres!", message: "Ultrapassou o limite de caracteres", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                delegate?.saveQuestion(text: questionText, selectedTeacher: selectedLine)
-                self.navigationController?.popViewController(animated: true)
-            }
-        } else {
-            let alert = UIAlertController(title: "Assunto vazio!", message: "Preencha o campo de assunto", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if editQuestion != nil {
+            questionField.text = editQuestion.questionTitle
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.selectedLine = self.delegate?.selectedLine() ?? self.selectedLine
-    }
-    
+    // MARK: - Methods
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -64,6 +45,55 @@ class NewQuestionViewController: MyViewController {
         self.addChildViewController(childViewController)
         self.view.addSubview(childViewController.view)
         childViewController.didMove(toParentViewController: self)
+    }
+    
+    func presentAlertMaxCharcters() {
+        let alert = UIAlertController(title: "Até 130 caracteres!", message: "Ultrapassou o limite de caracteres", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func presentAlertEmptyField() {
+        let alert = UIAlertController(title: "Assunto vazio!", message: "Preencha o campo de assunto", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Actions
+    // Create new question
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        
+        if editQuestion == nil {
+            // create new question function
+            if let questionText = questionField.text, !questionText.isEmpty {
+                if questionText.count > 131 {
+                    presentAlertMaxCharcters()
+                } else {
+                    questionProfileManager.createQuestion(userID: currentUser.userID,
+                                                          questionTxt: questionText,
+                                                          username: currentUser.username,
+                                                          requestedTeacher: selectedLine,
+                                                          userPhoto: currentUser.photo)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } else {
+                presentAlertEmptyField()
+            }
+        } else {
+            if let questionText = questionField.text, !questionText.isEmpty {
+                if questionText.count > 131 {
+                    presentAlertMaxCharcters()
+                } else {
+                    questionProfileManager.updateQuestion(editedQuestion: editQuestion,
+                                                          newText: questionText,
+                                                          newLineName: selectedLine,
+                                                          oldLineName: oldLineName)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } else {
+                presentAlertEmptyField()
+            }
+        }
     }
 }
 
@@ -78,7 +108,12 @@ extension NewQuestionViewController: UITableViewDelegate {
             }
             cell.checkView.backgroundColor = teacherArray[indexPath.row].1
         }
-        selectedLine = teacherArray[indexPath.row].0
+        if editQuestion == nil {
+            selectedLine = teacherArray[indexPath.row].0
+        } else {
+            oldLineName = selectedLine
+            selectedLine = teacherArray[indexPath.row].0
+        }
     }
     
 }
@@ -98,7 +133,6 @@ extension NewQuestionViewController: UITableViewDataSource {
                 cell.checkView.backgroundColor = teacherArray[indexPath.row].1
             }
         }
-        
         return cell
     }
     

@@ -32,10 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().delegate = self
     }
     
-//    fileprivate func requestAuthorisation() {
-//        INPreferences.requestSiriAuthorization { status in }
-//    }
-    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -46,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         IQKeyboardManager.shared.enable = true
         
         // Finds and saves users DeviceID
-//        let deviceID = UIDevice.current.identifierForVendor!.uuidString
         let deviceToken = Messaging.messaging().fcmToken
         UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
 
@@ -67,8 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         application.registerForRemoteNotifications()
         Messaging.messaging().shouldEstablishDirectChannel = true
-
-//        requestAuthorisation()
         
         setupWatchConnectivity()
         

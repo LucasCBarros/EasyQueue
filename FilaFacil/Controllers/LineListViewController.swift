@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 import Kingfisher
 
-//selectedTab = teacherArray[indexPath.row]
-
 class LineListViewController: UIViewController {
 
     // MARK: - Outlets
@@ -34,6 +32,7 @@ class LineListViewController: UIViewController {
     var allUserProfiles: [UserProfile]?
     var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
+    var editedQuestion: QuestionProfile!
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -80,10 +79,16 @@ class LineListViewController: UIViewController {
         listTableView.addSubview(refreshControl)
     }
     
+    // Transfer ALL data between ViewBoard throw prepareForSegue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "newQuestionView" {
-            if let view = segue.destination as? NewQuestionViewController {
-                view.delegate = self
+            if let viewController = segue.destination as? NewQuestionViewController {
+                viewController.currentUser = self.currentProfile
+                viewController.selectedLine = (self.selectedTab?.name)!
+                
+                if editedQuestion != nil {
+                    viewController.editQuestion = editedQuestion
+                }
             }
         }
     }
@@ -190,7 +195,8 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         let editAction = UITableViewRowAction.init(style: .normal, title: "Editar", handler: {[weak self] (_, indexPath) in
             
             if let this = self {
-                self?.performSegue(withIdentifier: "newQuestionView", sender: nil)
+                this.editedQuestion = this.inLineQuestions[indexPath.row]
+                this.performSegue(withIdentifier: "newQuestionView", sender: nil)
             }
         })
         
@@ -210,15 +216,12 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                 this.present(alert, animated: true, completion: nil)
             }
         })
-        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
-        editAction.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-        
         var actions: [UITableViewRowAction] = []
         
-        if self.inLineQuestions[indexPath.row].userID == self.currentProfile?.userID {
-//            actions.append(editAction)
-        }
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
         actions.append(deleteAction)
+        
+        editAction.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         actions.append(editAction)
         
         return actions
@@ -239,22 +242,6 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-}
-
-extension LineListViewController: NewQuestionTableViewDelegate {
-    
-    func selectedLine() -> String {
-        return self.selectedTab?.name ?? ""
-    }
-    
-    func saveQuestion(text: String, selectedTeacher: String) {
-        // Inserts question info in Firebase and updates users status
-        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
-                                              username: currentProfile!.username,
-                                              requestedTeacher: selectedTeacher,
-                                              userPhoto: (self.currentProfile?.photo)!)
-    }
-    
 }
 
 // MARK: - Lines

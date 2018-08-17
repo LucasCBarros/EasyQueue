@@ -21,7 +21,6 @@ class QuestionProfileService: NSObject {
         questionProfileManager.retrieveCurrentQuestion(questionID: questionID, completionHandler: completion)
     }
     
-    ///:BAD CODE - Will retrieve all questions
     // Return all open questions
     func retrieveAllOpenQuestions(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
         questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: completion)
@@ -34,5 +33,10 @@ class QuestionProfileService: NSObject {
                                               username: username,
                                               requestedTeacher: requestedTeacher,
                                               userPhoto: userPhoto)
+    }
+    
+    // Update Question
+    func updateQuestion(editedQuestion: QuestionProfile, newText: String, newLineName: String, oldLineName: String) {
+        questionProfileManager.updateQuestion(editedQuestion: editedQuestion, newText: newText, newLineName: newLineName, oldLineName: oldLineName)
     }
 }
