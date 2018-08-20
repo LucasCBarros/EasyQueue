@@ -207,7 +207,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Excluir", style: .destructive, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
-                    this.userProfileManager.removeQuestionFromLine(lineName: selectedTab.name, questionID: question.questionID)
+                    this.userProfileManager.removeQuestionFromLine(lineName: selectedTab.name, questionObj: question)
                     // Reload View
                     DispatchQueue.main.async {
                         this.viewWillAppear(true)

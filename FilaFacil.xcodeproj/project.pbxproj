@@ -66,6 +66,7 @@
 		E6A52C5020D9AE00001B4B16 /* ExtensionsWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A52C4F20D9AE00001B4B16 /* ExtensionsWatch.swift */; };
 		E6A52C5120D9F661001B4B16 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		E6D7FB1C205314B600EEC89D /* FilaFacilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */; };
+		E6F93700212B199F004797FC /* GoogleService-Info_SUB.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F936FF212B199E004797FC /* GoogleService-Info_SUB.plist */; };
 		E6FC384120B3506400D88578 /* CreateNoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC384020B3506400D88578 /* CreateNoteView.storyboard */; };
 		E6FC384320B3514500D88578 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384220B3514500D88578 /* NoteViewController.swift */; };
 		E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384420B35DE300D88578 /* NoteCell.swift */; };
@@ -303,6 +304,7 @@
 		E6D7FB19205314B600EEC89D /* FilaFacilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaFacilUITests.swift; sourceTree = "<group>"; };
 		E6D7FB1D205314B600EEC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6F936FF212B199E004797FC /* GoogleService-Info_SUB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_SUB.plist"; sourceTree = "<group>"; };
 		E6FC384020B3506400D88578 /* CreateNoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNoteView.storyboard; sourceTree = "<group>"; };
 		E6FC384220B3514500D88578 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		E6FC384420B35DE300D88578 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				E60229A4203FA29E00336FC3 /* Info.plist */,
 				FA93520C20E2C689001E4988 /* GoogleService-Info.plist */,
 				FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */,
+				E6F936FF212B199E004797FC /* GoogleService-Info_SUB.plist */,
 			);
 			path = FilaFacil;
 			sourceTree = "<group>";
@@ -1061,6 +1064,7 @@
 				E60229A0203FA29E00336FC3 /* Assets.xcassets in Resources */,
 				FAB336A320B331BB00D6B61F /* SF-Pro-Text-Semibold.otf in Resources */,
 				FAB3367B20B331BA00D6B61F /* SFCompactText-Regular.otf in Resources */,
+				E6F93700212B199F004797FC /* GoogleService-Info_SUB.plist in Resources */,
 				E60229BA203FCB6F00336FC3 /* TabBarView.storyboard in Resources */,
 				FAB3368820B331BB00D6B61F /* SFCompactText-Heavy.otf in Resources */,
 				E60229D2203FD12400336FC3 /* LineListView.storyboard in Resources */,

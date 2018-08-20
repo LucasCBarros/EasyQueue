@@ -11,7 +11,13 @@ import Foundation
 class QuestionService {
     
     func getAllQuestions(completion: @escaping (_ questions: [Question], _ error: Error?) -> Void) {
+        // AppStore Submission Server:
+//        let URL: String = "https://filafacil-submission.firebaseio.com/"
+        
+        // Production Server:
 //        let URL: String = "https://fila-facil.firebaseio.com/Lines.json"
+        
+        // Development Server:
         let URL: String = "https://filafacildev.firebaseio.com/Lines.json"
         
         //creating a NSURL

@@ -103,9 +103,24 @@ class UserProfileDAO: DAO {
         }
     }
 
+//    // Remove user from Line
+//    func removeQuestionFromLine(lineName: String, questionID: String) {
+//        let questionManager = QuestionProfileDAO()
+//        ref?.child("Lines").child(lineName).child(questionID).removeValue()
+//
+//        questionManager.createQuestion(userID: <#T##String#>, questionTxt: <#T##String#>, username: <#T##String#>, requestedTeacher: <#T##String#>, userPhoto: <#T##String#>)
+//    }
+    
     // Remove user from Line
-    func removeQuestionFromLine(lineName: String, questionID: String) {
-        ref?.child("Lines").child(lineName).child(questionID).removeValue()
+    func removeQuestionFromLine(lineName: String, questionObj: QuestionProfile) {
+        let questionManager = QuestionProfileDAO()
+        ref?.child("Lines").child(lineName).child(questionObj.questionID).removeValue()
+        
+        questionManager.saveOldQuestion(userID: questionObj.userID,
+                                       questionTxt: questionObj.questionTitle,
+                                       username: questionObj.username,
+                                       requestedTeacher: lineName,
+                                       userPhoto: questionObj.userPhoto)
     }
     
     func updateUserLinePosition(userID: String, position: Int) {

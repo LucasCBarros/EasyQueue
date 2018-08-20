@@ -78,6 +78,31 @@ class QuestionProfileDAO: DAO {
         ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
     }
     
+    // Save Old Question
+    func saveOldQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
+        
+        let path = "OldLine/" + requestedTeacher
+        
+        let newQuestionData = [userID,
+                               questionTxt,
+                               username,
+                               userPhoto]
+        
+        let questionFields = ["userID",
+                              "questionTitle",
+                              "username",
+                              "userPhoto"]
+        
+        let timeStampID = "\(Date().millisecondsSince1970)"
+        let pathWithID = path
+        
+        for question in 0..<questionFields.count {
+            ref?.child(pathWithID).child(timeStampID).child(questionFields[question]).setValue(newQuestionData[question])
+        }
+        
+        ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
+    }
+    
     // Update existing question with new text or selectedArea
     func updateQuestion(editedQuestion: QuestionProfile, newText: String, newLineName: String, oldLineName: String) {
        
