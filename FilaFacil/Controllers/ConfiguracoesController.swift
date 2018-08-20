@@ -16,30 +16,30 @@ class ConfiguracoesController: UITableViewController {
     
     @IBAction func switchDeveloperAction(_ sender: UISwitch) {
         if sender.isOn {
-            PresentedLinesService.shared.add("Developer")
+            PresentedLinesManager.shared.add("Developer")
         } else {
-            PresentedLinesService.shared.remove("Developer")
+            PresentedLinesManager.shared.remove("Developer")
         }
     }
     @IBAction func switchDesignAction(_ sender: UISwitch) {
         if sender.isOn {
-            PresentedLinesService.shared.add("Design")
+            PresentedLinesManager.shared.add("Design")
         } else {
-            PresentedLinesService.shared.remove("Design")
+            PresentedLinesManager.shared.remove("Design")
         }
     }
     @IBAction func switchBusinessAction(_ sender: UISwitch) {
         if sender.isOn {
-            PresentedLinesService.shared.add("Business")
+            PresentedLinesManager.shared.add("Business")
         } else {
-            PresentedLinesService.shared.remove("Business")
+            PresentedLinesManager.shared.remove("Business")
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        let switchsState = PresentedLinesService.shared.lines
+        let switchsState = PresentedLinesManager.shared.lines
         
         if switchsState.contains("Developer") {
             self.developerSwitch.setOn(true, animated: false)

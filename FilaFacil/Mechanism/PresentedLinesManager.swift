@@ -8,11 +8,11 @@
 
 import Foundation
 
-final class PresentedLinesService {
+final class PresentedLinesManager {
     
     private static let key = "lines"
     
-    open private(set) static var shared = PresentedLinesService()
+    open private(set) static var shared = PresentedLinesManager()
     
     private var _lines: Set<String> = []
     
@@ -35,7 +35,7 @@ final class PresentedLinesService {
     
     private init() {
         var finalLines: Set<String> = []
-        if let data = UserDefaults.standard.value(forKey: PresentedLinesService.key) as? Data, let lines = NSKeyedUnarchiver.unarchiveObject(with: data) as? Set<String> {
+        if let data = UserDefaults.standard.value(forKey: PresentedLinesManager.key) as? Data, let lines = NSKeyedUnarchiver.unarchiveObject(with: data) as? Set<String> {
             finalLines = lines
         }
         self.internalSemaphore.wait()
@@ -47,7 +47,7 @@ final class PresentedLinesService {
         self.internalSemaphore.wait()
         self.lines.insert(line)
         let data = NSKeyedArchiver.archivedData(withRootObject: self.lines)
-        UserDefaults.standard.setValue(data, forKey: PresentedLinesService.key)
+        UserDefaults.standard.setValue(data, forKey: PresentedLinesManager.key)
         self.internalSemaphore.signal()
     }
     
@@ -55,7 +55,7 @@ final class PresentedLinesService {
         self.internalSemaphore.wait()
         self.lines.remove(line)
         let data = NSKeyedArchiver.archivedData(withRootObject: self.lines)
-        UserDefaults.standard.setValue(data, forKey: PresentedLinesService.key)
+        UserDefaults.standard.setValue(data, forKey: PresentedLinesManager.key)
         self.internalSemaphore.signal()
     }
     

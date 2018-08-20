@@ -6,7 +6,8 @@
 //  Copyright © 2018 Lucas C Barros. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import Kingfisher
 
 class UserProfileService: NSObject {
     
@@ -30,6 +31,30 @@ class UserProfileService: NSObject {
     }
     
     /// Other functions:
+    
+    func retrieveImage(for userId: String, with completionHandler: @escaping (Data?, Error?) -> Void) {
+        if let image = CacheManager.shared.retrieveData(for: userId) {
+            completionHandler(image, nil)
+        } else {
+            self.userProfileManager.retrieveImage(for: userId, with: { (data, error) in
+                if let data = data, error == nil {
+                    // TODO: pensar em forma de tratar data da imagem de forma eficiente.
+                    CacheManager.shared.save(data: data, with: Date(), in: userId)
+                }
+            })
+        }
+    }
+    
+    func saveImage(_ image: Data, for userId: String, with completionHandler: @escaping (Error?) -> Void) {
+        self.userProfileManager.saveImage(image, for: userId) { (error) in
+            if error != nil {
+                CacheManager.shared.save(data: image, with: Date(), in: userId)
+                completionHandler(nil)
+            } else {
+                completionHandler(error)
+            }
+        }
+    }
     
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
