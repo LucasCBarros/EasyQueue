@@ -13,7 +13,7 @@
 		A93244DB2124D5E900AACD1B /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244DA2124D5E900AACD1B /* ProfileType.swift */; };
 		A93DFB142125F9A500231B1D /* ConfiguracoesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */; };
 		A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */; };
-		A93DFB182125FA4600231B1D /* PresentedLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB172125FA4500231B1D /* PresentedLinesService.swift */; };
+		A93DFB182125FA4600231B1D /* PresentedLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */; };
 		A93DFB1A2126043D00231B1D /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB192126043D00231B1D /* VersionViewController.swift */; };
 		A995C8EE20F51CDA002DF214 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A995C8ED20F51CDA002DF214 /* CloudKit.framework */; };
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
@@ -79,6 +79,7 @@
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
+		FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA80421275E36006EA274 /* CacheManager.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
 		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
@@ -90,7 +91,6 @@
 		FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6020D9234B00269699 /* EditEmailViewController.swift */; };
 		FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */; };
 		FA920699211A20EC0005BAAF /* Extensions in CK and Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA920698211A20EC0005BAAF /* Extensions in CK and Data.swift */; };
-		FA92069B211A401F0005BAAF /* CKAssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92069A211A401F0005BAAF /* CKAssetService.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
 		FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
 		FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
@@ -226,7 +226,7 @@
 		A93244DA2124D5E900AACD1B /* ProfileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConfiguracoesView.storyboard; sourceTree = "<group>"; };
 		A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracoesController.swift; sourceTree = "<group>"; };
-		A93DFB172125FA4500231B1D /* PresentedLinesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedLinesService.swift; sourceTree = "<group>"; };
+		A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedLinesManager.swift; sourceTree = "<group>"; };
 		A93DFB192126043D00231B1D /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
 		A962D0A920F7971E00923150 /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		A995C8EC20F51CD2002DF214 /* FilaFacil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacil.entitlements; sourceTree = "<group>"; };
@@ -303,6 +303,7 @@
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
+		FA3CA80421275E36006EA274 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -311,7 +312,6 @@
 		FA85EF6020D9234B00269699 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
 		FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		FA920698211A20EC0005BAAF /* Extensions in CK and Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions in CK and Data.swift"; sourceTree = "<group>"; };
-		FA92069A211A401F0005BAAF /* CKAssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKAssetService.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
@@ -552,10 +552,8 @@
 			children = (
 				E60229DB203FD5AB00336FC3 /* AuthService.swift */,
 				E60229E520409E8400336FC3 /* UserProfileService.swift */,
-				FA92069A211A401F0005BAAF /* CKAssetService.swift */,
 				E60229E72040A03C00336FC3 /* QuestionProfileService.swift */,
 				E6FC384A20B36FC600D88578 /* NoteProfileService.swift */,
-				A93DFB172125FA4500231B1D /* PresentedLinesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -693,7 +691,9 @@
 			children = (
 				E60229E92040ACA100336FC3 /* Extensions.swift */,
 				FA920698211A20EC0005BAAF /* Extensions in CK and Data.swift */,
+				FA3CA80421275E36006EA274 /* CacheManager.swift */,
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
+				A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -889,6 +889,7 @@
 					};
 					E6022994203FA29E00336FC3 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1201,7 +1202,6 @@
 				E60229B8203FC98000336FC3 /* MainListCell.swift in Sources */,
 				E60229E22040938300336FC3 /* UserProfileDAO.swift in Sources */,
 				E60229B4203FC8B300336FC3 /* QuestionProfile.swift in Sources */,
-				FA92069B211A401F0005BAAF /* CKAssetService.swift in Sources */,
 				E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */,
 				FA85EF6120D9234B00269699 /* EditEmailViewController.swift in Sources */,
 				A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */,
@@ -1213,7 +1213,7 @@
 				E60229E82040A03C00336FC3 /* QuestionProfileService.swift in Sources */,
 				E6FC384720B36CFD00D88578 /* NoteProfile.swift in Sources */,
 				FA85EF6320D9307F00269699 /* EditPasswordViewController.swift in Sources */,
-				A93DFB182125FA4600231B1D /* PresentedLinesService.swift in Sources */,
+				A93DFB182125FA4600231B1D /* PresentedLinesManager.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
@@ -1229,6 +1229,7 @@
 				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
+				FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,
 				E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */,
 				E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */,
@@ -1471,6 +1472,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1481,6 +1483,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1492,6 +1496,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1502,6 +1507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
