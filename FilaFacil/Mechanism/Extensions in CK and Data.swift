@@ -12,7 +12,7 @@ import UIKit
 extension CKAsset {
     
     convenience init(image: UIImage) {
-        let documentsDirectoryPath:NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let documentsDirectoryPath: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
         let tempImageName = "Image2.png"
         
         let imageData = UIImagePNGRepresentation(image)

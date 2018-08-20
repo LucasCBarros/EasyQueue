@@ -95,7 +95,7 @@ class UserProfileDAO: DAO {
                     return
                 }
                 
-                print("The user record is: \(record.recordID.recordName)")
+                //print("The user record is: \(record.recordID.recordName)")
 
                 self.publicDB.fetch(withRecordID: record.recordID, completionHandler: { (result, error) in
                     if error != nil {

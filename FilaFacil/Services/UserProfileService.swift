@@ -12,6 +12,8 @@ class UserProfileService: NSObject {
     
     let userProfileManager = UserProfileDAO()
     
+    private var currentUser: UserProfile?
+    
     /// AuthBase functions:
     // Register - Creates new user
     func createUser(userID: String, username: String, email: String, deviceID: String) {
@@ -33,7 +35,13 @@ class UserProfileService: NSObject {
     
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
+        
+        if self.currentUser == nil {
+        
         userProfileManager.retrieveCurrentUserProfile(completionHandler: completion)
+        } else {
+            completion(currentUser)
+        }
     }
     
     func attualizeTokenID(user: UserProfile) {

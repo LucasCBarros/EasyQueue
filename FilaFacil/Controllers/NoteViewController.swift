@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
+class NoteViewController: MyViewController {
 
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -28,7 +28,7 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         retrieveAllNotes()
         
-        print("VOLTOU!!!!!!!")
+        //print("VOLTOU!!!!!!!")
         // Update currentUser
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
@@ -37,6 +37,12 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createNote" {
+            (segue.destination as? CreateNoteViewController)?.delegate = self
+        }
     }
     
     // Retrieve logged user
@@ -48,33 +54,42 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    func orderListElements() {
-        allNoteProfiles = allNoteProfiles?.sorted { $0.noteID < $1.noteID }
-    }
-
     func retrieveAllNotes() {
-        noteProfileManager.retrieveOrderedNotes {[weak self] (noteProfile) in
-            if let noteProfile = noteProfile {
-                self?.allNoteProfiles = noteProfile
-            }
-
-            // Add to main Thread
-            DispatchQueue.main.async {
-                self?.orderListElements()
-                self?.activityIndicator.stopAnimating()
-                self?.noteTableView.reloadData()
-                if self?.allNoteProfiles?.count == 0 {
-                    self?.noteTableView.separatorStyle = .none
-                } else {
-                    self?.noteTableView.separatorStyle = .singleLine
+        
+            noteProfileManager.retrieveOrderedNotes {[weak self] (noteProfile) in
+                if let noteProfile = noteProfile {
+                    self?.allNoteProfiles = noteProfile
+                }
+                
+                // Add to main Thread
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+                    self?.noteTableView.reloadData()
+                    if self?.allNoteProfiles?.count == 0 {
+                        self?.noteTableView.separatorStyle = .none
+                    } else {
+                        self?.noteTableView.separatorStyle = .singleLine
+                    }
                 }
             }
-        }
+        
     }
-    
 }
 
-extension NoteViewController {
+extension NoteViewController: CreateNoteViewControllerDelegate {
+
+    func createNoteResponse(newNote: NoteProfile) {
+        
+        print("dsdsdsd")
+        print(newNote.noteText)
+        
+        self.allNoteProfiles?.append(newNote)
+        
+        //self.noteTableView.reloadData()
+    }
+}
+
+extension NoteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -117,7 +132,6 @@ extension NoteViewController {
                 })
                 self.viewWillAppear(true)
             }
-            
         }
     }
     

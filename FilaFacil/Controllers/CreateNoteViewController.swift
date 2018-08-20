@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol CreateNoteViewControllerDelegate: NSObjectProtocol {
+    
+    func createNoteResponse(newNote: NoteProfile)
+}
+
 class CreateNoteViewController: MyViewController {
     
     @IBOutlet weak var noteTextView: UITextView!
     
     let noteProfileManager = NoteProfileService()
     let userProfileManager = UserProfileService()
+    
+    weak var delegate: CreateNoteViewControllerDelegate?
     
     @IBAction func createNote_Action(_ sender: Any) {
         
@@ -24,11 +31,17 @@ class CreateNoteViewController: MyViewController {
                 noteProfileManager.createNote(userID: currentProfile!.userID,
                                               username: currentProfile!.username,
                                               noteText: noteText,
-                                              completion: {_ in
+                                              completion: {(newNote, error) in
         
-                                                DispatchQueue.main.async {
+                                                if error == nil {
+                                               
+                                                    DispatchQueue.main.async {
     
-                                                    self.navigationController?.popViewController(animated: true)
+                                                        if let note = newNote {
+                                                            self.delegate?.createNoteResponse(newNote: note)
+                                                        }
+                                                        self.navigationController?.popViewController(animated: true)
+                                                    }
                                                 }
                 })
             } else {
@@ -66,6 +79,10 @@ class CreateNoteViewController: MyViewController {
     func retrieveCurrentUserProfile() {
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             if let userProfile = userProfile {
+                
+                print(userProfile)
+                print(userProfile.userID)
+                
                 self.currentProfile = userProfile
             }
         }
