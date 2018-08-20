@@ -42,8 +42,8 @@ class LineListViewController: UIViewController {
                 })
                 if !existsSelected {
                     self.selectedTab = self.teacherArray.first
+                    self.linesCollectionView.reloadData()
                 }
-                self.linesCollectionView.reloadData()
             }
         })
     }
