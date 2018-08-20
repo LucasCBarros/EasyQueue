@@ -76,7 +76,7 @@ class ViewController: UIViewController {
                 self.questionActivityIndicator.stopAnimating()
                 self.noQuestions.isHidden = false
                 if let screenSaver = self.screenSaverTimeInterval {
-                    if Date().timeIntervalSince1970 - screenSaver >= 0 {
+                    if Date().timeIntervalSince1970 - screenSaver >= 600 {
                         self.screenSaverTimeInterval = nil
                         self.performSegue(withIdentifier: "screenSaver", sender: nil)
                     }
