@@ -87,25 +87,46 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func loadUserProfileInfo() {
+        
+        var userImage = UIImage(named: "icons8-user_filled")
+        
+        userProfileManager.retrieveImage(for: self.currentProfile.userID) { (data, error) in
+            
+            if error == nil {
+                if let data = data {
+                    userImage = UIImage(data: data)
+                }
+            }
+        }
+    
         if currentProfile != nil {
-            emailLabel.text = currentProfile.email
+            DispatchQueue.main.async {
+                self.emailLabel.text = self.currentProfile.email
+                self.profilePhoto.image = userImage
+            }
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        var selectedImageFromPicker: UIImage?
+        var selectedImageFromPicker: Any?
         
-        if let editedImage = info["UIImagePickerControllerEditedImage"]
-            as? UIImage {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] {
             selectedImageFromPicker = editedImage
-        } else if let originalImage = info["UIImagePickerControllerOriginalImage"]
-            as? UIImage {
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] {
             selectedImageFromPicker = originalImage
         }
         
         if let selectedImage = selectedImageFromPicker {
-            profilePhoto.image = selectedImage
-            saveChanges()
+            
+            if let photo = selectedImage as? UIImage {
+                profilePhoto.image = photo
+                
+                userProfileManager.saveImage(UIImagePNGRepresentation(photo)!, for: currentProfile.userID) { (error) in
+                    if error == nil {
+                        print("Imagem salva com sucesso")
+                    }
+                }
+            }
         }
         dismiss(animated: true, completion: nil)
     }
@@ -114,23 +135,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
     
-    func saveChanges() {
-        
-    }
-    
     func setupProfile() {
         
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor().UIBlack().cgColor, UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
-        
-//        profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
-//        profilePhoto.clipsToBounds = true
-//        editPhotoBtn.layer.cornerRadius = editPhotoBtn.frame.width/2
-//        editPhotoBtn.clipsToBounds = true
-        
-        
-        
         
         if isPhotoEdited {
 //            databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in

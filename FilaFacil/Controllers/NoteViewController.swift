@@ -105,11 +105,16 @@ extension NoteViewController: UITableViewDataSource, UITableViewDelegate {
         cell?.selectionStyle = .none // Removes selection
         
         if self.allNoteProfiles != nil {
-            let date = allNoteProfiles?[indexPath.row].createdAt
-            let strDate = Formatter.dateToString(date!)
             
-            cell?.noteDate.text = strDate
-            cell?.noteText.text = self.allNoteProfiles?[indexPath.row].noteText
+            if let question = allNoteProfiles?[indexPath.row] {
+                
+                let date = question.createdAt
+                let strDate = Formatter.dateToString(date!)
+                
+                cell?.noteDate.text = strDate
+                cell?.noteText.text = question.noteText
+                cell?.noteUsername.text = question.username
+            }
         }
         
         return cell!
