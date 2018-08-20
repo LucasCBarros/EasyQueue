@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
 
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var photoView: UIView!
     
     @IBAction func openSettings(_ sender: UIButton) {
         let settingsUrl = URL(string: UIApplicationOpenSettingsURLString)!
@@ -40,8 +40,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoutButton.clipsToBounds = true
-        logoutButton.layer.cornerRadius = 10
+        photoView.layer.cornerRadius = photoView.frame.width / 2.0
+        photoView.clipsToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,7 +78,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         userProfileManager.retrieveCurrentUserProfile {[weak self] (userProfile) in
             if let userProfile = userProfile {
                 self?.currentProfile = userProfile
-                self?.setupProfile()
+                DispatchQueue.main.async {
+                    self?.setupProfile()
+                }
             }
             self?.loadUserProfileInfo()
         }
@@ -122,10 +124,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         gradient.frame = view.bounds
         gradient.colors = [UIColor().UIBlack().cgColor, UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
         
-        profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
-        profilePhoto.clipsToBounds = true
-        editPhotoBtn.layer.cornerRadius = editPhotoBtn.frame.width/2
-        editPhotoBtn.clipsToBounds = true
+//        profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
+//        profilePhoto.clipsToBounds = true
+//        editPhotoBtn.layer.cornerRadius = editPhotoBtn.frame.width/2
+//        editPhotoBtn.clipsToBounds = true
+        
+        
+        
         
         if isPhotoEdited {
 //            databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in
