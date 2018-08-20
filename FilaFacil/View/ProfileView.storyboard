@@ -62,9 +62,14 @@
                                             <action selector="editPhoto_Action:" destination="Wck-Ig-pHW" eventType="touchUpInside" id="kTd-MQ-8Fq"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="PJ5-05-XbU">
+                                        <rect key="frame" x="52" y="52" width="20" height="20"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="PJ5-05-XbU" firstAttribute="centerX" secondItem="hFb-YM-7Na" secondAttribute="centerX" id="92M-Sc-QOf"/>
                                     <constraint firstItem="dcQ-fE-yik" firstAttribute="top" secondItem="hFb-YM-7Na" secondAttribute="top" id="D1a-Ta-XYD"/>
                                     <constraint firstAttribute="trailing" secondItem="dcQ-fE-yik" secondAttribute="trailing" id="J1W-FD-qHD"/>
                                     <constraint firstAttribute="width" constant="125" id="WOV-5W-rph"/>
@@ -78,6 +83,7 @@
                                     <constraint firstAttribute="bottom" secondItem="CtP-EJ-Iwz" secondAttribute="bottom" id="icN-lC-3ez"/>
                                     <constraint firstItem="dcQ-fE-yik" firstAttribute="leading" secondItem="hFb-YM-7Na" secondAttribute="leading" id="j3P-2O-AAe"/>
                                     <constraint firstAttribute="bottom" secondItem="1EI-4g-7pK" secondAttribute="bottom" id="pCO-bk-VNK"/>
+                                    <constraint firstItem="PJ5-05-XbU" firstAttribute="centerY" secondItem="hFb-YM-7Na" secondAttribute="centerY" id="wED-8x-ewO"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-ac-PAo">
@@ -161,6 +167,7 @@
                     <connections>
                         <outlet property="editPhotoBtn" destination="dcQ-fE-yik" id="jz1-4G-gtw"/>
                         <outlet property="emailLabel" destination="nyc-1L-ZEX" id="loG-Uw-1xp"/>
+                        <outlet property="loadingPhoto" destination="PJ5-05-XbU" id="yP2-E5-mUJ"/>
                         <outlet property="photoView" destination="hFb-YM-7Na" id="lZK-yd-Jz1"/>
                         <outlet property="profilePhoto" destination="CtP-EJ-Iwz" id="wEc-DU-PrM"/>
                     </connections>

@@ -141,37 +141,18 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.profileName?.text = question.username
             cell?.questionLabel?.text = question.questionTitle
             
-            //Tirar o timestamp e colocar a data e hora
-            //let timeInterval = Double.init(question.questionID)
-            //let date = Date(timeIntervalSince1970: timeInterval! / 1000)
             let date = question.createdAt ?? Date()
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
-//            if let url = URL(string: question.userPhoto) {
-//                KingfisherManager.shared.retrieveImage(with: url,
-//                                                       options: nil,
-//                                                       progressBlock: nil,
-//                                                       completionHandler: {[weak self] image, erro, _, url in
-//                    DispatchQueue.main.async {
-//                        if self != nil {
-//                            if let image = image, let url = url, erro == nil {
-//                                if self!.inLineQuestions.count >= indexPath.row - 1 && url.absoluteString
-//                                    == self!.inLineQuestions[indexPath.row].userPhoto {
-//                                    cell?.profilePhoto.image = image
-//                                } else {
-//                                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
-//                                }
-//                            } else {
-//                                cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
-//                            }
-//                        }
-//                    }
-//                })
-//            } else {
-//                if self.inLineQuestions.count >= indexPath.row - 1 && question.userPhoto == self.inLineQuestions[indexPath.row].userPhoto {
-//                    cell?.profilePhoto.image = #imageLiteral(resourceName: "icons8-user_filled")
-//                }
-//            }
+
+            userProfileManager.retrieveImage(for: question.userID) { (data, error) in
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        cell?.profilePhoto.image = UIImage(data: data)
+                    }
+                }
+            }
             
         }
         

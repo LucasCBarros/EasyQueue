@@ -49,7 +49,7 @@ class UserProfileService: NSObject {
     
     func saveImage(_ image: Data, for userId: String, with completionHandler: @escaping (Error?) -> Void) {
         self.userProfileManager.saveImage(image, for: userId) { (error) in
-            if error != nil {
+            if error == nil {
                 CacheManager.shared.save(data: image, with: Date(), in: userId)
                 completionHandler(nil)
             } else {
