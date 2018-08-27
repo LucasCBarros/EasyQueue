@@ -27,10 +27,10 @@ class LineService: NSObject {
                     completionHandler([PresentableLine](), nil)
                     return
                 }
-                var presentedLines = PresentedLinesService.shared.lines
+                var presentedLines = PresentedLinesManager.shared.lines
                 if presentedLines.count == 0 {
                     let firstLine = lines.first!.name
-                    PresentedLinesService.shared.add(firstLine)
+                    PresentedLinesManager.shared.add(firstLine)
                     presentedLines.insert(firstLine)
                 }
                 

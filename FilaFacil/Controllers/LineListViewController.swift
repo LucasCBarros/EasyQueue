@@ -34,6 +34,8 @@ class LineListViewController: UIViewController {
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         LineService.shared.fetchAllLines(onlySelected: true, { (lines, _) in
             DispatchQueue.main.async {
                 self.teacherArray = lines!
