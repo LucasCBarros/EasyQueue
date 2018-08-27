@@ -35,6 +35,9 @@ class UserProfile: NSObject, PersistenceObject {
     // Users photo if it has
     var photo: String?
     
+    // Date most recent photo update
+    var photoModifiedAt: Date?
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
@@ -58,20 +61,26 @@ class UserProfile: NSObject, PersistenceObject {
         if let photo = dictionary["photo"] as? String {
             self.photo = photo
         }
+        if let photoModifiedAt = dictionary["photoModifiedAt"] as? Date {
+            self.photoModifiedAt = photoModifiedAt
+        }
+        
         self.dictInfo = dictionary
     }
     
-    init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault, email: String, deviceID: String, photo: String? = nil) {
+    init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault, email: String, deviceID: String, photo: String? = nil, photoModifiedAt: Date) {
         self.userID = userID
         self.username = username
         self.profileType = profileType
         self.email = email
         self.deviceID = deviceID
+        self.photoModifiedAt = photoModifiedAt
         self.dictInfo = [
             "userID": userID,
             "username": username,
             "email": email,
-            "deviceID": deviceID
+            "deviceID": deviceID,
+            "photoModifiedAt": photoModifiedAt
         ]
         if let photo = photo {
             self.photo = photo

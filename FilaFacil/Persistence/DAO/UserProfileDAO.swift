@@ -154,7 +154,9 @@ class UserProfileDAO: DAO {
                         let profileType = record["profileType"] as? String
                         let photoModifiedAt = record["photoModifiedAt"] as? Date
                         
-                        completionHandler(UserProfile(userID: userId, username: userName!, profileType: ProfileType(withString: profileType), email: "gmail@gmail.com", deviceID: "12345"))
+                        completionHandler(UserProfile(userID: userId, username: userName!,
+                                                      profileType: ProfileType(withString: profileType),
+                                                      email: "gmail@gmail.com", deviceID: "12345", photoModifiedAt: photoModifiedAt!))
                     } else {
                         completionHandler(nil)
                     }
@@ -176,7 +178,6 @@ class UserProfileDAO: DAO {
             }
         }
         
-    
             // `recordID` is the record ID returned from CKContainer.fetchUserRecordID
 //            self.publicDB.fetch(withRecordID: recordID) { record, error in
 //                guard let record = record, error == nil else {
