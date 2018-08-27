@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 profilePhoto.image = photo
                 
                 loadingPhoto.startAnimating()
-                userProfileManager.saveImage(UIImagePNGRepresentation(photo)!, for: currentProfile.userID) { (error) in
+                userProfileManager.saveImage(UIImagePNGRepresentation(photo)!, for: currentProfile) { (error) in
                     if error == nil {
                         print("Imagem salva com sucesso")
                         DispatchQueue.main.async {

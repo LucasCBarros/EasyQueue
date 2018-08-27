@@ -68,7 +68,8 @@ class UserProfile: NSObject, PersistenceObject {
         self.dictInfo = dictionary
     }
     
-    init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault, email: String, deviceID: String, photo: String? = nil, photoModifiedAt: Date) {
+    init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault,
+         email: String, deviceID: String, photo: String? = nil, photoModifiedAt: Date? = nil) {
         self.userID = userID
         self.username = username
         self.profileType = profileType

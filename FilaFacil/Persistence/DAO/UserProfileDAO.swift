@@ -48,14 +48,26 @@ class UserProfileDAO: DAO {
 //        self.create(dump: UserProfile.self, object: newUser, path: path, newObjectID: userID)
     }
     
-    func editUser(user: UserProfile) {
-//        let path = "Users/"
-//
-//        self.editByID(dump: UserProfile.self, newObject: user, path: path, objectID: user.userID)
+    func editUser(user: UserProfile, completion: @escaping (Error?) -> Void) {
+
+        let recordID = CKRecordID(recordName: user.userID)
+        
+        publicDB.fetch(withRecordID: recordID) { record, error in
+            
+            if let record = record, error == nil {
+                
+                record.setValue(user.photo, forKey: "photoId")
+                record.setValue(user.photoModifiedAt, forKey: "photoModifiedAt")
+                
+                self.publicDB.save(record) { _, error in
+                    completion(error)
+                }
+            }
+        }
     }
     
     func retrieveImage(for userId: String, with completionHlandler: @escaping (Data?, Error?) -> Void) {
-        let recordId  = CKRecordID(recordName: userId)
+        //let recordId  = CKRecordID(recordName: userId)
         //let reference = CKReference(recordID: recordId, action: CKReferenceAction.deleteSelf)
         let reference = userId
         let predicate = NSPredicate(format: "userId == %@", reference)
@@ -74,7 +86,7 @@ class UserProfileDAO: DAO {
         }
     }
     
-    func saveImage(_ data: Data, for userId: String, with completionHandler: @escaping (Error?) -> Void) {
+    func saveImage(_ data: Data, for user: UserProfile, with completionHandler: @escaping (Error?) -> Void) {
         let temporaryDirectory = FileManager.default.temporaryDirectory
         let filename = ProcessInfo.processInfo.globallyUniqueString
         let tempUrl = URL.init(fileURLWithPath: temporaryDirectory.path).appendingPathComponent(filename)
@@ -87,13 +99,25 @@ class UserProfileDAO: DAO {
         }
         
         let asset = CKAsset(fileURL: tempUrl)
-        
-        let record = CKRecord(recordType: "ProfilePhoto")
+        var record: CKRecord!
+        if let photo = user.photo {
+            let recordId = CKRecordID(recordName: photo)
+            record = CKRecord(recordType: "ProfilePhoto", recordID: recordId)
+        } else {
+            record = CKRecord(recordType: "ProfilePhoto")
+        }
         
         record.setObject(asset, forKey: "photo")
-        record.setObject(userId as CKRecordValue, forKey: "userId")
+        record.setObject(user.userID as CKRecordValue, forKey: "userId")
         
-        publicDB.save(record) { (_, error) in
+        publicDB.save(record) { (record, error) in
+            if let record = record, user.photo == nil, error == nil {
+                user.photo = record.recordID.recordName
+                user.photoModifiedAt = record.creationDate
+                self.editUser(user: user, completion: { (error) in
+                    completionHandler(error)
+                })
+            }
             completionHandler(error)
         }
     }
@@ -156,7 +180,7 @@ class UserProfileDAO: DAO {
                         
                         completionHandler(UserProfile(userID: userId, username: userName!,
                                                       profileType: ProfileType(withString: profileType),
-                                                      email: "gmail@gmail.com", deviceID: "12345", photoModifiedAt: photoModifiedAt!))
+                                                      email: "gmail@gmail.com", deviceID: "12345", photoModifiedAt: photoModifiedAt))
                     } else {
                         completionHandler(nil)
                     }

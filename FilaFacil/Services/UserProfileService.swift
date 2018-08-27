@@ -47,10 +47,10 @@ class UserProfileService: NSObject {
         }
     }
     
-    func saveImage(_ image: Data, for userId: String, with completionHandler: @escaping (Error?) -> Void) {
-        self.userProfileManager.saveImage(image, for: userId) { (error) in
+    func saveImage(_ image: Data, for user: UserProfile, with completionHandler: @escaping (Error?) -> Void) {
+        self.userProfileManager.saveImage(image, for: user) { (error) in
             if error == nil {
-                CacheManager.shared.save(data: image, with: Date(), in: userId)
+                CacheManager.shared.save(data: image, with: Date(), in: user.userID)
                 completionHandler(nil)
             } else {
                 completionHandler(error)
@@ -69,12 +69,12 @@ class UserProfileService: NSObject {
         }
     }
     
-    func attualizeTokenID(user: UserProfile) {
-        if let deviceID = UserDefaults.standard.string(forKey: "userDeviceID") {
-            user.deviceID = deviceID
-            userProfileManager.editUser(user: user)
-        }
-    }
+//    func attualizeTokenID(user: UserProfile) {
+//        if let deviceID = UserDefaults.standard.string(forKey: "userDeviceID") {
+//            user.deviceID = deviceID
+//            userProfileManager.editUser(user: user)
+//        }
+//    }
     
     func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {
         var questionsInLine: [QuestionProfile] = []

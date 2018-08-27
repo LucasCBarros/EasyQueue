@@ -31,6 +31,9 @@ class QuestionProfile: NSObject, PersistenceObject {
     // Data da criacao da Questão
     var createdAt: Date?
     
+    // Data da ultima alteracao de photo
+    var photoModifiedAt: Date?
+    
     // Dictionary
     var dictInfo: [AnyHashable: Any]
     
@@ -57,17 +60,22 @@ class QuestionProfile: NSObject, PersistenceObject {
         if let userPhoto = dictionary["userPhoto"] as? String {
             self.userPhoto = userPhoto
         }
+        if let photoModifiedAt = dictionary["photoModifiedAt"] as? Date {
+            self.photoModifiedAt = photoModifiedAt
+        }
         
         self.dictInfo = dictionary
     }
     
-    init(questionTitle: String, questionID: String, userID: String, username: String, requestedTeacher: String, userPhoto: String) {
+    init(questionTitle: String, questionID: String, userID: String, username: String,
+         requestedTeacher: String, userPhoto: String, photoModifiedAt: Date) {
         self.questionTitle = questionTitle
         self.questionID = questionID
         self.userID = userID
         self.username = username
         self.requestedTeacher = requestedTeacher
         self.userPhoto = userPhoto
+        self.photoModifiedAt = photoModifiedAt
         self.dictInfo = [
             "questionTitle": questionTitle,
             "questionID": questionID,
