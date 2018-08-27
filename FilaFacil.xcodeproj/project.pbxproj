@@ -96,7 +96,6 @@
 		FA947E6D212B36E800AE06F1 /* PresentableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E6B212B36E700AE06F1 /* PresentableLine.swift */; };
 		FA947E70212B371200AE06F1 /* LineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E6F212B371200AE06F1 /* LineDAO.swift */; };
 		FA947E73212B371F00AE06F1 /* LineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E71212B371E00AE06F1 /* LineService.swift */; };
-		FA947E74212B371F00AE06F1 /* PresentedLinesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E72212B371F00AE06F1 /* PresentedLinesService.swift */; };
 		FAA331BE20E6B82800D893DC /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3366320B331B800D6B61F /* SF-Pro-Text-Regular.otf */; };
 		FAA331BF20E6B84800D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FAA331C020E6B85000D893DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
@@ -322,7 +321,6 @@
 		FA947E6B212B36E700AE06F1 /* PresentableLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableLine.swift; sourceTree = "<group>"; };
 		FA947E6F212B371200AE06F1 /* LineDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDAO.swift; sourceTree = "<group>"; };
 		FA947E71212B371E00AE06F1 /* LineService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineService.swift; sourceTree = "<group>"; };
-		FA947E72212B371F00AE06F1 /* PresentedLinesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedLinesService.swift; sourceTree = "<group>"; };
 		FAB3364120B331B600D6B61F /* SFCompactDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Heavy.otf"; sourceTree = "<group>"; };
 		FAB3364220B331B600D6B61F /* SFCompactText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Medium.otf"; sourceTree = "<group>"; };
 		FAB3364320B331B600D6B61F /* SFCompactText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -566,7 +564,6 @@
 				E60229E72040A03C00336FC3 /* QuestionProfileService.swift */,
 				E6FC384A20B36FC600D88578 /* NoteProfileService.swift */,
 				FA947E71212B371E00AE06F1 /* LineService.swift */,
-				FA947E72212B371F00AE06F1 /* PresentedLinesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1231,7 +1228,6 @@
 				A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
-				FA947E74212B371F00AE06F1 /* PresentedLinesService.swift in Sources */,
 				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
 				FA947E6D212B36E800AE06F1 /* PresentableLine.swift in Sources */,
 				E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */,
