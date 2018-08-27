@@ -70,7 +70,7 @@
                                                         <constraint firstAttribute="height" constant="33" id="mwE-27-SvX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -92,6 +92,7 @@
                                         <connections>
                                             <outlet property="noteDate" destination="8xq-WC-TtP" id="BEO-9h-IY9"/>
                                             <outlet property="noteText" destination="5bM-d4-nfb" id="vPW-vd-9fB"/>
+                                            <outlet property="noteUsername" destination="sva-Lx-Y7A" id="m3U-Zf-5XD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -124,7 +125,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d0T-4k-h95">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="NkH-c5-o1q" kind="show" id="6Ck-YO-Ugv"/>
+                                <segue destination="NkH-c5-o1q" kind="show" identifier="createNote" id="6Ck-YO-Ugv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

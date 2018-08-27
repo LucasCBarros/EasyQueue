@@ -26,9 +26,9 @@ class NoteProfileService: NSObject {
     }
     
     // Create a question
-    func createNote(userID: String, username: String, noteText: String, completion: @escaping(Error?) -> Void) {
-        noteProfileManager.createNote(userID: userID, username: username, noteText: noteText, completionHandler: {(error) in
-            completion(error)
+    func createNote(userID: String, username: String, noteText: String, completion: @escaping(NoteProfile?, Error?) -> Void) {
+        noteProfileManager.createNote(userID: userID, username: username, noteText: noteText, completionHandler: {(newNote, error) in
+            completion(newNote, error)
         })
     }
     

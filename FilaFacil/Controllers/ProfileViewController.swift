@@ -15,17 +15,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var editPhotoBtn: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
-
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var loadingPhoto: UIActivityIndicatorView!
     
-    @IBAction func openSettings(_ sender: UIButton) {
-        let settingsUrl = URL(string: UIApplicationOpenSettingsURLString)!
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(settingsUrl, completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(settingsUrl)
-        }
-    }
+    @IBOutlet weak var photoView: UIView!
     
     // MARK: - Properties
     let userProfileManager = UserProfileService()
@@ -34,18 +26,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var isPhotoEdited: Bool = true
     
-    //let storageRef = Storage.storage().reference()
-    //let databaseRef = Database.database().reference()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoutButton.clipsToBounds = true
-        logoutButton.layer.cornerRadius = 10
+        photoView.layer.cornerRadius = photoView.frame.width / 2.0
+        photoView.clipsToBounds = true
+        
+        retrieveCurrentUserProfile()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        retrieveCurrentUserProfile()
     }
     
     @IBAction func editPhoto_Action(_ sender: Any) {
@@ -54,11 +45,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.allowsEditing = true
         picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         self.present(picker, animated: true, completion: nil)
-    }
-    
-    @IBAction func click_Logout(_ sender: Any) {
-        //authManager.signOut()
-        presentLogoutScreen()
     }
     
     // MARK: - Methods
@@ -78,32 +64,60 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         userProfileManager.retrieveCurrentUserProfile {[weak self] (userProfile) in
             if let userProfile = userProfile {
                 self?.currentProfile = userProfile
-                self?.setupProfile()
+                DispatchQueue.main.async {
+                    self?.setupProfile()
+                }
             }
             self?.loadUserProfileInfo()
         }
     }
     
     func loadUserProfileInfo() {
+        
         if currentProfile != nil {
-            emailLabel.text = currentProfile.email
+            
+            DispatchQueue.main.async {
+                self.emailLabel.text = self.currentProfile.email
+                self.loadingPhoto.startAnimating()
+
+            }
+            
+            userProfileManager.retrieveImage(for: self.currentProfile.userID) { (data, error) in
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        self.profilePhoto.image = UIImage(data: data)
+                        self.loadingPhoto.stopAnimating()
+                    }
+                }
+            }
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        var selectedImageFromPicker: UIImage?
+        var selectedImageFromPicker: Any?
         
-        if let editedImage = info["UIImagePickerControllerEditedImage"]
-            as? UIImage {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] {
             selectedImageFromPicker = editedImage
-        } else if let originalImage = info["UIImagePickerControllerOriginalImage"]
-            as? UIImage {
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] {
             selectedImageFromPicker = originalImage
         }
         
         if let selectedImage = selectedImageFromPicker {
-            profilePhoto.image = selectedImage
-            saveChanges()
+            
+            if let photo = selectedImage as? UIImage {
+                profilePhoto.image = photo
+                
+                loadingPhoto.startAnimating()
+                userProfileManager.saveImage(UIImagePNGRepresentation(photo)!, for: currentProfile.userID) { (error) in
+                    if error == nil {
+                        print("Imagem salva com sucesso")
+                        DispatchQueue.main.async {
+                            self.loadingPhoto.stopAnimating()
+                        }
+                    }
+                }
+            }
         }
         dismiss(animated: true, completion: nil)
     }
@@ -112,49 +126,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
     
-    func saveChanges() {
-        
-    }
-    
     func setupProfile() {
         
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor().UIBlack().cgColor, UIColor.blue.cgColor, UIColor().UIBlack().cgColor]
         
-        profilePhoto.layer.cornerRadius = profilePhoto.frame.width/2
-        profilePhoto.clipsToBounds = true
-        editPhotoBtn.layer.cornerRadius = editPhotoBtn.frame.width/2
-        editPhotoBtn.clipsToBounds = true
-        
         if isPhotoEdited {
-//            databaseRef.child("Users").child(currentProfile.userID).observeSingleEvent(of: .value, with: { (snapshot) in
-//                if let dict = snapshot.value as? [String: AnyObject] {
-//                    if let profileImageURL = dict["photo"] as? String {
-//                        let url = URL(string: profileImageURL)
-//                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, _, error) in
-//                            if error != nil {
-//                                print(error!)
-//                                return
-//                            }
-//                            DispatchQueue.main.async {
-//                                self.profilePhoto?.image = UIImage(data: data!)
-//                            }
-//                        }).resume()
-//                    }
-//                }
-//            })
+
         }
         isPhotoEdited = false
-    }
-    
-    // MARK: - Navigation
-    // Opens app screens to loggedIn users
-    func presentLogoutScreen() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "LoginView", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate?
-        appDelegate??.window?.rootViewController = viewController
     }
 }
 

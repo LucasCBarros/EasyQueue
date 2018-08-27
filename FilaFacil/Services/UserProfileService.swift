@@ -13,6 +13,8 @@ class UserProfileService: NSObject {
     
     let userProfileManager = UserProfileDAO()
     
+    private var currentUser: UserProfile?
+    
     /// AuthBase functions:
     // Register - Creates new user
     func createUser(userID: String, username: String, email: String, deviceID: String) {
@@ -47,7 +49,7 @@ class UserProfileService: NSObject {
     
     func saveImage(_ image: Data, for userId: String, with completionHandler: @escaping (Error?) -> Void) {
         self.userProfileManager.saveImage(image, for: userId) { (error) in
-            if error != nil {
+            if error == nil {
                 CacheManager.shared.save(data: image, with: Date(), in: userId)
                 completionHandler(nil)
             } else {
@@ -58,7 +60,13 @@ class UserProfileService: NSObject {
     
     // Retrieve Current User
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
+        
+        if self.currentUser == nil {
+        
         userProfileManager.retrieveCurrentUserProfile(completionHandler: completion)
+        } else {
+            completion(currentUser)
+        }
     }
     
     func attualizeTokenID(user: UserProfile) {

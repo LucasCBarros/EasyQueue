@@ -18,6 +18,10 @@ class NoteProfile: NSObject, PersistenceObject {
     
     // UserID from Database
     var userID: String = ""
+    
+    // Name of the user who created the note
+    var username: String = ""
+    
     // Date of the note
     var createdAt: Date!
     
@@ -32,6 +36,9 @@ class NoteProfile: NSObject, PersistenceObject {
         if let noteID = dictionary["recordId"] as? String {
             self.noteID = noteID
         }
+        if let username = dictionary["username"] as? String {
+            self.username = username
+        }
         if let createdAt = dictionary["createdAt"] as? Date {
             self.createdAt = createdAt
         }
@@ -42,10 +49,11 @@ class NoteProfile: NSObject, PersistenceObject {
         
     }
 
-    init(noteText: String, noteID: String, userID: String, createdAt: Date) {
+    init(noteText: String, noteID: String, userID: String, createdAt: Date, username: String) {
         self.noteText = noteText
         self.noteID = noteID
         self.userID = userID
+        self.username = username
         self.createdAt = createdAt
         self.dictInfo = [
             "noteText": noteText,

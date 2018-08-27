@@ -123,7 +123,7 @@ class AuthDatabaseManager: DAO {
             
                 if let auth = record["authenticated"] as? Int64 {
                     
-                    print("authHHHH: \(auth)")
+                    //print("authHHHH: \(auth)")
                     
                     if auth != 0 {
 

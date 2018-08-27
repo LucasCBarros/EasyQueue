@@ -21,7 +21,7 @@ class NoteDAO: DAO {
     }
     
     // Create a note
-    func createNote(userID: String, username: String, noteText: String, completionHandler: @escaping(Error?) -> Void) {
+    func createNote(userID: String, username: String, noteText: String, completionHandler: @escaping(NoteProfile?, Error?) -> Void) {
         
         let uuid = UUID().uuidString
 
@@ -37,11 +37,19 @@ class NoteDAO: DAO {
             
             guard let record = record else {
                 print("Error saving record: ", error as Any)
+                completionHandler(nil, error)
                 return
             }
             
             print("Successfully saved record: ", record)
-            completionHandler(error)
+            
+            var dictionary = record.dictionaryWithValues(forKeys: record.allKeys())
+
+            dictionary["recordId"] = record.recordID.recordName
+            dictionary["createdAt"] = record.creationDate
+            
+            let newNote = NoteProfile(dictionary: dictionary)
+            completionHandler(newNote, error)
         })
     }
     

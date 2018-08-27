@@ -55,11 +55,12 @@ class UserProfileDAO: DAO {
     }
     
     func retrieveImage(for userId: String, with completionHlandler: @escaping (Data?, Error?) -> Void) {
-        let recordId = CKRecordID(recordName: userId)
-        let reference = CKReference(recordID: recordId, action: CKReferenceAction.deleteSelf)
-        let predicate = NSPredicate(format: "userID == %@", reference)
-        let query = CKQuery(recordType: "photo", predicate: predicate)
-        container.publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+        let recordId  = CKRecordID(recordName: userId)
+        //let reference = CKReference(recordID: recordId, action: CKReferenceAction.deleteSelf)
+        let reference = userId
+        let predicate = NSPredicate(format: "userId == %@", reference)
+        let query = CKQuery(recordType: "ProfilePhoto", predicate: predicate)
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
             guard let record = records?.first, let asset = record["photo"] as? CKAsset else {
                 completionHlandler(nil, error)
                 return
@@ -92,7 +93,7 @@ class UserProfileDAO: DAO {
         record.setObject(asset, forKey: "photo")
         record.setObject(userId as CKRecordValue, forKey: "userId")
         
-        container.publicCloudDatabase.save(record) { (_, error) in
+        publicDB.save(record) { (_, error) in
             completionHandler(error)
         }
     }
@@ -138,7 +139,7 @@ class UserProfileDAO: DAO {
                     return
                 }
                 
-                print("The user record is: \(record.recordID.recordName)")
+                //print("The user record is: \(record.recordID.recordName)")
 
                 self.publicDB.fetch(withRecordID: record.recordID, completionHandler: { (result, error) in
                     if error != nil {
