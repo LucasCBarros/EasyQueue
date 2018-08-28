@@ -113,7 +113,6 @@ class LineListViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     if self.selectedTab?.name == lineName {
                         self.inLineQuestions = questionProfile
-                        self.inLineQuestions = self.inLineQuestions.sorted { $0.questionID < $1.questionID }
                         self.listTableView.reloadData()
                     }
                 }
