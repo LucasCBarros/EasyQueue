@@ -29,7 +29,7 @@ class QuestionProfile: NSObject, PersistenceObject {
     var userID: String!
     
     // Data da criacao da Questão
-    var createdAt: Date?
+    var createdAt: Date!
     
     // Data da ultima alteracao de photo
     var photoModifiedAt: Date?

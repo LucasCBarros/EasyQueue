@@ -33,9 +33,14 @@ class QuestionProfileService: NSObject {
     // Return all open questions
     func retrieveAllOpenQuestions(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
         questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: {(allQuestions)  in
-            let filteredQuestions = allQuestions?.filter({ (question) -> Bool in
+            var filteredQuestions = allQuestions?.filter({ (question) -> Bool in
                 return question.requestedTeacher == lineName
             })
+            
+            if let questions = filteredQuestions {
+                filteredQuestions = questions.sorted{ $0.createdAt < $1.createdAt }
+            }
+            
             completion(filteredQuestions)
         })
     }
