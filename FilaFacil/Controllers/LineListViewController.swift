@@ -146,7 +146,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             let strDate = Formatter.dateToString(date)
             cell?.dateLabel.text = strDate
 
-            userProfileManager.retrieveImage(for: question.userID) { (data, error) in
+            userProfileManager.retrieveImage(for: question.userID, modifiedAt: question.photoModifiedAt) { (data, error) in
                 
                 if let data = data {
                     DispatchQueue.main.async {

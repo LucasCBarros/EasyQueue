@@ -34,15 +34,18 @@ class UserProfileService: NSObject {
     
     /// Other functions:
     
-    func retrieveImage(for userId: String, with completionHandler: @escaping (Data?, Error?) -> Void) {
-        if let image = CacheManager.shared.retrieveData(for: userId) {
+    func retrieveImage(for userId: String, modifiedAt date: Date?, with completionHandler: @escaping (Data?, Error?) -> Void) {
+        if let cacheDate = CacheManager.shared.retrieveLastModificationDate(for: userId),
+            let timeInterval = date?.timeIntervalSince(cacheDate), timeInterval <= 0,
+            let image = CacheManager.shared.retrieveData(for: userId) {
             completionHandler(image, nil)
         } else {
-            self.userProfileManager.retrieveImage(for: userId, with: { (data, error) in
-                if let data = data, error == nil {
+            self.userProfileManager.retrieveImage(for: userId, with: { (data, date, error) in
+                if let data = data, let date = date, error == nil {
                     // TODO: pensar em forma de tratar data da imagem de forma eficiente.
-                    CacheManager.shared.save(data: data, with: Date(), in: userId)
+                    CacheManager.shared.save(data: data, with: date, in: userId)
                 }
+                completionHandler(data, error)
             })
         }
     }
