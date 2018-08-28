@@ -148,13 +148,12 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
 
             userProfileManager.retrieveImage(for: question.userID) { (data, error) in
                 
-                if let data = data {
+                if let data = data, error == nil {
                     DispatchQueue.main.async {
                         cell?.profilePhoto.image = UIImage(data: data)
                     }
                 }
             }
-            
         }
         
         // Cell apperance
@@ -236,19 +235,9 @@ extension LineListViewController: NewQuestionTableViewDelegate {
     }
     
     func saveQuestion(text: String, selectedTeacher: String) {
-        // Inserts question info in Firebase and updates users status
-//        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
-//                                              username: currentProfile!.username,
-//                                              requestedTeacher: selectedTeacher,
-//                                              userPhoto: (self.currentProfile?.photo)!)
     
-        questionProfileManager.createQuestion(userID: currentProfile!.userID, questionTxt: text,
-                                              username: currentProfile!.username,
-                                              requestedTeacher: selectedTeacher,
-                                              userPhoto: "sadasdasdasd")
-    
+        questionProfileManager.createQuestion(user: currentProfile!, questionTxt: text, requestedTeacher: selectedTeacher)
     }
-    
 }
 
 // MARK: - Lines

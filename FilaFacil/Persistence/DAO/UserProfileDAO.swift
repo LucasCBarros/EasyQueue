@@ -66,20 +66,20 @@ class UserProfileDAO: DAO {
         }
     }
     
-    func retrieveImage(for userId: String, with completionHlandler: @escaping (Data?, Error?) -> Void) {
+    func retrieveImage(for userId: String, with completionHandler: @escaping (Data?, Error?) -> Void) {
         
         let predicate = NSPredicate(format: "userId == %@", userId)
         let query = CKQuery(recordType: "ProfilePhoto", predicate: predicate)
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
             guard let record = records?.first, let asset = record["photo"] as? CKAsset else {
-                completionHlandler(nil, error)
+                completionHandler(nil, error)
                 return
             }
             do {
                 let image = try Data.init(contentsOf: asset.fileURL)
-                completionHlandler(image, error)
+                completionHandler(image, error)
             } catch {
-                completionHlandler(nil, error)
+                completionHandler(nil, error)
             }
         }
     }

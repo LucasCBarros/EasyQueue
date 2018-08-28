@@ -54,22 +54,24 @@ class QuestionProfileDAO: DAO {
     }
     
     // Create a question
-    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
+    func createQuestion(user: UserProfile, questionTxt: String, requestedTeacher: String) {
         
-        let uuid = UUID().uuidString
+//        let uuid = UUID().uuidString
+//
+//        let timeStampID = "\(Date().millisecondsSince1970)"
+//
+//        let noteID = CKRecordID(recordName: uuid)
         
-        let timeStampID = "\(Date().millisecondsSince1970)"
+//        let record = CKRecord(recordType: "Question", recordID: noteID)
+        let record = CKRecord(recordType: "Question")
         
-        let noteID = CKRecordID(recordName: uuid)
-        
-        let record = CKRecord(recordType: "Question", recordID: noteID)
-        
-        record.setObject(userID as CKRecordValue, forKey: "userID")
+        record.setObject(user.userID as CKRecordValue, forKey: "userID")
         record.setObject(questionTxt as CKRecordValue, forKey: "questionTitle")
-        record.setObject(username as CKRecordValue, forKey: "username")
+        record.setObject(user.username as CKRecordValue, forKey: "username")
         record.setObject(requestedTeacher as CKRecordValue, forKey: "requestedTeacher")
-        record.setObject(timeStampID as CKRecordValue, forKey: "questionID")
-        record.setObject(userPhoto as CKRecordValue, forKey: "userPhoto")
+        if let photoModifiedAt = user.photoModifiedAt {
+            record.setObject(photoModifiedAt as CKRecordValue, forKey: "photoModifiedAt")
+        }
         
         publicDB.save(record, completionHandler: { record, error in
             
@@ -81,27 +83,6 @@ class QuestionProfileDAO: DAO {
             print("Successfully saved record: ", record)
 
         })
-        
-//        let path = "Lines/" + requestedTeacher
-//
-//        let newQuestionData = [userID,
-//                               questionTxt,
-//                               username,
-//                               userPhoto]
-//
-//        let questionFields = ["userID",
-//                            "questionTitle",
-//                            "username",
-//                            "userPhoto"]
-//
-//        let timeStampID = "\(Date().millisecondsSince1970)"
-//        let pathWithID = path
-//
-//        for question in 0..<questionFields.count {
-//            ref?.child(pathWithID).child(timeStampID).child(questionFields[question]).setValue(newQuestionData[question])
-//        }
-//
-//        ref?.child(pathWithID).child(timeStampID).child("questionID").setValue(timeStampID)
     }
     
     func removeQuestionFromLine(question: QuestionProfile, completionHandler: @escaping((Error?) -> Void)) {

@@ -57,9 +57,6 @@ class QuestionProfile: NSObject, PersistenceObject {
         if let requestedTeacher = dictionary["requestedTeacher"] as? String {
             self.requestedTeacher = requestedTeacher
         }
-        if let userPhoto = dictionary["userPhoto"] as? String {
-            self.userPhoto = userPhoto
-        }
         if let photoModifiedAt = dictionary["photoModifiedAt"] as? Date {
             self.photoModifiedAt = photoModifiedAt
         }
@@ -68,21 +65,19 @@ class QuestionProfile: NSObject, PersistenceObject {
     }
     
     init(questionTitle: String, questionID: String, userID: String, username: String,
-         requestedTeacher: String, userPhoto: String, photoModifiedAt: Date) {
+         requestedTeacher: String, photoModifiedAt: Date) {
         self.questionTitle = questionTitle
         self.questionID = questionID
         self.userID = userID
         self.username = username
         self.requestedTeacher = requestedTeacher
-        self.userPhoto = userPhoto
         self.photoModifiedAt = photoModifiedAt
         self.dictInfo = [
             "questionTitle": questionTitle,
             "questionID": questionID,
             "userID": userID,
             "username": username,
-            "requestedTeacher": requestedTeacher,
-            "userPhoto": userPhoto
+            "requestedTeacher": requestedTeacher
         ]
     }
     

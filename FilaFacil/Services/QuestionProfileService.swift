@@ -41,12 +41,9 @@ class QuestionProfileService: NSObject {
     }
     
     // Create a question
-    func createQuestion(userID: String, questionTxt: String, username: String, requestedTeacher: String, userPhoto: String) {
-        questionProfileManager.createQuestion(userID: userID,
+    func createQuestion(user: UserProfile, questionTxt: String, requestedTeacher: String) {
+        questionProfileManager.createQuestion(user: user,
                                               questionTxt: questionTxt,
-                                              username: username,
-                                              requestedTeacher: requestedTeacher,
-                                              userPhoto: userPhoto)
+                                              requestedTeacher: requestedTeacher)
     }
-    
 }
