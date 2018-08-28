@@ -67,10 +67,8 @@ class UserProfileDAO: DAO {
     }
     
     func retrieveImage(for userId: String, with completionHlandler: @escaping (Data?, Error?) -> Void) {
-        //let recordId  = CKRecordID(recordName: userId)
-        //let reference = CKReference(recordID: recordId, action: CKReferenceAction.deleteSelf)
-        let reference = userId
-        let predicate = NSPredicate(format: "userId == %@", reference)
+        
+        let predicate = NSPredicate(format: "userId == %@", userId)
         let query = CKQuery(recordType: "ProfilePhoto", predicate: predicate)
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
             guard let record = records?.first, let asset = record["photo"] as? CKAsset else {
@@ -87,6 +85,7 @@ class UserProfileDAO: DAO {
     }
     
     func saveImage(_ data: Data, for user: UserProfile, with completionHandler: @escaping (Error?) -> Void) {
+        
         let temporaryDirectory = FileManager.default.temporaryDirectory
         let filename = ProcessInfo.processInfo.globallyUniqueString
         let tempUrl = URL.init(fileURLWithPath: temporaryDirectory.path).appendingPathComponent(filename)
@@ -99,13 +98,29 @@ class UserProfileDAO: DAO {
         }
         
         let asset = CKAsset(fileURL: tempUrl)
-        var record: CKRecord!
+        
         if let photo = user.photo {
+            
             let recordId = CKRecordID(recordName: photo)
-            record = CKRecord(recordType: "ProfilePhoto", recordID: recordId)
+            publicDB.fetch(withRecordID: recordId) { (record, error) in
+                if let record = record, error == nil {
+                    
+                    self.updateImage(record: record, user: user, asset: asset, completionHandler: { (error) in
+                        completionHandler(error)
+                    })
+                }
+            }
+            
         } else {
-            record = CKRecord(recordType: "ProfilePhoto")
+            let record = CKRecord(recordType: "ProfilePhoto")
+            self.updateImage(record: record, user: user, asset: asset, completionHandler: { (error) in
+                completionHandler(error)
+            })
+
         }
+    }
+    
+    private func updateImage(record: CKRecord, user: UserProfile, asset: CKAsset, completionHandler: @escaping (Error?) -> Void) {
         
         record.setObject(asset, forKey: "photo")
         record.setObject(user.userID as CKRecordValue, forKey: "userId")
@@ -176,11 +191,12 @@ class UserProfileDAO: DAO {
                         let userId = record.recordID.recordName
                         let userName = record["username"] as? String
                         let profileType = record["profileType"] as? String
+                        let photoId = record["photoId"] as? String
                         let photoModifiedAt = record["photoModifiedAt"] as? Date
                         
                         completionHandler(UserProfile(userID: userId, username: userName!,
                                                       profileType: ProfileType(withString: profileType),
-                                                      email: "gmail@gmail.com", deviceID: "12345", photoModifiedAt: photoModifiedAt))
+                                                      email: "gmail@gmail.com", deviceID: "12345", photo: photoId, photoModifiedAt: photoModifiedAt))
                     } else {
                         completionHandler(nil)
                     }
@@ -231,9 +247,6 @@ class UserProfileDAO: DAO {
 //                    }
 //                }
 //            })
-            
-        
-        
         
 //        let authManager = AuthDatabaseManager()
 //        let userID = authManager.retrieveCurrentUserID()
@@ -270,8 +283,6 @@ class UserProfileDAO: DAO {
         }
     }
 
-    
-    
     func updateUserLinePosition(userID: String, position: Int) {
         //ref?.child("Users").child(userID).child("userLinePosition").setValue(position)
     }
