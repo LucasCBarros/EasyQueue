@@ -72,7 +72,7 @@ class UserProfileDAO: DAO {
         let query = CKQuery(recordType: "ProfilePhoto", predicate: predicate)
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
             guard let record = records?.first, let asset = record["photo"] as? CKAsset,
-                let date = record["photoModifiedAt"] as? Date else {
+                let date = record.modificationDate else {
                 completionHlandler(nil, nil, error)
                 return
             }
@@ -85,7 +85,7 @@ class UserProfileDAO: DAO {
         }
     }
     
-    func saveImage(_ data: Data, for user: UserProfile, with completionHandler: @escaping (Error?) -> Void) {
+    func saveImage(_ data: Data, for user: UserProfile, with completionHandler: @escaping (UserProfile?, Error?) -> Void) {
         
         let temporaryDirectory = FileManager.default.temporaryDirectory
         let filename = ProcessInfo.processInfo.globallyUniqueString
@@ -94,7 +94,7 @@ class UserProfileDAO: DAO {
         do {
             try data.write(to: tempUrl, options: .atomicWrite)
         } catch {
-            completionHandler(error)
+            completionHandler(nil, error)
             return
         }
         
@@ -106,35 +106,35 @@ class UserProfileDAO: DAO {
             publicDB.fetch(withRecordID: recordId) { (record, error) in
                 if let record = record, error == nil {
                     
-                    self.updateImage(record: record, user: user, asset: asset, completionHandler: { (error) in
-                        completionHandler(error)
+                    self.updateImage(record: record, user: user, asset: asset, completionHandler: { (user, error) in
+                        completionHandler(user, error)
                     })
                 }
             }
             
         } else {
             let record = CKRecord(recordType: "ProfilePhoto")
-            self.updateImage(record: record, user: user, asset: asset, completionHandler: { (error) in
-                completionHandler(error)
+            self.updateImage(record: record, user: user, asset: asset, completionHandler: { (user, error) in
+                completionHandler(user, error)
             })
 
         }
     }
     
-    private func updateImage(record: CKRecord, user: UserProfile, asset: CKAsset, completionHandler: @escaping (Error?) -> Void) {
+    private func updateImage(record: CKRecord, user: UserProfile, asset: CKAsset, completionHandler: @escaping (UserProfile?, Error?) -> Void) {
         
         record.setObject(asset, forKey: "photo")
         record.setObject(user.userID as CKRecordValue, forKey: "userId")
         
         publicDB.save(record) { (record, error) in
-            if let record = record, user.photo == nil, error == nil {
+            if let record = record, error == nil {
                 user.photo = record.recordID.recordName
-                user.photoModifiedAt = record.creationDate
+                user.photoModifiedAt = record.modificationDate
                 self.editUser(user: user, completion: { (error) in
-                    completionHandler(error)
+                    completionHandler(user, error)
                 })
             }
-            completionHandler(error)
+            completionHandler(nil, error)
         }
     }
     

@@ -12,6 +12,14 @@ class CacheManager {
     
     static open private(set) var shared = CacheManager()
     
+    static private let key = "imageDate"
+    
+    private init() {
+        if let objects = UserDefaults.standard.object(forKey: CacheManager.key) as? [String: Date] {
+            self.objects = objects
+        }
+    }
+    
     fileprivate var objects = [String: Date]()
     
     private var semaphore = DispatchSemaphore(value: 1)
@@ -19,6 +27,7 @@ class CacheManager {
     func save(data: Data, with date: Date, in key: String) {
         self.semaphore.wait()
         self.objects[key] = date
+        UserDefaults.standard.set(self.objects, forKey: CacheManager.key)
         self.semaphore.signal()
         if let image = UIImage(data: data) {
             KingfisherManager.shared.cache.store(image, forKey: key)
@@ -35,6 +44,7 @@ class CacheManager {
     func remove(with objectKey: String) {
         self.semaphore.wait()
         self.objects.removeValue(forKey: objectKey)
+        UserDefaults.standard.set(self.objects, forKey: CacheManager.key)
         self.semaphore.signal()
         KingfisherManager.shared.cache.removeImage(forKey: objectKey)
     }

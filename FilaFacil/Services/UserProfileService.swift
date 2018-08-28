@@ -35,6 +35,7 @@ class UserProfileService: NSObject {
     /// Other functions:
     
     func retrieveImage(for userId: String, modifiedAt date: Date?, with completionHandler: @escaping (Data?, Error?) -> Void) {
+        
         if let cacheDate = CacheManager.shared.retrieveLastModificationDate(for: userId),
             let timeInterval = date?.timeIntervalSince(cacheDate), timeInterval <= 0,
             let image = CacheManager.shared.retrieveData(for: userId) {
@@ -50,13 +51,13 @@ class UserProfileService: NSObject {
         }
     }
     
-    func saveImage(_ image: Data, for user: UserProfile, with completionHandler: @escaping (Error?) -> Void) {
-        self.userProfileManager.saveImage(image, for: user) { (error) in
+    func saveImage(_ image: Data, for user: UserProfile, with completionHandler: @escaping (UserProfile?, Error?) -> Void) {
+        self.userProfileManager.saveImage(image, for: user) { (newUser, error) in
             if error == nil {
                 CacheManager.shared.save(data: image, with: Date(), in: user.userID)
-                completionHandler(nil)
+                completionHandler(newUser, error)
             } else {
-                completionHandler(error)
+                completionHandler(nil, error)
             }
         }
     }
