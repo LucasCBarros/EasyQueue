@@ -43,7 +43,7 @@ class CacheManager {
         return KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: objectKey)
     }
     
-    func retrieveTimeInterval(for objectKey: String) -> Date? {
+    func retrieveLastModificationDate(for objectKey: String) -> Date? {
         self.semaphore.wait()
         let date = self.objects[objectKey]
         self.semaphore.signal()
