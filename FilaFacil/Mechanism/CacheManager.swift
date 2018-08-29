@@ -50,7 +50,14 @@ class CacheManager {
     }
     
     func retrieveImage(for objectKey: String) -> UIImage? {
-        return KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: objectKey)
+        if let image = KingfisherManager.shared.cache.retrieveImageInMemoryCache(forKey: objectKey) {
+            return image
+        }
+        if let image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: objectKey) {
+            KingfisherManager.shared.cache.store(image, forKey: objectKey)
+            return image
+        }
+        return nil
     }
     
     func retrieveLastModificationDate(for objectKey: String) -> Date? {

@@ -34,20 +34,22 @@ class UserProfileService: NSObject {
     
     /// Other functions:
     
-    func retrieveImage(for userId: String, modifiedAt date: Date?, with completionHandler: @escaping (Data?, Error?) -> Void) {
-        
-        if let cacheDate = CacheManager.shared.retrieveLastModificationDate(for: userId),
-            let timeInterval = date?.timeIntervalSince(cacheDate), timeInterval <= 0,
-            let image = CacheManager.shared.retrieveData(for: userId) {
-            completionHandler(image, nil)
-        } else {
-            self.userProfileManager.retrieveImage(for: userId, with: { (data, date, error) in
-                if let data = data, let date = date, error == nil {
-                    // TODO: pensar em forma de tratar data da imagem de forma eficiente.
-                    CacheManager.shared.save(data: data, with: date, in: userId)
-                }
-                completionHandler(data, error)
-            })
+    func retrieveImage(for userId: String, modifiedAt date: Date?, with completionHandler: @escaping (UIImage?, Bool, Error?) -> Void) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            if let cacheDate = CacheManager.shared.retrieveLastModificationDate(for: userId),
+                let date = date, cacheDate >= date,
+                let image = CacheManager.shared.retrieveImage(for: userId) {
+                completionHandler(image, false, nil)
+            } else {
+                self.userProfileManager.retrieveImage(for: userId, with: { (data, date, error) in
+                    if let data = data, let date = date, error == nil {
+                        // TODO: pensar em forma de tratar data da imagem de forma eficiente.
+                        CacheManager.shared.save(data: data, with: date, in: userId)
+                        completionHandler(UIImage(data: data), true, error)
+                    }
+                    completionHandler(nil, true, error)
+                })
+            }
         }
     }
     
