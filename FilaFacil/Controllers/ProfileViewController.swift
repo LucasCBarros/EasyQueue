@@ -31,9 +31,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         self.photoView.layer.cornerRadius = self.photoView.frame.width / 2.0
         self.photoView.clipsToBounds = true
-        self.loadingPhoto.hidesWhenStopped = true
         self.retrieveCurrentUserProfile()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

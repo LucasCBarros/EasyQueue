@@ -150,6 +150,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
                 if let data = data, error == nil {
                     DispatchQueue.main.async {
                         cell?.profilePhoto.image = UIImage(data: data)
+                        print("chamou imagem")
                     }
                 }
             }
@@ -176,7 +177,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             if let this = self, this.inLineQuestions.count > 0, let selectedTab = this.selectedTab {
                 let alert = UIAlertController(
                     title: "Excluir da Fila",
-                    message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab)?",
+                    message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab!.name)?",
                     preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { _ in
