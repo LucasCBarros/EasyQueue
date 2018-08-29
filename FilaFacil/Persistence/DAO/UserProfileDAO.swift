@@ -133,8 +133,9 @@ class UserProfileDAO: DAO {
                 self.editUser(user: user, completion: { (error) in
                     completionHandler(user, error)
                 })
+            } else {
+                completionHandler(nil, error)
             }
-            completionHandler(nil, error)
         }
     }
     
