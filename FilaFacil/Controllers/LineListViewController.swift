@@ -27,7 +27,6 @@ class LineListViewController: UIViewController {
     let userProfileManager = UserProfileService()
     let questionProfileManager = QuestionProfileService()
     var currentProfile: UserProfile?
-    var allUserProfiles: [UserProfile]?
     var inLineQuestions: [QuestionProfile] = []
     var refreshControl: UIRefreshControl!
     var editedQuestion: QuestionProfile!
@@ -109,6 +108,27 @@ class LineListViewController: UIViewController {
         questionProfileManager.retrieveAllOpenQuestions(lineName: lineName) { (questionProfile) in
             if let questionProfile = questionProfile {
                 // Add to main Thread
+                
+                let users = questionProfile.reduce([String: Date](), { (results, question) in
+                    var results = results
+                    guard let date = question.photoModifiedAt else {
+                        return results
+                    }
+                    guard let currentDate = results[question.userID] else {
+                        results[question.userID] = date
+                        return results
+                    }
+                    if date > currentDate {
+                        results[question.userID] = date
+                    }
+    
+                    return results
+                })
+    
+                for user in users {
+                    self.userProfileManager.retrieveImage(for: user.key, modifiedAt: user.value, with: { _, _, _ in })
+                }
+                
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                     if self.selectedTab?.name == lineName {
@@ -129,11 +149,30 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         return (inLineQuestions.count)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let question = inLineQuestions[indexPath.row]
+        
+        if let cell = cell as? MainListCell {
+            userProfileManager.retrieveImage(for: question.userID, modifiedAt: question.photoModifiedAt) { (image, _, error) in
+                if let image = image, error == nil {
+                    DispatchQueue.main.async {
+                        if self.selectedTab?.name == question.requestedTeacher &&
+                            cell.questionLabel.text == question.questionTitle {
+                            cell.profilePhoto.image = image
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
     // Shows tableView cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as? MainListCell
-        
+        cell?.profilePhoto.image = nil
         // Check if there are questions in Line
         if inLineQuestions.count >= indexPath.row - 1 {
             
@@ -143,16 +182,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             
             let date = question.createdAt ?? Date()
             let strDate = Formatter.dateToString(date)
-            cell?.dateLabel.text = strDate
-
-            userProfileManager.retrieveImage(for: question.userID, modifiedAt: question.photoModifiedAt) { (data, error) in
-                
-                if let data = data, error == nil {
-                    DispatchQueue.main.async {
-                        cell?.profilePhoto.image = UIImage(data: data)
-                    }
-                }
-            }
+            cell?.dateLabel.text = strDate            
         }
         
         // Cell apperance

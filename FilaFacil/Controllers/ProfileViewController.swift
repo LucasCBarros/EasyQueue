@@ -82,11 +82,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
             }
             
-            userProfileManager.retrieveImage(for: self.currentProfile.userID, modifiedAt: self.currentProfile.photoModifiedAt) { (data, error) in
+            userProfileManager.retrieveImage(for: self.currentProfile.userID, modifiedAt: self.currentProfile.photoModifiedAt) { (image, _, error) in
                 
-                if let data = data {
+                if let image = image {
                     DispatchQueue.main.async {
-                        self.profilePhoto.image = UIImage(data: data)
                         self.loadingPhoto.stopAnimating()
                     }
                 }

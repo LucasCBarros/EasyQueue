@@ -15,7 +15,7 @@ class MainListCell: UITableViewCell {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
