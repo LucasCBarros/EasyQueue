@@ -100,7 +100,7 @@
                                     <action selector="switch_LoginOrRegister:" destination="3vc-G5-VQo" eventType="valueChanged" id="h3L-tu-n6u"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-fg-O6A">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-fg-O6A">
                                 <rect key="frame" x="0.0" y="30" width="375" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,7 +170,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoginAppIcon" width="152" height="161"/>
         <image name="background-notes" width="375" height="667"/>
-        <image name="icon" width="167" height="172"/>
     </resources>
 </document>

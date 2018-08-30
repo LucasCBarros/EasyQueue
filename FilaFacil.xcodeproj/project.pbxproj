@@ -55,7 +55,6 @@
 		E616DB5520D991940009E9FD /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616DB5420D991940009E9FD /* ExtensionDelegate.swift */; };
 		E616DB5720D991940009E9FD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616DB5620D991940009E9FD /* NotificationController.swift */; };
 		E616DB5920D991950009E9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E616DB5820D991950009E9FD /* Assets.xcassets */; };
-		E616DB5E20D991950009E9FD /* FilaFacilWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E616DB4120D991910009E9FD /* FilaFacilWatch.app */; };
 		E616DB6820D9957C0009E9FD /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616DB6720D9957C0009E9FD /* RowController.swift */; };
 		E6A52C4420D9A817001B4B16 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A52C4320D9A817001B4B16 /* DetailInterfaceController.swift */; };
 		E6A52C4820D9AC6B001B4B16 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
@@ -92,8 +91,8 @@
 		FA8921D1211CB40A0030F295 /* LineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D0211CB40A0030F295 /* LineService.swift */; };
 		FA8921D4211CB8440030F295 /* LineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8921D3211CB8440030F295 /* LineDAO.swift */; };
 		FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93520820E2B80C001E4988 /* MyViewController.swift */; };
-		FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */; };
-		FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info.plist */; };
+		FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520A20E2C656001E4988 /* GoogleService-Info.plist */; };
+		FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */; };
 		FA936588211E0A1E0072F3C9 /* PresentableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA936587211E0A1E0072F3C9 /* PresentableLine.swift */; };
 		FA94AEBF211234D70018CA2C /* FilaFacilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEBE211234D70018CA2C /* FilaFacilTests.swift */; };
 		FA94AEC6211234FC0018CA2C /* QuestionProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */; };
@@ -171,13 +170,6 @@
 			remoteGlobalIDString = E616DB4C20D991940009E9FD;
 			remoteInfo = "FilaFacilWatch Extension";
 		};
-		E616DB5C20D991950009E9FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E616DB4020D991910009E9FD;
-			remoteInfo = FilaFacilWatch;
-		};
 		E6D7FB1E205314B600EEC89D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E602298D203FA29E00336FC3 /* Project object */;
@@ -222,7 +214,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				E616DB5E20D991950009E9FD /* FilaFacilWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,8 +318,8 @@
 		FA8921D0211CB40A0030F295 /* LineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineService.swift; sourceTree = "<group>"; };
 		FA8921D3211CB8440030F295 /* LineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDAO.swift; sourceTree = "<group>"; };
 		FA93520820E2B80C001E4988 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_PROD.plist"; sourceTree = "<group>"; };
-		FA93520C20E2C689001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA93520A20E2C656001E4988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_DEV.plist"; sourceTree = "<group>"; };
 		FA936587211E0A1E0072F3C9 /* PresentableLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableLine.swift; sourceTree = "<group>"; };
 		FA94AEB4211231010018CA2C /* QuestionProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProfileTest.swift; sourceTree = "<group>"; };
 		FA94AEBC211234D70018CA2C /* FilaFacilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -566,8 +557,8 @@
 				E60229AE203FA52E00336FC3 /* View */,
 				E602299F203FA29E00336FC3 /* Assets.xcassets */,
 				E60229A4203FA29E00336FC3 /* Info.plist */,
-				FA93520C20E2C689001E4988 /* GoogleService-Info.plist */,
-				FA93520A20E2C656001E4988 /* GoogleService-Info_PROD.plist */,
+				FA93520C20E2C689001E4988 /* GoogleService-Info_DEV.plist */,
+				FA93520A20E2C656001E4988 /* GoogleService-Info.plist */,
 				E6F936FF212B199E004797FC /* GoogleService-Info_SUB.plist */,
 			);
 			path = FilaFacil;
@@ -862,7 +853,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E616DB5D20D991950009E9FD /* PBXTargetDependency */,
 			);
 			name = FilaFacil;
 			productName = FilaFacil;
@@ -1043,10 +1033,10 @@
 				FAB3369C20B331BB00D6B61F /* SF-Pro-Display-Ultralight.otf in Resources */,
 				E60229A3203FA29E00336FC3 /* LaunchScreen.storyboard in Resources */,
 				FAB3368920B331BB00D6B61F /* SFCompactText-HeavyItalic.otf in Resources */,
-				FA93520D20E2C68A001E4988 /* GoogleService-Info.plist in Resources */,
+				FA93520D20E2C68A001E4988 /* GoogleService-Info_DEV.plist in Resources */,
 				FAB3369920B331BB00D6B61F /* SF-Pro-Text-Bold.otf in Resources */,
 				FAB3368D20B331BB00D6B61F /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
-				FA93520B20E2C656001E4988 /* GoogleService-Info_PROD.plist in Resources */,
+				FA93520B20E2C656001E4988 /* GoogleService-Info.plist in Resources */,
 				FAB3368120B331BB00D6B61F /* SFCompactText-MediumItalic.otf in Resources */,
 				FAB336A720B331BB00D6B61F /* SF-Pro-Text-Medium.otf in Resources */,
 				FAB3369820B331BB00D6B61F /* SF-Pro-Text-Regular.otf in Resources */,
@@ -1504,11 +1494,6 @@
 			isa = PBXTargetDependency;
 			target = E616DB4C20D991940009E9FD /* FilaFacilWatch Extension */;
 			targetProxy = E616DB4F20D991940009E9FD /* PBXContainerItemProxy */;
-		};
-		E616DB5D20D991950009E9FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E616DB4020D991910009E9FD /* FilaFacilWatch */;
-			targetProxy = E616DB5C20D991950009E9FD /* PBXContainerItemProxy */;
 		};
 		E6D7FB1F205314B600EEC89D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>88918312072-sm80r95m4oe5365rkhv2918nqmt17637.apps.googleusercontent.com</string>
+	<string>591100456906-uv6nj9nsmbb79j00gktk5k7lv37pbgfj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.88918312072-sm80r95m4oe5365rkhv2918nqmt17637</string>
+	<string>com.googleusercontent.apps.591100456906-uv6nj9nsmbb79j00gktk5k7lv37pbgfj</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAo-1VkuQmu23n6FxfiwEtoV1StmLb-IaE</string>
+	<string>AIzaSyA54BGrUlzbgV5OwcRB2ln9UwcPHnz3vGI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>88918312072</string>
+	<string>591100456906</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.LucasCB.FilaFacil</string>
 	<key>PROJECT_ID</key>
-	<string>filafacildev</string>
+	<string>fila-facil</string>
 	<key>STORAGE_BUCKET</key>
-	<string>filafacildev.appspot.com</string>
+	<string>fila-facil.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:88918312072:ios:ebb2a003b56d92e1</string>
+	<string>1:591100456906:ios:ebb2a003b56d92e1</string>
 	<key>DATABASE_URL</key>
-	<string>https://filafacildev.firebaseio.com</string>
+	<string>https://fila-facil.firebaseio.com</string>
 </dict>
 </plist>

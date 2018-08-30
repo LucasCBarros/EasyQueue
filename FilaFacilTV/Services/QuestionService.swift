@@ -15,10 +15,10 @@ class QuestionService {
 //        let URL: String = "https://filafacil-submission.firebaseio.com/"
         
         // Production Server:
-//        let URL: String = "https://fila-facil.firebaseio.com/Lines.json"
+        let URL: String = "https://fila-facil.firebaseio.com/Lines.json"
         
         // Development Server:
-        let URL: String = "https://filafacildev.firebaseio.com/Lines.json"
+//        let URL: String = "https://filafacildev.firebaseio.com/Lines.json"
         
         //creating a NSURL
         guard let url = NSURL(string: URL) else { return }
