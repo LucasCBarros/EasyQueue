@@ -825,7 +825,6 @@
 				DEDF0FBB20AE20470064A247 /* Frameworks */,
 				DEDF0FBC20AE20470064A247 /* Resources */,
 				14887C977ED0D492404F27FF /* [CP] Embed Pods Frameworks */,
-				ACEC50EEC73AC83A94EBF0BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -848,7 +847,6 @@
 				5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */,
 				E616DB6620D991950009E9FD /* Embed Watch Content */,
 				A9FD78FD20E56A3500DB9A1F /* Embed App Extensions */,
-				27D4FE107BDCE36627877F05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -885,8 +883,6 @@
 				E616DB4920D991940009E9FD /* Sources */,
 				E616DB4A20D991940009E9FD /* Frameworks */,
 				E616DB4B20D991940009E9FD /* Resources */,
-				41DF5323BD1ADA7B87FB8934 /* [CP] Embed Pods Frameworks */,
-				8F3B894FD66DCAC43960E4D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -924,7 +920,6 @@
 				FA94AEB9211234D70018CA2C /* Frameworks */,
 				FA94AEBA211234D70018CA2C /* Resources */,
 				3757091A88A8A4BC3CE8F304 /* [CP] Embed Pods Frameworks */,
-				186D856CE4144722C7FF5B62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1157,36 +1152,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		186D856CE4144722C7FF5B62 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		27D4FE107BDCE36627877F05 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3757091A88A8A4BC3CE8F304 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1217,21 +1182,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTests/Pods-FilaFacilTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41DF5323BD1ADA7B87FB8934 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BF29ECFB359D99098A7DC68 /* [CP] Embed Pods Frameworks */ = {
@@ -1300,36 +1250,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F3B894FD66DCAC43960E4D5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ACEC50EEC73AC83A94EBF0BF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ADC88CFA428C61706395F949 /* [CP] Check Pods Manifest.lock */ = {
