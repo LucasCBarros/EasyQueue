@@ -15,13 +15,32 @@
 		A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */; };
 		A93DFB182125FA4600231B1D /* PresentedLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */; };
 		A93DFB1A2126043D00231B1D /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB192126043D00231B1D /* VersionViewController.swift */; };
+		A95D8E65216BF49A006335A5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229DB203FD5AB00336FC3 /* AuthService.swift */; };
+		A95D8E66216BF49D006335A5 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E520409E8400336FC3 /* UserProfileService.swift */; };
+		A95D8E67216BF4A2006335A5 /* QuestionProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E72040A03C00336FC3 /* QuestionProfileService.swift */; };
+		A95D8E68216BF4A5006335A5 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
+		A95D8E69216BF4AB006335A5 /* LineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E71212B371E00AE06F1 /* LineService.swift */; };
+		A95D8E6B216D1377006335A5 /* AuthDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229DF20408FAD00336FC3 /* AuthDatabaseManager.swift */; };
+		A95D8E6C216D13D0006335A5 /* QuestionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229B3203FC8B300336FC3 /* QuestionProfile.swift */; };
+		A95D8E6D216D13FC006335A5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229B1203FC87F00336FC3 /* UserProfile.swift */; };
+		A95D8E6E216D1417006335A5 /* PresentableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E6B212B36E700AE06F1 /* PresentableLine.swift */; };
+		A95D8E6F216D142C006335A5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E6A212B36E700AE06F1 /* Line.swift */; };
+		A95D8E70216D1461006335A5 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229DD20408F0D00336FC3 /* DAO.swift */; };
+		A95D8E71216D147C006335A5 /* NoteProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384620B36CFD00D88578 /* NoteProfile.swift */; };
+		A95D8E72216D1492006335A5 /* LineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA947E6F212B371200AE06F1 /* LineDAO.swift */; };
+		A95D8E73216D14AC006335A5 /* QuestionProfileDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E320409C3E00336FC3 /* QuestionProfileDAO.swift */; };
+		A95D8E74216D14BE006335A5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA80421275E36006EA274 /* CacheManager.swift */; };
+		A95D8E75216D14CF006335A5 /* PresentedLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */; };
+		A95D8E76216D14E3006335A5 /* UserProfileDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E12040938300336FC3 /* UserProfileDAO.swift */; };
+		A95D8E77216D14F4006335A5 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
+		A95D8E7A216E965C006335A5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95D8E79216E965C006335A5 /* CloudKit.framework */; };
+		A95D8E7C216FAF30006335A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95D8E7B216FAF2F006335A5 /* Main.storyboard */; };
+		A95D8E7E216FAF56006335A5 /* ScreenSaverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D8E7D216FAF56006335A5 /* ScreenSaverViewController.swift */; };
+		A95D8E80216FB008006335A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D8E7F216FB008006335A5 /* ViewController.swift */; };
 		A995C8EE20F51CDA002DF214 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A995C8ED20F51CDA002DF214 /* CloudKit.framework */; };
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
-		DEDF0FC320AE20470064A247 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC220AE20470064A247 /* ViewController.swift */; };
-		DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */; };
-		DEDF0FC920AE20470064A247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDF0FC720AE20470064A247 /* Main.storyboard */; };
 		DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDF0FCA20AE20470064A247 /* Assets.xcassets */; };
 		DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */; };
 		DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE420AE20D00064A247 /* QuestionService.swift */; };
@@ -232,6 +251,11 @@
 		A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracoesController.swift; sourceTree = "<group>"; };
 		A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedLinesManager.swift; sourceTree = "<group>"; };
 		A93DFB192126043D00231B1D /* VersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionViewController.swift; sourceTree = "<group>"; };
+		A95D8E78216E9648006335A5 /* FilaFacilTV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacilTV.entitlements; sourceTree = "<group>"; };
+		A95D8E79216E965C006335A5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		A95D8E7B216FAF2F006335A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A95D8E7D216FAF56006335A5 /* ScreenSaverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSaverViewController.swift; sourceTree = "<group>"; };
+		A95D8E7F216FB008006335A5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A962D0A920F7971E00923150 /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		A995C8EC20F51CD2002DF214 /* FilaFacil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacil.entitlements; sourceTree = "<group>"; };
 		A995C8ED20F51CDA002DF214 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -245,9 +269,7 @@
 		DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuestion.swift; sourceTree = "<group>"; };
 		DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacilTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDF0FC020AE20470064A247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEDF0FC220AE20470064A247 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DEDF0FC520AE20470064A247 /* FilaFacilTV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilaFacilTV.xcdatamodel; sourceTree = "<group>"; };
-		DEDF0FC820AE20470064A247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DEDF0FC220AE20470064A247 /* ViewControllerOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOLD.swift; sourceTree = "<group>"; };
 		DEDF0FCA20AE20470064A247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEDF0FCC20AE20470064A247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -393,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */,
+				A95D8E7A216E965C006335A5 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */,
-				DEDF0FC720AE20470064A247 /* Main.storyboard */,
+				A95D8E7B216FAF2F006335A5 /* Main.storyboard */,
 				FAB336AE20B374A200D6B61F /* NoteViewCell.swift */,
 				FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */,
 			);
@@ -490,7 +513,9 @@
 		DEBC40C220B1E87A00870D4C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DEDF0FC220AE20470064A247 /* ViewController.swift */,
+				A95D8E7F216FB008006335A5 /* ViewController.swift */,
+				DEDF0FC220AE20470064A247 /* ViewControllerOLD.swift */,
+				A95D8E7D216FAF56006335A5 /* ScreenSaverViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -498,6 +523,7 @@
 		DEDF0FBF20AE20470064A247 /* FilaFacilTV */ = {
 			isa = PBXGroup;
 			children = (
+				A95D8E78216E9648006335A5 /* FilaFacilTV.entitlements */,
 				DEBC40C220B1E87A00870D4C /* Controller */,
 				DEBC40C120B1E85500870D4C /* Services */,
 				DEBC40BD20B1E7DB00870D4C /* Model */,
@@ -505,7 +531,6 @@
 				DEDF0FC020AE20470064A247 /* AppDelegate.swift */,
 				DEDF0FCA20AE20470064A247 /* Assets.xcassets */,
 				DEDF0FCC20AE20470064A247 /* Info.plist */,
-				DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */,
 			);
 			path = FilaFacilTV;
 			sourceTree = "<group>";
@@ -689,6 +714,7 @@
 		EEE9480C3407FA46BDEB6102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A95D8E79216E965C006335A5 /* CloudKit.framework */,
 				A995C8ED20F51CDA002DF214 /* CloudKit.framework */,
 				968F783760985A1FDB86908E /* Pods_FilaFacil.framework */,
 				BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */,
@@ -906,6 +932,14 @@
 					DEDF0FBD20AE20470064A247 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					E6022994203FA29E00336FC3 = {
 						CreatedOnToolsVersion = 9.2;
@@ -973,9 +1007,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95D8E7C216FAF30006335A5 /* Main.storyboard in Resources */,
 				DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */,
 				FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */,
-				DEDF0FC920AE20470064A247 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,19 +1232,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDF0FC320AE20470064A247 /* ViewController.swift in Sources */,
+				A95D8E7E216FAF56006335A5 /* ScreenSaverViewController.swift in Sources */,
+				A95D8E72216D1492006335A5 /* LineDAO.swift in Sources */,
+				A95D8E76216D14E3006335A5 /* UserProfileDAO.swift in Sources */,
+				A95D8E70216D1461006335A5 /* DAO.swift in Sources */,
+				A95D8E77216D14F4006335A5 /* NoteDAO.swift in Sources */,
+				A95D8E6E216D1417006335A5 /* PresentableLine.swift in Sources */,
+				A95D8E67216BF4A2006335A5 /* QuestionProfileService.swift in Sources */,
+				A95D8E6D216D13FC006335A5 /* UserProfile.swift in Sources */,
 				FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */,
 				FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */,
 				DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */,
 				FA834E0920B5E90C002F3E32 /* NoteService.swift in Sources */,
 				DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */,
+				A95D8E80216FB008006335A5 /* ViewController.swift in Sources */,
+				A95D8E75216D14CF006335A5 /* PresentedLinesManager.swift in Sources */,
 				DEBC40C020B1E81100870D4C /* Question.swift in Sources */,
-				DEDF0FC620AE20470064A247 /* FilaFacilTV.xcdatamodeld in Sources */,
 				FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */,
 				FA834E0B20B5E953002F3E32 /* Note.swift in Sources */,
+				A95D8E71216D147C006335A5 /* NoteProfile.swift in Sources */,
 				DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */,
+				A95D8E66216BF49D006335A5 /* UserProfileService.swift in Sources */,
+				A95D8E68216BF4A5006335A5 /* NoteProfileService.swift in Sources */,
+				A95D8E73216D14AC006335A5 /* QuestionProfileDAO.swift in Sources */,
+				A95D8E74216D14BE006335A5 /* CacheManager.swift in Sources */,
+				A95D8E6B216D1377006335A5 /* AuthDatabaseManager.swift in Sources */,
 				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,
+				A95D8E69216BF4AB006335A5 /* LineService.swift in Sources */,
+				A95D8E6C216D13D0006335A5 /* QuestionProfile.swift in Sources */,
+				A95D8E6F216D142C006335A5 /* Line.swift in Sources */,
 				FAB336AF20B374A200D6B61F /* NoteViewCell.swift in Sources */,
+				A95D8E65216BF49A006335A5 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,14 +1364,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DEDF0FC720AE20470064A247 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DEDF0FC820AE20470064A247 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E60229A1203FA29E00336FC3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1345,16 +1389,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = FilaFacilTV/FilaFacilTV.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacilTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tus.FilaFacilTV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacilTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
@@ -1364,16 +1411,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = FilaFacilTV/FilaFacilTV.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 987J4BXX78;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacilTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tus.FilaFacilTV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoaoHergert.FilaFacilTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.2;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
@@ -1721,19 +1771,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DEDF0FC420AE20470064A247 /* FilaFacilTV.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DEDF0FC520AE20470064A247 /* FilaFacilTV.xcdatamodel */,
-			);
-			currentVersion = DEDF0FC520AE20470064A247 /* FilaFacilTV.xcdatamodel */;
-			path = FilaFacilTV.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E602298D203FA29E00336FC3 /* Project object */;
 }

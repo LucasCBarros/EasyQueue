@@ -27,7 +27,8 @@ class DAO: NSObject {
         //ref = Database.database().reference()
         //ref.keepSynced(true)
         
-        container = CKContainer.default()
+        //container = CKContainer.default()
+        container = CKContainer(identifier: "iCloud.com.JoaoHergert.FilaFacil")
         publicDB  = container.publicCloudDatabase
         privateDB = container.privateCloudDatabase
         

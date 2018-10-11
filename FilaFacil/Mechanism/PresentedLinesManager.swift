@@ -35,7 +35,8 @@ final class PresentedLinesManager {
     
     private init() {
         var finalLines: Set<String> = []
-        if let data = UserDefaults.standard.value(forKey: PresentedLinesManager.key) as? Data, let lines = NSKeyedUnarchiver.unarchiveObject(with: data) as? Set<String> {
+        if let data = UserDefaults.standard.value(forKey: PresentedLinesManager.key) as? Data,
+            let lines = NSKeyedUnarchiver.unarchiveObject(with: data) as? Set<String> {
             finalLines = lines
         }
         self.internalSemaphore.wait()

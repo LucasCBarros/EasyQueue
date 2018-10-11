@@ -31,17 +31,27 @@ class QuestionProfileService: NSObject {
 
     ///:BAD CODE - Will retrieve all questions
     // Return all open questions
-    func retrieveAllOpenQuestions(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
-        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName, completionHandler: {(allQuestions)  in
+    func retrieveOpenQuestionsBySubject(lineName: String, completion: @escaping ([QuestionProfile]?) -> Void) {
+        questionProfileManager.retrieveAllOpenQuestions(completionHandler: {(allQuestions)  in
             let filteredQuestions = allQuestions?.filter({ (question) -> Bool in
                 return question.requestedTeacher == lineName
             })
             
             if let questions = filteredQuestions {
-                completion(questions.sorted { $0.createdAt < $1.createdAt }
-)
+                completion(questions.sorted { $0.createdAt < $1.createdAt })
             } else {
                 completion(filteredQuestions)
+            }
+        })
+    }
+    
+    func retrieveAllOpenQuestions(completion: @escaping ([QuestionProfile]?) -> Void) {
+        questionProfileManager.retrieveAllOpenQuestions(completionHandler: {(allQuestions)  in
+            
+            if let questions = allQuestions {
+                completion(questions.sorted { $0.createdAt < $1.createdAt })
+            } else {
+                completion(allQuestions)
             }
         })
     }

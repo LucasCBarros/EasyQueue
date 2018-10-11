@@ -105,7 +105,7 @@ class LineListViewController: UIViewController {
     }
     
     func retrieveAllQuestions(lineName: String) {
-        questionProfileManager.retrieveAllOpenQuestions(lineName: lineName) { (questionProfile) in
+        questionProfileManager.retrieveOpenQuestionsBySubject(lineName: lineName) { (questionProfile) in
             if let questionProfile = questionProfile {
                 // Add to main Thread
                 

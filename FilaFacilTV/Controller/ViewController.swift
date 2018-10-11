@@ -17,12 +17,41 @@ class ViewController: UIViewController {
     @IBOutlet weak var noQuestions: UILabel!
     @IBOutlet weak var noNotes: UILabel!
     @IBOutlet weak var questionTableView: UITableView!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var simulatedDeveloperBadge: UIView! {
+        didSet {
+            simulatedDeveloperBadge.layer.cornerRadius = 17.5
+            simulatedDeveloperBadge.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var developerNumber: UILabel!
+    @IBOutlet weak var simulatedDesignBadge: UIView! {
+        didSet {
+            simulatedDesignBadge.layer.cornerRadius = 17.5
+            simulatedDesignBadge.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var designNumber: UILabel!
+    @IBOutlet weak var simulatedBusinessBadge: UIView! {
+        didSet {
+            simulatedBusinessBadge.layer.cornerRadius = 17.5
+            simulatedBusinessBadge.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var businessNumber: UILabel!
     
-    var questionService = QuestionService()
-    var openedQuestions: [Question] = []
-    var noteService = NoteService()
-    var openedNotes: [Note] = []
+    var questionService = QuestionProfileService()
+    var openedQuestions: [QuestionProfile] = []
+    var noteService = NoteProfileService()
+    var openedNotes: [NoteProfile] = []
     var topTimer: Timer!
+    var teacherArray: [String:PresentableLine] = [:]
+    var selectedTab: PresentableLine?
+    
+    
+    var screenSaverTimeInterval: TimeInterval? = nil
+    weak var screenSaverViewController: ScreenSaverViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,72 +59,183 @@ class ViewController: UIViewController {
             layout.delegate = self
         }
         
+        LineService.shared.fetchAllLines(onlySelected: false, { (lines, _) in
+            DispatchQueue.main.async {
+                
+                if let lines = lines {
+                    self.teacherArray = Dictionary(uniqueKeysWithValues: lines.map { ($0.name, $0) })
+                }
+            }
+        })
+        
         UIApplication.shared.isIdleTimerDisabled = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         getAllQuestions()
         getAllNotes()
+        refreshDate()
+        refresHour()
         topTimer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self,
-                                                selector: #selector(ViewController.getAllInformations),
-                                                userInfo: nil, repeats: true)
+                                        selector: #selector(ViewController.getAllInformations),
+                                        userInfo: nil, repeats: true)
+    }
+    
+    func verifyThatNeedActivateScreenSaver(with questions: [Question]) {
+        if questions.count == 0 {
+            guard self.screenSaverViewController == nil else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.questionActivityIndicator.stopAnimating()
+                self.noQuestions.isHidden = false
+                if let screenSaver = self.screenSaverTimeInterval {
+                    if Date().timeIntervalSince1970 - screenSaver >= 600 {
+                        self.screenSaverTimeInterval = nil
+                        self.performSegue(withIdentifier: "screenSaver", sender: nil)
+                    }
+                } else {
+                    self.screenSaverTimeInterval = Date().timeIntervalSince1970
+                }
+            }
+        } else {
+            self.screenSaverTimeInterval = nil
+            DispatchQueue.main.async {
+                self.screenSaverViewController?.dismiss(animated: true, completion: {
+                    self.screenSaverViewController = nil
+                })
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "screenSaver" {
+            self.screenSaverViewController = segue.destination as? ScreenSaverViewController
+            self.screenSaverViewController?.screenDelegate = self
+        }
     }
     
     func getAllQuestions() {
-        questionService.getAllQuestions(completion: {[weak self] (questions, error) in
-            if error == nil {
-                let questions = questions.sorted(by: { (question1, question2) -> Bool in
-                    return question1.questionID < question2.questionID
-                })
-                if questions.count == 0 || self?.openedQuestions != questions {
-                    self?.openedQuestions.removeAll()
-                    self?.openedQuestions = questions
+        questionService.retrieveAllOpenQuestions { newQuestions in
+            
+            if let questions = newQuestions {
+                
+                if questions.count == 0 || self.openedQuestions != questions {
+                    self.openedQuestions.removeAll()
+                    self.openedQuestions = questions
                     DispatchQueue.main.async {
-                        self?.questionTableView.reloadData()
-                        self?.questionActivityIndicator.stopAnimating()
-                        if self?.openedQuestions.count == 0 {
-                            self?.noQuestions.isHidden = false
+                        self.questionTableView.reloadData()
+                        self.questionActivityIndicator.stopAnimating()
+                        if self.openedQuestions.count == 0 {
+                            self.noQuestions.isHidden = false
                         } else {
-                            self?.noQuestions.isHidden = true
+                            self.noQuestions.isHidden = true
                         }
                     }
                 }
+            }
+        }
+//        questionService.getAllQuestions(completion: {[weak self] (questions, error) in
+//            if error == nil {
+//                let questions = questions.sorted(by: { (question1, question2) -> Bool in
+//                    return question1.questionID < question2.questionID
+//                })
+//                self?.verifyThatNeedActivateScreenSaver(with: questions)
+//                if self?.openedQuestions != questions {
+//                    DispatchQueue.main.async {
+//                        if let viewController = self {
+//                            viewController.openedQuestions.removeAll()
+//                            viewController.openedQuestions = questions
+//                            viewController.questionTableView.reloadData()
+//                            viewController.questionActivityIndicator.stopAnimating()
+//                            viewController.developerNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .developer }))
+//                            viewController.designNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .design }))
+//                            viewController.businessNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .business }))
+//                            if viewController.openedQuestions.count == 0 {
+//                                viewController.noQuestions.isHidden = false
+//                            }
+//                            else {
+//                                viewController.noQuestions.isHidden = true
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        })
+    }
+    
+    func lineNumber(_ questions: [Question], condition: (Question)->Bool) -> Int {
+        return questions.reduce(into: 0, { (result, question) in
+            if condition(question) {
+                result += 1
             }
         })
     }
     
     func getAllNotes() {
-        noteService.getAllQuestions(completion: {[weak self] (notes, error) in
-            if error == nil {
-                let notes = notes.sorted(by: { (note1, note2) -> Bool in
-                    return note1.noteID < note2.noteID
-                })
-                if notes.count == 0 || self?.openedNotes != notes {
-                    self?.openedNotes.removeAll()
-                    self?.openedNotes = notes
-                    DispatchQueue.main.async {
-                        self?.noteCollectionView.reloadData()
-                        self?.noteCollectionView.collectionViewLayout.invalidateLayout()
-                        self?.noteActivityIndicator.stopAnimating()
-                        if self?.openedNotes.count == 0 {
-                            self?.noNotes.isHidden = false
-                        } else {
-                            self?.noNotes.isHidden = true
+        
+        noteService.retrieveOrderedNotes {[weak self] (noteProfile) in
+            if let notes = noteProfile {
+            
+                    if notes.count == 0 || self?.openedNotes != notes {
+                        self?.openedNotes.removeAll()
+                        self?.openedNotes = notes
+                        DispatchQueue.main.async {
+                            self?.noteCollectionView.reloadData()
+                            self?.noteCollectionView.collectionViewLayout.invalidateLayout()
+                            self?.noteActivityIndicator.stopAnimating()
+                            if self?.openedNotes.count == 0 {
+                                self?.noNotes.isHidden = false
+                            }
+                            else {
+                                self?.noNotes.isHidden = true
+                            }
                         }
                     }
-                }
+                
             }
-        })
+        }
+//        noteService.getAllQuestions(completion: {[weak self] (notes, error) in
+//            if error == nil {
+//                let notes = notes.sorted(by: { (note1, note2) -> Bool in
+//                    return note1.noteID > note2.noteID
+//                })
+//                if notes.count == 0 || self?.openedNotes != notes {
+//                    self?.openedNotes.removeAll()
+//                    self?.openedNotes = notes
+//                    DispatchQueue.main.async {
+//                        self?.noteCollectionView.reloadData()
+//                        self?.noteCollectionView.collectionViewLayout.invalidateLayout()
+//                        self?.noteActivityIndicator.stopAnimating()
+//                        if self?.openedNotes.count == 0 {
+//                            self?.noNotes.isHidden = false
+//                        }
+//                        else {
+//                            self?.noNotes.isHidden = true
+//                        }
+//                    }
+//                }
+//            }
+//        })
     }
-
+    
+    
     @objc func getAllInformations() {
         getAllQuestions()
         getAllNotes()
+        refreshDate()
+        refresHour()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshDate() {
+        self.dateLabel.text = Formatter.fullDateToString(Date())
+    }
+    
+    func refresHour() {
+        self.hourLabel.text = Formatter.currentHour()
     }
     
 }
@@ -114,24 +254,34 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionTableViewCell
         
+        
+        
         if self.openedQuestions.count > 0 {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = self.openedQuestions[indexPath.row].questionTitle
-            cell?.numberLabel.text = "\(indexPath.row+1)"
-            cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
+            cell?.numberLabel.text = "\(indexPath.row + 1)"
+            //cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
+            
+            let lineName = openedQuestions[indexPath.row].requestedTeacher
+            if let line = teacherArray[lineName] {
+                
+                cell?.viewTypeQuestion.backgroundColor = UIColor(red: CGFloat(line.color.red), green: CGFloat(line.color.green), blue: CGFloat(line.color.blue), alpha: 1.0)
+            }
+            
             
             //Tirar o timestamp e colocar a data e hora
-            let timeInterval = Double.init(self.openedQuestions[indexPath.row].questionID)
-            let date = Date(timeIntervalSince1970: timeInterval! / 1000)
-            let strDate = Formatter.dateToString(date)
-            cell?.timeInputQuestion.text = strDate
-            
-            if openedQuestions[indexPath.row].userPhoto != "" {
-                let photoUrl = URL(string: openedQuestions[indexPath.row].userPhoto)!
-                cell?.profileImage.kf.setImage(with: photoUrl)
+            if let date = openedQuestions[indexPath.row].createdAt {
+                let strDate = Formatter.dateToString(date)
+                cell?.timeInputQuestion.text = strDate
+            }
+            if(openedQuestions[indexPath.row].userPhoto != "") {
+                //let photoUrl = URL(string: openedQuestions[indexPath.row].userPhoto)!
+                //cell?.profileImage.kf.setImage(with: photoUrl)
             } else {
                 cell?.profileImage.image = #imageLiteral(resourceName: "icons8-user_filled")
             }
+            
+            
         }
         
         return cell!
@@ -139,7 +289,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? QuestionTableViewCell
-        cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
+        //cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
+    
+        let lineName = openedQuestions[indexPath.row].requestedTeacher
+        if let line = teacherArray[lineName] {
+            
+            cell?.viewTypeQuestion.backgroundColor = UIColor(red: CGFloat(line.color.red), green: CGFloat(line.color.green), blue: CGFloat(line.color.blue), alpha: 1.0)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 }
@@ -157,9 +317,10 @@ extension ViewController: UICollectionViewDataSource {
         if let noteCell = cell as? NoteViewCell {
             noteCell.noteLabel.text = openedNotes[indexPath.row].noteText
             
-            let strDate = Formatter.dateToString(openedNotes[indexPath.row].date)
+            let strDate = Formatter.dateToString(openedNotes[indexPath.row].createdAt)
             
-            noteCell.dateLabel.text = strDate
+            noteCell.nameLabel.text = "Username"
+            noteCell.dateLabel.text = "\(strDate)"
 //            noteCell.configureWidth(screenWidth)
         }
         
@@ -182,4 +343,12 @@ extension ViewController: NoteCollectionViewLayoutDelegate {
         })
     }
 
+}
+
+extension ViewController: ScreenSaverDelegate {
+    
+    func didDismiss() {
+        self.screenSaverViewController = nil
+    }
+    
 }
