@@ -204,7 +204,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
             if let this = self, this.inLineQuestions.count > 0, let selectedTab = this.selectedTab {
                 let alert = UIAlertController(title: "Excluir da Fila", message: "Tem certeza que deseja excluir o assunto da fila de \(this.selectedTab!.name)?", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-                alert.addAction(UIAlertAction(title: "Excluir", style: .destructive, handler: { _ in
+                alert.addAction(UIAlertAction(title: "Excluir", style: .default, handler: { _ in
                     let question = this.inLineQuestions[indexPath.row]
                     this.userProfileManager.removeQuestionFromLine(lineName: selectedTab.name, questionObj: question)
                     // Reload View
