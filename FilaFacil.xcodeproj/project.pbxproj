@@ -1550,7 +1550,7 @@
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
+				DEVELOPMENT_TEAM = N568683GB9;
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1574,7 +1574,7 @@
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
+				DEVELOPMENT_TEAM = N568683GB9;
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

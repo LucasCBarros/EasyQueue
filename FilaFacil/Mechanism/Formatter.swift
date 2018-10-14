@@ -24,19 +24,31 @@ class Formatter {
     }
     
     static func fullDateToString(_ date: Date) -> String {
-        let dateFormatter = currentDateFormatter
-        dateFormatter.dateFormat = "eee, dd 'de' "
-        var dayString = dateFormatter.string(from: date)
-        dayString = dayString.prefix(1).uppercased() + dayString.dropFirst()
-        dateFormatter.dateFormat = "MMMM"
-        var monthString = dateFormatter.string(from: date)
-        monthString = monthString.prefix(1).uppercased() + monthString.dropFirst()
-        return dayString + monthString
+        
+        let preferredLanguage = NSLocale.preferredLanguages[0]
+      
+            let dateFormatter = currentDateFormatter
+            dateFormatter.locale = Locale(identifier: "\(preferredLanguage)")
+            //Verifica o idioma do sistema
+            if preferredLanguage == "pt-BR" {
+                dateFormatter.dateFormat = "eee, dd 'de' "
+            } else {
+                dateFormatter.dateFormat = "eee, dd "
+            }
+        
+            var dayString = dateFormatter.string(from: date)
+            dayString = dayString.prefix(1).uppercased() + dayString.dropFirst()
+            dateFormatter.dateFormat = "MMMM"
+            var monthString = dateFormatter.string(from: date)
+            monthString = monthString.prefix(1).uppercased() + monthString.dropFirst()
+        
+        
+            return dayString + monthString
     }
     
     static func currentHour() -> String {
         let dateFormatter = currentDateFormatter
-        dateFormatter.dateFormat = "HH:mm'h'"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: Date())
     }
     
