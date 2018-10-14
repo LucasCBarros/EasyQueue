@@ -265,6 +265,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2p-T5-Ood">
                                                     <rect key="frame" x="0.0" y="0.0" width="341" height="65.5"/>
+                                                    <connections>
+                                                        <action selector="sendFeedback:" destination="xur-Ou-fWP" eventType="touchUpInside" id="VyL-TF-dlX"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviar feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfi-3T-6uS">
                                                     <rect key="frame" x="16" y="22.5" width="122.5" height="21"/>

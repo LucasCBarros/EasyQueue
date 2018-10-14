@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ConfiguracoesController: UITableViewController {
     
@@ -14,6 +15,7 @@ class ConfiguracoesController: UITableViewController {
     @IBOutlet weak var developerSwitch: UISwitch!
     @IBOutlet weak var designSwitch: UISwitch!
     @IBOutlet weak var businessSwitch: UISwitch!
+    var email = "ellenmota29@gmail.com"
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +60,25 @@ class ConfiguracoesController: UITableViewController {
         } else {
             PresentedLinesService.shared.remove("Business")
         }
+    }
+    
+    @IBAction func sendFeedback(_ sender: Any) {
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            let alert = UIAlertController(title: "Ops!", message: "Não há e-mail configurado em seu device!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+        // Configure the fields of the interface.
+        composeVC.setToRecipients([self.email])
+        composeVC.setSubject("Feedback sobre o aplicativo")
+        composeVC.setMessageBody("", isHTML: false)
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
     }
     
     //Leva para Notificações em configurações
