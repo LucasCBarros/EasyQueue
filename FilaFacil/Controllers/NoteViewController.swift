@@ -13,7 +13,6 @@ class NoteViewController: MyViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Outlets
     @IBOutlet weak var noteTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var nameUser: UILabel!
     
     // MARK: - Properties
     var allNoteProfiles: [NoteProfile]?

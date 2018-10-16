@@ -62,24 +62,11 @@
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Usuario" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-zi-dL2">
-                                                    <rect key="frame" x="20" y="56.5" width="190" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="tpH-CX-F4t"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
-                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="top" secondItem="0Y0-hN-DSY" secondAttribute="bottom" constant="20" id="1QT-lk-PYH"/>
-                                                <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="yqM-zi-dL2" secondAttribute="trailing" constant="-190" id="ANe-oT-eHV"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Y0-hN-DSY" secondAttribute="trailing" constant="20" id="C3U-pz-mC2"/>
                                                 <constraint firstItem="0Y0-hN-DSY" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="EQy-vd-XIC"/>
-                                                <constraint firstItem="yqM-zi-dL2" firstAttribute="leading" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="FHh-IB-wJJ"/>
-                                                <constraint firstItem="yqM-zi-dL2" firstAttribute="firstBaseline" secondItem="qdI-wv-Qfd" secondAttribute="firstBaseline" id="Hhi-vd-90E"/>
-                                                <constraint firstItem="yqM-zi-dL2" firstAttribute="baseline" secondItem="qdI-wv-Qfd" secondAttribute="baseline" id="Js6-S7-P3P"/>
                                                 <constraint firstItem="0Y0-hN-DSY" firstAttribute="top" secondItem="3Cv-zA-y0C" secondAttribute="top" constant="16" id="M0H-TS-tX5"/>
                                                 <constraint firstAttribute="bottom" secondItem="qdI-wv-Qfd" secondAttribute="bottom" constant="10" id="XA6-MT-Eu8"/>
                                                 <constraint firstItem="qdI-wv-Qfd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Cv-zA-y0C" secondAttribute="leading" constant="20" id="gih-YS-Sj0"/>
@@ -129,7 +116,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="95E-Ig-233" id="bHn-LJ-7ex"/>
-                        <outlet property="nameUser" destination="yqM-zi-dL2" id="868-ri-vgU"/>
                         <outlet property="noteTableView" destination="OOi-ih-1qy" id="6da-mK-l98"/>
                     </connections>
                 </viewController>
