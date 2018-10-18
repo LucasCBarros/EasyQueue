@@ -101,8 +101,9 @@
 		FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA80421275E36006EA274 /* CacheManager.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
-		FA65BB2C2178FD8F0075214C /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BB2B2178FD8F0075214C /* PushNotification.swift */; };
+		FA65BB2C2178FD8F0075214C /* PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BB2B2178FD8F0075214C /* PushNotifications.swift */; };
 		FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
+		FA65BB3121791F3F0075214C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA65BB3021791F3F0075214C /* Localizable.strings */; };
 		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		FA8148B920BF304700F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
@@ -333,7 +334,10 @@
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FA3CA80421275E36006EA274 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
-		FA65BB2B2178FD8F0075214C /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
+		FA65BB2B2178FD8F0075214C /* PushNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifications.swift; sourceTree = "<group>"; };
+		FA65BB2E21791EEC0075214C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FA65BB2F21791EEC0075214C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Interface.strings"; sourceTree = "<group>"; };
+		FA65BB3021791F3F0075214C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
@@ -735,7 +739,7 @@
 				FA3CA80421275E36006EA274 /* CacheManager.swift */,
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 				A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */,
-				FA65BB2B2178FD8F0075214C /* PushNotification.swift */,
+				FA65BB2B2178FD8F0075214C /* PushNotifications.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -744,6 +748,7 @@
 			isa = PBXGroup;
 			children = (
 				FA947E6F212B371200AE06F1 /* LineDAO.swift */,
+				FA65BB3021791F3F0075214C /* Localizable.strings */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -989,7 +994,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = E602298C203FA29E00336FC3;
@@ -1034,6 +1038,7 @@
 				FAB3369620B331BB00D6B61F /* SF-Pro-Text-Light.otf in Resources */,
 				FAB3369320B331BB00D6B61F /* SF-Pro-Display-Bold.otf in Resources */,
 				FAB3367D20B331BB00D6B61F /* SFCompactDisplay-Semibold.otf in Resources */,
+				FA65BB3121791F3F0075214C /* Localizable.strings in Resources */,
 				FAB3368B20B331BB00D6B61F /* SFCompactDisplay-Thin.otf in Resources */,
 				FAB3368F20B331BB00D6B61F /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				FAB3368720B331BB00D6B61F /* SFCompactDisplay-Ultralight.otf in Resources */,
@@ -1274,7 +1279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA65BB2C2178FD8F0075214C /* PushNotification.swift in Sources */,
+				FA65BB2C2178FD8F0075214C /* PushNotifications.swift in Sources */,
 				E60229CA203FD01900336FC3 /* LoginViewController.swift in Sources */,
 				E60229B8203FC98000336FC3 /* MainListCell.swift in Sources */,
 				FA947E73212B371F00AE06F1 /* LineService.swift in Sources */,
@@ -1374,6 +1379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E60229A2203FA29E00336FC3 /* Base */,
+				FA65BB2E21791EEC0075214C /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1382,6 +1388,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E616DB4420D991910009E9FD /* Base */,
+				FA65BB2F21791EEC0075214C /* pt-BR */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";

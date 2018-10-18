@@ -1,0 +1,48 @@
+
+/* Class = "WKInterfaceLabel"; text = "Atendimento"; ObjectID = "0fl-Us-87Y"; */
+"0fl-Us-87Y.text" = "Atendimento";
+
+/* Class = "WKInterfaceLabel"; text = "Name"; ObjectID = "7tn-YU-aBf"; */
+"7tn-YU-aBf.text" = "Name";
+
+/* Class = "WKInterfaceController"; title = "Fila"; ObjectID = "9hJ-vI-oB8"; */
+"9hJ-vI-oB8.title" = "Fila";
+
+/* Class = "WKInterfaceButton"; title = "Começar"; ObjectID = "AJy-8C-pzg"; */
+"AJy-8C-pzg.title" = "Começar";
+
+/* Class = "WKInterfaceController"; title = "Smart Board"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "Smart Board";
+
+/* Class = "WKInterfaceLabel"; text = "Question"; ObjectID = "Fa1-dn-rJC"; */
+"Fa1-dn-rJC.text" = "Question";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "Gtx-xK-4Hb"; */
+"Gtx-xK-4Hb.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Alert Label"; ObjectID = "IdU-wH-bcW"; */
+"IdU-wH-bcW.text" = "Alert Label";
+
+/* Class = "WKInterfaceLabel"; text = "Sem questões"; ObjectID = "Mb7-AU-egw"; */
+"Mb7-AU-egw.text" = "Sem questões";
+
+/* Class = "WKInterfaceLabel"; text = "Username"; ObjectID = "Rcs-cU-LHh"; */
+"Rcs-cU-LHh.text" = "Username";
+
+/* Class = "WKInterfaceLabel"; text = "Duração"; ObjectID = "TbG-nh-H8h"; */
+"TbG-nh-H8h.text" = "Duração";
+
+/* Class = "WKInterfaceLabel"; text = "Question"; ObjectID = "d2b-RL-rUa"; */
+"d2b-RL-rUa.text" = "Question";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "dlU-kC-l9I"; */
+"dlU-kC-l9I.text" = "Label";
+
+/* Class = "WKInterfaceController"; title = "Fechar"; ObjectID = "dps-9g-Nlz"; */
+"dps-9g-Nlz.title" = "Fechar";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "hsh-P1-tPn"; */
+"hsh-P1-tPn.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Name"; ObjectID = "qjX-gs-aMX"; */
+"qjX-gs-aMX.text" = "Name";

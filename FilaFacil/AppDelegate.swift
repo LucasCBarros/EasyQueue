@@ -79,6 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //        Messaging.messaging().appDidReceiveMessage(userInfo)
 //    }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        PushNotifications.resetBadgeNumber()
+    }
+    
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
