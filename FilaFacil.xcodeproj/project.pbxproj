@@ -101,6 +101,8 @@
 		FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA80421275E36006EA274 /* CacheManager.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
+		FA65BB2C2178FD8F0075214C /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BB2B2178FD8F0075214C /* PushNotification.swift */; };
+		FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		FA8148B920BF304700F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
@@ -331,6 +333,7 @@
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FA3CA80421275E36006EA274 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FA65BB2B2178FD8F0075214C /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
@@ -732,6 +735,7 @@
 				FA3CA80421275E36006EA274 /* CacheManager.swift */,
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 				A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */,
+				FA65BB2B2178FD8F0075214C /* PushNotification.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -1270,6 +1274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA65BB2C2178FD8F0075214C /* PushNotification.swift in Sources */,
 				E60229CA203FD01900336FC3 /* LoginViewController.swift in Sources */,
 				E60229B8203FC98000336FC3 /* MainListCell.swift in Sources */,
 				FA947E73212B371F00AE06F1 /* LineService.swift in Sources */,
@@ -1302,6 +1307,7 @@
 				E60229DE20408F0D00336FC3 /* DAO.swift in Sources */,
 				FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */,
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
+				FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */,
 				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
@@ -1550,7 +1556,7 @@
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N568683GB9;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1574,7 +1580,7 @@
 				CODE_SIGN_ENTITLEMENTS = FilaFacil/FilaFacil.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N568683GB9;
+				DEVELOPMENT_TEAM = 2ZL2ZS7T3D;
 				INFOPLIST_FILE = FilaFacil/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -29,9 +29,10 @@ class LineService: NSObject {
                 }
                 var presentedLines = PresentedLinesManager.shared.lines
                 if presentedLines.count == 0 {
-                    let firstLine = lines.first!.name
-                    PresentedLinesManager.shared.add(firstLine)
-                    presentedLines.insert(firstLine)
+                    for line in lines {
+                        PresentedLinesManager.shared.add(line.name)
+                        presentedLines.insert(line.name)
+                    }
                 }
                 
                 let onlySelected = !onlySelected

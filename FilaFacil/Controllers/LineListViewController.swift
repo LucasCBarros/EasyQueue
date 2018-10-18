@@ -35,6 +35,8 @@ class LineListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         LineService.shared.fetchAllLines(onlySelected: true, { (lines, _) in
             DispatchQueue.main.async {
                 self.teacherArray = lines!

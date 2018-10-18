@@ -17,8 +17,6 @@ class LineDAO: NSObject {
         lines.append(Line(lineId: "0", name: "Developer", color: Color(red: 51.0 / 255.0, green: 164.0 / 255.0, blue: 255.0 / 255.0)))
         lines.append(Line(lineId: "1", name: "Design", color: (try? Color(with: "F6713D"))!))
         lines.append(Line(lineId: "2", name: "Business", color: (try? Color(with: "EEB307"))!))
-        lines.append(Line(lineId: "3", name: "Teste4", color: (try? Color(with: "FFFFFF"))!))
-        lines.append(Line(lineId: "4", name: "Teste5", color: (try? Color(with: "000000"))!))
         
         completionHandler(lines, nil)
     }
