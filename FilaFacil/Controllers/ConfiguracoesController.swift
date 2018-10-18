@@ -37,6 +37,31 @@ class ConfiguracoesController: UITableViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        let selectedLines = PresentedLinesManager.shared.lines
+        LineDAO().fetchAllLines { (allLines, error) in
+            if let allLines = allLines {
+                var lines = allLines.reduce(Set<String>(), { (result, line) in
+                    var result = result
+                    result.insert(line.name)
+                    return result
+                })
+                for line in selectedLines {
+                    lines.remove(line)
+                }
+                let removedLines = lines.map({ (element) -> CategoryQuestionType? in
+                    return CategoryQuestionType(rawValue: element)
+                })
+                let newLines = selectedLines.map({ (element) -> CategoryQuestionType? in
+                    return CategoryQuestionType(rawValue: element)
+                })
+                
+                PushNotifications.removeSubscriptions(categoriesQuestion: removedLines.compactMap({$0}))
+                PushNotifications.saveSubscriptions(categoriesQuestion: newLines.compactMap({$0}))
+            }
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func switchDeveloperAction(_ sender: UISwitch) {
         if sender.isOn {

@@ -25,7 +25,7 @@ class PushNotifications {
             
             let notificationInfo = CKNotificationInfo()
             
-            notificationInfo.alertLocalizationKey = "FilaFacil_" + category.rawValue
+            notificationInfo.alertLocalizationKey = category.rawValue
             if #available(iOS 11.0, *) {
                 notificationInfo.title = "Nova questão na fila " + category.rawValue
             }
