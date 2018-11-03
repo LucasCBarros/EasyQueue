@@ -13,6 +13,7 @@ class NoteViewCell: UICollectionViewCell {
     static fileprivate var column:(left: CGPoint, right: CGPoint)?
     
     @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var apagar: NSLayoutConstraint!
     
     @IBOutlet weak var nameLabel: UILabel!
     
