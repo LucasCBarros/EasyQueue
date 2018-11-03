@@ -11,9 +11,7 @@ import UIKit
 protocol NoteCollectionViewLayoutDelegate: NSObjectProtocol {
     
     func getAllTexts() -> [String]
-    
-    func calculeColumn(width: CGFloat) -> CGFloat
-    
+        
 }
 
 class NoteCollectionViewLayout: UICollectionViewLayout {
@@ -21,9 +19,10 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
     open weak var delegate: NoteCollectionViewLayoutDelegate?
     
     // Configurable properties
-    var numberOfColumns = 2
-    var cellPadding: CGFloat = 10
-
+    let numberOfColumns = 2
+    let sectionInset: CGFloat = 0
+    let interitemSpacing: CGFloat = 20
+    
     //3. Array to keep a cache of attributes.
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
 
@@ -55,28 +54,48 @@ class NoteCollectionViewLayout: UICollectionViewLayout {
         var xOffset = [CGFloat]()
         if let delegate = self.delegate {
             texts = delegate.getAllTexts()
-            columnWidth = delegate.calculeColumn(width: columnWidth)
         }
-        for column in 0 ..< numberOfColumns {
-            xOffset.append(CGFloat(column) * columnWidth)
-        }
-        var column = 0
+        var insect: CGFloat
+        var interitemSpacing: CGFloat
+        var column: Int = 0
+        var expectedHeight: CGFloat
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
+        let numberOfItems = collectionView.numberOfItems(inSection: 0)
         
         // 3. Iterates through the list of items in the first section
-        for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
-
+        for item in 0 ..< numberOfItems {
+            insect = 0
+            interitemSpacing = 0
+            
+            if  column == 0 || column == numberOfColumns - 1 {
+                insect = -self.sectionInset
+            } else {
+                interitemSpacing = -self.interitemSpacing
+            }
+            
+            xOffset.append(columnWidth * CGFloat(item) + insect + interitemSpacing)
+            
+            if column == 0 && column == numberOfColumns - 1 {
+                insect -= self.sectionInset
+            } else {
+                interitemSpacing -= self.interitemSpacing
+            }
+            
+            interitemSpacing /= 2
+            
+            let itemWidth = columnWidth + insect + interitemSpacing
+            
             let indexPath = IndexPath(item: item, section: 0)
             
-            var expectedHeight: CGFloat = 185
+            expectedHeight = 180
             
-            expectedHeight += texts[indexPath.row].height(withConstrainedWidth: columnWidth - 54,
-                                                          font: UIFont(name: "SFProDisplay-Regular",
-                                                                       size: 27)!)
+            let textHeight = texts[indexPath.row].height(withConstrainedWidth: itemWidth - 50, font: UIFont(name: "SFProDisplay-Regular", size: 31)!)
+            
+            expectedHeight += textHeight
             
             // 4. Asks the delegate for the height of the picture and the annotation and calculates the cell frame.
-            let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: expectedHeight)
-            let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
+            let frame = CGRect(x: xOffset[column], y: yOffset[column], width: itemWidth, height: expectedHeight)
+            let insetFrame = frame.insetBy(dx: 0, dy: 10)
 
             // 5. Creates an UICollectionViewLayoutItem with the frame and add it to the cache
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
