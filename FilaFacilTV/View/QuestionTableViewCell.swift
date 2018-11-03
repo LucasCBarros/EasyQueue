@@ -35,7 +35,7 @@ class QuestionTableViewCell: UITableViewCell {
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         super.didUpdateFocus(in: context, with: coordinator)
         
-        if context.nextFocusedView == self{
+        if context.nextFocusedView == self {
             self.profileName.textColor = #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1)
             self.questionLabel.textColor = UIColor.black
             self.timeInputQuestion.textColor = #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.231372549, alpha: 1)

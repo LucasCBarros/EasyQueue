@@ -48,9 +48,7 @@ class DAO: NSObject {
                     
                         allObjects.append(newObj)
                 }
-
                 completionHandler(allObjects)
-            
             }
         })
     }

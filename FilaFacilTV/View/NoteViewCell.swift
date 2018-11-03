@@ -18,8 +18,6 @@ class NoteViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     
-    //    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 7

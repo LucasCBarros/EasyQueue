@@ -282,7 +282,9 @@ extension LineListViewController: UICollectionViewDataSource {
             let line = teacherArray[indexPath.row]
             lineCell.title.text = line.name
             if lineCell.title.text == selectedTab?.name {
-                lineCell.colorfulBar.backgroundColor = UIColor(red: CGFloat(line.color.red), green: CGFloat(line.color.green), blue: CGFloat(line.color.blue), alpha: 1.0)
+                lineCell.colorfulBar.backgroundColor = UIColor(red: CGFloat(line.color.red),
+                                                               green: CGFloat(line.color.green),
+                                                               blue: CGFloat(line.color.blue), alpha: 1.0)
             } else {
                 lineCell.colorfulBar.backgroundColor = UIColor.clear
             }
@@ -305,7 +307,9 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewDele
         self.linesCollectionView.reloadData()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let heitgh: CGFloat = 45.0
         var size = CGSize(width: 0, height: heitgh)
         if self.teacherArray.count > 2 {
@@ -319,7 +323,9 @@ extension LineListViewController: UICollectionViewDelegate, UICollectionViewDele
         return size
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if self.teacherArray.count > 1 {
             let interitemSpacing = (collectionView.frame.width - self.lineTotalWidth) / CGFloat(self.teacherArray.count - 1)
             let minimumInteritemSpacing: CGFloat = 20.0

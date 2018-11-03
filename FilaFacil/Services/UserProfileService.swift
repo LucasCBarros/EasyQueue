@@ -25,7 +25,6 @@ class UserProfileService: NSObject {
             } else {
                 self.userProfileManager.retrieveImage(for: userId, with: { (data, date, error) in
                     if let data = data, let date = date, error == nil {
-                        // TODO: pensar em forma de tratar data da imagem de forma eficiente.
                         CacheManager.shared.save(data: data, with: date, in: userId)
                         completionHandler(UIImage(data: data), true, error)
                     }

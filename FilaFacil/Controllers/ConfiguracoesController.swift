@@ -39,7 +39,7 @@ class ConfiguracoesController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let selectedLines = PresentedLinesManager.shared.lines
-        LineDAO().fetchAllLines { (allLines, error) in
+        LineDAO().fetchAllLines { (allLines, _) in
             if let allLines = allLines {
                 var lines = allLines.reduce(Set<String>(), { (result, line) in
                     var result = result

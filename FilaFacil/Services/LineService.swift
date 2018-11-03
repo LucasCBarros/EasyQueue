@@ -11,7 +11,7 @@ import Foundation
 /// Services associated with the Lines.
 class LineService: NSObject {
     
-    open static let shared = LineService()
+    public static let shared = LineService()
     
     private override init() { }
     

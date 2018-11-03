@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 // For iOS 10 display notification (sent via APNS)
                 UNUserNotificationCenter.current().delegate = self
                 let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-                UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {accepted, error in
+                UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { accepted, _ in
                     if accepted {
                         PushNotifications.saveSubscriptions(categoriesQuestion: [.developer, .business, .design])
                     }

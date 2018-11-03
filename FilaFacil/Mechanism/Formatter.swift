@@ -42,7 +42,6 @@ class Formatter {
             var monthString = dateFormatter.string(from: date)
             monthString = monthString.prefix(1).uppercased() + monthString.dropFirst()
         
-        
             return dayString + monthString
     }
     

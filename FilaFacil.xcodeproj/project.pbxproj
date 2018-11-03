@@ -253,8 +253,6 @@
 		A962D0A920F7971E00923150 /* FilaFacilWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FilaFacilWatch Extension.entitlements"; sourceTree = "<group>"; };
 		A995C8EC20F51CD2002DF214 /* FilaFacil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilaFacil.entitlements; sourceTree = "<group>"; };
 		A995C8ED20F51CDA002DF214 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		A9FD78F620E56A3500DB9A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD17A1D36A22534F1E524D6B /* Pods_FilaFacilWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacilWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -460,15 +458,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A9FD78F320E56A3500DB9A1F /* FilaFacilSiri */ = {
-			isa = PBXGroup;
-			children = (
-				A9FD78F420E56A3500DB9A1F /* IntentHandler.swift */,
-				A9FD78F620E56A3500DB9A1F /* Info.plist */,
-			);
-			path = FilaFacilSiri;
-			sourceTree = "<group>";
-		};
 		DEBC40BD20B1E7DB00870D4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,7 +520,6 @@
 				DEDF0FBF20AE20470064A247 /* FilaFacilTV */,
 				E616DB4220D991910009E9FD /* FilaFacilWatch */,
 				E616DB5120D991940009E9FD /* FilaFacilWatch Extension */,
-				A9FD78F320E56A3500DB9A1F /* FilaFacilSiri */,
 				E6022996203FA29E00336FC3 /* Products */,
 				1ECAEA88155B8A23266FB768 /* Pods */,
 				EEE9480C3407FA46BDEB6102 /* Frameworks */,

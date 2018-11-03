@@ -36,7 +36,7 @@ class PushNotifications {
 
             subscription.notificationInfo = notificationInfo
             
-            dao.publicDB.save(subscription, completionHandler: {subscription, error in
+            dao.publicDB.save(subscription, completionHandler: { _, error in
                 semaphore.signal()
                 if error == nil {
 
@@ -58,7 +58,7 @@ class PushNotifications {
                 for subscription in subscriptions {
                     if let notificationInfo = subscription.notificationInfo, let alertLocalizationKey = notificationInfo.alertLocalizationKey,
                         categoriesNames.contains(alertLocalizationKey) {
-                        self.dao.publicDB.delete(withSubscriptionID: subscription.subscriptionID, completionHandler: { (string, error) in
+                        self.dao.publicDB.delete(withSubscriptionID: subscription.subscriptionID, completionHandler: { (_, error) in
                             if error == nil {
                                 
                             } else {
@@ -78,9 +78,8 @@ class PushNotifications {
         
         badgeResetOperation.modifyBadgeCompletionBlock = { (error) -> Void in
             if error != nil {
-                print("\nError resetting badge: \(error)")
-            }
-            else {
+                print("\nError resetting badge: \(String(describing: error))")
+            } else {
                 DispatchQueue.main.async {
                     UIApplication.shared.applicationIconBadgeNumber = 0
                 }

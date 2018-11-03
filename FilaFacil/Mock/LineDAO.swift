@@ -14,7 +14,9 @@ class LineDAO: NSObject {
         
         var lines: [Line] = []
         
-        lines.append(Line(lineId: "0", name: "Developer", color: Color(red: 51.0 / 255.0, green: 164.0 / 255.0, blue: 255.0 / 255.0)))
+        lines.append(Line(lineId: "0", name: "Developer", color: Color(red: 51.0 / 255.0,
+                                                                       green: 164.0 / 255.0,
+                                                                       blue: 255.0 / 255.0)))
         lines.append(Line(lineId: "1", name: "Design", color: (try? Color(with: "F6713D"))!))
         lines.append(Line(lineId: "2", name: "Business", color: (try? Color(with: "EEB307"))!))
         

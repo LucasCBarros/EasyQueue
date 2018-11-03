@@ -12,11 +12,11 @@ final class PresentedLinesManager {
     
     private static let key = "lines"
     
-    open private(set) static var shared = PresentedLinesManager()
+    public private(set) static var shared = PresentedLinesManager()
     
     private var _lines: Set<String> = []
     
-    open private(set) var lines: Set<String> {
+    public private(set) var lines: Set<String> {
         get {
             self.externalSemaphore.wait()
             let lines = self._lines
@@ -44,7 +44,7 @@ final class PresentedLinesManager {
         self.internalSemaphore.signal()
     }
     
-    open func add(_ line: String) {
+    public func add(_ line: String) {
         self.internalSemaphore.wait()
         self.lines.insert(line)
         let data = NSKeyedArchiver.archivedData(withRootObject: self.lines)
@@ -52,7 +52,7 @@ final class PresentedLinesManager {
         self.internalSemaphore.signal()
     }
     
-    open func remove(_ line: String) {
+    public func remove(_ line: String) {
         self.internalSemaphore.wait()
         self.lines.remove(line)
         let data = NSKeyedArchiver.archivedData(withRootObject: self.lines)
