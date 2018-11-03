@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class ConfiguracoesController: UITableViewController {
+class ConfiguracoesController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var developerSwitch: UISwitch!
@@ -70,16 +70,15 @@ class ConfiguracoesController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
             return
         }
-        else {
-            let composeVC = MFMailComposeViewController()
-            composeVC.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
-            // Configure the fields of the interface.
-            composeVC.setToRecipients([self.email])
-            composeVC.setSubject("Feedback sobre o aplicativo")
-            composeVC.setMessageBody("", isHTML: false)
-            // Present the view controller modally.
-            self.present(composeVC, animated: true, completion: nil)
-        }
+        
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        // Configure the fields of the interface.
+        composeVC.setToRecipients([self.email])
+        composeVC.setSubject("Feedback sobre o aplicativo")
+        composeVC.setMessageBody("", isHTML: false)
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
        
     }
     
