@@ -12,14 +12,8 @@ class AuthService: NSObject {
 
     let authManager = AuthDatabaseManager()
     let userProfileService = UserProfileService()
-        
-    func signOut() {
-        //authManager.signOut()
-    }
     
-    //func checkUserLogged() -> Bool {
     func checkUserLogged(completion: @escaping(Bool) -> Void) {
-       //return authManager.checkSignIn()
         authManager.checkSignIn { (authenticated) in
             completion(authenticated)
         }

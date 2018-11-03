@@ -17,18 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var window: UIWindow?
     
-//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-//        let deviceToken = Messaging.messaging().fcmToken
-//        UserDefaults.standard.set( deviceToken, forKey: "userDeviceID")
-//    }
-    
-    override init() {
-        super.init()
-        //FirebaseApp.configure()
-        
-        //Messaging.messaging().delegate = self
-    }
-    
     fileprivate func requestAuthorisation() {
         INPreferences.requestSiriAuthorization { _ in }
     }
