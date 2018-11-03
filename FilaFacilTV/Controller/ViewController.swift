@@ -114,55 +114,45 @@ class ViewController: UIViewController {
     }
     
     func getAllQuestions() {
-        questionService.retrieveAllOpenQuestions { newQuestions in
+        questionService.retrieveAllOpenQuestions {[weak self] newQuestions in
             
             if let questions = newQuestions {
-                
-                if questions.count == 0 || self.openedQuestions != questions {
-                    self.openedQuestions.removeAll()
-                    self.openedQuestions = questions
-                    DispatchQueue.main.async {
-                        self.questionTableView.reloadData()
-                        self.questionActivityIndicator.stopAnimating()
-                        if self.openedQuestions.count == 0 {
-                            self.noQuestions.isHidden = false
-                        } else {
-                            self.noQuestions.isHidden = true
+                if let vc = self {
+                    if questions.count == 0 || vc.openedQuestions != questions {
+                        
+                        vc.openedQuestions.removeAll()
+                        vc.openedQuestions = questions
+                        DispatchQueue.main.async {
+                            
+                            vc.openedQuestions.removeAll()
+                            vc.openedQuestions = questions
+                            vc.questionTableView.reloadData()
+                            vc.questionActivityIndicator.stopAnimating()
+                            vc.developerNumber.text = String(vc.lineNumber(questions, condition: { (questionProfile) -> Bool in
+                                return questionProfile.requestedTeacher == CategoryQuestionType.developer.rawValue
+                            }))
+                            vc.designNumber.text = String(vc.lineNumber(questions, condition: { (questionProfile) -> Bool in
+                                return questionProfile.requestedTeacher == CategoryQuestionType.design.rawValue
+                            }))
+                            vc.businessNumber.text = String(vc.lineNumber(questions, condition: { (questionProfile) -> Bool in
+                                return questionProfile.requestedTeacher == CategoryQuestionType.business.rawValue
+                            }))
+                            
+                            vc.questionTableView.reloadData()
+                            vc.questionActivityIndicator.stopAnimating()
+                            if vc.openedQuestions.count == 0 {
+                                vc.noQuestions.isHidden = false
+                            } else {
+                                vc.noQuestions.isHidden = true
+                            }
                         }
                     }
                 }
             }
         }
-//        questionService.getAllQuestions(completion: {[weak self] (questions, error) in
-//            if error == nil {
-//                let questions = questions.sorted(by: { (question1, question2) -> Bool in
-//                    return question1.questionID < question2.questionID
-//                })
-//                self?.verifyThatNeedActivateScreenSaver(with: questions)
-//                if self?.openedQuestions != questions {
-//                    DispatchQueue.main.async {
-//                        if let viewController = self {
-//                            viewController.openedQuestions.removeAll()
-//                            viewController.openedQuestions = questions
-//                            viewController.questionTableView.reloadData()
-//                            viewController.questionActivityIndicator.stopAnimating()
-//                            viewController.developerNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .developer }))
-//                            viewController.designNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .design }))
-//                            viewController.businessNumber.text = String(viewController.lineNumber(questions, condition: { $0.categoryQuestion.type == .business }))
-//                            if viewController.openedQuestions.count == 0 {
-//                                viewController.noQuestions.isHidden = false
-//                            }
-//                            else {
-//                                viewController.noQuestions.isHidden = true
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        })
     }
     
-    func lineNumber(_ questions: [Question], condition: (Question)->Bool) -> Int {
+    func lineNumber(_ questions: [QuestionProfile], condition: (QuestionProfile) -> Bool) -> Int {
         return questions.reduce(into: 0, { (result, question) in
             if condition(question) {
                 result += 1
