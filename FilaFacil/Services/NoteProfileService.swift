@@ -21,7 +21,7 @@ class NoteProfileService: NSObject {
     func retrieveOrderedNotes(completion: @escaping ([NoteProfile]?) -> Void) {
        
         retrieveAllOpenNotes { (allNotes) in
-            completion(allNotes?.sorted { $0.createdAt < $1.createdAt })
+            completion(allNotes?.sorted { $0.createdAt > $1.createdAt })
         }
     }
     
