@@ -26,7 +26,7 @@ class DetailInterfaceController: InterfaceController {
             startButton.setBackgroundColor(#colorLiteral(red: 0.4352941176, green: 0.02352941176, blue: 0.02352941176, alpha: 1))
             
             // create the attributed colour
-            let attributedStringColor = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            let attributedStringColor = [NSAttributedString.Key.foregroundColor: UIColor.white]
             // create the attributed string
             let attributedString = NSAttributedString(string: "Parar", attributes: attributedStringColor)
             self.startButton.setAttributedTitle(attributedString)
@@ -37,7 +37,7 @@ class DetailInterfaceController: InterfaceController {
             // Custom color
             let greenColor = #colorLiteral(red: 0, green: 0.9820762277, blue: 0.6320260167, alpha: 1)
             // create the attributed colour
-            let attributedStringColor = [NSAttributedStringKey.foregroundColor: greenColor]
+            let attributedStringColor = [NSAttributedString.Key.foregroundColor: greenColor]
             // create the attributed string
             let attributedString = NSAttributedString(string: "Começar", attributes: attributedStringColor)
             startButton.setAttributedTitle(attributedString)

@@ -24,13 +24,13 @@ class LoginViewController: MyViewController {
         super.viewDidLoad()
         emailTxtField.textColor = UIColor.white
         emailTxtField.attributedPlaceholder = NSAttributedString(string: "E-mail",
-                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         passwordTxtField.textColor = UIColor.white
         passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         usernameTxtField.textColor = UIColor.white
         usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
-                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         registerBtn.clipsToBounds = true
         registerBtn.layer.cornerRadius = 10
         
@@ -139,8 +139,8 @@ class LoginViewController: MyViewController {
     
     // Alert message case error
     func alertMessage(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

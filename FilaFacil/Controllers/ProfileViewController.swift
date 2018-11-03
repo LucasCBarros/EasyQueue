@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
-        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
         self.present(picker, animated: true, completion: nil)
     }
     
@@ -94,7 +94,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         var selectedImageFromPicker: Any?
         
         if let editedImage = info["UIImagePickerControllerEditedImage"] {
@@ -109,7 +112,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 profilePhoto.image = photo
                 
                 loadingPhoto.startAnimating()
-                userProfileManager.saveImage(UIImagePNGRepresentation(photo)!, for: currentProfile) { (newUser, error)  in
+                userProfileManager.saveImage(photo.pngData()!, for: currentProfile) { (newUser, error)  in
                     if error == nil {
                         print("Imagem salva com sucesso")
                         if let user = newUser {
@@ -182,4 +185,9 @@ extension ProfileViewController: EditPasswordViewControllerDelegate {
 //            }
 //        })
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }

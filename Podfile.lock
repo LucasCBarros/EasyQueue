@@ -1,8 +1,8 @@
 PODS:
-  - IQKeyboardManagerSwift (6.0.4)
-  - Kingfisher (4.8.0)
-  - SwiftLint (0.25.1)
-  - SwiftyJSON (4.1.0)
+  - IQKeyboardManagerSwift (6.2.0)
+  - Kingfisher (4.10.0)
+  - SwiftLint (0.27.0)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
@@ -18,10 +18,10 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
-  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
-  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
 PODFILE CHECKSUM: d14a182691b64b72b27405d3a1a97b233344481e
 

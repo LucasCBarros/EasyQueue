@@ -12,7 +12,7 @@ extension UIViewController {
     
     func alert(message: String, completionHandler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: completionHandler))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: completionHandler))
         self.present(alert, animated: true, completion: nil)
     }
 }

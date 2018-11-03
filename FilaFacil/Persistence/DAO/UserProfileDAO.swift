@@ -50,7 +50,7 @@ class UserProfileDAO: DAO {
     
     func editUser(user: UserProfile, completion: @escaping (Error?) -> Void) {
 
-        let recordID = CKRecordID(recordName: user.userID)
+        let recordID = CKRecord.ID(recordName: user.userID)
         
         publicDB.fetch(withRecordID: recordID) { record, error in
             
@@ -102,7 +102,7 @@ class UserProfileDAO: DAO {
         
         if let photo = user.photo {
             
-            let recordId = CKRecordID(recordName: photo)
+            let recordId = CKRecord.ID(recordName: photo)
             publicDB.fetch(withRecordID: recordId) { (record, error) in
                 if let record = record, error == nil {
                     

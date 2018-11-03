@@ -21,7 +21,7 @@ class EditPasswordViewController: MyViewController {
     let alert = UIAlertController(
         title: "Senha inválida",
         message: "Senha deve ter no mínimo 6 caracteres e ser igual a confirmação.",
-        preferredStyle: UIAlertControllerStyle.alert)
+        preferredStyle: UIAlertController.Style.alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()

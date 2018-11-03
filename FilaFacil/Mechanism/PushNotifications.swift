@@ -23,7 +23,7 @@ class PushNotifications {
             
             let subscription = CKQuerySubscription(recordType: "Question", predicate: predicate, options: .firesOnRecordCreation)
             
-            let notificationInfo = CKNotificationInfo()
+            let notificationInfo = CKSubscription.NotificationInfo()
             
             notificationInfo.alertLocalizationKey = category.rawValue
             if #available(iOS 11.0, *) {

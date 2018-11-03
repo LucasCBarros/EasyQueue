@@ -88,7 +88,7 @@ class ConfiguracoesController: UITableViewController {
     //Leva para Notificações em configurações
     @IBAction func goNotification(_ sender: UIButton) {
         
-        guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
             return
         }
         

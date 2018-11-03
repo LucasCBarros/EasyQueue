@@ -25,7 +25,7 @@ class NoteDAO: DAO {
         
         let uuid = UUID().uuidString
 
-        let noteID = CKRecordID(recordName: uuid)
+        let noteID = CKRecord.ID(recordName: uuid)
         
         let record = CKRecord(recordType: "Note", recordID: noteID)
         
@@ -56,7 +56,7 @@ class NoteDAO: DAO {
     // Remove note from DB
     func removeNote(note: NoteProfile, completionHandler: @escaping(Error?) -> Void) {
         
-        let noteRecordId = CKRecordID(recordName: note.noteID)
+        let noteRecordId = CKRecord.ID(recordName: note.noteID)
 
         publicDB.delete(withRecordID: noteRecordId) { (record, error) in
            

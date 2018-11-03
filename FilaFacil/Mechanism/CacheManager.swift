@@ -8,9 +8,9 @@
 
 import Kingfisher
 
-class CacheManager {
+open class CacheManager {
     
-    static open private(set) var shared = CacheManager()
+    static public private(set) var shared = CacheManager()
     
     static private let key = "imageDate"
     

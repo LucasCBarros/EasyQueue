@@ -87,7 +87,7 @@ class QuestionProfileDAO: DAO {
     
     func removeQuestionFromLine(question: QuestionProfile, completionHandler: @escaping((Error?) -> Void)) {
 
-        let questionId = CKRecordID(recordName: question.questionID)
+        let questionId = CKRecord.ID(recordName: question.questionID)
         
         publicDB.delete(withRecordID: questionId) { (record, error) in
             

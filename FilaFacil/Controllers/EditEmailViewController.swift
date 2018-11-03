@@ -17,7 +17,7 @@ class EditEmailViewController: MyViewController {
     open weak var delegate: EditEmailViewControllerDelegate?
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    let alert = UIAlertController(title: "Email inválido", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+    let alert = UIAlertController(title: "Email inválido", message: nil, preferredStyle: UIAlertController.Style.alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()

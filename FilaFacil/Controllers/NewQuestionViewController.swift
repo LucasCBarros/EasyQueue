@@ -61,9 +61,9 @@ class NewQuestionViewController: MyViewController {
         
         let childViewController = UIStoryboard(name: "ProfileQuestionStatusView",
                                                bundle: nil).instantiateViewController(withIdentifier: "ProfileQuestionStatusViewController")
-        self.addChildViewController(childViewController)
+        self.addChild(childViewController)
         self.view.addSubview(childViewController.view)
-        childViewController.didMove(toParentViewController: self)
+        childViewController.didMove(toParent: self)
     }
 }
 
