@@ -9,8 +9,6 @@
 import UIKit
 import Kingfisher
 
-//selectedTab = teacherArray[indexPath.row]
-
 class LineListViewController: UIViewController {
 
     // MARK: - Outlets

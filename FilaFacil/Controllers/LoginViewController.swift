@@ -72,18 +72,15 @@ class LoginViewController: MyViewController {
             self.alertMessage(title: "Register Error", message: "Password field can't be empty")
         }
         
-        guard let email = emailTxtField.text else {
-//            self.alertMessage(title: "Register Error", message: "Email field can't be empty!")
+        guard emailTxtField.text != nil else {
             print("Email Error!")
             return
         }
-        guard let password = passwordTxtField.text else {
-//            self.alertMessage(title: "Register Error", message: "Password field can't be empty")
+        guard passwordTxtField.text != nil else {
             print("Password Error!")
             return
         }
-        guard let username = usernameTxtField.text else {
-//            self.alertMessage(title: "Register Error", message: "Name field can't be empty")
+        guard usernameTxtField.text != nil else {
             print("Name Error!")
             return
         }

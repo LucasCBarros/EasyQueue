@@ -10,7 +10,6 @@
 		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
 		A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244D82124CFB500AACD1B /* NoteViewController.swift */; };
-		A93244DB2124D5E900AACD1B /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244DA2124D5E900AACD1B /* ProfileType.swift */; };
 		A93DFB142125F9A500231B1D /* ConfiguracoesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */; };
 		A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */; };
 		A93DFB182125FA4600231B1D /* PresentedLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */; };
@@ -54,17 +53,11 @@
 		E60229BC203FCC3E00336FC3 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229BB203FCC3E00336FC3 /* LoginView.storyboard */; };
 		E60229BE203FCC9E00336FC3 /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229BD203FCC9E00336FC3 /* ProfileView.storyboard */; };
 		E60229C2203FCD1500336FC3 /* NewQuestionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229C1203FCD1500336FC3 /* NewQuestionView.storyboard */; };
-		E60229C4203FCD7D00336FC3 /* QuestionStatusView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229C3203FCD7D00336FC3 /* QuestionStatusView.storyboard */; };
-		E60229C6203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */; };
-		E60229C8203FCE6800336FC3 /* LineStatusView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */; };
 		E60229CA203FD01900336FC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229C9203FD01900336FC3 /* LoginViewController.swift */; };
 		E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229CD203FD09E00336FC3 /* ProfileViewController.swift */; };
 		E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229CF203FD11300336FC3 /* LineListViewController.swift */; };
 		E60229D2203FD12400336FC3 /* LineListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60229D1203FD12400336FC3 /* LineListView.storyboard */; };
 		E60229D4203FD18200336FC3 /* NewQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229D3203FD18200336FC3 /* NewQuestionViewController.swift */; };
-		E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229D5203FD19900336FC3 /* QuestionStatusViewController.swift */; };
-		E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */; };
-		E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229D9203FD20200336FC3 /* LineStatusViewController.swift */; };
 		E60229DC203FD5AB00336FC3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229DB203FD5AB00336FC3 /* AuthService.swift */; };
 		E60229DE20408F0D00336FC3 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229DD20408F0D00336FC3 /* DAO.swift */; };
 		E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229DF20408FAD00336FC3 /* AuthDatabaseManager.swift */; };
@@ -90,7 +83,6 @@
 		E6A52C4D20D9AC95001B4B16 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834E0820B5E90C002F3E32 /* NoteService.swift */; };
 		E6A52C5020D9AE00001B4B16 /* ExtensionsWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A52C4F20D9AE00001B4B16 /* ExtensionsWatch.swift */; };
 		E6A52C5120D9F661001B4B16 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
-		E6D7FB1C205314B600EEC89D /* FilaFacilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */; };
 		E6FC384120B3506400D88578 /* CreateNoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FC384020B3506400D88578 /* CreateNoteView.storyboard */; };
 		E6FC384320B3514500D88578 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384220B3514500D88578 /* CreateNoteViewController.swift */; };
 		E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384420B35DE300D88578 /* NoteCell.swift */; };
@@ -249,7 +241,6 @@
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53A0C9E131043C9A0A35EED /* Pods-FilaFacilWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A93244D82124CFB500AACD1B /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
-		A93244DA2124D5E900AACD1B /* ProfileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConfiguracoesView.storyboard; sourceTree = "<group>"; };
 		A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracoesController.swift; sourceTree = "<group>"; };
 		A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedLinesManager.swift; sourceTree = "<group>"; };
@@ -272,7 +263,6 @@
 		DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuestion.swift; sourceTree = "<group>"; };
 		DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacilTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDF0FC020AE20470064A247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DEDF0FC220AE20470064A247 /* ViewControllerOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOLD.swift; sourceTree = "<group>"; };
 		DEDF0FCA20AE20470064A247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEDF0FCC20AE20470064A247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -289,17 +279,11 @@
 		E60229BB203FCC3E00336FC3 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		E60229BD203FCC9E00336FC3 /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		E60229C1203FCD1500336FC3 /* NewQuestionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewQuestionView.storyboard; sourceTree = "<group>"; };
-		E60229C3203FCD7D00336FC3 /* QuestionStatusView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionStatusView.storyboard; sourceTree = "<group>"; };
-		E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileQuestionStatusView.storyboard; sourceTree = "<group>"; };
-		E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LineStatusView.storyboard; sourceTree = "<group>"; };
 		E60229C9203FD01900336FC3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E60229CD203FD09E00336FC3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E60229CF203FD11300336FC3 /* LineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineListViewController.swift; sourceTree = "<group>"; };
 		E60229D1203FD12400336FC3 /* LineListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LineListView.storyboard; sourceTree = "<group>"; };
 		E60229D3203FD18200336FC3 /* NewQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionViewController.swift; sourceTree = "<group>"; };
-		E60229D5203FD19900336FC3 /* QuestionStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStatusViewController.swift; sourceTree = "<group>"; };
-		E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileQuestionStatusViewController.swift; sourceTree = "<group>"; };
-		E60229D9203FD20200336FC3 /* LineStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStatusViewController.swift; sourceTree = "<group>"; };
 		E60229DB203FD5AB00336FC3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E60229DD20408F0D00336FC3 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		E60229DF20408FAD00336FC3 /* AuthDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDatabaseManager.swift; sourceTree = "<group>"; };
@@ -323,8 +307,6 @@
 		E6A52C4320D9A817001B4B16 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		E6A52C4F20D9AE00001B4B16 /* ExtensionsWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsWatch.swift; sourceTree = "<group>"; };
 		E6D7FB19205314B600EEC89D /* FilaFacilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilaFacilUITests.swift; sourceTree = "<group>"; };
-		E6D7FB1D205314B600EEC89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6FC384020B3506400D88578 /* CreateNoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNoteView.storyboard; sourceTree = "<group>"; };
 		E6FC384220B3514500D88578 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		E6FC384420B35DE300D88578 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
@@ -521,7 +503,6 @@
 			isa = PBXGroup;
 			children = (
 				A95D8E7F216FB008006335A5 /* ViewController.swift */,
-				DEDF0FC220AE20470064A247 /* ViewControllerOLD.swift */,
 				A95D8E7D216FAF56006335A5 /* ScreenSaverViewController.swift */,
 			);
 			path = Controller;
@@ -547,7 +528,6 @@
 			children = (
 				FAB3363F20B3319B00D6B61F /* Fonts */,
 				E6022997203FA29E00336FC3 /* FilaFacil */,
-				E6D7FB1A205314B600EEC89D /* FilaFacilUITests */,
 				DEDF0FBF20AE20470064A247 /* FilaFacilTV */,
 				E616DB4220D991910009E9FD /* FilaFacilWatch */,
 				E616DB5120D991940009E9FD /* FilaFacilWatch Extension */,
@@ -606,7 +586,6 @@
 				FA947E6A212B36E700AE06F1 /* Line.swift */,
 				FA947E6B212B36E700AE06F1 /* PresentableLine.swift */,
 				E6FC384620B36CFD00D88578 /* NoteProfile.swift */,
-				A93244DA2124D5E900AACD1B /* ProfileType.swift */,
 				E60229B1203FC87F00336FC3 /* UserProfile.swift */,
 				E60229B3203FC8B300336FC3 /* QuestionProfile.swift */,
 				FA93520820E2B80C001E4988 /* MyViewController.swift */,
@@ -630,10 +609,7 @@
 				E60229C9203FD01900336FC3 /* LoginViewController.swift */,
 				E60229CD203FD09E00336FC3 /* ProfileViewController.swift */,
 				E60229CF203FD11300336FC3 /* LineListViewController.swift */,
-				E60229D5203FD19900336FC3 /* QuestionStatusViewController.swift */,
 				E60229D3203FD18200336FC3 /* NewQuestionViewController.swift */,
-				E60229D7203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift */,
-				E60229D9203FD20200336FC3 /* LineStatusViewController.swift */,
 				E6FC384220B3514500D88578 /* CreateNoteViewController.swift */,
 				A93244D82124CFB500AACD1B /* NoteViewController.swift */,
 				FA85EF6020D9234B00269699 /* EditEmailViewController.swift */,
@@ -653,10 +629,7 @@
 				E60229B9203FCB6F00336FC3 /* TabBarView.storyboard */,
 				E60229BD203FCC9E00336FC3 /* ProfileView.storyboard */,
 				E60229D1203FD12400336FC3 /* LineListView.storyboard */,
-				E60229C3203FCD7D00336FC3 /* QuestionStatusView.storyboard */,
 				E60229C1203FCD1500336FC3 /* NewQuestionView.storyboard */,
-				E60229C5203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard */,
-				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
 				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
 				A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */,
 			);
@@ -707,15 +680,6 @@
 				FAD6061820EAD66500A02366 /* WatchTimer.swift */,
 			);
 			path = "FilaFacilWatch Extension";
-			sourceTree = "<group>";
-		};
-		E6D7FB1A205314B600EEC89D /* FilaFacilUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E6D7FB1B205314B600EEC89D /* FilaFacilUITests.swift */,
-				E6D7FB1D205314B600EEC89D /* Info.plist */,
-			);
-			path = FilaFacilUITests;
 			sourceTree = "<group>";
 		};
 		EEE9480C3407FA46BDEB6102 /* Frameworks */ = {
@@ -1050,7 +1014,6 @@
 				FAB3368720B331BB00D6B61F /* SFCompactDisplay-Ultralight.otf in Resources */,
 				FAB3368A20B331BB00D6B61F /* SFCompactText-LightItalic.otf in Resources */,
 				FAB336A120B331BB00D6B61F /* SF-Pro-Text-BoldItalic.otf in Resources */,
-				E60229C6203FCE4E00336FC3 /* ProfileQuestionStatusView.storyboard in Resources */,
 				FAB3368020B331BB00D6B61F /* SFCompactDisplay-Regular.otf in Resources */,
 				FAB336A920B331BB00D6B61F /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				E60229A0203FA29E00336FC3 /* Assets.xcassets in Resources */,
@@ -1066,7 +1029,6 @@
 				A93DFB142125F9A500231B1D /* ConfiguracoesView.storyboard in Resources */,
 				FAB3369520B331BB00D6B61F /* SF-Pro-Display-Heavy.otf in Resources */,
 				FAB3369D20B331BB00D6B61F /* SF-Pro-Display-UltralightItalic.otf in Resources */,
-				E60229C4203FCD7D00336FC3 /* QuestionStatusView.storyboard in Resources */,
 				FAB336A220B331BB00D6B61F /* SF-Pro-Text-RegularItalic.otf in Resources */,
 				FAB336AA20B331BB00D6B61F /* SF Pro Font License.rtf in Resources */,
 				FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */,
@@ -1096,7 +1058,6 @@
 				FAB3368620B331BB00D6B61F /* SFCompactText-Bold.otf in Resources */,
 				E60229C2203FCD1500336FC3 /* NewQuestionView.storyboard in Resources */,
 				FAB336A520B331BB00D6B61F /* SF-Pro-Display-ThinItalic.otf in Resources */,
-				E60229C8203FCE6800336FC3 /* LineStatusView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1356,7 +1317,6 @@
 				A93DFB162125F9DE00231B1D /* ConfiguracoesController.swift in Sources */,
 				FA8148BC20BF383F00F2FADD /* NewQuestionTableViewCell.swift in Sources */,
 				E60229E620409E8400336FC3 /* UserProfileService.swift in Sources */,
-				E60229DA203FD20200336FC3 /* LineStatusViewController.swift in Sources */,
 				FA947E6D212B36E800AE06F1 /* PresentableLine.swift in Sources */,
 				E60229D0203FD11300336FC3 /* LineListViewController.swift in Sources */,
 				E60229E020408FAD00336FC3 /* AuthDatabaseManager.swift in Sources */,
@@ -1366,11 +1326,9 @@
 				FA947E6C212B36E800AE06F1 /* Line.swift in Sources */,
 				A93DFB182125FA4600231B1D /* PresentedLinesManager.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
-				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
 				FA947E70212B371200AE06F1 /* LineDAO.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
 				FA8148B920BF304700F2FADD /* Formatter.swift in Sources */,
-				A93244DB2124D5E900AACD1B /* ProfileType.swift in Sources */,
 				E6FC384520B35DE300D88578 /* NoteCell.swift in Sources */,
 				FA920699211A20EC0005BAAF /* Extensions in CK and Data.swift in Sources */,
 				E60229EA2040ACA100336FC3 /* Extensions.swift in Sources */,
@@ -1380,7 +1338,6 @@
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
 				FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */,
 				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
-				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
 				FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,
@@ -1416,7 +1373,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D7FB1C205314B600EEC89D /* FilaFacilUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

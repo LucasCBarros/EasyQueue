@@ -46,9 +46,8 @@ class ViewController: UIViewController {
     var noteService = NoteProfileService()
     var openedNotes: [NoteProfile] = []
     var topTimer: Timer!
-    var teacherArray: [String:PresentableLine] = [:]
+    var teacherArray: [String: PresentableLine] = [:]
     var selectedTab: PresentableLine?
-    
     
     var screenSaverTimeInterval: TimeInterval? = nil
     weak var screenSaverViewController: ScreenSaverViewController? = nil
@@ -117,33 +116,34 @@ class ViewController: UIViewController {
         questionService.retrieveAllOpenQuestions {[weak self] newQuestions in
             
             if let questions = newQuestions {
-                if let vc = self {
-                    if questions.count == 0 || vc.openedQuestions != questions {
+                if let viewController = self {
+                    if questions.count == 0 || viewController.openedQuestions != questions {
                         
-                        vc.openedQuestions.removeAll()
-                        vc.openedQuestions = questions
+                        viewController.openedQuestions.removeAll()
+                        viewController.openedQuestions = questions
                         DispatchQueue.main.async {
                             
-                            vc.openedQuestions.removeAll()
-                            vc.openedQuestions = questions
-                            vc.questionTableView.reloadData()
-                            vc.questionActivityIndicator.stopAnimating()
-                            vc.developerNumber.text = String(vc.lineNumber(questions, condition: { (questionProfile) -> Bool in
+                            viewController.openedQuestions.removeAll()
+                            viewController.openedQuestions = questions
+                            viewController.questionTableView.reloadData()
+                            viewController.questionActivityIndicator.stopAnimating()
+                            viewController.developerNumber.text = String(
+                                viewController.lineNumber(questions, condition: { (questionProfile) -> Bool in
                                 return questionProfile.requestedTeacher == CategoryQuestionType.developer.rawValue
                             }))
-                            vc.designNumber.text = String(vc.lineNumber(questions, condition: { (questionProfile) -> Bool in
+                            viewController.designNumber.text = String(viewController.lineNumber(questions, condition: { (questionProfile) -> Bool in
                                 return questionProfile.requestedTeacher == CategoryQuestionType.design.rawValue
                             }))
-                            vc.businessNumber.text = String(vc.lineNumber(questions, condition: { (questionProfile) -> Bool in
+                            viewController.businessNumber.text = String(viewController.lineNumber(questions, condition: { (questionProfile) -> Bool in
                                 return questionProfile.requestedTeacher == CategoryQuestionType.business.rawValue
                             }))
                             
-                            vc.questionTableView.reloadData()
-                            vc.questionActivityIndicator.stopAnimating()
-                            if vc.openedQuestions.count == 0 {
-                                vc.noQuestions.isHidden = false
+                            viewController.questionTableView.reloadData()
+                            viewController.questionActivityIndicator.stopAnimating()
+                            if viewController.openedQuestions.count == 0 {
+                                viewController.noQuestions.isHidden = false
                             } else {
-                                vc.noQuestions.isHidden = true
+                                viewController.noQuestions.isHidden = true
                             }
                         }
                     }
@@ -174,8 +174,7 @@ class ViewController: UIViewController {
                             self?.noteActivityIndicator.stopAnimating()
                             if self?.openedNotes.count == 0 {
                                 self?.noNotes.isHidden = false
-                            }
-                            else {
+                            } else {
                                 self?.noNotes.isHidden = true
                             }
                         }
@@ -184,7 +183,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
     
     @objc func getAllInformations() {
         getAllQuestions()
@@ -221,8 +219,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionTableViewCell
         
-        
-        
         if self.openedQuestions.count > 0 {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = self.openedQuestions[indexPath.row].questionTitle
@@ -231,9 +227,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let lineName = openedQuestions[indexPath.row].requestedTeacher
             if let line = teacherArray[lineName] {
                 
-                cell?.viewTypeQuestion.backgroundColor = UIColor(red: CGFloat(line.color.red), green: CGFloat(line.color.green), blue: CGFloat(line.color.blue), alpha: 1.0)
+                cell?.viewTypeQuestion.backgroundColor = UIColor(red: CGFloat(line.color.red),
+                                                                 green: CGFloat(line.color.green),
+                                                                 blue: CGFloat(line.color.blue), alpha: 1.0)
             }
-            
             
             //Tirar o timestamp e colocar a data e hora
             if let date = openedQuestions[indexPath.row].createdAt {
@@ -246,10 +243,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell?.profileImage.image = #imageLiteral(resourceName: "icons8-user_filled")
             }
-            
-            
         }
-        
         return cell!
     }
     
@@ -259,7 +253,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let lineName = openedQuestions[indexPath.row].requestedTeacher
         if let line = teacherArray[lineName] {
             
-            cell?.viewTypeQuestion.backgroundColor = UIColor(red: CGFloat(line.color.red), green: CGFloat(line.color.green), blue: CGFloat(line.color.blue), alpha: 1.0)
+            cell?.viewTypeQuestion.backgroundColor = UIColor(red: CGFloat(line.color.red),
+                                                             green: CGFloat(line.color.green),
+                                                             blue: CGFloat(line.color.blue), alpha: 1.0)
         }
     }
     

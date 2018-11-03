@@ -32,7 +32,9 @@ class ScreenSaverViewController: AVPlayerViewController {
         
         self.showsPlaybackControls = false
         
-        self.timeObserver = self.player?.addBoundaryTimeObserver(forTimes: [NSValue(time: avAsset.duration - CMTime(seconds: 1.0, preferredTimescale: 1))], queue: .main, using: {
+        self.timeObserver = self.player?.addBoundaryTimeObserver(forTimes:
+            [NSValue(time: avAsset.duration - CMTime(seconds: 1.0, preferredTimescale: 1))],
+                                                                 queue: .main, using: {
             if let time = self.initialTime {
                 print("Timer já instanciado.")
                 if Date().timeIntervalSince1970 - time >= 1200 {
@@ -53,7 +55,6 @@ class ScreenSaverViewController: AVPlayerViewController {
         menuGesture.allowedPressTypes = [NSNumber(value: UIPressType.menu.rawValue)]
         self.view.addGestureRecognizer(menuGesture)
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
