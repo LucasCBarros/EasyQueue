@@ -69,7 +69,12 @@ open class CacheManager {
     
     func retrieveData(for objectKey: String) -> Data? {
         if let image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: objectKey) {
+            #if os(iOS)
+            return image.pngData()
+            #else
             return UIImagePNGRepresentation(image)
+            #endif
+            
         } else {
             return nil
         }
