@@ -130,11 +130,11 @@ class LineListViewController: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
                     if self.selectedTab?.name == lineName {
                         self.inLineQuestions = questionProfile
                         self.listTableView.reloadData()
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             }
         }
