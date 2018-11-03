@@ -35,6 +35,38 @@ class DAO: NSObject {
     }
     
     func retrieveAll<T: PersistenceObject>(dump: T.Type, path: String, completionHandler: @escaping ([T]?) -> Void) {
+        
+        container.requestApplicationPermission(.userDiscoverability) {[weak self] (applicationStatus, error) in
+            if applicationStatus == CKContainer_Application_PermissionStatus.granted {
+                print("\n\n\nDeu certo\n\n\n")
+                self?.container.fetchUserRecordID { (recordId, error) in
+                    
+                    if error == nil {
+                       
+                        self?.container.discoverUserIdentity(withPhoneNumber: "", completionHandler: { (userInfo, error) in
+                            if error != nil {
+                                print("Handle error")
+                            } else {
+                                if let userInfo = userInfo {
+                                    if let nameComponents = userInfo.nameComponents {
+                                        let firstName = nameComponents.givenName!
+                                        let lastName = nameComponents.familyName!
+                                        
+                                        let fullName = firstName + " " + lastName
+                                        print("user: \(fullName)")
+                                        print("emailAddress =   \(userInfo.lookupInfo?.emailAddress)")
+                                        print("phoneNumber = \(userInfo.lookupInfo?.phoneNumber ?? "PhoneNumber")")
+                                    } else {}
+                                } else {
+                                    print("no user info")
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        }
+        
         var allObjects: [T] = []
 
         let predicate = NSPredicate(value: true)

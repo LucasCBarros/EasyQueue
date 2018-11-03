@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3vc-G5-VQo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3vc-G5-VQo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Medium.otf">
-            <string>SFProDisplay-Medium</string>
-        </array>
-        <array key="SF-Pro-Display-Regular.otf">
-            <string>SFProDisplay-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="gHT-cz-zTy">
@@ -30,46 +21,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-notes" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-1H-CXQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GnY-X8-50C">
-                                <rect key="frame" x="44" y="240" width="286" height="30"/>
-                                <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="GnY-X8-50C" secondAttribute="height" multiplier="143:15" id="9y0-w6-hMX"/>
-                                    <constraint firstAttribute="width" constant="286" id="SCp-iw-s6t"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pHi-z4-HUM">
-                                <rect key="frame" x="44" y="286" width="286" height="30"/>
-                                <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" label="Email Text Field"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="1G8-GP-3Vj"/>
-                                    <constraint firstAttribute="width" secondItem="pHi-z4-HUM" secondAttribute="height" multiplier="143:15" id="Kxb-ym-gr8"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" textContentType="email"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gjF-AL-Z4f">
-                                <rect key="frame" x="44" y="334" width="286" height="30"/>
-                                <color key="backgroundColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" label="Password Text Field"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="Aae-Tc-n69"/>
-                                    <constraint firstAttribute="width" secondItem="gjF-AL-Z4f" secondAttribute="height" multiplier="143:15" id="HAi-pI-kmf"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-fg-O6A">
-                                <rect key="frame" x="0.0" y="30" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -77,47 +30,29 @@
                                     <constraint firstAttribute="width" secondItem="SyE-fg-O6A" secondAttribute="height" multiplier="5:2" id="jbd-wo-sII"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ad-Ur-giT">
-                                <rect key="frame" x="44.5" y="436" width="286" height="48"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" label="Create Account Button"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="9aR-D8-1Gf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="19"/>
-                                <state key="normal" title="Create Account">
-                                    <color key="titleColor" red="0.2666666667" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="click_createAccount:" destination="3vc-G5-VQo" eventType="touchUpInside" id="ktB-8C-xfd"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Procure um instrutor para liberar seu acesso" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sz-F7-PBI">
+                                <rect key="frame" x="16" y="303.5" width="343" height="64.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15636768940000001" green="0.16786375640000001" blue="0.2093632221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="trailing" secondItem="2Z8-GS-aQT" secondAttribute="trailing" id="3Ik-0V-xXL"/>
-                            <constraint firstItem="pHi-z4-HUM" firstAttribute="top" secondItem="GnY-X8-50C" secondAttribute="bottom" constant="16" id="3od-Bv-FP5"/>
                             <constraint firstAttribute="bottom" secondItem="hxe-1H-CXQ" secondAttribute="bottom" id="6Gb-tf-aVd"/>
                             <constraint firstItem="SyE-fg-O6A" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="73E-2D-YGf"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="centerX" secondItem="soV-3b-Lp2" secondAttribute="centerX" id="7mO-YW-DHm"/>
-                            <constraint firstItem="gjF-AL-Z4f" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="Elp-VN-0E9"/>
+                            <constraint firstItem="2Z8-GS-aQT" firstAttribute="trailing" secondItem="2Sz-F7-PBI" secondAttribute="trailing" constant="16" id="EeS-Gl-Vec"/>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="top" secondItem="soV-3b-Lp2" secondAttribute="top" id="FSb-52-DkR"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="top" secondItem="gjF-AL-Z4f" secondAttribute="bottom" constant="72" id="Fzb-gj-orV"/>
-                            <constraint firstItem="0ad-Ur-giT" firstAttribute="width" secondItem="gjF-AL-Z4f" secondAttribute="width" id="XJS-wb-Kav"/>
-                            <constraint firstItem="GnY-X8-50C" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="Zwq-zT-ePv"/>
-                            <constraint firstItem="GnY-X8-50C" firstAttribute="top" secondItem="SyE-fg-O6A" secondAttribute="bottom" constant="60" id="feJ-5t-RLp"/>
-                            <constraint firstItem="gjF-AL-Z4f" firstAttribute="top" secondItem="pHi-z4-HUM" secondAttribute="bottom" constant="18" id="gA7-zr-9RU"/>
-                            <constraint firstItem="SyE-fg-O6A" firstAttribute="top" secondItem="2Z8-GS-aQT" secondAttribute="top" constant="10" id="nX9-9Y-JWe"/>
+                            <constraint firstItem="SyE-fg-O6A" firstAttribute="top" secondItem="2Z8-GS-aQT" secondAttribute="top" constant="30" id="nX9-9Y-JWe"/>
+                            <constraint firstItem="2Sz-F7-PBI" firstAttribute="centerX" secondItem="soV-3b-Lp2" secondAttribute="centerX" id="nk6-Hg-6Gg"/>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="leading" secondItem="2Z8-GS-aQT" secondAttribute="leading" id="o3j-g9-WOS"/>
-                            <constraint firstItem="pHi-z4-HUM" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="o5J-b0-hkh"/>
+                            <constraint firstItem="2Sz-F7-PBI" firstAttribute="top" secondItem="SyE-fg-O6A" secondAttribute="bottom" constant="103.5" id="pPz-fJ-LNS"/>
+                            <constraint firstItem="2Sz-F7-PBI" firstAttribute="leading" secondItem="2Z8-GS-aQT" secondAttribute="leading" constant="16" id="uhe-lW-dpK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Z8-GS-aQT"/>
                     </view>
                     <connections>
-                        <outlet property="emailTxtField" destination="pHi-z4-HUM" id="Od7-BL-Q6e"/>
-                        <outlet property="passwordTxtField" destination="gjF-AL-Z4f" id="MAT-ym-XUi"/>
-                        <outlet property="registerBtn" destination="0ad-Ur-giT" id="Wnb-g9-Vu9"/>
-                        <outlet property="usernameTxtField" destination="GnY-X8-50C" id="OtZ-wD-a1D"/>
                         <segue destination="BI3-bX-5Ek" kind="show" identifier="LoggedIn" id="hgo-TM-F3P"/>
                     </connections>
                 </viewController>

@@ -51,7 +51,7 @@ class AuthService: NSObject {
     
     //func checkUserLogged() -> Bool {
     func checkUserLogged(completion: @escaping(Bool) -> Void) {
-       //return authManager.checkSignIn()
+        //return authManager.checkSignIn()
         authManager.checkSignIn { (authenticated) in
             completion(authenticated)
         }

@@ -46,15 +46,16 @@ class ViewController: UIViewController {
     var noteService = NoteProfileService()
     var openedNotes: [NoteProfile] = []
     var topTimer: Timer!
-    var teacherArray: [String:PresentableLine] = [:]
+    var teacherArray: [String: PresentableLine] = [:]
     var selectedTab: PresentableLine?
-    
     
     var screenSaverTimeInterval: TimeInterval? = nil
     weak var screenSaverViewController: ScreenSaverViewController? = nil
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
+
         if let layout = noteCollectionView.collectionViewLayout as? NoteCollectionViewLayout {
             layout.delegate = self
         }

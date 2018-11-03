@@ -66,6 +66,24 @@ class UserProfileDAO: DAO {
         }
     }
     
+    
+    func editUsername(user: UserProfile, completion: @escaping (Error?) -> Void) {
+        
+        let recordID = CKRecord.ID(recordName: user.userID)
+        
+        publicDB.fetch(withRecordID: recordID) { record, error in
+            
+            if let record = record, error == nil {
+                
+                record.setValue(user.username, forKey: "username")
+                
+                self.publicDB.save(record) { _, error in
+                    completion(error)
+                }
+            }
+        }
+    }
+    
     func retrieveImage(for userId: String, with completionHlandler: @escaping (Data?, Date?, Error?) -> Void) {
         
         let predicate = NSPredicate(format: "userId == %@", userId)

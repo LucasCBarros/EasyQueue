@@ -22,17 +22,17 @@ class LoginViewController: MyViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTxtField.textColor = UIColor.white
-        emailTxtField.attributedPlaceholder = NSAttributedString(string: "E-mail",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        passwordTxtField.textColor = UIColor.white
-        passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        usernameTxtField.textColor = UIColor.white
-        usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        registerBtn.clipsToBounds = true
-        registerBtn.layer.cornerRadius = 10
+//        emailTxtField.textColor = UIColor.white
+//        emailTxtField.attributedPlaceholder = NSAttributedString(string: "E-mail",
+//                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+//        passwordTxtField.textColor = UIColor.white
+//        passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
+//                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+//        usernameTxtField.textColor = UIColor.white
+//        usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
+//                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+//        registerBtn.clipsToBounds = true
+//        registerBtn.layer.cornerRadius = 10
         
     }
     
@@ -108,7 +108,6 @@ class LoginViewController: MyViewController {
                 print("Problem to register")
             }
         }
-        
     }
 
 //    func login() {

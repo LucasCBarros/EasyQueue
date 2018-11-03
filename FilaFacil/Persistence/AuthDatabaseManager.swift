@@ -94,18 +94,35 @@ class AuthDatabaseManager: DAO {
         
     }
     
-//    func signOut() {
-//        do {
-//            try Auth.auth().signOut()
-//            
-//            print("Logged out successfully")
-//        } catch let signOutError as NSError {
-//            print ("Error signing out: %@", signOutError)
-//        }
-//    }
-//    
-//   func checkSignIn() -> Bool {
-   
+    func getPersonalData(completion: @escaping(String) -> Void) {
+        
+        container.fetchUserRecordID { (recordId, error) in
+            
+            if error == nil {
+                
+//                self.container.discoverUserIdentity(withUserRecordID: recordId!, completionHandler: { (userInfo, error) in
+//                    if error != nil {
+//                        print("Handle error")
+//                    } else {
+//                        if let userInfo = userInfo {
+//                            if let nameComponents = userInfo.nameComponents {
+//                                let firstName = nameComponents.givenName!
+//                                let lastName = nameComponents.familyName!
+//
+//                                let fullName = firstName + lastName
+//                                print("emailAddress =   \(userInfo.lookupInfo?.emailAddress ?? "Email")")
+//                                print("phoneNumber = \(userInfo.lookupInfo?.phoneNumber ?? "PhoneNumber")")
+//                                completion(fullName)
+//                            } else {}
+//                        } else {
+//                            print("no user info")
+//                        }
+//                    }
+//                })
+            }
+        }
+    }
+    
     func checkSignIn(completion: @escaping(Bool) -> Void) {
         
         //var authenticated: Bool = false
@@ -123,12 +140,23 @@ class AuthDatabaseManager: DAO {
             
                 if let auth = record["authenticated"] as? Int64 {
                     
-                    //print("authHHHH: \(auth)")
-                    
                     if auth != 0 {
 
                         completion(true)
                         //authenticated = true
+                    } else {
+                        if let name = record["username"] as? String {
+                            
+                        } else {
+                            
+                            self.getPersonalData(completion: { (user) in
+                                
+//                                userServices.editUsername(user: user, completion: { (user) in
+//                                    
+//                            
+//                                })
+                            })
+                        }
                     }
                 }
             }
