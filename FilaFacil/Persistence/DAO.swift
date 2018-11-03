@@ -20,14 +20,7 @@ class DAO: NSObject {
     let publicDB: CKDatabase
     let privateDB: CKDatabase
     
-    //var ref: DatabaseReference!
-    
     override init() {
-        //super.init()
-        //ref = Database.database().reference()
-        //ref.keepSynced(true)
-        
-        //container = CKContainer.default()
         container = CKContainer(identifier: "iCloud.com.JoaoHergert.FilaFacil")
         publicDB  = container.publicCloudDatabase
         privateDB = container.privateCloudDatabase
@@ -48,24 +41,12 @@ class DAO: NSObject {
                 for result in results {
                 
                     var dictionary = result.dictionaryWithValues(forKeys: result.allKeys())
-                    
-                   // for key in dictionary.keys {
-                       // let objectDict = dictionary[key] as? [String: Any]
-                        
-                       // let newObj = T(dictionary: objectDict!)
                     dictionary["recordId"] = result.recordID.recordName
                     dictionary["createdAt"] = result.creationDate
                     
                     let newObj = T(dictionary: dictionary)
-//                        let testeDict = ["username": "Joao",
-//                                                "questionID": "1111",
-//                                                "questionTitle": "Duvida de teste",
-//                                                "userID": "1111",
-//                                                "requestedTeacher": "Developer",
-//                                                "userPhoto": "dwdwdwdw"]
                     
                         allObjects.append(newObj)
-                    //}
                 }
 
                 completionHandler(allObjects)
@@ -73,72 +54,4 @@ class DAO: NSObject {
             }
         })
     }
-            
-        
-        
-        
-//        ref?.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let dictionary = snapshot.value as? [String: Any] {
-//
-//                for key in dictionary.keys {
-//                    let objectDict = dictionary[key] as? [String: Any]
-//
-//                    let newObj = T(dictionary: objectDict!)
-//
-//                    allObjects.append(newObj)
-//                }
-//
-//            }
-//            completionHandler(allObjects)
-//        })
-//    }
-//
-//    // Returns an Profile by ID
-//    func retrieveByID<T: PersistenceObject>(dump: T.Type, path: String, completionHandler: @escaping ([T]?) -> Void) {
-//        var allObjects: [T] = []
-//
-//        ref?.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let dictionary = snapshot.value as? [String: Any] {
-//
-//                for key in dictionary.keys {
-//                    let objectDict = dictionary[key] as? [String: Any]
-//
-//                    let newObj = T(dictionary: objectDict!)
-//
-//                    allObjects.append(newObj)
-//                }
-//
-//                completionHandler(allObjects)
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
-//    }
-//
-//    func editByID<T: PersistenceObject>(dump: T.Type, newObject: T, path: String, objectID: String) {
-//        let dict = newObject.getDictInfo()
-//
-//        ref?.child(path).child(objectID).updateChildValues(dict)
-//    }
-//
-//    func create<T: PersistenceObject>(dump: T.Type, object: T, path: String, newObjectID: String?) {
-//        let newID = (newObjectID == nil) ? ref?.child(path).childByAutoId().key : newObjectID
-//
-//        var dict = object.getDictInfo()
-//
-//        dict["userID"] = newID
-//
-//        ref?.child(path).child(newID!).setValue(dict)
-//    }
-//
-//    func createDetailedWithTimeStampID(path: String, fields: [String], info: [String]) {
-//
-//        let timeStampID = Date().millisecondsSince1970 //"\(Int(NSDate.timeIntervalSinceReferenceDate*1000))"
-//        print("##########", timeStampID)
-//        let pathWithID = path + String(timeStampID)
-//
-//        for field in 0..<fields.count {
-//            ref?.child(pathWithID).child(fields[field]).setValue(info[field])
-//        }
-//    }
 }

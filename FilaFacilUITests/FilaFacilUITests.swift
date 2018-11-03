@@ -32,38 +32,6 @@ class FilaFacilUITests: XCTestCase {
         super.tearDown()
     }
     
-//    func testLoginTeacher() {
-//
-//        let loginButtonButton = app.buttons["Login Button"]
-//        loginButtonButton.tap()
-//
-//        let okButton = app.alerts["Login Error"].buttons["Ok"]
-//        okButton.tap()
-//
-//        app/*@START_MENU_TOKEN@*/.buttons["Login"]/*[[".segmentedControls.buttons[\"Login\"]",".buttons[\"Login\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-//
-//        let eMailTextField = app.textFields["E-mail"]
-//        eMailTextField.tap()
-//        eMailTextField.typeText("teacher@t.com")
-//
-//        let toolbarsQuery = app.toolbars
-//        toolbarsQuery.buttons["Toolbar Next Button"].tap()
-//        app.secureTextFields["Password"].typeText("qqqqqq")
-//        toolbarsQuery.buttons["Toolbar Done Button"].tap()
-//        app.buttons["Login Button"].tap()
-//
-//
-//        let tabBarsQuery = app.tabBars
-//        tabBarsQuery.buttons["Questions"].tap()
-//    }
-//
-//    func test_LogoutTeacher() {
-//
-//        app.tabBars.buttons["Questions"].tap()
-//        app.buttons["icons8 settings 50"].tap()
-//        app.buttons["Logout"].tap()
-//    }
-    
     // Testa login do aluno
     func testLoginStudent() {
         

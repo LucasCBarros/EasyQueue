@@ -32,8 +32,6 @@ class ScreenSaverViewController: AVPlayerViewController {
         
         self.showsPlaybackControls = false
         
-//        let time = NSValue(time: CMTime(seconds: 2, preferredTimescale: 1))
-        
         self.timeObserver = self.player?.addBoundaryTimeObserver(forTimes: [NSValue(time: avAsset.duration - CMTime(seconds: 1.0, preferredTimescale: 1))], queue: .main, using: {
             if let time = self.initialTime {
                 print("Timer já instanciado.")

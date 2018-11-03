@@ -98,29 +98,10 @@ class InterfaceController: WKInterfaceController {
                     self?.openedQuestions.removeAll()
                     self?.openedQuestions = questions
                     DispatchQueue.main.async {
-//                        self?.questionTableView.reloadData()
                         self?.loadTableData()
                     }
                 }
             }
         })
     }
-    
-//    func getAllNotes() {
-//        noteService.getAllQuestions(completion: {[weak self] (notes, error) in
-//            if error == nil {
-//                let notes = notes.sorted(by: { (note1, note2) -> Bool in
-//                    return note1.noteID < note2.noteID
-//                })
-//                if notes.count == 0 || self?.openedNotes != notes {
-//                    self?.openedNotes.removeAll()
-//                    self?.openedNotes = notes
-//                    DispatchQueue.main.async {
-////                        self?.noteCollectionView.reloadData()
-//                    }
-//                }
-//            }
-//        })
-//    }
-
 }

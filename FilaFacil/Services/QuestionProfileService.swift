@@ -12,15 +12,6 @@ class QuestionProfileService: NSObject {
    
     let questionProfileManager = QuestionProfileDAO()
     
-    // Returns the question associated with the current User
-    func retrieveUsersQuestion(questionID: String, completion: @escaping (QuestionProfile?) -> Void) {
-       questionProfileManager.retrieveUsersQuestion(questionID: questionID, completionHandler: completion)
-    }
-    
-    func retrieveCurrentQuestion(questionID: String, completion: @escaping (QuestionProfile?) -> Void) {
-        questionProfileManager.retrieveCurrentQuestion(questionID: questionID, completionHandler: completion)
-    }
-    
     // Remove LineData from User
     func removeQuestionFromLine(lineName: String, question: QuestionProfile, completionHandler: @escaping (Error?) -> Void) {
         questionProfileManager.removeQuestionFromLine(question: question, completionHandler: {(error) in

@@ -15,25 +15,7 @@ class UserProfileService: NSObject {
     
     private var currentUser: UserProfile?
     
-    /// AuthBase functions:
-    // Register - Creates new user
-    func createUser(userID: String, username: String, email: String, deviceID: String) {
-        userProfileManager.createUserProfile(userID: userID, username: username, email: email, deviceID: deviceID)
-    }
-    
-    // Login - Retrieve user info
-    func retrieveUser(userID: String, completionHandler: @escaping (UserProfile?) -> Void) {
-        userProfileManager.retrieveUserProfile(userID: userID) { (user) in
-            if let currUser = user {
-                completionHandler(currUser)
-            } else {
-                completionHandler(nil)
-            }
-        }
-    }
-    
     /// Other functions:
-    
     func retrieveImage(for userId: String, modifiedAt date: Date?, with completionHandler: @escaping (UIImage?, Bool, Error?) -> Void) {
         DispatchQueue.global(qos: .userInteractive).async {
             if let cacheDate = CacheManager.shared.retrieveLastModificationDate(for: userId),
@@ -74,13 +56,6 @@ class UserProfileService: NSObject {
             completion(currentUser)
         }
     }
-    
-//    func attualizeTokenID(user: UserProfile) {
-//        if let deviceID = UserDefaults.standard.string(forKey: "userDeviceID") {
-//            user.deviceID = deviceID
-//            userProfileManager.editUser(user: user)
-//        }
-//    }
     
     func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {
         var questionsInLine: [QuestionProfile] = []

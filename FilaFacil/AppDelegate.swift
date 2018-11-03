@@ -75,10 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-//        Messaging.messaging().appDidReceiveMessage(userInfo)
-//    }
-    
     func applicationDidBecomeActive(_ application: UIApplication) {
         PushNotifications.resetBadgeNumber()
     }
@@ -99,7 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let token = tokenParts.joined()
         print("Device Token: \(token)")
         
-        //Messaging.messaging().apnsToken = deviceToken
     }
     
 }

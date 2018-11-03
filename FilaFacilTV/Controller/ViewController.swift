@@ -183,28 +183,6 @@ class ViewController: UIViewController {
                 
             }
         }
-//        noteService.getAllQuestions(completion: {[weak self] (notes, error) in
-//            if error == nil {
-//                let notes = notes.sorted(by: { (note1, note2) -> Bool in
-//                    return note1.noteID > note2.noteID
-//                })
-//                if notes.count == 0 || self?.openedNotes != notes {
-//                    self?.openedNotes.removeAll()
-//                    self?.openedNotes = notes
-//                    DispatchQueue.main.async {
-//                        self?.noteCollectionView.reloadData()
-//                        self?.noteCollectionView.collectionViewLayout.invalidateLayout()
-//                        self?.noteActivityIndicator.stopAnimating()
-//                        if self?.openedNotes.count == 0 {
-//                            self?.noNotes.isHidden = false
-//                        }
-//                        else {
-//                            self?.noNotes.isHidden = true
-//                        }
-//                    }
-//                }
-//            }
-//        })
     }
     
     
@@ -235,7 +213,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.openedQuestions.count
         return openedQuestions.count
     }
     
@@ -250,7 +227,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.profileName.text = self.openedQuestions[indexPath.row].username
             cell?.questionLabel.text = self.openedQuestions[indexPath.row].questionTitle
             cell?.numberLabel.text = "\(indexPath.row + 1)"
-            //cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
             
             let lineName = openedQuestions[indexPath.row].requestedTeacher
             if let line = teacherArray[lineName] {
@@ -279,7 +255,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? QuestionTableViewCell
-        //cell?.viewTypeQuestion.backgroundColor = self.openedQuestions[indexPath.row].categoryQuestion.color
     
         let lineName = openedQuestions[indexPath.row].requestedTeacher
         if let line = teacherArray[lineName] {
@@ -311,7 +286,6 @@ extension ViewController: UICollectionViewDataSource {
             
             noteCell.nameLabel.text = "João Silva"
             noteCell.dateLabel.text = "\(strDate)"
-//            noteCell.configureWidth(screenWidth)
         }
         
         return cell

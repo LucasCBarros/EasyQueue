@@ -50,17 +50,6 @@ class LoginViewController: MyViewController {
         }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        authService.checkUserLogged { (authenticated) in
-//            if authenticated {
-//                self.presentLoggedInScreen()
-//            } else {
-//                self.authService.signOut()
-//            }
-//        }
-//    }
-    
     // Creates a new Account in FB
     @IBAction func click_createAccount(_ sender: Any) {
         createAccount()
@@ -98,44 +87,7 @@ class LoginViewController: MyViewController {
             print("Name Error!")
             return
         }
-        
-        // Register the user and perform a Loggedin Segue
-        authService.register(email: email, password: password, username: username) { (success, idOrErrorMessage) in
-            if success {
-                self.performSegue(withIdentifier: "LoggedIn", sender: nil)
-            } else {
-                self.alertMessage(title: "Register Error", message: idOrErrorMessage)
-                print("Problem to register")
-            }
-        }
-        
     }
-
-//    func login() {
-//        // Check if fields are empty
-//        if let email = emailTxtField.text, let password = passwordTxtField.text {
-//            
-//            // Autenticates and finds Existing user
-//            authService.login(email: email, password: password, completionHandler: { (user) in
-//                if user != nil {
-//                    self.presentLoggedInScreen()
-//                    
-//                } else {
-//                    // Alert User not found!
-//                    self.alertMessage(title: "Login Error", message: "Coulden't Find user!")
-//                    print("Coulden't Find user!")
-//                }
-//            })
-//            // Treat empty field problem
-//        } else {
-//            self.alertMessage(title: "Login Error", message: "Both email and password can't be empty")
-//            print("Problem in login")
-//        }
-//    }
-    
-//    func isUserSignedIn() -> Bool {
-//        return authService.checkUserLogged()
-//    }
     
     // Alert message case error
     func alertMessage(title: String, message: String) {
