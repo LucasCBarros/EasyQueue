@@ -306,25 +306,24 @@ extension ViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath)
         
         if let noteCell = cell as? NoteViewCell {
-            noteCell.noteLabel.text = openedNotes[indexPath.row].noteText
+            let note = openedNotes[indexPath.row]
+            noteCell.noteLabel.text = note.noteText
             
-            let strDate = Formatter.dateToString(openedNotes[indexPath.row].createdAt)
+            let strDate = Formatter.dateToString(note.createdAt)
             
-            noteCell.nameLabel.text = "João Silva"
-            noteCell.dateLabel.text = "\(strDate)"
+            noteCell.nameLabel.text = note.username
+            noteCell.dateLabel.text = strDate
 //            noteCell.configureWidth(screenWidth)
         }
         
         return cell
     }
     
+    
+    
 }
 
 extension ViewController: NoteCollectionViewLayoutDelegate {
-    
-    func calculeColumn(width: CGFloat) -> CGFloat {
-        return width - (noteCollectionView.contentInset.left + noteCollectionView.contentInset.right) - 20
-    }
     
     func getAllTexts() -> [String] {
         return self.openedNotes.reduce([], {result, element in
