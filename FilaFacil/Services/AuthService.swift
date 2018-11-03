@@ -11,7 +11,6 @@ import UIKit
 class AuthService: NSObject {
 
     let authManager = AuthDatabaseManager()
-    let userProfileService = UserProfileService()
     
     func checkUserLogged(completion: @escaping(Bool) -> Void) {
         authManager.checkSignIn { (authenticated) in

@@ -42,7 +42,7 @@ class LoginViewController: MyViewController {
                 DispatchQueue.main.async {
                     self.presentLoggedInScreen()
                 }
-            } https://www.facebook.com/danipiazonartesanatos/
+            } 
         }
     }
     

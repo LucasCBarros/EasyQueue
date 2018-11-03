@@ -28,7 +28,6 @@ class NoteViewController: MyViewController {
     override func viewWillAppear(_ animated: Bool) {
         retrieveAllNotes()
         
-        //print("VOLTOU!!!!!!!")
         // Update currentUser
         userProfileManager.retrieveCurrentUserProfile { (userProfile) in
             self.currentProfile = userProfile!
@@ -79,13 +78,7 @@ class NoteViewController: MyViewController {
 extension NoteViewController: CreateNoteViewControllerDelegate {
 
     func createNoteResponse(newNote: NoteProfile) {
-        
-        print("dsdsdsd")
-        print(newNote.noteText)
-        
         self.allNoteProfiles?.append(newNote)
-        
-        //self.noteTableView.reloadData()
     }
 }
 

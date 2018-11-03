@@ -171,6 +171,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as? MainListCell
         cell?.profilePhoto.image = nil
+        
         // Check if there are questions in Line
         if inLineQuestions.count >= indexPath.row - 1 {
             
@@ -194,11 +195,6 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let editAction = UITableViewRowAction(style: .normal, title: "Editar", handler: { (rowAction, indexPath) in
-//
-//        })
-//        editAction.backgroundColor = #colorLiteral(red: 0.3490196078, green: 0.3490196078, blue: 0.8274509804, alpha: 1)
-        
         let deleteAction = UITableViewRowAction.init(style: .destructive, title: "Deletar", handler: {[weak self] (_, indexPath) in
             // update line status in Firebase
             if let this = self, this.inLineQuestions.count > 0, let selectedTab = this.selectedTab {
@@ -225,12 +221,8 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
         
         var actions: [UITableViewRowAction] = []
-        
-//        if self.inLineQuestions[indexPath.row].userID == self.currentProfile?.userID {
-//            actions.append(editAction)
-//        }
         actions.append(deleteAction)
-        
+
         return actions
     }
     

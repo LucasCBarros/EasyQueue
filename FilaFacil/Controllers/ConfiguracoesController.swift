@@ -97,7 +97,6 @@ class ConfiguracoesController: UITableViewController {
                 print("Settings opened: \(success)") // Prints true
             })
         }
-        
     }
     
     // MARK: - Methods
@@ -106,5 +105,4 @@ class ConfiguracoesController: UITableViewController {
             cell.separatorInset = UIEdgeInsets(top: 0.0, left: cell.bounds.size.width, bottom: 0.0, right: 0.0)
         }
     }
-    
 }
