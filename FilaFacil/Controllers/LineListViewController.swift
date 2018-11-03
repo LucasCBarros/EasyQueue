@@ -133,8 +133,8 @@ class LineListViewController: UIViewController {
                     if self.selectedTab?.name == lineName {
                         self.inLineQuestions = questionProfile
                         self.listTableView.reloadData()
+                        self.activityIndicator.stopAnimating()
                     }
-                    self.activityIndicator.stopAnimating()
                 }
             }
         }
