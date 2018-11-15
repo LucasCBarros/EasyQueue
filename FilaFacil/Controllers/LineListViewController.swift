@@ -130,10 +130,10 @@ class LineListViewController: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
                     if self.selectedTab?.name == lineName {
                         self.inLineQuestions = questionProfile
                         self.listTableView.reloadData()
+                        self.activityIndicator.stopAnimating()
                     }
                 }
             }
@@ -188,7 +188,7 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
         // Cell apperance
         cell?.selectionStyle = .none // Removes selection
         cell?.profilePhoto.backgroundColor = UIColor.lightGray
-        cell?.profilePhoto.alpha = 0.5
+        cell?.profilePhoto.alpha = 1
         cell?.profilePhoto.layer.cornerRadius = (cell?.profilePhoto.layer.frame.width)!/2
         cell?.profilePhoto.clipsToBounds = true
         

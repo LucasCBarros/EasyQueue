@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		35C80BA0B7A1113CF3173665 /* Pods_FilaFacilWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC2662F1791356F9403CC75 /* Pods_FilaFacilWatch_Extension.framework */; };
+		98EDD355218E2BC200C74560 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EDD354218E2BC200C74560 /* TermsViewController.swift */; };
+		98EDD357218E2BF400C74560 /* Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 98EDD356218E2BF400C74560 /* Terms.txt */; };
 		A172386548BFA5B7787A876C /* Pods_FilaFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F783760985A1FDB86908E /* Pods_FilaFacil.framework */; };
 		A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244D82124CFB500AACD1B /* NoteViewController.swift */; };
 		A93244DB2124D5E900AACD1B /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93244DA2124D5E900AACD1B /* ProfileType.swift */; };
@@ -252,6 +254,8 @@
 		253837BB8AF537A0568D62FB /* Pods-FilaFacilTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilTV/Pods-FilaFacilTV.debug.xcconfig"; sourceTree = "<group>"; };
 		82ED1182B387CED3B8F44AE3 /* Pods-FilaFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.debug.xcconfig"; sourceTree = "<group>"; };
 		968F783760985A1FDB86908E /* Pods_FilaFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilaFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98EDD354218E2BC200C74560 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		98EDD356218E2BF400C74560 /* Terms.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Terms.txt; sourceTree = "<group>"; };
 		A53A0C9E131043C9A0A35EED /* Pods-FilaFacilWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacilWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacilWatch Extension/Pods-FilaFacilWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A93244D82124CFB500AACD1B /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A93244DA2124D5E900AACD1B /* ProfileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
@@ -619,6 +623,7 @@
 				E60229B1203FC87F00336FC3 /* UserProfile.swift */,
 				E60229B3203FC8B300336FC3 /* QuestionProfile.swift */,
 				FA93520820E2B80C001E4988 /* MyViewController.swift */,
+				98EDD356218E2BF400C74560 /* Terms.txt */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
 				A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */,
 				A93DFB192126043D00231B1D /* VersionViewController.swift */,
+				98EDD354218E2BC200C74560 /* TermsViewController.swift */,
 				FA379DC5219DFF2500347E52 /* AccessDeniedViewController.swift */,
 			);
 			path = Controllers;
@@ -1083,6 +1089,7 @@
 				FAB3368220B331BB00D6B61F /* SFCompactText-Semibold.otf in Resources */,
 				A93DFB142125F9A500231B1D /* ConfiguracoesView.storyboard in Resources */,
 				FAB3369520B331BB00D6B61F /* SF-Pro-Display-Heavy.otf in Resources */,
+				98EDD357218E2BF400C74560 /* Terms.txt in Resources */,
 				FAB3369D20B331BB00D6B61F /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				E60229C4203FCD7D00336FC3 /* QuestionStatusView.storyboard in Resources */,
 				FAB336A220B331BB00D6B61F /* SF-Pro-Text-RegularItalic.otf in Resources */,
@@ -1327,6 +1334,7 @@
 				A93DFB182125FA4600231B1D /* PresentedLinesManager.swift in Sources */,
 				E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */,
 				E60229D6203FD19900336FC3 /* QuestionStatusViewController.swift in Sources */,
+				98EDD355218E2BC200C74560 /* TermsViewController.swift in Sources */,
 				FA947E70212B371200AE06F1 /* LineDAO.swift in Sources */,
 				E60229E420409C3E00336FC3 /* QuestionProfileDAO.swift in Sources */,
 				FA8148B920BF304700F2FADD /* Formatter.swift in Sources */,

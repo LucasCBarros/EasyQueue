@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import MessageUI
 
-class ConfiguracoesController: UITableViewController {
+class ConfiguracoesController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var developerSwitch: UISwitch!
     @IBOutlet weak var designSwitch: UISwitch!
     @IBOutlet weak var businessSwitch: UISwitch!
+    var email = "filafacilcontato@gmail.com"
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -34,31 +36,6 @@ class ConfiguracoesController: UITableViewController {
             self.businessSwitch.setOn(true, animated: false)
         } else {
             self.businessSwitch.setOn(false, animated: false)
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        let selectedLines = PresentedLinesManager.shared.lines
-        LineDAO().fetchAllLines { (allLines, error) in
-            if let allLines = allLines {
-                var lines = allLines.reduce(Set<String>(), { (result, line) in
-                    var result = result
-                    result.insert(line.name)
-                    return result
-                })
-                for line in selectedLines {
-                    lines.remove(line)
-                }
-                let removedLines = lines.map({ (element) -> CategoryQuestionType? in
-                    return CategoryQuestionType(rawValue: element)
-                })
-                let newLines = selectedLines.map({ (element) -> CategoryQuestionType? in
-                    return CategoryQuestionType(rawValue: element)
-                })
-                
-                PushNotifications.removeSubscriptions(categoriesQuestion: removedLines.compactMap({$0}))
-                PushNotifications.saveSubscriptions(categoriesQuestion: newLines.compactMap({$0}))
-            }
         }
     }
     
@@ -83,6 +60,26 @@ class ConfiguracoesController: UITableViewController {
         } else {
             PresentedLinesManager.shared.remove("Business")
         }
+    }
+    
+    @IBAction func sendFeedback(_ sender: Any) {
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            let alert = UIAlertController(title: "Ops!", message: "Não há e-mail configurado em seu device!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        // Configure the fields of the interface.
+        composeVC.setToRecipients([self.email])
+        composeVC.setSubject("Feedback sobre o aplicativo")
+        composeVC.setMessageBody("", isHTML: false)
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+       
     }
     
     //Leva para Notificações em configurações
