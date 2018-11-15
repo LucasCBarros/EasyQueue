@@ -53,6 +53,7 @@
                         <viewLayoutGuide key="safeArea" id="2Z8-GS-aQT"/>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="2Sz-F7-PBI" id="Uzy-Hz-bT0"/>
                         <segue destination="BI3-bX-5Ek" kind="show" identifier="LoggedIn" id="hgo-TM-F3P"/>
                     </connections>
                 </viewController>

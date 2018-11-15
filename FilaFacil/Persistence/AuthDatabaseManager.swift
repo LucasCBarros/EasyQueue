@@ -8,13 +8,14 @@
 
 import UIKit
 import CloudKit
-//import FirebaseAuth
 
-// Possible Error Codes
-let wrongPassword = 17009
-let userNotFound = 17011
-let weakPassword = 17026
-let emailInUse = 17007
+
+
+enum LoginError: Error {
+    case emailNotRegistered
+    case emailNotAuthorized
+    case emailDontMatchICloudEmail
+}
 
 let userServices = UserProfileService()
 
@@ -123,54 +124,62 @@ class AuthDatabaseManager: DAO {
         }
     }
     
-    func checkSignIn(completion: @escaping(Bool) -> Void) {
+    func checkSignIn(completion: @escaping(Bool, Error?) -> Void) {
         
-        //var authenticated: Bool = false
-        
+        // Busca record Id do usuário atual
         container.fetchUserRecordID { recordID, error in
             guard let recordID = recordID, error == nil else {
+                completion(false, error)
                 return
             }
             
+            // Busca informações do usuário (email, apelido) através do recordId
             self.publicDB.fetch(withRecordID: recordID) { record, error in
                 guard let record = record, error == nil else {
-
+                    completion(false, error)
                     return
                 }
             
-                if let auth = record["authenticated"] as? Int64 {
+                // Verifica se o usuário possui email cadastrado
+                if let userEmail = record["email"] as? String {
                     
-                    if auth != 0 {
-
-                        completion(true)
-                        //authenticated = true
-                    } else {
-                        if let name = record["username"] as? String {
-                            
-                        } else {
-                            
-                            self.getPersonalData(completion: { (user) in
-                                
-//                                userServices.editUsername(user: user, completion: { (user) in
-//                                    
-//                            
-//                                })
-                            })
+                    let predicate = NSPredicate(value: true)
+                    let query = CKQuery(recordType: "VerifiedEmails", predicate: predicate)
+                    
+                    // Busca lista de emails autorizados a logar
+                    self.publicDB.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
+                        
+                        guard let records = records, error == nil else {
+                            completion(false, error)
+                            return
                         }
-                    }
+                        
+                        // Converte lista de emails autorizados em um array de strings com os emails
+                        let rec = records.first
+                        let emailList = rec!["emailList"] as? [String]
+                        
+                        // Verifica se o email cadastrado pelo usuário está na lista
+                        if emailList!.contains(userEmail) {
+                            
+                            // Se email está na lista compara o recordName obtido pelo fetch via email
+                            // com o recordName obtido via fetch no usuário atual
+                            self.container.discoverUserIdentity(withEmailAddress: userEmail, completionHandler: { (userIdentity, error) in
+                                
+                                if userIdentity?.userRecordID?.recordName == recordID.recordName {
+                                    completion(true, nil)
+                                } else {
+                                    completion(false, LoginError.emailDontMatchICloudEmail)
+                                }
+                            })
+                        } else {
+                            completion(false, LoginError.emailNotAuthorized)
+                        }
+                    })
+                } else {
+                    completion(false, LoginError.emailNotRegistered)
                 }
             }
         }
-        completion(false)
- //       return authenticated
-        
-//        if FileManager.default.ubiquityIdentityToken != nil {
-//
-//            return true
-//        } else {
-//            return false
-//        }
-        
     }
 //
 //    func retrieveCurrentUserID() -> String {

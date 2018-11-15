@@ -15,6 +15,7 @@ class LoginViewController: MyViewController {
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var usernameTxtField: UITextField!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - Properties
     let authService = AuthService()
@@ -37,14 +38,17 @@ class LoginViewController: MyViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        authService.checkUserLogged { (authenticated) in
+        authService.checkUserLogged { (authenticated, error) in
             if authenticated {
                 DispatchQueue.main.async {
                     self.presentLoggedInScreen()
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.authService.signOut()
+                    
+                    self.errorLabel.text = error.debugDescription
+                    //self.authService.signOut()
+                    
                 }
             }
         }
