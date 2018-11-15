@@ -98,6 +98,8 @@
 		E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384820B36E0900D88578 /* NoteDAO.swift */; };
 		E6FC384B20B36FC600D88578 /* NoteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC384A20B36FC600D88578 /* NoteProfileService.swift */; };
 		E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
+		FA379DC4219DFB0400347E52 /* AccessDenied.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA379DC3219DFB0400347E52 /* AccessDenied.storyboard */; };
+		FA379DC6219DFF2500347E52 /* AccessDeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA379DC5219DFF2500347E52 /* AccessDeniedViewController.swift */; };
 		FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA80421275E36006EA274 /* CacheManager.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
@@ -181,6 +183,7 @@
 		FABAB6F720CAFBD800E46E3E /* LineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABAB6F620CAFBD800E46E3E /* LineCell.swift */; };
 		FACB456620EAE28A00E96A52 /* TimerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB456520EAE28A00E96A52 /* TimerInterfaceController.swift */; };
 		FAD6061920EAD66500A02366 /* WatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6061820EAD66500A02366 /* WatchTimer.swift */; };
+		FADA060E219DA5E70089C2FD /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADA060D219DA5E70089C2FD /* Tutorial.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -332,6 +335,8 @@
 		E6FC384820B36E0900D88578 /* NoteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDAO.swift; sourceTree = "<group>"; };
 		E6FC384A20B36FC600D88578 /* NoteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProfileService.swift; sourceTree = "<group>"; };
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
+		FA379DC3219DFB0400347E52 /* AccessDenied.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccessDenied.storyboard; sourceTree = "<group>"; };
+		FA379DC5219DFF2500347E52 /* AccessDeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessDeniedViewController.swift; sourceTree = "<group>"; };
 		FA3CA80421275E36006EA274 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FA65BB2B2178FD8F0075214C /* PushNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifications.swift; sourceTree = "<group>"; };
@@ -407,6 +412,7 @@
 		FABAB6F620CAFBD800E46E3E /* LineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCell.swift; sourceTree = "<group>"; };
 		FACB456520EAE28A00E96A52 /* TimerInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInterfaceController.swift; sourceTree = "<group>"; };
 		FAD6061820EAD66500A02366 /* WatchTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTimer.swift; sourceTree = "<group>"; };
+		FADA060D219DA5E70089C2FD /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -640,6 +646,7 @@
 				FA85EF6220D9307F00269699 /* EditPasswordViewController.swift */,
 				A93DFB152125F9DE00231B1D /* ConfiguracoesController.swift */,
 				A93DFB192126043D00231B1D /* VersionViewController.swift */,
+				FA379DC5219DFF2500347E52 /* AccessDeniedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -659,6 +666,8 @@
 				E60229C7203FCE6800336FC3 /* LineStatusView.storyboard */,
 				E6FC384020B3506400D88578 /* CreateNoteView.storyboard */,
 				A93DFB132125F9A400231B1D /* ConfiguracoesView.storyboard */,
+				FADA060D219DA5E70089C2FD /* Tutorial.storyboard */,
+				FA379DC3219DFB0400347E52 /* AccessDenied.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1052,6 +1061,7 @@
 				E60229A0203FA29E00336FC3 /* Assets.xcassets in Resources */,
 				FAB336A320B331BB00D6B61F /* SF-Pro-Text-Semibold.otf in Resources */,
 				FAB3367B20B331BA00D6B61F /* SFCompactText-Regular.otf in Resources */,
+				FADA060E219DA5E70089C2FD /* Tutorial.storyboard in Resources */,
 				E60229BA203FCB6F00336FC3 /* TabBarView.storyboard in Resources */,
 				FAB3368820B331BB00D6B61F /* SFCompactText-Heavy.otf in Resources */,
 				E60229D2203FD12400336FC3 /* LineListView.storyboard in Resources */,
@@ -1067,6 +1077,7 @@
 				FAB336AA20B331BB00D6B61F /* SF Pro Font License.rtf in Resources */,
 				FAB3367920B331BA00D6B61F /* SFCompactText-SemiboldItalic.otf in Resources */,
 				FAB3369E20B331BB00D6B61F /* SF-Pro-Display-LightItalic.otf in Resources */,
+				FA379DC4219DFB0400347E52 /* AccessDenied.storyboard in Resources */,
 				FAB336A820B331BB00D6B61F /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				E60229BC203FCC3E00336FC3 /* LoginView.storyboard in Resources */,
 				FAB3369B20B331BB00D6B61F /* SF-Pro-Display-HeavyItalic.otf in Resources */,
@@ -1315,6 +1326,7 @@
 				FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */,
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
 				FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */,
+				FA379DC6219DFF2500347E52 /* AccessDeniedViewController.swift in Sources */,
 				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
