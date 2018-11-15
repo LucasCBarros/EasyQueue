@@ -41,7 +41,6 @@
 		DEBC40C020B1E81100870D4C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		DEBC40C420B1EC9F00870D4C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FC020AE20470064A247 /* AppDelegate.swift */; };
-		DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDF0FCA20AE20470064A247 /* Assets.xcassets */; };
 		DEDF0FE520AE20D10064A247 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */; };
 		DEDF0FE620AE20D10064A247 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF0FE420AE20D00064A247 /* QuestionService.swift */; };
 		E6022999203FA29E00336FC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6022998203FA29E00336FC3 /* AppDelegate.swift */; };
@@ -82,6 +81,7 @@
 		E616DB5920D991950009E9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E616DB5820D991950009E9FD /* Assets.xcassets */; };
 		E616DB5E20D991950009E9FD /* FilaFacilWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E616DB4120D991910009E9FD /* FilaFacilWatch.app */; };
 		E616DB6820D9957C0009E9FD /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E616DB6720D9957C0009E9FD /* RowController.swift */; };
+		E68EBE3E219DC6D20074395B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E68EBE3D219DC6D20074395B /* Assets.xcassets */; };
 		E6A52C4420D9A817001B4B16 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A52C4320D9A817001B4B16 /* DetailInterfaceController.swift */; };
 		E6A52C4820D9AC6B001B4B16 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40BF20B1E81100870D4C /* Question.swift */; };
 		E6A52C4A20D9AC79001B4B16 /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
@@ -276,7 +276,6 @@
 		DEDF0FBE20AE20470064A247 /* FilaFacilTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilaFacilTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDF0FC020AE20470064A247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEDF0FC220AE20470064A247 /* ViewControllerOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOLD.swift; sourceTree = "<group>"; };
-		DEDF0FCA20AE20470064A247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEDF0FCC20AE20470064A247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDF0FE320AE20D00064A247 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		DEDF0FE420AE20D00064A247 /* QuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
@@ -323,6 +322,7 @@
 		E616DB5A20D991950009E9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E616DB5B20D991950009E9FD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		E616DB6720D9957C0009E9FD /* RowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
+		E68EBE3D219DC6D20074395B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6A52C4320D9A817001B4B16 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		E6A52C4F20D9AE00001B4B16 /* ExtensionsWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsWatch.swift; sourceTree = "<group>"; };
 		E6D7FB19205314B600EEC89D /* FilaFacilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilaFacilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -542,7 +542,7 @@
 				DEBC40BD20B1E7DB00870D4C /* Model */,
 				DEBC40BE20B1E7F100870D4C /* View */,
 				DEDF0FC020AE20470064A247 /* AppDelegate.swift */,
-				DEDF0FCA20AE20470064A247 /* Assets.xcassets */,
+				E68EBE3D219DC6D20074395B /* Assets.xcassets */,
 				DEDF0FCC20AE20470064A247 /* Info.plist */,
 			);
 			path = FilaFacilTV;
@@ -1027,7 +1027,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A95D8E7C216FAF30006335A5 /* Main.storyboard in Resources */,
-				DEDF0FCB20AE20470064A247 /* Assets.xcassets in Resources */,
+				E68EBE3E219DC6D20074395B /* Assets.xcassets in Resources */,
 				FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
