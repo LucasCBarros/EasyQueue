@@ -100,6 +100,8 @@
 		E7CBAE459A308A99EF30A585 /* Pods_FilaFacilTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9260BBFB13758D3E98D076 /* Pods_FilaFacilTV.framework */; };
 		FA379DC4219DFB0400347E52 /* AccessDenied.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA379DC3219DFB0400347E52 /* AccessDenied.storyboard */; };
 		FA379DC6219DFF2500347E52 /* AccessDeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA379DC5219DFF2500347E52 /* AccessDeniedViewController.swift */; };
+		FA379DC8219E045B00347E52 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA379DC7219E045B00347E52 /* DesignableTextField.swift */; };
+		FA379DCA219E048B00347E52 /* Extensions in CK and Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA920698211A20EC0005BAAF /* Extensions in CK and Data.swift */; };
 		FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA80421275E36006EA274 /* CacheManager.swift */; };
 		FA3DF91820B76CE500D8DA5C /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAB3365C20B331B800D6B61F /* SF-Pro-Display-Regular.otf */; };
 		FA626B6320B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */; };
@@ -337,6 +339,7 @@
 		EC17BD52135241410AEAA245 /* Pods-FilaFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilaFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilaFacil/Pods-FilaFacil.release.xcconfig"; sourceTree = "<group>"; };
 		FA379DC3219DFB0400347E52 /* AccessDenied.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccessDenied.storyboard; sourceTree = "<group>"; };
 		FA379DC5219DFF2500347E52 /* AccessDeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessDeniedViewController.swift; sourceTree = "<group>"; };
+		FA379DC7219E045B00347E52 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		FA3CA80421275E36006EA274 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		FA626B6220B4BC3D0062E2F2 /* NoteCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FA65BB2B2178FD8F0075214C /* PushNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifications.swift; sourceTree = "<group>"; };
@@ -740,15 +743,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA8148B720BF2F2600F2FADD /* Mechanism */ = {
+		FA379DC9219E046400347E52 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E60229E92040ACA100336FC3 /* Extensions.swift */,
 				FA920698211A20EC0005BAAF /* Extensions in CK and Data.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA8148B720BF2F2600F2FADD /* Mechanism */ = {
+			isa = PBXGroup;
+			children = (
+				FA379DC9219E046400347E52 /* Extensions */,
 				FA3CA80421275E36006EA274 /* CacheManager.swift */,
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 				A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */,
 				FA65BB2B2178FD8F0075214C /* PushNotifications.swift */,
+				FA379DC7219E045B00347E52 /* DesignableTextField.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -1282,6 +1294,7 @@
 				DEDF0FC120AE20470064A247 /* AppDelegate.swift in Sources */,
 				A95D8E69216BF4AB006335A5 /* LineService.swift in Sources */,
 				A95D8E6C216D13D0006335A5 /* QuestionProfile.swift in Sources */,
+				FA379DCA219E048B00347E52 /* Extensions in CK and Data.swift in Sources */,
 				A95D8E6F216D142C006335A5 /* Line.swift in Sources */,
 				FAB336AF20B374A200D6B61F /* NoteViewCell.swift in Sources */,
 				A95D8E65216BF49A006335A5 /* AuthService.swift in Sources */,
@@ -1329,6 +1342,7 @@
 				FA379DC6219DFF2500347E52 /* AccessDeniedViewController.swift in Sources */,
 				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,
+				FA379DC8219E045B00347E52 /* DesignableTextField.swift in Sources */,
 				E60229B2203FC87F00336FC3 /* UserProfile.swift in Sources */,
 				FA3CA80521275E36006EA274 /* CacheManager.swift in Sources */,
 				E60229CE203FD09E00336FC3 /* ProfileViewController.swift in Sources */,

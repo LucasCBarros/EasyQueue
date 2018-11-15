@@ -16,7 +16,7 @@ class LoginViewController: MyViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func loginActionButton(_ sender: UIButton) {
-        if let email = emailTextField.text {
+        if let email = emailTextField.text, !email.isEmpty {
             authService.tryLoggin(email: email) { (authenticated, error) in
                 if authenticated {
                     DispatchQueue.main.async {
@@ -26,6 +26,13 @@ class LoginViewController: MyViewController {
                     self.errorHandling(loginError)
                 }
             }
+        } else {
+            let alert = UIAlertController(title: "Email vazio.", message: "Digite seu email.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: {
+                self.emailTextField.text = ""
+            })
         }
     }
     
@@ -38,7 +45,7 @@ class LoginViewController: MyViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.44)])
         
         self.loginButton.layer.cornerRadius = 7
         
