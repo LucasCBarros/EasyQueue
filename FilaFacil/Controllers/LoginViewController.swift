@@ -97,6 +97,8 @@ class LoginViewController: MyViewController {
                 break
             case .emailDontMatchICloudEmail:
                 let alert = UIAlertController(title: "Email inválido", message: "Este email não está vinculado ao seu iCloud.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
                 self.present(alert, animated: true, completion: {
                     self.emailTextField.text = ""
                 })
@@ -105,9 +107,23 @@ class LoginViewController: MyViewController {
                 // Nunca vai acontecer aqui. Primeiro acesso do usuário.
                 break
             case .emailNotAuthorized:
-                
                     self.performSegue(withIdentifier: "accessDeniedSegue", sender: nil)
                 break
+            case .deniedUserPermission:
+                let alert = UIAlertController(title: "Permissão negada pelo usuário.", message: "Somente é possível usar o Fila Fácil se conceder a permissão.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    self.emailTextField.text = ""
+                })
+                break
+            case .corruptedNameComponent:
+                let alert = UIAlertController(title: "Dados insuficientes.", message: "Não foi encontrado o seu nome em sua conta iCloud.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    self.emailTextField.text = ""
+                })
             }
         }
     }

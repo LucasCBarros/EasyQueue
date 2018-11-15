@@ -16,6 +16,8 @@ enum LoginError: Error {
     case emailNotAuthorized
     case emailDontMatchICloudEmail
     case iCloudNotLoggedInDevice
+    case deniedUserPermission
+    case corruptedNameComponent
 }
 
 let userServices = UserProfileService()
@@ -23,25 +25,40 @@ let userServices = UserProfileService()
 class AuthDatabaseManager: DAO {
     
     func trySigin(email: String, completion: @escaping(Bool, Error?) -> Void) {
-        container.fetchUserRecordID { userRecordID, error in
-            guard let userRecordID = userRecordID, error == nil else {
-                completion(false, LoginError.iCloudNotLoggedInDevice)
+        CKContainer.default().requestApplicationPermission(.userDiscoverability) { (status, error) in
+            guard status == CKContainer_Application_PermissionStatus.granted else {
+                completion(false, LoginError.deniedUserPermission)
                 return
             }
             
-            self.sigin(userEmail: email, recordID: userRecordID, completion:{ (authenticate, error) in
-                
-                if authenticate {
-                    self.publicDB.fetch(withRecordID: userRecordID) { record, error in
-                        if let record = record {
-                            record["email"] = email
-                            self.publicDB.save(record, completionHandler: { _,_ in })
-                        }
-                    }
+            self.container.fetchUserRecordID { userRecordID, error in
+                guard let userRecordID = userRecordID, error == nil else {
+                    completion(false, LoginError.iCloudNotLoggedInDevice)
+                    return
                 }
                 
-                completion(authenticate, error)
-            })
+                self.sigin(userEmail: email, recordID: userRecordID, completion:{ (authenticate, error) in
+                    if authenticate {
+                        self.container.discoverUserIdentity(withEmailAddress: email, completionHandler: { (userIdentity, error) in
+                            self.publicDB.fetch(withRecordID: userRecordID) { record, error in
+                                if let record = record {
+                                    guard let nameComponents = userIdentity?.nameComponents,
+                                        let firstName = nameComponents.givenName else {
+                                        completion(false, LoginError.corruptedNameComponent)
+                                        return
+                                    }
+                                    record["email"] = email
+                                    let lastName = nameComponents.familyName ?? ""
+                                    let name = "\(firstName) \(lastName)"
+                                    record["username"] = name
+                                    self.publicDB.save(record, completionHandler: { _,_ in })
+                                }
+                            }
+                        })
+                    }
+                    completion(authenticate, error)
+                })
+            }
         }
     }
     
@@ -94,7 +111,6 @@ class AuthDatabaseManager: DAO {
                         completion(false, error)
                         return
                     }
-                    
                     if userIdentity.userRecordID?.recordName == recordID.recordName {
                         completion(true, nil)
                     } else {
