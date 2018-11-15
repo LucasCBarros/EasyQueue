@@ -11,30 +11,55 @@ import UIKit
 class LoginViewController: MyViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var emailTxtField: UITextField!
-    @IBOutlet weak var passwordTxtField: UITextField!
-    @IBOutlet weak var usernameTxtField: UITextField!
-    @IBOutlet weak var registerBtn: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBAction func loginActionButton(_ sender: UIButton) {
+        if let email = emailTextField.text, !email.isEmpty {
+            authService.tryLoggin(email: email) { (authenticated, error) in
+                if authenticated {
+                    DispatchQueue.main.async {
+                        self.presentLoggedInScreen()
+                    }
+                } else if let loginError = error as? LoginError {
+                    self.errorHandling(loginError)
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "Email vazio.", message: "Digite seu email.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: {
+                self.emailTextField.text = ""
+            })
+        }
+    }
     
     // MARK: - Properties
     let authService = AuthService()
     
-    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        emailTxtField.textColor = UIColor.white
-//        emailTxtField.attributedPlaceholder = NSAttributedString(string: "E-mail",
-//                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-//        passwordTxtField.textColor = UIColor.white
-//        passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
-//                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-//        usernameTxtField.textColor = UIColor.white
-//        usernameTxtField.attributedPlaceholder = NSAttributedString(string: "Username",
-//                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-//        registerBtn.clipsToBounds = true
-//        registerBtn.layer.cornerRadius = 10
         
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.44)])
+        
+        self.loginButton.layer.cornerRadius = 7
+        
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            scrollView.contentInset.bottom = keyboardFrame.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,110 +69,13 @@ class LoginViewController: MyViewController {
                     self.presentLoggedInScreen()
                 }
             } else {
-                DispatchQueue.main.async {
-                    
-                    self.errorLabel.text = error.debugDescription
-                    //self.authService.signOut()
-                    
+                if let loginError = error as? LoginError {
+                    self.errorHandling(loginError)
                 }
             }
         }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        authService.checkUserLogged { (authenticated) in
-//            if authenticated {
-//                self.presentLoggedInScreen()
-//            } else {
-//                self.authService.signOut()
-//            }
-//        }
-//    }
-    
-    // Creates a new Account in FB
-    @IBAction func click_createAccount(_ sender: Any) {
-        createAccount()
-    }
-    
-    // MARK: - Methods
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    func createAccount() {
-        /// Check empty fields
-        if (usernameTxtField.text?.isEmpty)! {
-            self.alertMessage(title: "Register Error", message: "Name field can't be empty")
-        }
-        if (emailTxtField.text?.isEmpty)! {
-            self.alertMessage(title: "Register Error", message: "Email field can't be empty!")
-        }
-        if (passwordTxtField.text?.isEmpty)! {
-            self.alertMessage(title: "Register Error", message: "Password field can't be empty")
-        }
-        
-        guard let email = emailTxtField.text else {
-//            self.alertMessage(title: "Register Error", message: "Email field can't be empty!")
-            print("Email Error!")
-            return
-        }
-        guard let password = passwordTxtField.text else {
-//            self.alertMessage(title: "Register Error", message: "Password field can't be empty")
-            print("Password Error!")
-            return
-        }
-        guard let username = usernameTxtField.text else {
-//            self.alertMessage(title: "Register Error", message: "Name field can't be empty")
-            print("Name Error!")
-            return
-        }
-        
-        // Register the user and perform a Loggedin Segue
-        authService.register(email: email, password: password, username: username) { (success, idOrErrorMessage) in
-            if success {
-                self.performSegue(withIdentifier: "LoggedIn", sender: nil)
-            } else {
-                self.alertMessage(title: "Register Error", message: idOrErrorMessage)
-                print("Problem to register")
-            }
-        }
-    }
-
-//    func login() {
-//        // Check if fields are empty
-//        if let email = emailTxtField.text, let password = passwordTxtField.text {
-//            
-//            // Autenticates and finds Existing user
-//            authService.login(email: email, password: password, completionHandler: { (user) in
-//                if user != nil {
-//                    self.presentLoggedInScreen()
-//                    
-//                } else {
-//                    // Alert User not found!
-//                    self.alertMessage(title: "Login Error", message: "Coulden't Find user!")
-//                    print("Coulden't Find user!")
-//                }
-//            })
-//            // Treat empty field problem
-//        } else {
-//            self.alertMessage(title: "Login Error", message: "Both email and password can't be empty")
-//            print("Problem in login")
-//        }
-//    }
-    
-//    func isUserSignedIn() -> Bool {
-//        return authService.checkUserLogged()
-//    }
-    
-    // Alert message case error
-    func alertMessage(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: - Navigation
     // Opens app screens to loggedIn users
     func presentLoggedInScreen() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "TabBarView", bundle: nil)
@@ -155,4 +83,49 @@ class LoginViewController: MyViewController {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate?
         appDelegate??.window?.rootViewController = tabBarController
     }
+    
+    fileprivate func errorHandling(_ loginError: LoginError) {
+        DispatchQueue.main.async {
+            switch loginError {
+            case .iCloudNotLoggedInDevice:
+                let alert = UIAlertController(title: "iCloud desconectado", message: "Este dispositivo não está logado no iCloud.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    self.emailTextField.text = ""
+                })
+                break
+            case .emailDontMatchICloudEmail:
+                let alert = UIAlertController(title: "Email inválido", message: "Este email não está vinculado ao seu iCloud.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    self.emailTextField.text = ""
+                })
+                break
+            case .emailNotRegistered:
+                // Nunca vai acontecer aqui. Primeiro acesso do usuário.
+                break
+            case .emailNotAuthorized:
+                    self.performSegue(withIdentifier: "accessDeniedSegue", sender: nil)
+                break
+            case .deniedUserPermission:
+                let alert = UIAlertController(title: "Permissão negada pelo usuário.", message: "Somente é possível usar o Fila Fácil se conceder a permissão.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    self.emailTextField.text = ""
+                })
+                break
+            case .corruptedNameComponent:
+                let alert = UIAlertController(title: "Dados insuficientes.", message: "Não foi encontrado o seu nome em sua conta iCloud.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    self.emailTextField.text = ""
+                })
+            }
+        }
+    }
+    
 }
