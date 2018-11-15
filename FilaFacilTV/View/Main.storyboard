@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pMK-bG-TX5">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pMK-bG-TX5">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +21,9 @@
         </array>
         <array key="SF-Pro-Display-Regular.otf">
             <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -532,9 +535,161 @@
             </objects>
             <point key="canvasLocation" x="2337" y="536"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="iLw-Rx-ga7">
+            <objects>
+                <viewController id="amj-mC-hbQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NNL-S7-IP6"/>
+                        <viewControllerLayoutGuide type="bottom" id="trV-8B-eYc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HbI-nL-r0X">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="Tif-CN-nPf">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite o email do iCloud para ter acesso ao Fila Fácil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaj-Ws-t4M">
+                                <rect key="frame" x="262" y="400" width="1397" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="LKy-6s-aIk"/>
+                                    <constraint firstAttribute="width" constant="1397" id="qzc-iF-gNw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="57"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgI-jL-R6O">
+                                <rect key="frame" x="673" y="768" width="574" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4q8-C9-8b5"/>
+                                    <constraint firstAttribute="width" constant="574" id="Iik-IV-O55"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Entrar">
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="39" name="SFProText-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" alpha="0.32000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ane-Gr-MM8">
+                                <rect key="frame" x="660" y="571" width="600" height="79"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="jIW-Kw-I3x"/>
+                                    <constraint firstAttribute="height" constant="79" id="tq0-dK-qvB"/>
+                                </constraints>
+                                <color key="textColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="46"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jaj-Ws-t4M" firstAttribute="centerX" secondItem="MCs-6r-zPA" secondAttribute="centerX" id="2X8-kZ-hOU"/>
+                            <constraint firstItem="IgI-jL-R6O" firstAttribute="centerX" secondItem="MCs-6r-zPA" secondAttribute="centerX" id="6tV-sK-ldk"/>
+                            <constraint firstItem="IgI-jL-R6O" firstAttribute="top" secondItem="jaj-Ws-t4M" secondAttribute="bottom" constant="300" id="EpH-Pq-dir"/>
+                            <constraint firstItem="ane-Gr-MM8" firstAttribute="top" secondItem="jaj-Ws-t4M" secondAttribute="bottom" constant="103" id="Wq7-fe-HbL"/>
+                            <constraint firstItem="ane-Gr-MM8" firstAttribute="centerX" secondItem="MCs-6r-zPA" secondAttribute="centerX" id="ccw-GC-oed"/>
+                            <constraint firstItem="jaj-Ws-t4M" firstAttribute="top" secondItem="MCs-6r-zPA" secondAttribute="top" constant="340" id="eI2-bf-PGy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MCs-6r-zPA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oo-GC-yQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2337" y="2068"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jmJ-x2-DDo">
+            <objects>
+                <viewController id="66A-Ao-I5O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="416-cN-bgQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="HeB-T3-VMF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5jt-Wp-blA">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-24-duw">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você não possui permissão para utilizar o Fila Fácil, entre em contato conosco para ter acesso." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7s-D8-gUD">
+                                <rect key="frame" x="264" y="617" width="1392" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1392" id="ZNh-BK-SNH"/>
+                                    <constraint firstAttribute="width" secondItem="J7s-D8-gUD" secondAttribute="height" multiplier="1392:157" id="ejG-7E-6MI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="57"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-Q9-8uY">
+                                <rect key="frame" x="673" y="878" width="574" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SSg-Q9-8uY" secondAttribute="height" multiplier="41:5" id="J6j-Eq-DXe"/>
+                                    <constraint firstAttribute="width" constant="574" id="xbl-HJ-ShG"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Tentar novamente">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="39" name="SFProText-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="rh1-Qc-W8A">
+                                <rect key="frame" x="827" y="230" width="267" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rh1-Qc-W8A" secondAttribute="height" multiplier="267:280" id="PHQ-up-WKg"/>
+                                    <constraint firstAttribute="height" constant="280" id="l4J-8G-eaf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="J7s-D8-gUD" firstAttribute="centerX" secondItem="o1i-PU-DEZ" secondAttribute="centerX" id="AAF-3h-DU5"/>
+                            <constraint firstItem="J7s-D8-gUD" firstAttribute="top" secondItem="rh1-Qc-W8A" secondAttribute="bottom" constant="107" id="KUZ-Ja-OyY"/>
+                            <constraint firstItem="rh1-Qc-W8A" firstAttribute="top" secondItem="416-cN-bgQ" secondAttribute="bottom" constant="170" id="Qeg-Yy-0FD"/>
+                            <constraint firstItem="SSg-Q9-8uY" firstAttribute="centerX" secondItem="o1i-PU-DEZ" secondAttribute="centerX" id="Xls-af-wgC"/>
+                            <constraint firstItem="rh1-Qc-W8A" firstAttribute="centerX" secondItem="o1i-PU-DEZ" secondAttribute="centerX" id="nLx-Qj-n3d"/>
+                            <constraint firstItem="SSg-Q9-8uY" firstAttribute="top" secondItem="rh1-Qc-W8A" secondAttribute="bottom" constant="368" id="rnF-SM-5ZB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o1i-PU-DEZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epP-bo-ytD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2337" y="-981"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="1920" height="1079"/>
+        <image name="group" width="1920" height="1080"/>
+        <image name="icon" width="167" height="172"/>
         <image name="icons8-user_filled" width="60" height="60"/>
     </resources>
 </document>
