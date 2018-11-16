@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
         </array>
@@ -86,7 +89,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-ac-PAo">
-                                <rect key="frame" x="0.0" y="169" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="259" width="375" height="58"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6MI-Yr-DZX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
@@ -146,18 +149,34 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO5-8V-FSI">
+                                <rect key="frame" x="148.33333333333334" y="157" width="78.666666666666657" height="36"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5B-hN-cYy">
+                                <rect key="frame" x="168.33333333333334" y="205" width="38.666666666666657" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15636768940000001" green="0.16786375640000001" blue="0.2093632221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ow7-qS-Quq" firstAttribute="trailing" secondItem="Rth-ac-PAo" secondAttribute="trailing" id="3Pz-uQ-Sfc"/>
+                            <constraint firstItem="d5B-hN-cYy" firstAttribute="top" secondItem="HO5-8V-FSI" secondAttribute="bottom" constant="12" id="632-La-iit"/>
                             <constraint firstItem="1T9-E3-V8y" firstAttribute="centerX" secondItem="ow7-qS-Quq" secondAttribute="centerX" id="C6z-fr-NHB"/>
-                            <constraint firstItem="Rth-ac-PAo" firstAttribute="top" secondItem="hFb-YM-7Na" secondAttribute="bottom" constant="24" id="NH6-9C-SY6"/>
+                            <constraint firstItem="HO5-8V-FSI" firstAttribute="centerX" secondItem="8Xq-LP-ZrK" secondAttribute="centerX" id="Dhi-Ha-N4b"/>
+                            <constraint firstItem="HO5-8V-FSI" firstAttribute="top" secondItem="hFb-YM-7Na" secondAttribute="bottom" constant="12" id="K3j-Ks-ajA"/>
+                            <constraint firstItem="d5B-hN-cYy" firstAttribute="centerX" secondItem="8Xq-LP-ZrK" secondAttribute="centerX" id="QXN-Px-8jQ"/>
                             <constraint firstItem="1T9-E3-V8y" firstAttribute="centerY" secondItem="ow7-qS-Quq" secondAttribute="centerY" id="W7I-00-M0F"/>
                             <constraint firstItem="hFb-YM-7Na" firstAttribute="top" secondItem="ow7-qS-Quq" secondAttribute="top" constant="20" id="WTi-mk-Wik"/>
                             <constraint firstItem="1T9-E3-V8y" firstAttribute="leading" secondItem="ow7-qS-Quq" secondAttribute="leading" id="Yov-99-s9o"/>
                             <constraint firstItem="hFb-YM-7Na" firstAttribute="centerX" secondItem="8Xq-LP-ZrK" secondAttribute="centerX" id="rxi-D0-G7G"/>
                             <constraint firstItem="1T9-E3-V8y" firstAttribute="top" secondItem="ow7-qS-Quq" secondAttribute="top" id="sNC-n4-l9C"/>
                             <constraint firstItem="Rth-ac-PAo" firstAttribute="leading" secondItem="ow7-qS-Quq" secondAttribute="leading" id="vBO-vx-o1l"/>
+                            <constraint firstItem="Rth-ac-PAo" firstAttribute="top" secondItem="d5B-hN-cYy" secondAttribute="bottom" constant="36" id="zHe-kL-ykW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ow7-qS-Quq"/>
                     </view>
@@ -165,9 +184,11 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editPhotoBtn" destination="dcQ-fE-yik" id="jz1-4G-gtw"/>
+                        <outlet property="emailLabel" destination="d5B-hN-cYy" id="qaD-lN-oo0"/>
                         <outlet property="loadingPhoto" destination="PJ5-05-XbU" id="yP2-E5-mUJ"/>
                         <outlet property="photoView" destination="hFb-YM-7Na" id="lZK-yd-Jz1"/>
                         <outlet property="profilePhoto" destination="CtP-EJ-Iwz" id="wEc-DU-PrM"/>
+                        <outlet property="realNameLabel" destination="HO5-8V-FSI" id="O9c-Ck-cPB"/>
                         <outlet property="usernameLabel" destination="nyc-1L-ZEX" id="2hQ-cp-SyE"/>
                     </connections>
                 </viewController>

@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var loadingPhoto: UIActivityIndicatorView!
     @IBOutlet weak var photoView: UIView!
+    @IBOutlet weak var realNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     // MARK: - Properties
     let userProfileManager = UserProfileService.shared
@@ -73,6 +75,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             DispatchQueue.main.async {
                 self.usernameLabel.text = self.currentUser.username
+                self.realNameLabel.text = self.currentUser.realName
+                self.emailLabel.text = self.currentUser.email
                 self.loadingPhoto.startAnimating()
 
             }

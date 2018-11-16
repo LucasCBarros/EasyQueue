@@ -23,6 +23,9 @@ class UserProfile: NSObject, PersistenceObject {
     // Users Name
     var username: String = ""
     
+    // Real user name
+    var realName: String = ""
+    
     // Users profile type
     var profileType: ProfileType = ProfileType.user
     
@@ -46,6 +49,9 @@ class UserProfile: NSObject, PersistenceObject {
         if let username = dictionary["username"] as? String {
             self.username = username
         }
+        if let realName = dictionary["realName"] as? String {
+            self.realName = realName
+        }
         if let profileType = dictionary["profileType"] as? ProfileType {
             self.profileType = profileType
         }
@@ -63,10 +69,11 @@ class UserProfile: NSObject, PersistenceObject {
         self.dictInfo = dictionary
     }
     
-    init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault,
+    init(userID: String, username: String, realName: String, profileType: ProfileType = ProfileType.ptDefault,
          email: String, photo: String? = nil, photoModifiedAt: Date? = nil) {
         self.userID = userID
         self.username = username
+        self.realName = realName
         self.profileType = profileType
         self.email = email
         self.photoModifiedAt = photoModifiedAt

@@ -180,104 +180,46 @@ class UserProfileDAO: DAO {
 //        })
     }
     
-    /// Other Actions
     // Retrieve Current User
     func retrieveCurrentUserProfile(completionHandler: @escaping (UserProfile?) -> Void) {
         
         container.fetchUserRecordID { recordID, error in
             guard let recordID = recordID, error == nil else {
-                // error handling magic
+                completionHandler(nil)
                 return
             }
             // "recordID" is the record ID returned from CKContainer.fetchUserRecordID
             self.publicDB.fetch(withRecordID: recordID) { record, error in
                 guard let record = record, error == nil else {
-                    // show off your error handling skills
+                    completionHandler(nil)
                     return
                 }
                 
-                //print("The user record is: \(record.recordID.recordName)")
-
-                self.publicDB.fetch(withRecordID: record.recordID, completionHandler: { (result, error) in
-                    if error != nil {
-                        //return
-                        completionHandler(nil)
-                    }
+                let userId = record.recordID.recordName
+                let username = record["username"] as? String ?? "EMPTY_NAME"
+                var realName = "EMPTY_NAME"
+                let email = record["email"] as? String
+                let profileType = record["profileType"] as? String
+                let photoId = record["photoId"] as? String
+                let photoModifiedAt = record["photoModifiedAt"] as? Date
+                
+                self.container.discoverUserIdentity(withUserRecordID: record.recordID, completionHandler: { (userIdentity, _) in
                     
-                    if let record = result {
-                    
-                        let userId = record.recordID.recordName
-                        let userName = record["username"] as? String
-                        let email = record["email"] as? String
-                        let profileType = record["profileType"] as? String
-                        let photoId = record["photoId"] as? String
-                        let photoModifiedAt = record["photoModifiedAt"] as? Date
+                    if let firstName = userIdentity?.nameComponents?.givenName, let lastName = userIdentity?.nameComponents?.familyName {
                         
-                        completionHandler(UserProfile(userID: userId, username: userName!,
-                                                      profileType: ProfileType(withString: profileType),
-                                                      email: email!,
-                                                      photo: photoId, photoModifiedAt: photoModifiedAt))
+                        realName = firstName + " " + lastName
                     } else {
-                        completionHandler(nil)
+                        
+                        realName = username
                     }
+                    let user = UserProfile(userID: userId, username: username, realName: realName,
+                                profileType: ProfileType(withString: profileType),
+                                email: email!, photo: photoId, photoModifiedAt: photoModifiedAt)
+                    
+                    completionHandler(user)
                 })
             }
         }
-        
-            // `recordID` is the record ID returned from CKContainer.fetchUserRecordID
-//            self.publicDB.fetch(withRecordID: recordID) { record, error in
-//                guard let record = record, error == nil else {
-//                    // show off your error handling skills
-//                    return
-//                }
-//
-////                print("The user record is: \(record.object(forKey: "createdBy"))")
-//            }
-            
-//            let predicate = NSPredicate(format: "Name == %s", recordID)
-//            let predicate = NSPredicate(value: true)
-//            let query = CKQuery(recordType: "Users", predicate: predicate)
-//            self?.publicDB.perform(query, inZoneWith: nil, completionHandler: {records, error in
-//                if let records = records {
-//                    for record in records {
-//                        print("ak: \(record.creatorUserRecordID)")
-//                    }
-//                }
-//            })
-//            self.curr
-//            self?.privateDB.perform(query, inZoneWith: nil, completionHandler: {records, error in
-//                if let records = records {
-//                    print(records)
-//                    for record in records {
-//                        print("ak: \(record.creatorUserRecordID)")
-//                    }
-//                }
-//            })
-        
-//        let authManager = AuthDatabaseManager()
-//        let userID = authManager.retrieveCurrentUserID()
-//        ref?.child("Users/\(userID)").observeSingleEvent(of: .value, with: {[weak self] (snapshot) in
-//            let user = snapshot.value as? NSDictionary
-//
-//            if let actualUser = user as? [AnyHashable: Any] {
-//
-//                let newUser = UserProfile(dictionary: actualUser)
-//
-//                self?.ref?.child("ProfileType/\(userID)").observeSingleEvent(of: .value, with: { (snapshot) in
-//                    UserDefaults.standard.set(userID, forKey: "userID")
-//                    let profileType = snapshot.value as? NSDictionary
-//                    if let profileType = profileType as? [AnyHashable: Any] {
-//                        newUser.profileType = ProfileType(dictionary: profileType).profileType
-//                        UserDefaults.standard.set(newUser.profileType, forKey: "userType")
-//                    }
-//
-//                    completionHandler(newUser)
-//                })
-//
-//            } else {
-//                completionHandler(nil)
-//            }
-//        })
     }
     
     // Retrieve Users In Line
