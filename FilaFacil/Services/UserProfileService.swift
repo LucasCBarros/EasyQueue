@@ -64,14 +64,13 @@ class UserProfileService: NSObject {
         }
     }
     
-    func editUsername(user: UserProfile, completion: @escaping (UserProfile) -> Void) {
+    func editUsername(user: UserProfile, completion: @escaping (UserProfile, Error?) -> Void) {
         
-        userProfileManager.editUsername(user: user) { (error) in
+        userProfileManager.editUsername(user: user) { (user, error) in
             if error == nil {
-                
+                completion(user, error)
             }
         }
-        
     }
     
     // Retrieve Current User

@@ -29,9 +29,6 @@ class UserProfile: NSObject, PersistenceObject {
     // Users E-mail
     var email: String = ""
     
-    // Users Position in the Line
-    var deviceID: String = ""
-    
     // Users photo if it has
     var photo: String?
     
@@ -55,9 +52,7 @@ class UserProfile: NSObject, PersistenceObject {
         if let email = dictionary["email"] as? String {
             self.email = email
         }
-        if let deviceID = dictionary["deviceID"] as? String {
-            self.deviceID = deviceID
-        }
+        
         if let photo = dictionary["photo"] as? String {
             self.photo = photo
         }
@@ -69,18 +64,16 @@ class UserProfile: NSObject, PersistenceObject {
     }
     
     init(userID: String, username: String, profileType: ProfileType = ProfileType.ptDefault,
-         email: String, deviceID: String, photo: String? = nil, photoModifiedAt: Date? = nil) {
+         email: String, photo: String? = nil, photoModifiedAt: Date? = nil) {
         self.userID = userID
         self.username = username
         self.profileType = profileType
         self.email = email
-        self.deviceID = deviceID
         self.photoModifiedAt = photoModifiedAt
         self.dictInfo = [
             "userID": userID,
             "username": username,
             "email": email,
-            "deviceID": deviceID,
             "photoModifiedAt": photoModifiedAt
         ]
         if let photo = photo {

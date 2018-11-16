@@ -14,15 +14,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: - Outlets
     @IBOutlet weak var editPhotoBtn: UIButton!
     @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var loadingPhoto: UIActivityIndicatorView!
-    
     @IBOutlet weak var photoView: UIView!
     
     // MARK: - Properties
     let userProfileManager = UserProfileService()
     let authManager = AuthDatabaseManager()
-    var currentProfile: UserProfile!
+    var currentUser: UserProfile!
     
     var isPhotoEdited: Bool = true
     
@@ -61,7 +60,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func retrieveCurrentUserProfile() {
         userProfileManager.retrieveCurrentUserProfile {[weak self] (userProfile) in
             if let userProfile = userProfile {
-                self?.currentProfile = userProfile
+                self?.currentUser = userProfile
                 DispatchQueue.main.async {
                     self?.setupProfile()
                 }
@@ -72,15 +71,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func loadUserProfileInfo() {
         
-        if currentProfile != nil {
+        if currentUser != nil {
             
             DispatchQueue.main.async {
-                self.emailLabel.text = self.currentProfile.email
+                self.usernameLabel.text = self.currentUser.username
                 self.loadingPhoto.startAnimating()
 
             }
             
-            userProfileManager.retrieveImage(for: self.currentProfile.userID, modifiedAt: self.currentProfile.photoModifiedAt) { (image, _, error) in
+            userProfileManager.retrieveImage(for: self.currentUser.userID, modifiedAt: self.currentUser.photoModifiedAt) { (image, _, error) in
                 
                 if let image = image, error == nil {
                     DispatchQueue.main.async {
@@ -112,11 +111,11 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                 profilePhoto.image = photo
                 
                 loadingPhoto.startAnimating()
-                userProfileManager.saveImage(photo.pngData()!, for: currentProfile) { (newUser, error)  in
+                userProfileManager.saveImage(photo.pngData()!, for: currentUser) { (newUser, error)  in
                     if error == nil {
                         print("Imagem salva com sucesso")
                         if let user = newUser {
-                            self.currentProfile = user
+                            self.currentUser = user
                         }
                         DispatchQueue.main.async {
                             self.loadingPhoto.stopAnimating()
@@ -146,7 +145,17 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 }
 
 extension ProfileViewController: EditEmailViewControllerDelegate {
-    func change(email: String, _ password: String) {
+    func change(username: String) {
+        
+        currentUser.username = username
+        
+        userProfileManager.editUsername(user: currentUser) { (user, error) in
+            if error != nil {
+                
+            }
+        }
+        
+        
 //        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
 //            if user != nil {
 //            self.databaseRef.child("Users").child(
@@ -175,6 +184,8 @@ extension ProfileViewController: EditEmailViewControllerDelegate {
 
 extension ProfileViewController: EditPasswordViewControllerDelegate {
     func change(password: String, to newPassword: String) {
+        
+        
 //        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
 //            if user != nil {
 //                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: {error in

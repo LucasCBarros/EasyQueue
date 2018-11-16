@@ -9,24 +9,26 @@
 import UIKit
 
 protocol EditEmailViewControllerDelegate: NSObjectProtocol {
-    func change(email: String, _ password: String)
+    func change(username: String)
 }
 
 class EditEmailViewController: MyViewController {
     
     open weak var delegate: EditEmailViewControllerDelegate?
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    let alert = UIAlertController(title: "Email inválido", message: nil, preferredStyle: UIAlertController.Style.alert)
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    let alert = UIAlertController(title: "Username inválido", message: nil, preferredStyle: UIAlertController.Style.alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameTextField.placeholder = "Novo username"
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
     
     @IBAction func okButton(_ sender: UIBarButtonItem) {
-        if let email = emailTextField.text, let password = passwordTextField.text, email.count > 5 {
-            self.delegate?.change(email: email, password)
+        if let username = usernameTextField.text, username.count > 1 {
+            self.delegate?.change(username: username)
             self.navigationController?.popViewController(animated: true)
         } else {
             self.present(alert, animated: true, completion: nil)

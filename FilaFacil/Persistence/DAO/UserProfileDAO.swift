@@ -66,8 +66,7 @@ class UserProfileDAO: DAO {
         }
     }
     
-    
-    func editUsername(user: UserProfile, completion: @escaping (Error?) -> Void) {
+    func editUsername(user: UserProfile, completion: @escaping (UserProfile, Error?) -> Void) {
         
         let recordID = CKRecord.ID(recordName: user.userID)
         
@@ -78,7 +77,8 @@ class UserProfileDAO: DAO {
                 record.setValue(user.username, forKey: "username")
                 
                 self.publicDB.save(record) { _, error in
-                    completion(error)
+            
+                    completion(user, error)
                 }
             }
         }
@@ -189,9 +189,7 @@ class UserProfileDAO: DAO {
                 // error handling magic
                 return
             }
-            
-            //print("Got user record ID \(recordID.recordName).")
-            // `recordID` is the record ID returned from CKContainer.fetchUserRecordID
+            // "recordID" is the record ID returned from CKContainer.fetchUserRecordID
             self.publicDB.fetch(withRecordID: recordID) { record, error in
                 guard let record = record, error == nil else {
                     // show off your error handling skills
@@ -210,31 +208,19 @@ class UserProfileDAO: DAO {
                     
                         let userId = record.recordID.recordName
                         let userName = record["username"] as? String
+                        let email = record["email"] as? String
                         let profileType = record["profileType"] as? String
                         let photoId = record["photoId"] as? String
                         let photoModifiedAt = record["photoModifiedAt"] as? Date
                         
                         completionHandler(UserProfile(userID: userId, username: userName!,
                                                       profileType: ProfileType(withString: profileType),
-                                                      email: "gmail@gmail.com", deviceID: "12345", photo: photoId, photoModifiedAt: photoModifiedAt))
+                                                      email: email!,
+                                                      photo: photoId, photoModifiedAt: photoModifiedAt))
                     } else {
                         completionHandler(nil)
                     }
                 })
-                
-//                let predicate = NSPredicate(format: "self contains %@", record.recordID.recordName)
-//                let query = CKQuery(recordType: "Users", predicate: predicate)
-//
-//                self.publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
-//                    if let error = error {
-//
-//                        return
-//                    }
-//                    for result in results! {
-//                        print(" >-- ")
-//                        print(result)
-//                    }
-//                }
             }
         }
         
