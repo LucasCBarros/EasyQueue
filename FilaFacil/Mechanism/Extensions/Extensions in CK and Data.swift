@@ -15,7 +15,14 @@ extension CKAsset {
         let documentsDirectoryPath: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
         let tempImageName = "Image2.png"
         
-        let imageData = image.pngData()
+        let imageData: Data?
+        
+        #if os(iOS)
+        imageData = image.pngData()
+        #else
+        imageData = UIImagePNGRepresentation(image)
+        #endif
+        
         let path = documentsDirectoryPath.appendingPathComponent(tempImageName)
         let url = URL(fileURLWithPath: path)
         try? imageData?.write(to: url, options: [.atomic])
