@@ -42,7 +42,7 @@ class NoteProfile: NSObject, PersistenceObject {
         if let createdAt = dictionary["createdAt"] as? Date {
             self.createdAt = createdAt
         }
-        if let userID = dictionary["userID"] as? String {
+        if let userID = dictionary["userId"] as? String {
             self.userID = userID
         }
         self.dictInfo = dictionary
