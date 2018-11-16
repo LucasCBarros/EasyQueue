@@ -53,7 +53,7 @@ class ConfiguracoesController: UITableViewController, MFMailComposeViewControlle
                 willAddCategoriesQuestion.append(categorieQuestion)
             }
         }
-        PushNotifications.removeSubscriptions(categoriesQuestion: willAddCategoriesQuestion)
+        PushNotifications.saveSubscriptions(categoriesQuestion: willAddCategoriesQuestion)
         
         // Remove old Categories Question in Push Notification.
         self.initialLines.subtract(PresentedLinesManager.shared.lines)

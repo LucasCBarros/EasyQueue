@@ -18,7 +18,7 @@ class CreateNoteViewController: MyViewController {
     @IBOutlet weak var noteTextView: UITextView!
     
     let noteProfileManager = NoteProfileService()
-    let userProfileManager = UserProfileService()
+    let userProfileManager = UserProfileService.shared
     
     weak var delegate: CreateNoteViewControllerDelegate?
     

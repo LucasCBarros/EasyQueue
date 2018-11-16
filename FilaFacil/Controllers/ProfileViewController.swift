@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var photoView: UIView!
     
     // MARK: - Properties
-    let userProfileManager = UserProfileService()
+    let userProfileManager = UserProfileService.shared
     let authManager = AuthDatabaseManager()
     var currentProfile: UserProfile!
     
