@@ -73,6 +73,19 @@ class LoginViewController: MyViewController {
         
         self.loginButton.layer.cornerRadius = 7
         
+        authService.checkUserLogged { (authenticated, error) in
+            if authenticated {
+                DispatchQueue.main.async {
+                    self.presentLoggedInScreen()
+                }
+            } else {
+                self.finishingLoading()
+                if let loginError = error as? LoginError {
+                    self.errorHandling(loginError)
+                }
+            }
+        }
+        
     }
     
     @objc func keyboardWillShow(notification: Notification) {
@@ -86,19 +99,9 @@ class LoginViewController: MyViewController {
         scrollView.contentInset = contentInset
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        authService.checkUserLogged { (authenticated, error) in
-            if authenticated {
-                DispatchQueue.main.async {
-                    self.presentLoggedInScreen()
-                }
-            } else {
-                self.finishingLoading()
-                if let loginError = error as? LoginError {
-                    self.errorHandling(loginError)
-                }
-            }
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // Opens app screens to loggedIn users
