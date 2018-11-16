@@ -11,7 +11,7 @@ import Kingfisher
 
 class UserProfileService: NSObject {
     
-    static open let shared = UserProfileService()
+    static public let shared = UserProfileService()
     
     private override init() { }
     
@@ -72,6 +72,7 @@ class UserProfileService: NSObject {
         
         userProfileManager.editUsername(user: user) { (user, error) in
             if error == nil {
+                self.currentUser = user
                 completion(user, error)
             }
         }
@@ -89,13 +90,6 @@ class UserProfileService: NSObject {
             completion(self.currentUser)
         }
     }
-    
-//    func attualizeTokenID(user: UserProfile) {
-//        if let deviceID = UserDefaults.standard.string(forKey: "userDeviceID") {
-//            user.deviceID = deviceID
-//            userProfileManager.editUser(user: user)
-//        }
-//    }
     
     func filterLineByTab(allQuestions: [QuestionProfile], selectedTab: String) -> ([QuestionProfile]) {
         var questionsInLine: [QuestionProfile] = []

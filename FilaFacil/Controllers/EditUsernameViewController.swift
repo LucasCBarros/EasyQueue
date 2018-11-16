@@ -8,21 +8,21 @@
 
 import UIKit
 
-protocol EditEmailViewControllerDelegate: NSObjectProtocol {
+protocol EditUsernameViewControllerDelegate: NSObjectProtocol {
     func change(username: String)
 }
 
-class EditEmailViewController: MyViewController {
+class EditUsernameViewController: MyViewController {
     
-    open weak var delegate: EditEmailViewControllerDelegate?
+    open weak var delegate: EditUsernameViewControllerDelegate?
     @IBOutlet weak var usernameTextField: UITextField!
     
-    let alert = UIAlertController(title: "Username inválido", message: nil, preferredStyle: UIAlertController.Style.alert)
+    let alert = UIAlertController(title: "Apelido inválido", message: nil, preferredStyle: UIAlertController.Style.alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameTextField.placeholder = "Novo username"
+        usernameTextField.placeholder = "Novo apelido"
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
     

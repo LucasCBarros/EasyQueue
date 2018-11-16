@@ -50,10 +50,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let emailVC = segue.destination as? EditEmailViewController {
+        if let emailVC = segue.destination as? EditUsernameViewController {
             emailVC.delegate = self
-        } else if let passwordVC = segue.destination as? EditPasswordViewController {
-            passwordVC.delegate = self
         }
     }
     
@@ -144,57 +142,25 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     }
 }
 
-extension ProfileViewController: EditEmailViewControllerDelegate {
+extension ProfileViewController: EditUsernameViewControllerDelegate {
     func change(username: String) {
         
         currentUser.username = username
         
         userProfileManager.editUsername(user: currentUser) { (user, error) in
-            if error != nil {
-                
+            DispatchQueue.main.async {
+                if error != nil {
+                    let alert = UIAlertController(title: "Erro ao atualizar username", message: nil, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    UserProfileService.shared.retrieveCurrentUserProfile(completion: { (user) in
+                        self.currentUser = user
+                        self.usernameLabel.text = self.currentUser.username
+                    })
+                }
             }
         }
-        
-        
-//        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
-//            if user != nil {
-//            self.databaseRef.child("Users").child(
-//                self.currentProfile.userID).updateChildValues(
-//                    ["email": email],
-//                    withCompletionBlock: {(error, _) in
-//                    if error != nil {
-//                        print(error!)
-//                        return
-//                    } else {
-//                        Auth.auth().currentUser?.updateEmail(to: email, completion: {[weak self](error) in
-//                            if error == nil {
-//                                DispatchQueue.main.async {
-//                                    self?.emailLabel.text = email
-//                                }
-//                            } else {
-//                                print(error!)
-//                            }
-//                        })
-//                    }
-//                })
-//            }
-//        })
-    }
-}
-
-extension ProfileViewController: EditPasswordViewControllerDelegate {
-    func change(password: String, to newPassword: String) {
-        
-        
-//        AuthService().login(email: Auth.auth().currentUser!.email!, password: password, completionHandler: {user in
-//            if user != nil {
-//                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: {error in
-//                    if error != nil {
-//                        print(error!)
-//                    }
-//                })
-//            }
-//        })
     }
 }
 
