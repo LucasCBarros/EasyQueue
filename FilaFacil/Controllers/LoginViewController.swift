@@ -14,16 +14,38 @@ class LoginViewController: MyViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var visusalEffectView: UIVisualEffectView!
+    
+    fileprivate func finishingLoading() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.visusalEffectView.isHidden = true
+            self.view.isUserInteractionEnabled = true
+        }
+    }
+    
+    fileprivate func initiatingLoading() {
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+            self.visusalEffectView.isHidden = false
+            self.view.isUserInteractionEnabled = false
+        }
+    }
     
     @IBAction func loginActionButton(_ sender: UIButton) {
         if let email = emailTextField.text, !email.isEmpty {
+            self.initiatingLoading()
             authService.tryLoggin(email: email) { (authenticated, error) in
                 if authenticated {
                     DispatchQueue.main.async {
                         self.presentLoggedInScreen()
                     }
-                } else if let loginError = error as? LoginError {
-                    self.errorHandling(loginError)
+                } else {
+                    self.finishingLoading()
+                    if let loginError = error as? LoginError {
+                        self.errorHandling(loginError)
+                    }
                 }
             }
         } else {
@@ -41,6 +63,8 @@ class LoginViewController: MyViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.activityIndicator.hidesWhenStopped = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -69,6 +93,7 @@ class LoginViewController: MyViewController {
                     self.presentLoggedInScreen()
                 }
             } else {
+                self.finishingLoading()
                 if let loginError = error as? LoginError {
                     self.errorHandling(loginError)
                 }
@@ -107,7 +132,7 @@ class LoginViewController: MyViewController {
                 // Nunca vai acontecer aqui. Primeiro acesso do usuário.
                 break
             case .emailNotAuthorized:
-                    self.performSegue(withIdentifier: "accessDeniedSegue", sender: nil)
+                self.performSegue(withIdentifier: "accessDeniedSegue", sender: nil)
                 break
             case .deniedUserPermission:
                 let alert = UIAlertController(title: "Permissão negada pelo usuário.", message: "Somente é possível usar o Fila Fácil se conceder a permissão.", preferredStyle: .alert)

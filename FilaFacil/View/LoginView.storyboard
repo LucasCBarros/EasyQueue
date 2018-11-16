@@ -14,7 +14,7 @@
         <scene sceneID="gHT-cz-zTy">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="3vc-G5-VQo" customClass="LoginViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="soV-3b-Lp2">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="soV-3b-Lp2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -105,24 +105,43 @@
                                     <constraint firstItem="Mx4-g6-xLC" firstAttribute="width" secondItem="7m9-km-u6U" secondAttribute="width" id="dV0-2k-CvP"/>
                                 </constraints>
                             </scrollView>
+                            <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvI-kd-edV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q0C-YG-Nrp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="26i-yL-spb">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.15636768940000001" green="0.16786375640000001" blue="0.2093632221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="trailing" secondItem="2Z8-GS-aQT" secondAttribute="trailing" id="3Ik-0V-xXL"/>
+                            <constraint firstItem="QvI-kd-edV" firstAttribute="top" secondItem="soV-3b-Lp2" secondAttribute="top" id="5u8-yz-boz"/>
                             <constraint firstAttribute="bottom" secondItem="hxe-1H-CXQ" secondAttribute="bottom" id="6Gb-tf-aVd"/>
+                            <constraint firstAttribute="bottom" secondItem="QvI-kd-edV" secondAttribute="bottom" id="AYn-xo-LzR"/>
+                            <constraint firstItem="2Z8-GS-aQT" firstAttribute="trailing" secondItem="QvI-kd-edV" secondAttribute="trailing" id="EQM-IH-1lF"/>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="top" secondItem="soV-3b-Lp2" secondAttribute="top" id="FSb-52-DkR"/>
                             <constraint firstItem="2Z8-GS-aQT" firstAttribute="leading" secondItem="7m9-km-u6U" secondAttribute="leading" id="FTc-ZL-BDD"/>
+                            <constraint firstItem="26i-yL-spb" firstAttribute="centerX" secondItem="2Z8-GS-aQT" secondAttribute="centerX" id="Gs1-aS-kAO"/>
                             <constraint firstItem="2Z8-GS-aQT" firstAttribute="top" secondItem="7m9-km-u6U" secondAttribute="top" id="Hrb-f0-Xj9"/>
+                            <constraint firstItem="QvI-kd-edV" firstAttribute="leading" secondItem="2Z8-GS-aQT" secondAttribute="leading" id="LKf-R1-RBo"/>
                             <constraint firstItem="7m9-km-u6U" firstAttribute="trailing" secondItem="2Z8-GS-aQT" secondAttribute="trailing" id="NkF-f3-1Hh"/>
+                            <constraint firstItem="26i-yL-spb" firstAttribute="centerY" secondItem="2Z8-GS-aQT" secondAttribute="centerY" id="Tc3-ZY-50n"/>
                             <constraint firstItem="2Z8-GS-aQT" firstAttribute="bottom" secondItem="7m9-km-u6U" secondAttribute="bottom" id="fpL-ML-8pK"/>
                             <constraint firstItem="hxe-1H-CXQ" firstAttribute="leading" secondItem="2Z8-GS-aQT" secondAttribute="leading" id="o3j-g9-WOS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Z8-GS-aQT"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="26i-yL-spb" id="Kvx-To-f4O"/>
                         <outlet property="emailTextField" destination="UDs-Qt-jnj" id="Ruk-i6-UJQ"/>
                         <outlet property="loginButton" destination="xGu-uJ-VNY" id="loI-dE-Ggz"/>
                         <outlet property="scrollView" destination="7m9-km-u6U" id="kX6-pb-15D"/>
+                        <outlet property="visusalEffectView" destination="QvI-kd-edV" id="Cr6-HE-1eW"/>
                         <segue destination="BI3-bX-5Ek" kind="show" identifier="LoggedIn" id="hgo-TM-F3P"/>
                         <segue destination="9p3-fR-cND" kind="show" identifier="accessDeniedSegue" id="LbI-Kl-cfJ"/>
                     </connections>
