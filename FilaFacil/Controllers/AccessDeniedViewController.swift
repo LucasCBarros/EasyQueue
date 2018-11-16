@@ -13,6 +13,12 @@ class AccessDeniedViewController: UIViewController, MFMailComposeViewControllerD
     
     private let email = "filafacilcontato@gmail.com"
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     @IBAction func contactActionButton(_ sender: UIButton) {
         if !MFMailComposeViewController.canSendMail() {
             print("Mail services are not available")

@@ -17,26 +17,54 @@ class ConfiguracoesController: UITableViewController, MFMailComposeViewControlle
     @IBOutlet weak var businessSwitch: UISwitch!
     var email = "filafacilcontato@gmail.com"
     
+    private var initialLines: Set<String> = []
+    
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let switchsState = PresentedLinesManager.shared.lines
+        initialLines = PresentedLinesManager.shared.lines
         
-        if switchsState.contains("Developer") {
+        if initialLines.contains("Developer") {
             self.developerSwitch.setOn(true, animated: false)
         } else {
             self.developerSwitch.setOn(false, animated: false)
         }
-        if switchsState.contains("Design") {
+        if initialLines.contains("Design") {
             self.designSwitch.setOn(true, animated: false)
         } else {
             self.designSwitch.setOn(false, animated: false)
         }
-        if switchsState.contains("Business") {
+        if initialLines.contains("Business") {
             self.businessSwitch.setOn(true, animated: false)
         } else {
             self.businessSwitch.setOn(false, animated: false)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Add new Categories Question in Push Notification.
+        let willAddLines = PresentedLinesManager.shared.lines.subtracting(self.initialLines)
+        
+        var willAddCategoriesQuestion = [CategoryQuestionType]()
+        for line in willAddLines {
+            if let categorieQuestion = CategoryQuestionType.init(rawValue: line) {
+                willAddCategoriesQuestion.append(categorieQuestion)
+            }
+        }
+        PushNotifications.saveSubscriptions(categoriesQuestion: willAddCategoriesQuestion)
+        
+        // Remove old Categories Question in Push Notification.
+        self.initialLines.subtract(PresentedLinesManager.shared.lines)
+        
+        var willRemoveCategoriesQuestion = [CategoryQuestionType]()
+        for line in self.initialLines {
+            if let categorieQuestion = CategoryQuestionType.init(rawValue: line) {
+                willRemoveCategoriesQuestion.append(categorieQuestion)
+            }
+        }
+        PushNotifications.removeSubscriptions(categoriesQuestion: willRemoveCategoriesQuestion)
     }
     
     // MARK: - Actions

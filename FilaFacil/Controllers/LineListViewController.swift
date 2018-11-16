@@ -24,7 +24,7 @@ class LineListViewController: UIViewController {
     var lineTotalWidth: CGFloat = 0
     var selectedTab: PresentableLine?
     
-    let userProfileManager = UserProfileService()
+    let userProfileManager = UserProfileService.shared
     let questionProfileManager = QuestionProfileService()
     var currentProfile: UserProfile?
     var inLineQuestions: [QuestionProfile] = []

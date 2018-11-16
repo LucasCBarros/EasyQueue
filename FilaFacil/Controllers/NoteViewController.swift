@@ -16,7 +16,7 @@ class NoteViewController: MyViewController {
     var allNoteProfiles: [NoteProfile]?
     
     let noteProfileManager = NoteProfileService()
-    let userProfileManager = UserProfileService()
+    let userProfileManager = UserProfileService.shared
     
     var currentProfile: UserProfile?
     
@@ -27,12 +27,6 @@ class NoteViewController: MyViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         retrieveAllNotes()
-        
-        //print("VOLTOU!!!!!!!")
-        // Update currentUser
-        userProfileManager.retrieveCurrentUserProfile { (userProfile) in
-            self.currentProfile = userProfile!
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,12 +74,10 @@ extension NoteViewController: CreateNoteViewControllerDelegate {
 
     func createNoteResponse(newNote: NoteProfile) {
         
-        print("dsdsdsd")
         print(newNote.noteText)
         
         self.allNoteProfiles?.append(newNote)
         
-        //self.noteTableView.reloadData()
     }
 }
 
@@ -142,7 +134,7 @@ extension NoteViewController: UITableViewDataSource, UITableViewDelegate {
     
     // Allows to edit cell according to profile type
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if self.allNoteProfiles?[indexPath.row].userID == currentProfile?.userID || self.currentProfile?.profileType ==  .admin {
+        if self.allNoteProfiles?[indexPath.row].userID == currentProfile?.userID || self.currentProfile?.profileType == .admin {
             return true
         } else {
             return false

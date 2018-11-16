@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3vc-G5-VQo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8WT-9P-li4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,25 +10,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="gHT-cz-zTy">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="3vc-G5-VQo" customClass="LoginViewController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="soV-3b-Lp2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-notes" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-1H-CXQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7m9-km-u6U">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mx4-g6-xLC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="458"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="478"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-fg-O6A">
-                                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                                                <rect key="frame" x="0.0" y="40" width="375" height="150"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -37,13 +37,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Digite o email vinculado ao iCloud para ter acesso" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3K-I1-aRe">
-                                                <rect key="frame" x="40" y="228" width="295" height="41"/>
+                                                <rect key="frame" x="40" y="248" width="295" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDs-Qt-jnj" customClass="DesignableTextField" customModule="FilaFacil" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="287" width="295" height="47"/>
+                                                <rect key="frame" x="40" y="307" width="295" height="47"/>
                                                 <color key="backgroundColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="47" id="db3-b1-jXx"/>
@@ -65,7 +65,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-uJ-VNY">
-                                                <rect key="frame" x="40" y="391" width="295" height="47"/>
+                                                <rect key="frame" x="40" y="411" width="295" height="47"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="47" id="qQZ-vd-h4d"/>
@@ -86,7 +86,7 @@
                                             <constraint firstItem="UDs-Qt-jnj" firstAttribute="leading" secondItem="g3K-I1-aRe" secondAttribute="leading" id="9Ut-qI-DeE"/>
                                             <constraint firstAttribute="trailing" secondItem="g3K-I1-aRe" secondAttribute="trailing" constant="40" id="AsC-je-Kjh"/>
                                             <constraint firstItem="UDs-Qt-jnj" firstAttribute="top" secondItem="g3K-I1-aRe" secondAttribute="bottom" constant="18" id="Cuo-YC-eua"/>
-                                            <constraint firstItem="SyE-fg-O6A" firstAttribute="top" secondItem="Mx4-g6-xLC" secondAttribute="top" constant="20" id="DHf-df-nsm"/>
+                                            <constraint firstItem="SyE-fg-O6A" firstAttribute="top" secondItem="Mx4-g6-xLC" secondAttribute="top" constant="40" id="DHf-df-nsm"/>
                                             <constraint firstItem="g3K-I1-aRe" firstAttribute="top" secondItem="SyE-fg-O6A" secondAttribute="bottom" constant="58" id="E5t-ru-s1p"/>
                                             <constraint firstItem="UDs-Qt-jnj" firstAttribute="trailing" secondItem="g3K-I1-aRe" secondAttribute="trailing" id="dJT-bu-2js"/>
                                             <constraint firstItem="xGu-uJ-VNY" firstAttribute="leading" secondItem="UDs-Qt-jnj" secondAttribute="leading" id="egw-cJ-fsj"/>
@@ -106,15 +106,15 @@
                                 </constraints>
                             </scrollView>
                             <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvI-kd-edV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q0C-YG-Nrp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="26i-yL-spb">
-                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <rect key="frame" x="169" y="283" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.15636768940000001" green="0.16786375640000001" blue="0.2093632221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -136,6 +136,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Z8-GS-aQT"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Login" id="Lda-w1-TZL"/>
                     <connections>
                         <outlet property="activityIndicator" destination="26i-yL-spb" id="Kvx-To-f4O"/>
                         <outlet property="emailTextField" destination="UDs-Qt-jnj" id="Ruk-i6-UJQ"/>
@@ -157,6 +158,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOz-NP-SdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5" y="546"/>
+        </scene>
+        <!--Transparent Navigation Controller-->
+        <scene sceneID="tlb-IO-9vz">
+            <objects>
+                <navigationController id="8WT-9P-li4" customClass="TransparentNavigationController" customModule="FilaFacil" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NOf-1T-IoD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBarTransparent" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="3vc-G5-VQo" kind="relationship" relationship="rootViewController" id="4z9-az-BlG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rId-85-pRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-841" y="75"/>
         </scene>
         <!--TabBarView-->
         <scene sceneID="6d1-C6-B33">

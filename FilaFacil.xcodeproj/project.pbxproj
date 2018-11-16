@@ -110,6 +110,7 @@
 		FA65BB2C2178FD8F0075214C /* PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65BB2B2178FD8F0075214C /* PushNotifications.swift */; };
 		FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC40C320B1EC9F00870D4C /* CategoryQuestion.swift */; };
 		FA65BB3121791F3F0075214C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA65BB3021791F3F0075214C /* Localizable.strings */; };
+		FA7B4CF8219F14A300F19DF7 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B4CF7219F14A300F19DF7 /* TransparentNavigationController.swift */; };
 		FA8148B620BF2B0500F2FADD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60229E92040ACA100336FC3 /* Extensions.swift */; };
 		FA8148B920BF304700F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
 		FA8148BA20BF318300F2FADD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8148B820BF304700F2FADD /* Formatter.swift */; };
@@ -350,6 +351,7 @@
 		FA65BB2E21791EEC0075214C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FA65BB2F21791EEC0075214C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Interface.strings"; sourceTree = "<group>"; };
 		FA65BB3021791F3F0075214C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FA7B4CF7219F14A300F19DF7 /* TransparentNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
 		FA8148B820BF304700F2FADD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		FA8148BB20BF383F00F2FADD /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		FA834E0820B5E90C002F3E32 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
@@ -766,6 +768,7 @@
 				FA8148B820BF304700F2FADD /* Formatter.swift */,
 				A93DFB172125FA4500231B1D /* PresentedLinesManager.swift */,
 				FA65BB2B2178FD8F0075214C /* PushNotifications.swift */,
+				FA7B4CF7219F14A300F19DF7 /* TransparentNavigationController.swift */,
 				FA379DC7219E045B00347E52 /* DesignableTextField.swift */,
 			);
 			path = Mechanism;
@@ -1350,6 +1353,7 @@
 				FA93520920E2B80C001E4988 /* MyViewController.swift in Sources */,
 				E6FC384920B36E0900D88578 /* NoteDAO.swift in Sources */,
 				FA65BB2D217903B00075214C /* CategoryQuestion.swift in Sources */,
+				FA7B4CF8219F14A300F19DF7 /* TransparentNavigationController.swift in Sources */,
 				FA379DC6219DFF2500347E52 /* AccessDeniedViewController.swift in Sources */,
 				A93244D92124CFB600AACD1B /* NoteViewController.swift in Sources */,
 				E60229D8203FD1EB00336FC3 /* ProfileQuestionStatusViewController.swift in Sources */,

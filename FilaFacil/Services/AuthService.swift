@@ -11,7 +11,7 @@ import UIKit
 class AuthService: NSObject {
 
     let authManager = AuthDatabaseManager()
-    let userProfileService = UserProfileService()
+    let userProfileService = UserProfileService.shared
     
     func signOut() {
         //authManager.signOut()

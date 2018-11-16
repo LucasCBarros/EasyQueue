@@ -11,6 +11,10 @@ import Kingfisher
 
 class UserProfileService: NSObject {
     
+    static open let shared = UserProfileService()
+    
+    private override init() { }
+    
     let userProfileManager = UserProfileDAO()
     
     private var currentUser: UserProfile?
@@ -77,10 +81,12 @@ class UserProfileService: NSObject {
     func retrieveCurrentUserProfile(completion: @escaping (UserProfile?) -> Void) {
         
         if self.currentUser == nil {
-        
-        userProfileManager.retrieveCurrentUserProfile(completionHandler: completion)
+            userProfileManager.retrieveCurrentUserProfile { (userProfile) in
+                self.currentUser = userProfile
+                completion(self.currentUser)
+            }
         } else {
-            completion(currentUser)
+            completion(self.currentUser)
         }
     }
     

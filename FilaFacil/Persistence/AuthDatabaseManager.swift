@@ -20,7 +20,7 @@ enum LoginError: Error {
     case corruptedNameComponent
 }
 
-let userServices = UserProfileService()
+let userServices = UserProfileService.shared
 
 class AuthDatabaseManager: DAO {
     
