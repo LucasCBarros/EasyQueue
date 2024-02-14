@@ -1,4 +1,4 @@
-![Cover image](img/cover.png)
+![Cover image](img/Github_Header.png)
 
 # EasyBoard *(FilaFácil)*
 
@@ -20,24 +20,24 @@ Find an extensive option of features with real examples so you can try them for 
 - Create a question and enter the queue in a specific subject
 - Check recents news in the notice board
 
-![Image with example of the queue, creating question and notice board featues](img/guides.png)
+![Image with example of the queue, creating question and notice board featues](img/Github_Features01.png)
 
 Also enjoy other importante features!
 - Create notices to inform all your collagues
 - Edit your profile to change photo, update e-mail & password or toggle notifications
 - Feel safe to login & create new account
 
-![Image with example of the create notice, edit profile and login features](img/codes.png)
+![Image with example of the create notice, edit profile and login features](img/Github_Features02.png)
 
 Our key feature counts on the AppleTv, where you can see all the recent notices and visualize all the questions in the queue & their subject.
 > All this information is displayed in real time
 
-![Image with example of TvOS features](img/codes.png)
+![Image with example of TvOS features](img/Github_FeatureTvOS.png)
 
 We also have a feature is beta where it's possible to check the queue and questions on your Apple Watch!
 > The WatchOS was implemented to help the seniors receive notifications and follow up on questions.
 
-![Image with example of WatchOS features](img/codes.png)
+![Image with example of WatchOS features](img/Github_FeatureWatchOS.png)
 
 > Have an ideia for a new feature? [Submit an issue](https://github.com/LucasCBarros/MegaDevs/issues/new).
 
