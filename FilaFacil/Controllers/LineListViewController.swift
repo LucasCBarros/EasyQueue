@@ -254,8 +254,8 @@ extension LineListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     // Delete cell and update student status in Firebase
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             
             // update student status in Firebase
             if (usersInLine?.count)! > 0 {

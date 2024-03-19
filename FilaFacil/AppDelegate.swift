@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseCore
 import IQKeyboardManagerSwift
 import FirebaseMessaging
-import FirebaseInstanceID
 import UserNotifications
 
 @UIApplicationMain
@@ -26,13 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //Personlayze status bar
         application.statusBarStyle = .lightContent
         UIApplication.shared.isStatusBarHidden = false
         // Override point for customization after application launch.
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
         
         // Finds and saves users DeviceID
 //        let deviceID = UIDevice.current.identifierForVendor!.uuidString
@@ -55,8 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         application.registerForRemoteNotifications()
-        Messaging.messaging().shouldEstablishDirectChannel = true
-        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: NSNotification.Name.MessagingRegistrationTokenRefreshed, object: nil)
         
         return true
     }
@@ -81,13 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         Messaging.messaging().apnsToken = deviceToken
     }
-
+    
     @objc func tokenRefreshNotification(notification: NSNotification) {
-        if let refreshedToken = InstanceID.instanceID().token() {
-            print("InstanceID token: \(refreshedToken)")
-            
-            //            User.getIDTokenForcingRefresh(refreshedToken.)
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                print("InstanceID token: \(token)")
+                //            User.getIDTokenForcingRefresh(refreshedToken.)
+            }
         }
     }
-    
 }

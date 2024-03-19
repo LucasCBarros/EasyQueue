@@ -186,7 +186,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func presentLogoutScreen() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "LoginView", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate!
-        appDelegate?.window?.rootViewController = viewController
+        
+//        let appDelegate = UIApplication.shared.delegate as? AppDelegate!
+//        appDelegate.window?.rootViewController = viewController
+        
+        UIApplication.shared.windows.first?.rootViewController = viewController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = viewController
     }
 }

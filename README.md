@@ -4,7 +4,6 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-red)](https://opensource.org/licenses/MIT)
 ![Platform iOS](https://img.shields.io/badge/Platform-iOS-blue)
-![SwiftUI](https://img.shields.io/badge/-SwiftUI-orange)
 
 ## Description
 An iOS App that extends from iOS to TvOS and WatchOS to optimize the user experience while sharing they dificulties with the team. This tool makes overcoming & learning challenges easier with team effort, where everyone can give support.
@@ -22,7 +21,7 @@ Find an extensive option of features with real examples so you can try them for 
 
 ![Image with example of the queue, creating question and notice board featues](img/Github_Features01.png)
 
-Also enjoy other importante features!
+Also enjoy other important features!
 - Create notices to inform all your collagues
 - Edit your profile to change photo, update e-mail & password or toggle notifications
 - Feel safe to login & create new account
@@ -48,7 +47,7 @@ We also have a feature is beta where it's possible to check the queue and questi
 - The authentication is also using Firebase
 - We opted a simple MVC Architecture
 - There is a separate target for TvOS and another for WatchOS
-- Swift version: 3.0
+- Swift version: 4.0 (Updated to be able to run the project again)
 
 ### Known Issues & Improvements: 
 

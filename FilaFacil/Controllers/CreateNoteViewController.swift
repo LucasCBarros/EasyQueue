@@ -163,7 +163,7 @@ extension CreateNoteViewController {
     }
     
     // Delete cell and update student status in Firebase
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         // TODO: Verify ID from who created
         if editingStyle == UITableViewCellEditingStyle.delete {

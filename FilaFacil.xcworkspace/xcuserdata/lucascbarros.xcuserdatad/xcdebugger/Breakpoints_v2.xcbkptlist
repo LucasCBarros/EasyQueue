@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "E0EF8F7A-FADE-439F-AA1F-46DD9BB72311"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "50EE6510-BE1F-4EA0-A734-BF6327C2513A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "792BF192-3E65-43DD-9239-CCB61492F5A4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FCF6739E-AA23-49A9-90F6-A92010DFBC5F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,6 +58,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "784A8000-51B0-41C7-9735-5FEFBD1B57C6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -70,6 +75,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6B433E1D-E667-4061-850C-D9B04302B73A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -83,6 +89,7 @@
             landmarkType = "3">
             <Locations>
                <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 33f8df33807d1fd6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -98,6 +105,7 @@
                   offsetFromSymbolStart = "116">
                </Location>
                <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 62ec299606040fda"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -112,12 +120,193 @@
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "156">
                </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 26e80f0b9821076e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.getter : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 77fcf9ae1e58159c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.setter : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - eedc8e005e01f98d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.modify : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 919f73f527c1dbe8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - c36b4c492eadbac7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 68ca0267cf6a1fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - dae68e8b3c8aec2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.getter : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 8bf2782ebaf3fa5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.setter : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 12d20f80faaa164d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.modify : Swift.String"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 5d28e9557d9e7888"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.noteText.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - 3f65cdc98a065507"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "6B433E1D-E667-4061-850C-D9B04302B73A - fa8221a6d85d4e3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "188">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -131,6 +320,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5 - a07cd65b8d4d9e0f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -146,6 +336,7 @@
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
+                  uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5 - d67b9c7136f1a081"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -160,12 +351,73 @@
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "32">
                </Location>
+               <Location
+                  uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5 - b56c0663951188c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.__allocating_init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5 - c36b4c492eadbac7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5 - 496287e331ba6385"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.__allocating_init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "B65FFBB9-5469-499D-9AFF-50DA1732B8A5 - 3f65cdc98a065507"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(dictionary: Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "220">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -179,6 +431,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8 - bdd4978f7dff822a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -194,6 +447,7 @@
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
+                  uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8 - 139c701e64aabbb8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -208,12 +462,73 @@
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "68">
                </Location>
+               <Location
+                  uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8 - a8c447b765a394e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.__allocating_init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8 - 68ca0267cf6a1fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8 - 54cac637c1087fa0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.__allocating_init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "09522C9A-90F9-47E6-B5FA-BD940755CBA8 - fa8221a6d85d4e3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FilaFacil.NoteProfile.init(noteText: Swift.String, noteID: Swift.String, userID: Swift.String) -&gt; FilaFacil.NoteProfile"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Model/NoteProfile.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "188">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "93095AC5-6540-4AC0-83E3-9B177018A0B2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -225,6 +540,116 @@
             endingLineNumber = "49"
             landmarkName = "getDictInfo()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55C591AF-38AE-4D27-B7D7-63CFC38577E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Services/AuthService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "login(email:password:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "619D9AE0-01E4-40CB-9B5D-2C72B10702F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Persistence/AuthDatabaseManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "signIn(email:password:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02ADE13E-C4AC-4A5C-8819-FC8216D38670"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FilaFacil/Services/AuthService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "login(email:password:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "02ADE13E-C4AC-4A5C-8819-FC8216D38670 - 51857a1c521ee54b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String) -&gt; () in FilaFacil.AuthService.login(email: Swift.String, password: Swift.String, completionHandler: (Swift.Optional&lt;FilaFacil.UserProfile&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Services/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "02ADE13E-C4AC-4A5C-8819-FC8216D38670 - 77c5c0653f3ea45d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FilaFacil.UserProfile&gt;) -&gt; () in closure #1 (Swift.Bool, Swift.String) -&gt; () in FilaFacil.AuthService.login(email: Swift.String, password: Swift.String, completionHandler: (Swift.Optional&lt;FilaFacil.UserProfile&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs-master/FilaFacil/Services/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "02ADE13E-C4AC-4A5C-8819-FC8216D38670 - aa1bc270253e930b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String) -&gt; () in FilaFacil.AuthService.login(email: Swift.String, password: Swift.String, completionHandler: (Swift.Optional&lt;FilaFacil.UserProfile&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Services/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "02ADE13E-C4AC-4A5C-8819-FC8216D38670 - 8c5b7809481ed21d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FilaFacil.UserProfile&gt;) -&gt; () in closure #1 (Swift.Bool, Swift.String) -&gt; () in FilaFacil.AuthService.login(email: Swift.String, password: Swift.String, completionHandler: (Swift.Optional&lt;FilaFacil.UserProfile&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FilaFacil"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascbarros/Desktop/MegaDevs/FilaFacil/Services/AuthService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
